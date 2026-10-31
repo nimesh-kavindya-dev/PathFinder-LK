@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Structured IT learning roadmaps for university students in Sri Lanka. Step-by-step learning stages, topics, skills, and practical project suggestions for 5 IT careers.">
+  <meta name="keywords" content="IT learning roadmap, software engineer roadmap, data analyst roadmap, data engineer roadmap, cybersecurity roadmap, UI UX designer roadmap, university IT studies Sri Lanka">
+  <meta name="author" content="PathFinder LK Group">
+  
+  <meta property="og:title" content="Step-by-Step IT Career Roadmaps | PathFinder LK">
+  <meta property="og:description" content="Follow progressive learning stages from university fundamentals to industry internship readiness across 5 IT careers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pathfinderlk.github.io/roadmaps.html">
+  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
+  
+  <title>PathFinder LK | Step-by-Step IT Career Roadmaps</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+  <script src="js/roadmaps.js" defer></script>
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38">
+        <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle-icon">&#9776;</span>
+      </button>
+
+      <!-- Primary Navigation Menu -->
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
+          <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
+          <li class="nav-item"><a href="roadmaps.html" class="nav-link active">Roadmaps</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="main-content" role="main">
+    
+    <!-- Page Header Banner -->
+    <section class="page-header" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); padding: 3rem 0 2rem; border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: var(--text-muted);">
+          <ol style="display: flex; list-style: none; gap: 0.5rem; padding: 0;">
+            <li><a href="index.html">Home</a> &gt;</li>
+            <li aria-current="page" style="color: var(--secondary-color); font-weight: 600;">Career Roadmaps</li>
+          </ol>
+        </nav>
+        <h1 style="font-size: 2.25rem;">Step-by-Step IT Learning Roadmaps</h1>
+        <p style="color: var(--text-muted); max-width: 820px; font-size: 1.1rem;">
+          Progressive, milestone-based learning roadmaps designed specifically for university students. Move systematically from academic fundamentals to hands-on projects, portfolio building, and internship readiness.
+        </p>
+      </div>
+    </section>
+
+    <!-- Roadmap Selector Tabs Navigation -->
+    <section style="padding: 1.25rem 0; background-color: #ffffff; border-bottom: 1px solid var(--border-color); position: sticky; top: 72px; z-index: 90; box-shadow: var(--shadow-sm);" aria-label="Select Career Roadmap">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+        <span style="font-weight: 700; color: var(--secondary-color); font-size: 0.95rem;">Select Roadmap Track:</span>
+        <div class="filter-pills" role="tablist" aria-label="Roadmap Career Tabs">
+          <button type="button" class="filter-btn roadmap-tab-btn active" role="tab" aria-selected="true" aria-controls="roadmap-se" id="tab-se" data-target="roadmap-se">Software Engineer</button>
+          <button type="button" class="filter-btn roadmap-tab-btn" role="tab" aria-selected="false" aria-controls="roadmap-da" id="tab-da" data-target="roadmap-da">Data Analyst</button>
+          <button type="button" class="filter-btn roadmap-tab-btn" role="tab" aria-selected="false" aria-controls="roadmap-de" id="tab-de" data-target="roadmap-de">Data Engineer</button>
+          <button type="button" class="filter-btn roadmap-tab-btn" role="tab" aria-selected="false" aria-controls="roadmap-cs" id="tab-cs" data-target="roadmap-cs">Cybersecurity Analyst</button>
+          <button type="button" class="filter-btn roadmap-tab-btn" role="tab" aria-selected="false" aria-controls="roadmap-uiux" id="tab-uiux" data-target="roadmap-uiux">UI/UX Designer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmaps Container Section -->
+    <section class="section" style="padding: 2.5rem 0 4rem;" aria-label="Career Milestones Content">
+      <div class="container" style="max-width: 900px;">
+
+        <!-- Global Toggle Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem;">
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">
+            Click on any stage to expand or collapse details.
+          </p>
+          <button type="button" id="expand-all-btn" class="btn btn-secondary btn-sm">Expand All Stages</button>
+        </div>
+
+        <!-- ====================================================================
+             ROADMAP 1: SOFTWARE ENGINEER
+             ==================================================================== -->
+        <article id="roadmap-se" class="roadmap-pane active" role="tabpanel" aria-labelledby="tab-se">
+          
+          <header style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-blue">Engineering Track</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">6 Learning Stages</span>
+            </div>
+            <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Software Engineer Learning Roadmap</h2>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.6;">
+              A structured roadmap taking you from foundational computational logic in your 1st university year to full-stack engineering and internship portfolio readiness.
+            </p>
+          </header>
+
+          <div class="accordion-list">
+            
+            <!-- Stage 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span><span class="stage-tag">Stage 1</span> Programming Fundamentals</span>
+                <span class="accordion-arrow">&#9652;</span>
+              </button>
+              <div class="accordion-body" style="display: block;">
+                <p>Master core programming syntax, control structures, and Object-Oriented Programming (OOP) principles.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Variables, primitive data types, memory allocation, operators, and expressions.</li>
+                  <li>Control flow: If-else branching, switch statements, for and while loops.</li>
+                  <li>Modular programming: Methods/functions, parameters, return types, scope, recursion.</li>
+                  <li>Core Object-Oriented Programming (OOP): Classes, objects, encapsulation, inheritance, polymorphism, abstraction.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Computational Logic</span>
+                  <span class="skill-tag">OOP Principles</span>
+                  <span class="skill-tag">Java / Python / C#</span>
+                  <span class="skill-tag">Debugging</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Choose one foundational language (Java or Python).</li>
+                  <li>Practice control structures and write mathematical/logical console programs.</li>
+                  <li>Implement OOP models with multiple interacting classes.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Build 3 small console applications: a Student Grade Calculator, a Bank Account Simulation, and a Command-Line Inventory Tracker.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag">Stage 2</span> Data Structures and Algorithms</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Learn how to store, retrieve, and process data efficiently in memory to solve algorithmic challenges.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Linear Data Structures: Arrays, Dynamic Arrays, Linked Lists (Singly &amp; Doubly), Stacks, Queues.</li>
+                  <li>Non-Linear Data Structures: Hash Tables / Hash Maps, Binary Search Trees (BST), Graph representations.</li>
+                  <li>Algorithms: Linear Search, Binary Search, Bubble Sort, Merge Sort, Quick Sort.</li>
+                  <li>Asymptotic Analysis: Big O notation (time and space complexity).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Big O Complexity</span>
+                  <span class="skill-tag">Hash Maps</span>
+                  <span class="skill-tag">Binary Search</span>
+                  <span class="skill-tag">Tree Traversal</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Study linear structures first (Arrays, Stacks, Queues).</li>
+                  <li>Master Hash Maps and understand hash collisions and constant-time lookup.</li>
+                  <li>Learn recursive algorithms and binary search.</li>
+                  <li>Analyze time complexity using Big O.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Solve 25–30 beginner problems on LeetCode or HackerRank focusing on Two Sum, Valid Parentheses, and Array manipulation.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag">Stage 3</span> HTML, CSS and JavaScript</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Construct modern, accessible, and responsive user interfaces using foundational web technologies.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Semantic HTML5: header, nav, main, section, article, footer, forms, tables, accessibility attributes (ARIA).</li>
+                  <li>Modern CSS3: Box model, Flexbox layouts, CSS Grid, custom properties (variables), media queries for mobile-first design.</li>
+                  <li>Vanilla JavaScript (ES6+): DOM manipulation, event listeners, array methods (map, filter, reduce), promises, Fetch API, async/await.</li>
+                  <li>Web Accessibility: Color contrast, keyboard navigation, and semantic landmarks.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Semantic HTML5</span>
+                  <span class="skill-tag">Flexbox &amp; CSS Grid</span>
+                  <span class="skill-tag">Vanilla JS DOM</span>
+                  <span class="skill-tag">Fetch API</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Build static semantic HTML pages.</li>
+                  <li>Style layouts with CSS Flexbox, Grid, and mobile media queries.</li>
+                  <li>Add client-side interactivity and form validation with Vanilla JavaScript.</li>
+                  <li>Fetch and render dynamic data from public REST APIs.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Build a responsive web application (like this PathFinder LK platform or a Weather Dashboard) that pulls live data from an open API.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag">Stage 4</span> Database Fundamentals</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Design, query, and manage persistent data storage systems for modern applications.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Relational Database Management Systems (PostgreSQL, MySQL).</li>
+                  <li>SQL fundamentals: DDL (CREATE, ALTER), DML (INSERT, UPDATE, DELETE), and DQL (SELECT, WHERE, ORDER BY).</li>
+                  <li>Relational concepts: Primary keys, foreign keys, cardinality (1:1, 1:N, N:M), multi-table joins.</li>
+                  <li>Database Normalization: 1NF, 2NF, 3NF to eliminate data redundancy.</li>
+                  <li>Transactions (ACID properties), basic indexing, and an introduction to NoSQL (MongoDB).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">SQL Queries</span>
+                  <span class="skill-tag">ER Diagramming</span>
+                  <span class="skill-tag">Schema Normalization</span>
+                  <span class="skill-tag">PostgreSQL / MySQL</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Draw Entity-Relationship (ER) diagrams from requirements.</li>
+                  <li>Create database tables with appropriate constraints.</li>
+                  <li>Master multi-table INNER and LEFT joins.</li>
+                  <li>Connect databases to your programming code using JDBC, Prisma, or Hibernate.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Design a relational schema for a university library management system with books, students, loans, and fines.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag">Stage 5</span> Software Development Projects</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Connect frontend interfaces, backend APIs, and database persistence into full-stack software applications.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Backend development frameworks: Java Spring Boot, Node.js/Express, or Python Django/FastAPI.</li>
+                  <li>RESTful API design: Endpoints, HTTP methods (GET, POST, PUT, DELETE), JSON payloads, HTTP status codes.</li>
+                  <li>User Authentication: Password hashing (BCrypt), JSON Web Tokens (JWT), session security.</li>
+                  <li>Frontend frameworks: React components, state, hooks, and routing.</li>
+                  <li>Automated Unit Testing: Writing unit tests for controllers and service layers.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Full-Stack Integration</span>
+                  <span class="skill-tag">REST APIs</span>
+                  <span class="skill-tag">JWT Authentication</span>
+                  <span class="skill-tag">React / Spring Boot</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Build and test a standalone CRUD REST API with Postman.</li>
+                  <li>Implement secure JWT user login and registration.</li>
+                  <li>Connect the backend API to a responsive React or JavaScript frontend.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Develop a Task &amp; Issue Tracking system with user registration, roles (Admin/Member), status boards, and comment threads.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag">Stage 6</span> Portfolio Development</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Package your engineering work, document your projects, and prepare for competitive university internships.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Advanced Git &amp; GitHub: Feature branching, pull request reviews, resolving merge conflicts.</li>
+                  <li>Documentation standards: Writing clean README.md files with project architecture diagrams, setup steps, and screenshots.</li>
+                  <li>Deployment &amp; Hosting: Hosting static frontends on GitHub Pages or Vercel; deploying backend APIs to cloud containers.</li>
+                  <li>Containerization basics: Writing Dockerfiles to containerize applications.</li>
+                  <li>Technical CV &amp; Interview prep: Preparing for technical coding tests and system explanation questions.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">GitHub Portfolio</span>
+                  <span class="skill-tag">Docker Basics</span>
+                  <span class="skill-tag">CI/CD &amp; Deployment</span>
+                  <span class="skill-tag">Interview Readiness</span>
+                </div>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Recommended Learning Order:</h4>
+                <ol style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Select your top 2 full-stack projects and clean up the code.</li>
+                  <li>Add comprehensive README files with live demo links.</li>
+                  <li>Publish a personal developer portfolio site showcasing your projects.</li>
+                  <li>Practice whiteboard and LeetCode algorithmic interview problems.</li>
+                </ol>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Create a polished GitHub profile with pinned repositories, well-formatted READMEs, and apply for 3rd-year university internship positions.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="career-details.html?career=software-engineer#software-engineer" class="btn btn-secondary btn-sm">Explore Software Engineer Career Details &rarr;</a>
+            <a href="resources.html" class="btn btn-primary btn-sm">Access Free Study Resources</a>
+          </div>
+
+        </article>
+
+        <!-- ====================================================================
+             ROADMAP 2: DATA ANALYST
+             ==================================================================== -->
+        <article id="roadmap-da" class="roadmap-pane" role="tabpanel" aria-labelledby="tab-da" style="display: none;">
+          
+          <header style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-green">Analytics Track</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">6 Learning Stages</span>
+            </div>
+            <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Data Analyst Learning Roadmap</h2>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Progress steadily from spreadsheet data modeling and SQL querying to interactive Power BI dashboards, statistical storytelling, and business portfolio development.
+            </p>
+          </header>
+
+          <div class="accordion-list">
+            
+            <!-- Stage 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 1</span> Spreadsheet Modeling &amp; Excel Fundamentals</span>
+                <span class="accordion-arrow">&#9652;</span>
+              </button>
+              <div class="accordion-body" style="display: block;">
+                <p>Master spreadsheet computation, formula logic, and data structuring in Microsoft Excel.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Core formula syntax, cell references (relative vs. absolute), data validation rules.</li>
+                  <li>Lookup and conditional functions: XLOOKUP, INDEX/MATCH, VLOOKUP, IF, SUMIFS, COUNTIFS.</li>
+                  <li>Pivot Tables &amp; Pivot Charts: Multi-dimensional aggregation, calculated fields, slicers.</li>
+                  <li>Data cleaning techniques: Removing duplicate rows, text-to-columns, handling missing cells.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Advanced Excel</span>
+                  <span class="skill-tag">Pivot Tables</span>
+                  <span class="skill-tag">XLOOKUP</span>
+                  <span class="skill-tag">Data Cleaning</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Download a retail transaction spreadsheet and build an automated monthly executive sales summary with interactive slicers.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 2</span> Relational Databases &amp; Advanced SQL</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Learn to extract, filter, join, and aggregate enterprise data stored in relational database engines.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>SQL query clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT.</li>
+                  <li>Relational table joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN.</li>
+                  <li>Aggregate statistical functions: COUNT, SUM, AVG, MIN, MAX.</li>
+                  <li>Advanced SQL: Subqueries, Common Table Expressions (CTEs), and Window Functions (ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">SQL Joins</span>
+                  <span class="skill-tag">Window Functions</span>
+                  <span class="skill-tag">CTEs</span>
+                  <span class="skill-tag">PostgreSQL / SSMS</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Complete all SQLBolt tutorials and write complex SQL queries to calculate monthly customer retention rates from a database.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 3</span> Business Intelligence &amp; Interactive Dashboards</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Construct professional, interactive visual dashboards using Microsoft Power BI or Tableau.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Power BI data importing and transformation workflows using Power Query.</li>
+                  <li>Data modeling: Star schema, Snowflake schema, primary-to-foreign key relationships, cardinality.</li>
+                  <li>DAX (Data Analysis Expressions): CALCULATE, FILTER, RELATED, time-intelligence calculations (Year-over-Year growth).</li>
+                  <li>Visual design principles: Choosing between bar, line, scatter, card, and map charts.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Microsoft Power BI</span>
+                  <span class="skill-tag">DAX Measures</span>
+                  <span class="skill-tag">Data Modeling</span>
+                  <span class="skill-tag">Tableau</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Build an interactive Power BI dashboard tracking Sri Lankan university enrollment trends or public healthcare metrics.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 4</span> Python for Data Analysis &amp; EDA</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Utilize Python libraries for programmatic data manipulation, exploratory data analysis, and statistical visualization.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Jupyter Notebook workflow and Python data structures (lists, dictionaries, sets).</li>
+                  <li>Pandas library: Dataframe indexing, filtering, grouping, merging, pivot tables, handling missing values.</li>
+                  <li>NumPy library: Numerical arrays, vectorization, and mathematical operations.</li>
+                  <li>Visualization libraries: Matplotlib and Seaborn (histograms, box plots, correlation heatmaps).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Python (Pandas)</span>
+                  <span class="skill-tag">NumPy</span>
+                  <span class="skill-tag">Exploratory Analysis (EDA)</span>
+                  <span class="skill-tag">Seaborn Charts</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Download an open Kaggle dataset (e.g. World Bank development indicators) and create an annotated Jupyter Notebook detailing 5 key statistical findings.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 5</span> Business Analytics, KPIs &amp; Data Storytelling</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Learn how to connect data findings directly to executive commercial strategies and decision-making.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Core business metrics: Customer Acquisition Cost (CAC), Churn Rate, Lifetime Value (LTV), Return on Investment (ROI).</li>
+                  <li>Statistical testing: Hypothesis formulation, p-values, A/B testing principles, confidence intervals.</li>
+                  <li>Data storytelling: Structuring presentations with a clear problem context, empirical findings, and actionable recommendations.</li>
+                  <li>Executive summary drafting for non-technical stakeholders.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Business KPIs</span>
+                  <span class="skill-tag">Data Storytelling</span>
+                  <span class="skill-tag">A/B Testing</span>
+                  <span class="skill-tag">Executive Reporting</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Write a 2-page executive business recommendation brief based on your exploratory data analysis, outlining 3 strategic commercial actions.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #d1fae5; color: #047857;">Stage 6</span> Analytics Portfolio &amp; Capstone Projects</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Curate your best projects, publish interactive dashboards, and prepare for university internship interviews.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Publishing interactive reports to NovyPro or Tableau Public for public viewing.</li>
+                  <li>Documenting SQL queries and Python code in clean, well-annotated GitHub repositories.</li>
+                  <li>Kaggle community participation: Sharing notebooks and earning peer upvotes.</li>
+                  <li>Interview readiness: Explaining complex SQL window functions and dashboard design decisions during interviews.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Portfolio Curation</span>
+                  <span class="skill-tag">Tableau Public</span>
+                  <span class="skill-tag">GitHub Documentation</span>
+                  <span class="skill-tag">Internship Interview Prep</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Package 3 distinct case studies (one in SQL, one in Power BI, and one in Python) and link them on your LinkedIn profile and CV.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="career-details.html?career=data-analyst#data-analyst" class="btn btn-secondary btn-sm">Explore Data Analyst Career Details &rarr;</a>
+            <a href="resources.html" class="btn btn-primary btn-sm">Access Free Study Resources</a>
+          </div>
+
+        </article>
+
+        <!-- ====================================================================
+             ROADMAP 3: DATA ENGINEER
+             ==================================================================== -->
+        <article id="roadmap-de" class="roadmap-pane" role="tabpanel" aria-labelledby="tab-de" style="display: none;">
+          
+          <header style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-amber">Big Data Track</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">6 Learning Stages</span>
+            </div>
+            <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Data Engineer Learning Roadmap</h2>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Learn to architect resilient data architectures, automate high-throughput ETL pipelines, manage cloud warehouses, and process distributed big data streams.
+            </p>
+          </header>
+
+          <div class="accordion-list">
+            
+            <!-- Stage 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 1</span> Programming Fundamentals &amp; Linux Essentials</span>
+                <span class="accordion-arrow">&#9652;</span>
+              </button>
+              <div class="accordion-body" style="display: block;">
+                <p>Establish fluency in command-line scripting and backend Python programming for data automation.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Python programming: File I/O, JSON and CSV parsing, handling exceptions, virtual environments.</li>
+                  <li>Linux operating system basics: Navigating the terminal, file permissions, pipes (`|`), `grep`, `awk`, `sed`.</li>
+                  <li>Automating cron jobs and writing bash shell scripts.</li>
+                  <li>Version control workflows using Git and GitHub.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Python Scripting</span>
+                  <span class="skill-tag">Linux / Bash</span>
+                  <span class="skill-tag">Cron Automation</span>
+                  <span class="skill-tag">File Parsing</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Write a bash script that pulls hourly server logs, extracts HTTP 500 error counts, and logs them to a CSV report.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 2</span> Advanced Database Systems &amp; Data Modeling</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Master analytical schema design and high-performance querying for data warehousing.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Differences between OLTP (Transactional) and OLAP (Analytical) database architectures.</li>
+                  <li>Dimensional Modeling: Star schema, Snowflake schema, Fact tables, Dimension tables.</li>
+                  <li>Advanced SQL: Query optimization, table partitioning, clustering keys, index structures (B-Tree).</li>
+                  <li>NoSQL database systems: Document stores (MongoDB) and column-family stores (Cassandra).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Dimensional Modeling</span>
+                  <span class="skill-tag">OLAP Architectures</span>
+                  <span class="skill-tag">Partitioning</span>
+                  <span class="skill-tag">PostgreSQL / NoSQL</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Design a dimensional data warehouse schema for a ride-sharing service featuring fact trips and dimension drivers, riders, and locations.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 3</span> Data Warehousing &amp; Cloud Storage</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Construct modern cloud data lakes and query columnar storage formats at scale.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Cloud object storage architectures: Amazon Web Services (AWS) S3, Google Cloud Storage.</li>
+                  <li>Columnar storage file formats: Apache Parquet, ORC, Avro vs. row-based CSV/JSON.</li>
+                  <li>Cloud Data Warehouses: Snowflake, Google BigQuery, AWS Redshift.</li>
+                  <li>Staging and loading data: COPY INTO commands, external tables, data lake partitioning.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Snowflake / BigQuery</span>
+                  <span class="skill-tag">AWS S3</span>
+                  <span class="skill-tag">Parquet Storage</span>
+                  <span class="skill-tag">Data Lakes</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Use a free-tier Snowflake or BigQuery account to stage Parquet datasets and measure query execution speed versus uncompressed CSV files.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 4</span> ETL Pipelines &amp; Workflow Orchestration</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Build and schedule automated extraction, transformation, and loading pipelines.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>ETL (Extract, Transform, Load) vs. modern ELT (Extract, Load, Transform) paradigms.</li>
+                  <li>Workflow orchestration with Apache Airflow: Defining DAGs (Directed Acyclic Graphs), operators, task dependencies.</li>
+                  <li>Data transformation with dbt (data build tool): Modular SQL transformations and automated testing.</li>
+                  <li>Idempotency, pipeline error handling, alert mechanisms, and backfilling.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Apache Airflow</span>
+                  <span class="skill-tag">ETL / ELT Pipelines</span>
+                  <span class="skill-tag">dbt (Data Build Tool)</span>
+                  <span class="skill-tag">DAG Scheduling</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Build an Apache Airflow pipeline that fetches currency exchange rates from an open REST API daily, cleans the data, and writes it to a PostgreSQL database.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 5</span> Big Data Processing &amp; Streaming Technologies</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Process terabyte-scale datasets and real-time streaming architectures using distributed computing.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Distributed computing foundations: Master-worker architectures, parallel execution, partition skew.</li>
+                  <li>Apache Spark &amp; PySpark: SparkSession, DataFrames, transformations vs. actions, broadcast joins.</li>
+                  <li>Streaming architectures: Introduction to Apache Kafka, topics, producers, consumers, message brokers.</li>
+                  <li>Delta Lake and data lakehouse concepts (ACID transactions on object storage).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Apache Spark (PySpark)</span>
+                  <span class="skill-tag">Distributed Computing</span>
+                  <span class="skill-tag">Apache Kafka</span>
+                  <span class="skill-tag">Data Streaming</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Write a PySpark batch transformation script that processes multi-gigabyte server logs to calculate hourly unique visitors and top requested URLs.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #fef3c7; color: #b45309;">Stage 6</span> End-to-End Pipeline Capstone &amp; Portfolio</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Deploy a containerized end-to-end cloud pipeline, write architecture diagrams, and prepare for industry recruitment.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Containerizing pipeline services with Docker and Docker Compose (Airflow + Postgres).</li>
+                  <li>Automated data quality testing using frameworks like Great Expectations.</li>
+                  <li>Documenting end-to-end data pipeline architectures with system flowcharts.</li>
+                  <li>Publishing clean, reproducible pipeline repositories on GitHub for internship recruiters.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Docker Compose</span>
+                  <span class="skill-tag">Architecture Diagrams</span>
+                  <span class="skill-tag">Data Quality Testing</span>
+                  <span class="skill-tag">Capstone Portfolio</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Build and document an end-to-end pipeline: Ingest API data &rarr; Orchestrate in Airflow &rarr; Process with Spark &rarr; Store in Snowflake warehouse &rarr; Visualize in Power BI.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="career-details.html?career=data-engineer#data-engineer" class="btn btn-secondary btn-sm">Explore Data Engineer Career Details &rarr;</a>
+            <a href="resources.html" class="btn btn-primary btn-sm">Access Free Study Resources</a>
+          </div>
+
+        </article>
+
+        <!-- ====================================================================
+             ROADMAP 4: CYBERSECURITY ANALYST
+             ==================================================================== -->
+        <article id="roadmap-cs" class="roadmap-pane" role="tabpanel" aria-labelledby="tab-cs" style="display: none;">
+          
+          <header style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-red">Security Track</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">6 Learning Stages</span>
+            </div>
+            <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Cybersecurity Analyst Learning Roadmap</h2>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Progress steadily from network protocol foundations and Linux system hardening to security log inspection, vulnerability assessment, and SOC incident response.
+            </p>
+          </header>
+
+          <div class="accordion-list">
+            
+            <!-- Stage 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 1</span> Computer Networking Fundamentals</span>
+                <span class="accordion-arrow">&#9652;</span>
+              </button>
+              <div class="accordion-body" style="display: block;">
+                <p>Master how data travels across local and global networks before attempting to defend them.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>The OSI 7-Layer Model and TCP/IP protocol stack.</li>
+                  <li>IP Addressing: IPv4, IPv6, Subnetting (CIDR notation), public vs. private IPs, NAT.</li>
+                  <li>Essential network protocols: DNS, DHCP, HTTP, HTTPS, SSH, FTP, ARP, ICMP.</li>
+                  <li>Network hardware and security perimeters: Routers, switches, firewalls, and VLANs.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">TCP/IP Protocol</span>
+                  <span class="skill-tag">Subnetting</span>
+                  <span class="skill-tag">OSI Model</span>
+                  <span class="skill-tag">DNS &amp; Routing</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Use Cisco Packet Tracer to build a virtual campus network topology with subnets, DHCP servers, and access-control lists (ACLs).
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 2</span> Operating Systems &amp; Linux Hardening</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Learn operating system architectures, terminal mastery, and secure server configuration.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Linux operating systems (Ubuntu, Debian, Kali Linux): Navigation, file system hierarchy, package management.</li>
+                  <li>Access Control: User accounts, groups, file permissions (`chmod`, `chown`, `umask`), sudo privileges.</li>
+                  <li>Process monitoring and system services: `systemctl`, `top`, `ps`, cron jobs, background processes.</li>
+                  <li>Windows Server fundamentals: Active Directory, Group Policy Objects (GPO), and NTFS permissions.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Linux Administration</span>
+                  <span class="skill-tag">File Permissions</span>
+                  <span class="skill-tag">System Hardening</span>
+                  <span class="skill-tag">Active Directory</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Play through Levels 0 to 15 of the free OverTheWire Bandit wargame to master Linux commands and SSH security.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 3</span> Security Principles, Threat Vectors &amp; Cryptography</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Understand the foundational principles of information security and core cryptographic primitives.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>The CIA Triad: Confidentiality, Integrity, and Availability.</li>
+                  <li>Authentication &amp; Access: Multi-Factor Authentication (MFA), Principle of Least Privilege, Zero Trust.</li>
+                  <li>Cryptography: Symmetric encryption (AES), Asymmetric encryption (RSA), Hashing (SHA-256), Digital Signatures, PKI/Certificates.</li>
+                  <li>Attack taxonomy: Phishing, Social Engineering, Malware (Ransomware, Trojans), Man-in-the-Middle (MITM), Denial-of-Service (DDoS).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">CIA Triad</span>
+                  <span class="skill-tag">Cryptography &amp; Hashing</span>
+                  <span class="skill-tag">Threat Vectors</span>
+                  <span class="skill-tag">MFA &amp; PKI</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Write a Python script that takes a plaintext string, hashes it with SHA-256 using salt, and verifies password matching.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 4</span> Network Security Analysis &amp; Packet Inspection</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Inspect real-time network packets, discover active ports, and monitor security event logs.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Packet analysis using Wireshark: TCP three-way handshake, filtering protocols (`http`, `dns`, `tcp.port`), inspecting payload headers.</li>
+                  <li>Network scanning with Nmap: Host discovery, SYN scanning (`-sS`), service version detection (`-sV`), OS fingerprinting (`-O`).</li>
+                  <li>Security Information and Event Management (SIEM): Centralized log collection, Splunk / Elastic SIEM fundamentals.</li>
+                  <li>Analyzing firewall and authentication failure logs to spot brute-force attempts.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Wireshark Analysis</span>
+                  <span class="skill-tag">Nmap Port Scanning</span>
+                  <span class="skill-tag">SIEM Tools (Splunk)</span>
+                  <span class="skill-tag">Log Triage</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Capture Wireshark network traffic during an unencrypted HTTP login vs. an HTTPS login to visually observe payload encryption.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 5</span> Vulnerability Assessment &amp; Ethical Security Testing</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Identify, evaluate, and report security vulnerabilities across web applications and server perimeters.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>The OWASP Top 10 Web Application Vulnerabilities: SQL Injection, Cross-Site Scripting (XSS), Broken Access Control, Security Misconfiguration.</li>
+                  <li>Intercepting web proxy tools: Burp Suite (repeater, proxy, spidering).</li>
+                  <li>Vulnerability scanning: Using Nessus or OpenVAS to detect unpatched software versions.</li>
+                  <li>Vulnerability scoring: CVSS (Common Vulnerability Scoring System) ratings and remediation recommendations.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">OWASP Top 10</span>
+                  <span class="skill-tag">Burp Suite</span>
+                  <span class="skill-tag">Vulnerability Assessment</span>
+                  <span class="skill-tag">CVSS Scoring</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Complete the free PortSwigger Web Security Academy beginner labs on SQL Injection and reflected XSS in a safe, legal sandbox.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #ffe4e6; color: #be123c;">Stage 6</span> Incident Response, Defensive Labs &amp; Certifications</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Master the incident containment lifecycle, simulate SOC operations, and prepare for industry defense certifications.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>The NIST Incident Response Lifecycle: Preparation &rarr; Detection &amp; Analysis &rarr; Containment, Eradication &amp; Recovery &rarr; Post-Incident Activity.</li>
+                  <li>Security Operations Center (SOC) Tier 1 workflows: Incident triage, ticket documentation, escalation protocols.</li>
+                  <li>Hands-on defensive training platforms: TryHackMe (SOC Level 1 pathway) and Blue Team Labs Online.</li>
+                  <li>Entry certification alignment: CompTIA Security+, Cisco Certified Support Technician (CCST) Cybersecurity.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Incident Response</span>
+                  <span class="skill-tag">SOC Workflows</span>
+                  <span class="skill-tag">Forensic Triage</span>
+                  <span class="skill-tag">CompTIA Security+</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Complete the free Cisco "Skills for All: Cybersecurity Essentials" modules and document a simulated ransomware response post-mortem report.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="career-details.html?career=cybersecurity#cybersecurity" class="btn btn-secondary btn-sm">Explore Cybersecurity Career Details &rarr;</a>
+            <a href="resources.html" class="btn btn-primary btn-sm">Access Free Study Resources</a>
+          </div>
+
+        </article>
+
+        <!-- ====================================================================
+             ROADMAP 5: UI/UX DESIGNER
+             ==================================================================== -->
+        <article id="roadmap-uiux" class="roadmap-pane" role="tabpanel" aria-labelledby="tab-uiux" style="display: none;">
+          
+          <header style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-purple">Design Track</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">6 Learning Stages</span>
+            </div>
+            <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">UI/UX Designer Learning Roadmap</h2>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Progress systematically from design thinking and user empathy research to wireframing, accessible design systems in Figma, and complete UX case study portfolios.
+            </p>
+          </header>
+
+          <div class="accordion-list">
+            
+            <!-- Stage 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 1</span> Foundations of UX &amp; Design Thinking</span>
+                <span class="accordion-arrow">&#9652;</span>
+              </button>
+              <div class="accordion-body" style="display: block;">
+                <p>Understand the human-centered methodology behind creating intuitive digital products.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>The 5 stages of Design Thinking: Empathize, Define, Ideate, Prototype, Test.</li>
+                  <li>Distinguishing User Experience (UX - logic &amp; flows) from User Interface (UI - visuals &amp; aesthetics).</li>
+                  <li>Jakob Nielsen's 10 Usability Heuristics for User Interface Design.</li>
+                  <li>Cognitive load, Fitts's Law, Hick's Law, and user mental models.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Design Thinking</span>
+                  <span class="skill-tag">Usability Heuristics</span>
+                  <span class="skill-tag">Cognitive Load</span>
+                  <span class="skill-tag">UX Auditing</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Choose a popular Sri Lankan banking or train ticket booking app and conduct a 5-point heuristic usability audit identifying user pain points.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 2</span> User Research, Personas &amp; Information Architecture</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Gather empirical user data, craft user personas, and map out logical information navigation structures.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>User research methods: Qualitative interviews, surveys, competitive analysis.</li>
+                  <li>Creating user personas and empathy maps to define user needs, motivations, and frustrations.</li>
+                  <li>Customer Journey Mapping: Tracking touchpoints, emotional highs, and pain points across a task.</li>
+                  <li>Information Architecture (IA): Organizing app menus, card sorting, and user flow diagrams.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">User Research</span>
+                  <span class="skill-tag">User Personas</span>
+                  <span class="skill-tag">Journey Mapping</span>
+                  <span class="skill-tag">Information Architecture</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Interview 3 fellow university undergraduates about challenges finding student study notes, and build a detailed user persona and journey map.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 3</span> Wireframing &amp; Low-Fidelity Prototyping</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Quickly sketch layout compositions and test navigation flows before investing time in visual styling.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Paper prototyping and rapid thumbnail sketching.</li>
+                  <li>Digital wireframing in Figma: Grids, layout containers, placeholder components.</li>
+                  <li>User flow diagramming: Connecting wireframes to simulate button taps and screen transitions.</li>
+                  <li>Conducting early feedback sessions on wireframes to validate layout concepts.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Paper Sketching</span>
+                  <span class="skill-tag">Figma Wireframing</span>
+                  <span class="skill-tag">User Flow Diagrams</span>
+                  <span class="skill-tag">Rapid Prototyping</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Sketch a 4-screen wireframe flow for a student carpooling or hostel finder mobile application and link the frames into a clickable low-fidelity prototype.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 4</span> Visual UI Design, Color Psychology &amp; Typography</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Master aesthetic principles, typography scales, color harmony, and accessibility standards.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Typography scales: Font pairings, line heights, font weights, and readability hierarchy.</li>
+                  <li>Color theory &amp; psychology: Primary brand colors, neutrals, semantic colors (success, error), 60-30-10 color rule.</li>
+                  <li>The 8pt Spacing Grid: Consistent margins, paddings, and alignment rules.</li>
+                  <li>Web Content Accessibility Guidelines (WCAG 2.1 AA): Contrast ratios (minimum 4.5:1), touch target sizes (min 44x44px).</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Typography Scales</span>
+                  <span class="skill-tag">8pt Grid System</span>
+                  <span class="skill-tag">Color Psychology</span>
+                  <span class="skill-tag">WCAG Accessibility</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Re-design an existing unstyled web form into a high-contrast, accessible visual interface in Figma adhering strictly to the 8pt grid.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 5</span> High-Fidelity Prototyping &amp; Design Systems in Figma</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Build scalable design systems and realistic interactive prototypes with smart animations in Figma.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Advanced Figma Auto-Layout: Responsive resizing, padding, spacing, nested flex-like containers.</li>
+                  <li>Component Architecture: Master components, instances, variants, component properties.</li>
+                  <li>Interactive Prototyping: Micro-interactions, hover states, overlays, Smart Animate transitions.</li>
+                  <li>Design Tokens: Centralized color, typography, and spacing variables for design systems.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Figma Auto-Layout</span>
+                  <span class="skill-tag">Design Systems</span>
+                  <span class="skill-tag">Component Variants</span>
+                  <span class="skill-tag">Smart Animate</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Create a mini design system in Figma with buttons (default, hover, disabled), input boxes, and cards, then assemble a 5-screen clickable prototype.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span><span class="stage-tag" style="background-color: #f3e8ff; color: #7e22ce;">Stage 6</span> Usability Testing, Developer Handoff &amp; Portfolio Case Studies</span>
+                <span class="accordion-arrow">&#9662;</span>
+              </button>
+              <div class="accordion-body" style="display: none;">
+                <p>Validate your designs with real users, prepare specs for developers, and publish polished UX case studies.</p>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Topics to Study:</h4>
+                <ul style="padding-left: 1.25rem; margin-bottom: 1rem;">
+                  <li>Usability testing protocols: Writing task scenarios, moderated vs. unmoderated tests, gathering qualitative feedback.</li>
+                  <li>Design iteration: Refining designs based on observed user friction and testing metrics.</li>
+                  <li>Developer handoff: Figma Dev Mode, inspecting CSS, exporting assets, creating component specification notes.</li>
+                  <li>Structuring UX Case Studies: Problem statement &rarr; User research &rarr; Wireframes &rarr; Final Prototype &rarr; Usability results &rarr; Key learnings.</li>
+                </ul>
+                <h4 style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Important Skills:</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                  <span class="skill-tag">Usability Testing</span>
+                  <span class="skill-tag">Developer Handoff</span>
+                  <span class="skill-tag">Case Study Writing</span>
+                  <span class="skill-tag">Behance / Notion Portfolio</span>
+                </div>
+                <div class="practical-box">
+                  <strong>Practical Suggestion:</strong> Write a comprehensive UX case study documenting your entire project journey from initial research to final interactive prototype and publish it on Behance or Notion.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="career-details.html?career=ui-ux#ui-ux" class="btn btn-secondary btn-sm">Explore UI/UX Designer Career Details &rarr;</a>
+            <a href="resources.html" class="btn btn-primary btn-sm">Access Free Study Resources</a>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & Mission -->
+        <div class="footer-column">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
+            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
+          </div>
+          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
+          </p>
+          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
+            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+          </p>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="footer-column">
+          <h3>Navigation Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="careers.html">Explore Careers</a></li>
+            <li><a href="quiz.html">Career Quiz</a></li>
+            <li><a href="roadmaps.html">Career Roadmaps</a></li>
+            <li><a href="resources.html">Learning Resources</a></li>
+            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Useful Links -->
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
+            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
+            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
+            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
+            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Academic Information -->
+        <div class="footer-column">
+          <h3>Academic Context</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
+            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
+            <strong>Project:</strong> Semester 1 Group Web Project<br>
+            <strong>Theme:</strong> Community-Focused Static Website<br>
+            <strong>Platform:</strong> PathFinder LK
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

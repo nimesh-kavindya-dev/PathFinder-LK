@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curated 100% free learning platforms, courses, and documentation for IT university students in Sri Lanka. Explore resources for Software Engineering, Data Analytics, Cybersecurity, and UI/UX Design.">
+  <meta name="keywords" content="Free IT resources, FreeCodeCamp, W3Schools, MDN Web Docs, Kaggle, Cisco Networking Academy, Figma Learn, free university student perks">
+  <meta name="author" content="PathFinder LK Group">
+  
+  <meta property="og:title" content="Curated Free IT Learning Resources | PathFinder LK">
+  <meta property="og:description" content="Access verified, high-quality, 100% free educational platforms and developer student perks to boost your tech career.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pathfinderlk.github.io/resources.html">
+  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
+  
+  <title>PathFinder LK | Curated Free IT Learning Resources</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+  <script src="js/resources.js" defer></script>
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38">
+        <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle-icon">&#9776;</span>
+      </button>
+
+      <!-- Primary Navigation Menu -->
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
+          <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
+          <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="main-content" role="main">
+    
+    <!-- Page Header Banner -->
+    <section class="page-header" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); padding: 3rem 0 2rem; border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: var(--text-muted);">
+          <ol style="display: flex; list-style: none; gap: 0.5rem; padding: 0;">
+            <li><a href="index.html">Home</a> &gt;</li>
+            <li aria-current="page" style="color: var(--secondary-color); font-weight: 600;">Learning Resources</li>
+          </ol>
+        </nav>
+        <h1 style="font-size: 2.25rem;">Curated Free Learning Resources</h1>
+        <p style="color: var(--text-muted); max-width: 820px; font-size: 1.1rem;">
+          High-quality education should be accessible to every university student. Explore this curated directory of verified, 100% free learning platforms, documentation, interactive sandboxes, and student perks.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="filter-section" style="padding: 2rem 0 1rem;" aria-label="Resource Search and Filter">
+      <div class="container">
+        <div class="search-filter-box">
+          <div class="search-input-group">
+            <label for="resource-search" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Search resources</label>
+            <input type="search" id="resource-search" class="search-input" placeholder="Search resources by platform, title, or topic (e.g. Python, SQL, CSS, Security)..." aria-label="Search resources">
+          </div>
+          <div class="filter-pills" role="group" aria-label="Filter resources by career domain">
+            <button type="button" class="filter-btn resource-filter-btn active" data-category="all">All Resources (10)</button>
+            <button type="button" class="filter-btn resource-filter-btn" data-category="development">Software Engineering</button>
+            <button type="button" class="filter-btn resource-filter-btn" data-category="data">Data &amp; AI</button>
+            <button type="button" class="filter-btn resource-filter-btn" data-category="security">Cybersecurity</button>
+            <button type="button" class="filter-btn resource-filter-btn" data-category="design">UI/UX Design</button>
+          </div>
+          <button type="button" id="clear-resources-btn" class="btn btn-secondary btn-sm" title="Clear all search inputs and category filters">Clear Filters</button>
+        </div>
+
+        <!-- Live Results Counter -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span id="resources-result-count" style="font-size: 0.95rem; font-weight: 600; color: var(--secondary-color);">Showing 10 of 10 Resources</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Use the search and filters above to find learning materials.</span>
+        </div>
+
+        <!-- No Results Notification Container -->
+        <div id="no-resources-msg" class="card" style="display: none; text-align: center; padding: 2.5rem 2rem; border-color: var(--primary-border); background-color: #f0f9ff; margin-bottom: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
+          <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">No Matching Learning Resources Found</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We couldn't find any resource matching your active search and category filters.</p>
+          <button type="button" id="reset-resources-btn" class="btn btn-primary btn-sm">Reset All Filters &amp; Show All Resources</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Card Grid Directory -->
+    <section class="section" style="padding: 1rem 0 3.5rem;" aria-label="Learning Platforms Directory">
+      <div class="container">
+        <div class="popular-careers-grid" id="resources-grid">
+          
+          <!-- Resource 1: freeCodeCamp -->
+          <article class="card resource-card" data-category="development" data-keywords="freecodecamp coding web development responsive html css javascript fullstack apis certifications">
+            <div class="career-card-top">
+              <span class="badge badge-blue">Interactive Platform</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">freeCodeCamp.org</span>
+            </div>
+            <h2>freeCodeCamp</h2>
+            <p>
+              A world-renowned free interactive platform offering comprehensive hands-on curriculum in Responsive Web Design, JavaScript Algorithms, Front End Libraries, and Backend APIs with verified completion certificates.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer</span>
+            </div>
+            <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit freeCodeCamp &#8599;</a>
+          </article>
+
+          <!-- Resource 2: W3Schools -->
+          <article class="card resource-card" data-category="development data" data-keywords="w3schools web tutorials html css javascript sql python reference try it yourself beginner">
+            <div class="career-card-top">
+              <span class="badge badge-blue">Reference &amp; Tutorials</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">W3Schools</span>
+            </div>
+            <h2>W3Schools Online Web Tutorials</h2>
+            <p>
+              The web's most popular beginner learning portal featuring clear code references, structured tutorials, and live "Try It Yourself" browser code sandboxes for HTML, CSS, JavaScript, and relational SQL.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer &amp; Data Analyst</span>
+            </div>
+            <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit W3Schools &#8599;</a>
+          </article>
+
+          <!-- Resource 3: MDN Web Docs -->
+          <article class="card resource-card" data-category="development design" data-keywords="mdn web docs mozilla documentation standards html5 css3 javascript apis accessibility reference">
+            <div class="career-card-top">
+              <span class="badge badge-blue">Official Documentation</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Mozilla</span>
+            </div>
+            <h2>MDN Web Docs</h2>
+            <p>
+              The industry gold-standard documentation for web developers maintained by Mozilla. In-depth, accurate references and guided tutorials covering HTML5, CSS3, modern JavaScript, Web APIs, and WCAG accessibility standards.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer &amp; UI/UX Designer</span>
+            </div>
+            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit MDN Web Docs &#8599;</a>
+          </article>
+
+          <!-- Resource 4: Kaggle Learn -->
+          <article class="card resource-card" data-category="data" data-keywords="kaggle learn python sql pandas data analysis datasets jupyter notebooks micro-courses">
+            <div class="career-card-top">
+              <span class="badge badge-green">Hands-on Micro-Courses</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Kaggle / Google</span>
+            </div>
+            <h2>Kaggle Learn &amp; Datasets</h2>
+            <p>
+              Practical, bite-sized tutorials on Python, SQL, Pandas, Data Cleaning, and Data Visualization with live browser-based Jupyter environments and access to thousands of open real-world datasets for portfolio practice.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: #059669; font-weight: 600;">Data Analyst &amp; Data Engineer</span>
+            </div>
+            <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Kaggle Learn &#8599;</a>
+          </article>
+
+          <!-- Resource 5: Cisco Networking Academy (Skills for All) -->
+          <article class="card resource-card" data-category="security" data-keywords="cisco networking academy skills for all cybersecurity defense security basics digital badges credentials">
+            <div class="career-card-top">
+              <span class="badge badge-red">Security Academy</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Cisco</span>
+            </div>
+            <h2>Cisco Networking Academy</h2>
+            <p>
+              Free self-paced training pathways directly from Cisco Networking Academy (Skills for All) covering networking essentials, defense principles, threat defense, and verifiable digital completion badges on Credly.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: #dc2626; font-weight: 600;">Cybersecurity Analyst</span>
+            </div>
+            <a href="https://skillsforall.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Cisco Academy &#8599;</a>
+          </article>
+
+          <!-- Resource 6: Figma Learn -->
+          <article class="card resource-card" data-category="design" data-keywords="figma learn tutorials prototyping ui ux design systems auto-layout wireframing interface design">
+            <div class="career-card-top">
+              <span class="badge badge-purple">Official Tutorials</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Figma</span>
+            </div>
+            <h2>Figma Learn &amp; Help Center</h2>
+            <p>
+              Official guided tutorials and video walkthroughs covering UI wireframing, Figma Auto-Layout constraints, interactive prototype micro-animations, component variants, and design system governance.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: #7e22ce; font-weight: 600;">UI/UX Designer</span>
+            </div>
+            <a href="https://help.figma.com/hc/en-us/categories/360002042553-Figma-Design" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Figma Learn &#8599;</a>
+          </article>
+
+          <!-- Resource 7: SQLBolt -->
+          <article class="card resource-card" data-category="data development" data-keywords="sqlbolt interactive sql queries database joins aggregations subqueries practice">
+            <div class="career-card-top">
+              <span class="badge badge-green">Interactive Practice</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">SQLBolt</span>
+            </div>
+            <h2>SQLBolt: Interactive SQL Lessons</h2>
+            <p>
+              Interactive browser-based tutorials that teach relational database querying from basic SELECT statements to multi-table joins, subqueries, and table constraints with instant exercise feedback.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: #059669; font-weight: 600;">Data Analyst &amp; Data Engineer</span>
+            </div>
+            <a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit SQLBolt &#8599;</a>
+          </article>
+
+          <!-- Resource 8: OverTheWire Bandit -->
+          <article class="card resource-card" data-category="security" data-keywords="overthewire bandit wargames linux ssh terminal security file permissions ethical hacking">
+            <div class="career-card-top">
+              <span class="badge badge-red">Hands-on Wargames</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">OverTheWire</span>
+            </div>
+            <h2>OverTheWire: Bandit Wargame</h2>
+            <p>
+              A hands-on, gamified security wargame aimed at beginners to master Linux commands, SSH authentication, directory navigation, hidden files, and file permissions in a live terminal sandbox.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: #dc2626; font-weight: 600;">Cybersecurity Analyst</span>
+            </div>
+            <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Bandit Wargame &#8599;</a>
+          </article>
+
+          <!-- Resource 9: CS50 Harvard -->
+          <article class="card resource-card" data-category="development" data-keywords="cs50 harvard university computer science c algorithms python sql memory data structures">
+            <div class="career-card-top">
+              <span class="badge badge-blue">University Course</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Harvard University / edX</span>
+            </div>
+            <h2>CS50: Intro to Computer Science</h2>
+            <p>
+              Harvard University's legendary open introduction to computer science and programming. Covers C, memory management, algorithms, Python, SQL, and web foundations. Available 100% free via the edX audit track.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer</span>
+            </div>
+            <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit CS50 Harvard &#8599;</a>
+          </article>
+
+          <!-- Resource 10: Roadmap.sh -->
+          <article class="card resource-card" data-category="development data security design" data-keywords="roadmap.sh developer roadmaps community visual guides technology trees frontend backend devops">
+            <div class="career-card-top">
+              <span class="badge badge-blue">Visual Technology Trees</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Roadmap.sh</span>
+            </div>
+            <h2>Roadmap.sh Developer Roadmaps</h2>
+            <p>
+              Community-driven visual technology roadmaps, career paths, and study guides for frontend, backend, DevOps, data analysis, and cybersecurity roles across the global software development industry.
+            </p>
+            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
+              <span style="font-size: 0.9rem; color: var(--secondary-color); font-weight: 600;">All 5 IT Career Areas</span>
+            </div>
+            <a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Roadmap.sh &#8599;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Developer Perks Spotlight Section -->
+    <section class="perks-section section-light" style="padding: 3.5rem 0;" aria-labelledby="perks-title">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Student Privileges</span>
+          <h2 id="perks-title">Free Industry Developer Perks for University Students</h2>
+          <p class="section-subtitle">
+            Take advantage of exclusive student packages by registering with your university email address (`.ac.lk`).
+          </p>
+        </div>
+
+        <div class="popular-careers-grid">
+          
+          <div class="card">
+            <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Developer Tools</span>
+            <h3 style="margin-bottom: 0.5rem;">GitHub Student Developer Pack</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+              Free access to GitHub Copilot, free custom domains from Namecheap, cloud hosting credits on DigitalOcean, and dozens of premium developer tools.
+            </p>
+            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Claim GitHub Pack &#8599;</a>
+          </div>
+
+          <div class="card">
+            <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Professional IDEs</span>
+            <h3 style="margin-bottom: 0.5rem;">JetBrains Educational License</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+              100% free annual subscriptions to professional IDEs including IntelliJ IDEA Ultimate, PyCharm Professional, WebStorm, and DataGrip for database work.
+            </p>
+            <a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Apply for License &#8599;</a>
+          </div>
+
+          <div class="card">
+            <span class="badge badge-purple" style="margin-bottom: 0.75rem;">Design Suite</span>
+            <h3 style="margin-bottom: 0.5rem;">Figma for Education</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+              Free upgrade to Figma Professional features, unlimited version history, shared team design libraries, and collaboration spaces for students.
+            </p>
+            <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Get Figma Education &#8599;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & Mission -->
+        <div class="footer-column">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
+            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
+          </div>
+          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
+          </p>
+          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
+            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+          </p>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="footer-column">
+          <h3>Navigation Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="careers.html">Explore Careers</a></li>
+            <li><a href="quiz.html">Career Quiz</a></li>
+            <li><a href="roadmaps.html">Career Roadmaps</a></li>
+            <li><a href="resources.html">Learning Resources</a></li>
+            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Useful Links -->
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
+            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
+            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
+            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
+            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Academic Information -->
+        <div class="footer-column">
+          <h3>Academic Context</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
+            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
+            <strong>Project:</strong> Semester 1 Group Web Project<br>
+            <strong>Theme:</strong> Community-Focused Static Website<br>
+            <strong>Platform:</strong> PathFinder LK
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

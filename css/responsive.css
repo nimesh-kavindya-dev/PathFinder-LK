@@ -1,0 +1,145 @@
+/* ==========================================================================
+   PathFinder LK - Responsive Stylesheet
+   Course: IS 1106 - Foundations of Web Technologies
+   Description: Mobile-first responsive rules & media queries
+   ========================================================================== */
+
+/* --- Large Tablet / Medium Devices (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .how-it-works-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --- Tablet Devices (max-width: 992px) --- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-media {
+    order: -1;
+  }
+
+  .hero-image {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --- Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .hero-heading {
+    font-size: 2.15rem;
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.2rem; }
+
+  /* Navigation Toggle */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    gap: 0.5rem;
+    z-index: 99;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .popular-careers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cta-heading {
+    font-size: 1.85rem;
+  }
+}
+
+/* --- Small Mobile Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .hero-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .about-feature-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

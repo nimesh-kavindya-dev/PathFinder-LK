@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Data Engineer icon">
+  <rect width="120" height="120" rx="16" fill="#f59e0b" fill-opacity="0.1"/>
+  <!-- Top cylinder -->
+  <ellipse cx="60" cy="36" rx="34" ry="12" fill="#d97706"/>
+  <path d="M26 36 v18 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-18" fill="#b45309"/>
+  <ellipse cx="60" cy="36" rx="34" ry="12" fill="#f59e0b"/>
+  <!-- Middle cylinder -->
+  <path d="M26 58 v18 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-18" fill="#d97706"/>
+  <!-- Bottom cylinder -->
+  <path d="M26 80 v18 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-18" fill="#b45309"/>
+  <!-- Pipeline gear/arrows -->
+  <circle cx="86" cy="84" r="14" fill="#0f172a" stroke="#f59e0b" stroke-width="2.5"/>
+  <path d="M82 84 L86 80 L90 84" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+</svg>
