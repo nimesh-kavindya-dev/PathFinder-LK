@@ -2,8 +2,8 @@
 
 > **Module**: IS 1106 – Foundations of Web Technologies  
 > **Assignment**: Semester 1 Group Web Project (Community-Focused Static Website)  
-> **GitHub Repository**: [https://github.com/nimesh-kavindya/pathfinder-lk](https://github.com/nimesh-kavindya/pathfinder-lk)  
-> **Live Website URL**: [https://nimesh-kavindya.github.io/pathfinder-lk/](https://nimesh-kavindya.github.io/pathfinder-lk/)  
+> **GitHub Repository**: [https://github.com/nimesh-kavindya-dev/pathfinder-lk](https://github.com/nimesh-kavindya-dev/pathfinder-lk)  
+> **Live Website URL**: [https://nimesh-kavindya-dev.github.io/pathfinder-lk/](https://nimesh-kavindya-dev.github.io/PathFinder-LK/)  
 
 ---
 
