@@ -233,15 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resultContainer && careerInfo) {
       resultContainer.innerHTML = `
         <div style="text-align: center; margin-bottom: 2rem;">
-          <div style="display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; background-color: var(--bg-page); border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1rem;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; background-color: var(--bg-alt); border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1rem;">
             <img src="${careerInfo.icon}" alt="${careerInfo.title} icon" width="56" height="56">
           </div>
           <div>
             <span class="badge ${careerInfo.badgeClass}" style="margin-bottom: 0.5rem;">${careerInfo.domain}</span>
-            <h2 style="font-size: 2.25rem; color: var(--secondary-color); margin-bottom: 0.25rem;">
+            <h2 style="font-size: 2.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">
               Recommended Match: <span style="color: var(--primary-color);">${careerInfo.title}</span>
             </h2>
-            <div style="display: inline-block; background-color: #f0f9ff; border: 1px solid var(--primary-border); padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; margin-top: 0.5rem;">
+            <div style="display: inline-block; background-color: var(--badge-blue-bg); border: 1px solid var(--border-color); padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; color: var(--badge-blue-text); font-size: 0.95rem; margin-top: 0.5rem;">
               Career Match Score: ${highestScore} / ${TOTAL_QUESTIONS} (${matchPercentage}% Alignment)
             </div>
           </div>
@@ -249,21 +249,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ${tieHtml}
 
-        <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Why This Role Fits You</h3>
-          <p style="color: var(--text-main); font-size: 1rem; margin: 0; line-height: 1.7;">
+        <div style="background-color: var(--bg-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.5rem;">Why This Role Fits You</h3>
+          <p style="color: var(--text-secondary); font-size: 1rem; margin: 0; line-height: 1.7;">
             ${careerInfo.description}
           </p>
         </div>
 
         <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; color: var(--secondary-color); margin-bottom: 0.75rem;">Key Technical &amp; Practical Skills to Develop</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8; color: var(--text-main);">
+          <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.75rem;">Key Technical &amp; Practical Skills to Develop</h3>
+          <ul style="padding-left: 1.25rem; line-height: 1.8; color: var(--text-secondary);">
             ${careerInfo.skills.map(s => `<li>${s}</li>`).join('')}
           </ul>
         </div>
 
-        <div style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2rem;">
+        <div style="background-color: var(--bg-alt); border: 1px solid var(--border-color); padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2rem;">
           <strong>Educational Guidance Notice:</strong> This quiz provides general orientation based on your self-reported study preferences. It is an educational tool designed to help university students explore career domains and is not an absolute or scientific determinant of your future career path.
         </div>
 

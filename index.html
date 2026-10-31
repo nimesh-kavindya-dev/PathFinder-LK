@@ -21,6 +21,11 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
   
+  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <script>
+    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
@@ -32,14 +37,9 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
-
-      <!-- Mobile Navigation Hamburger Button -->
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-icon">&#9776;</span>
-      </button>
 
       <!-- Primary Navigation Links -->
       <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
@@ -52,6 +52,18 @@
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
+          <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
+          <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+        </button>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-icon">&#9776;</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -64,26 +76,23 @@
         <div class="hero-grid">
           <div class="hero-content">
             <div class="hero-tag">
-              <span class="badge badge-blue">University Career Companion</span>
+              <span class="badge badge-hero"><span class="badge-pulse"></span> University Career Companion</span>
             </div>
             <h1 id="hero-heading" class="hero-heading">
-              Discover Your True Career Path in the Sri Lankan IT Industry
+              Discover Your True Career Path in the <span class="hero-heading-gradient">Sri Lankan IT Industry</span>
             </h1>
             <p class="hero-intro">
               PathFinder LK helps university undergraduates navigate the tech world with clarity. Explore diverse IT careers, understand essential industry skills, follow step-by-step learning roadmaps, and access 100% free learning resources.
             </p>
             <div class="hero-actions">
-              <a href="careers.html" class="btn btn-primary">Explore Careers</a>
-              <a href="quiz.html" class="btn btn-secondary">Take Career Quiz</a>
+              <a href="careers.html" class="btn btn-primary">Explore Careers &rarr;</a>
+              <a href="quiz.html" class="btn btn-secondary">&#128640; Take Career Quiz</a>
             </div>
           </div>
           <div class="hero-media">
-            <figure style="margin: 0;">
+            <div class="hero-image-wrapper">
               <img src="assets/images/hero/hero-illustration.svg" alt="Visual representation of IT careers: Software Engineering, Data Analysis, Cybersecurity, and UI/UX Design" width="600" height="400" class="hero-image">
-              <figcaption style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
-                Explore foundational pathways in modern information technology
-              </figcaption>
-            </figure>
+            </div>
           </div>
         </div>
       </div>

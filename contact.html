@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
   
+  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <script>
+    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/validation.js" defer></script>
@@ -32,14 +37,9 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="36" height="36">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
-
-      <!-- Mobile Navigation Hamburger Button -->
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-icon">&#9776;</span>
-      </button>
 
       <!-- Primary Navigation Menu -->
       <nav class="main-nav" id="primary-navigation" aria-label="Main Navigation">
@@ -52,6 +52,18 @@
           <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
+          <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
+          <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+        </button>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-icon">&#9776;</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -59,16 +71,16 @@
   <main id="main-content" class="main-content" role="main">
     
     <!-- Page Header Banner -->
-    <section class="page-header" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); padding: 3rem 0 2rem; border-bottom: 1px solid var(--border-color);">
+    <section class="page-header" aria-labelledby="contact-page-title">
       <div class="container">
-        <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: var(--text-muted);">
-          <ol style="display: flex; list-style: none; gap: 0.5rem; padding: 0;">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
             <li><a href="index.html">Home</a> &gt;</li>
-            <li aria-current="page" style="color: var(--secondary-color); font-weight: 600;">Contact Us</li>
+            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Contact Us</li>
           </ol>
         </nav>
-        <h1 style="font-size: 2.25rem;">Contact Us &amp; Student Inquiries</h1>
-        <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
+        <h1 id="contact-page-title">Contact Us &amp; Student Inquiries</h1>
+        <p style="color: var(--text-secondary); max-width: 800px; font-size: 1.1rem;">
           Have questions about an IT path, want to suggest additional free learning materials, or need advice on university internships? Send us a message or browse the undergraduate FAQ below.
         </p>
       </div>
@@ -82,11 +94,11 @@
           <!-- Contact Form Container -->
           <div class="card">
             <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Send an Inquiry</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
               Fill in the form below. Client-side validation verifies that all required fields, email formatting, and message lengths are correct before submitting.
             </p>
 
-            <div style="background-color: #f0f9ff; border-left: 4px solid var(--primary-color); padding: 0.85rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.85rem; color: var(--secondary-color); margin-bottom: 1.5rem;">
+            <div style="background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 0.85rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 1.5rem;">
               <strong>Static Website Demonstration:</strong> This portal is built with pure static HTML, CSS, and Vanilla JavaScript hosted on GitHub Pages. This form demonstrates frontend validation without storing sensitive personal data or delivering emails to a real mailbox.
             </div>
 
@@ -247,9 +259,9 @@
             </div>
 
             <!-- Academic Support Notice -->
-            <div class="card" style="margin-top: 2rem; background-color: var(--primary-light); border-color: #bae6fd;">
-              <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem;">Academic Project Note</h3>
-              <p style="font-size: 0.9rem; color: #0369a1; margin: 0;">
+            <div class="card" style="margin-top: 2rem; background-color: var(--primary-light); border-color: var(--primary-border);">
+              <h3 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.5rem;">Academic Project Note</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
                 PathFinder LK is an educational initiative developed under the IS 1106 Foundations of Web Technologies course module. All simulated form submissions demonstrate client-side form validation using Vanilla JavaScript without collecting sensitive personal credentials.
               </p>
             </div>

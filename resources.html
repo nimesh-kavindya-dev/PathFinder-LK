@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
   
+  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <script>
+    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/resources.js" defer></script>
@@ -32,17 +37,12 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
 
-      <!-- Mobile Navigation Hamburger Button -->
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-icon">&#9776;</span>
-      </button>
-
       <!-- Primary Navigation Menu -->
-      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
+      <nav class="main-nav" id="primary-navigation" aria-label="Main Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
@@ -52,6 +52,18 @@
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
+          <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
+          <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+        </button>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-icon">&#9776;</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -59,16 +71,16 @@
   <main id="main-content" class="main-content" role="main">
     
     <!-- Page Header Banner -->
-    <section class="page-header" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); padding: 3rem 0 2rem; border-bottom: 1px solid var(--border-color);">
+    <section class="page-header" aria-labelledby="resources-page-title">
       <div class="container">
-        <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: var(--text-muted);">
-          <ol style="display: flex; list-style: none; gap: 0.5rem; padding: 0;">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
             <li><a href="index.html">Home</a> &gt;</li>
-            <li aria-current="page" style="color: var(--secondary-color); font-weight: 600;">Learning Resources</li>
+            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Learning Resources</li>
           </ol>
         </nav>
-        <h1 style="font-size: 2.25rem;">Curated Free Learning Resources</h1>
-        <p style="color: var(--text-muted); max-width: 820px; font-size: 1.1rem;">
+        <h1 id="resources-page-title">Curated Free Learning Resources</h1>
+        <p style="color: var(--text-secondary); max-width: 820px; font-size: 1.1rem;">
           High-quality education should be accessible to every university student. Explore this curated directory of verified, 100% free learning platforms, documentation, interactive sandboxes, and student perks.
         </p>
       </div>
@@ -94,14 +106,14 @@
 
         <!-- Live Results Counter -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span id="resources-result-count" style="font-size: 0.95rem; font-weight: 600; color: var(--secondary-color);">Showing 10 of 10 Resources</span>
+          <span id="resources-result-count" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Showing 10 of 10 Resources</span>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Use the search and filters above to find learning materials.</span>
         </div>
 
         <!-- No Results Notification Container -->
-        <div id="no-resources-msg" class="card" style="display: none; text-align: center; padding: 2.5rem 2rem; border-color: var(--primary-border); background-color: #f0f9ff; margin-bottom: 2rem;">
+        <div id="no-resources-msg" class="card" style="display: none; text-align: center; padding: 2.5rem 2rem; border-color: var(--primary-border); background-color: var(--bg-card-subtle); margin-bottom: 2rem;">
           <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
-          <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">No Matching Learning Resources Found</h3>
+          <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No Matching Learning Resources Found</h3>
           <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We couldn't find any resource matching your active search and category filters.</p>
           <button type="button" id="reset-resources-btn" class="btn btn-primary btn-sm">Reset All Filters &amp; Show All Resources</button>
         </div>

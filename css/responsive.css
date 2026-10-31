@@ -1,27 +1,69 @@
 /* ==========================================================================
-   PathFinder LK - Responsive Stylesheet
+   PathFinder LK - Responsive Stylesheet (Fluid Multi-Device Architecture)
    Course: IS 1106 - Foundations of Web Technologies
-   Description: Mobile-first responsive rules & media queries
+   Breakpoints: 1440px (Desktop), 1024px (Tablet Land), 768px (Tablet Port),
+                425px (Mobile L), 375px (Mobile M), 320px (Mobile S)
    ========================================================================== */
 
-/* --- Large Tablet / Medium Devices (max-width: 1024px) --- */
-@media (max-width: 1024px) {
-  .how-it-works-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 2rem;
+/* --------------------------------------------------------------------------
+   1. DESKTOP SCREENS & LARGE LAPTOPS (min-width: 1025px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
   }
 }
 
-/* --- Tablet Devices (max-width: 992px) --- */
+/* --------------------------------------------------------------------------
+   2. LAPTOPS & LARGE TABLETS (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .container {
+    width: 94%;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-column:last-child {
+    grid-column: span 3;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+  }
+
+  .hero-heading {
+    font-size: 2.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS (max-width: 992px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
+  .section {
+    padding: 3.75rem 0;
+  }
+
+  .hero-section {
+    padding: 3.5rem 0 3rem;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.75rem;
     text-align: center;
+  }
+
+  .hero-intro {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-actions {
@@ -33,7 +75,7 @@
   }
 
   .hero-image {
-    max-width: 420px;
+    max-width: 440px;
     margin: 0 auto;
   }
 
@@ -46,66 +88,90 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .popular-careers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+
+  .footer-column:last-child {
+    grid-column: span 2;
+  }
 }
 
-/* --- Mobile Devices (max-width: 768px) --- */
+/* --------------------------------------------------------------------------
+   4. MOBILE DEVICES (max-width: 768px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .section {
-    padding: 3.5rem 0;
+  html {
+    scroll-padding-top: 75px;
   }
 
-  .hero-section {
-    padding: 3rem 0;
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
   }
 
   .hero-heading {
-    font-size: 2.15rem;
+    font-size: clamp(2rem, 5vw + 0.8rem, 2.5rem);
   }
 
   .hero-intro {
     font-size: 1.05rem;
   }
 
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.2rem; }
-
-  /* Navigation Toggle */
+  /* Navigation Bar Mobile Layout */
   .nav-toggle {
-    display: block;
+    display: inline-flex;
   }
 
-  .nav-list {
-    display: none;
-    flex-direction: column;
+  .main-nav {
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 1.5rem;
-    box-shadow: var(--shadow-md);
-    gap: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    padding: 1rem 1.25rem;
     z-index: 99;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.25s ease;
   }
 
-  .nav-list.active {
-    display: flex;
+  .main-nav.active {
+    max-height: 480px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    width: 100%;
   }
 
   .nav-link {
     width: 100%;
-    display: block;
     padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
   }
 
   .how-it-works-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .popular-careers-grid {
@@ -117,29 +183,152 @@
     gap: 2rem;
   }
 
+  .footer-column:last-child {
+    grid-column: span 1;
+  }
+
   .cta-heading {
     font-size: 1.85rem;
   }
+
+  /* Sticky Role Switcher Bar */
+  .role-switcher-bar {
+    top: 62px;
+  }
+
+  .quiz-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .quiz-question-legend {
+    font-size: 1.15rem;
+  }
+
+  .quiz-option-label {
+    padding: 0.85rem 1rem;
+  }
 }
 
-/* --- Small Mobile Devices (max-width: 480px) --- */
+/* --------------------------------------------------------------------------
+   5. COMPACT MOBILE & SMALL PHONES (max-width: 480px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .hero-actions .btn,
   .cta-actions .btn {
     width: 100%;
   }
 
   .hero-heading {
-    font-size: 1.85rem;
+    font-size: 1.95rem;
+    letter-spacing: -0.015em;
+  }
+
+  .hero-intro {
+    font-size: 0.98rem;
   }
 
   .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   .about-feature-card {
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    gap: 0.85rem;
+  }
+
+  .career-card {
+    padding: 1.45rem 1.2rem;
+  }
+
+  .resource-card {
+    padding: 1.45rem 1.2rem;
+  }
+
+  /* Comparison Data Table on Small Mobile */
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .search-filter-box {
+    padding: 1rem;
+  }
+
+  .filter-pills {
+    width: 100%;
+  }
+
+  .filter-btn {
+    font-size: 0.825rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .quiz-result-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .quiz-result-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. EXTRA-SMALL PHONES (max-width: 360px - e.g. iPhone SE 1st gen, Galaxy Fold)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .brand-text {
+    font-size: 1.15rem;
+  }
+
+  .brand-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-heading {
+    font-size: 1.75rem;
+  }
+
+  .hero-intro {
+    font-size: 0.925rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .career-skills-tags .skill-tag {
+    font-size: 0.725rem;
+    padding: 0.2rem 0.45rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. ACCESSIBILITY: REDUCED MOTION PREFERENCE (WCAG 2.1 AA)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
