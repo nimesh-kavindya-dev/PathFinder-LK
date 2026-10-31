@@ -2,8 +2,8 @@
 
 > **Module**: IS 1106 – Foundations of Web Technologies  
 > **Assignment**: Semester 1 Group Web Project (Community-Focused Static Website)  
-> **GitHub Repository**: [https://github.com/<username>/pathfinder-lk](https://github.com/<username>/pathfinder-lk)  
-> **Live Website URL**: [https://<username>.github.io/pathfinder-lk/](https://<username>.github.io/pathfinder-lk/)  
+> **GitHub Repository**: [https://github.com/nimesh-kavindya/pathfinder-lk](https://github.com/nimesh-kavindya/pathfinder-lk)  
+> **Live Website URL**: [https://nimesh-kavindya.github.io/pathfinder-lk/](https://nimesh-kavindya.github.io/pathfinder-lk/)  
 
 ---
 
@@ -218,8 +218,7 @@ Follow these steps to deploy PathFinder LK for free on GitHub Pages:
 5. **Access Your Live Website**:
    * GitHub Pages will build and deploy the site in approximately 1–2 minutes.
    * Refresh the Settings &rarr; Pages page to see the live banner:  
-     `Your site is live at https://<your-username>.github.io/pathfinder-lk/`
-   * Replace `<username>` in this README with your actual GitHub username.
+     `Your site is live at https://nimesh-kavindya.github.io/pathfinder-lk/`
 
 ---
 
