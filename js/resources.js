@@ -1,106 +1,159 @@
 /**
- * PathFinder LK - Learning Resources Script
- * Course: IS 1106 - Foundations of Web Technologies
- * Description: Live search and topic filtering for the Learning Resources directory.
+ * ============================================================================
+ * PathFinder LK - Free Learning Resources Filter Script (resources.js)
+ * ============================================================================
+ * Description: Powers real-time search, category filtering (Software, Data,
+ *              Cloud, Security, Design/Media, QA, Business & Management,
+ *              Marketing, Finance, Engineering), and difficulty filtering.
+ * ============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initResourcesFilter();
+});
 
+function initResourcesFilter() {
   const searchInput = document.getElementById('resource-search');
-  const filterButtons = document.querySelectorAll('.resource-filter-btn');
-  const resourceCards = document.querySelectorAll('.resource-card');
-  const noResultsMsg = document.getElementById('no-resources-msg');
-  const clearResourcesBtn = document.getElementById('clear-resources-btn');
-  const resetResourcesBtn = document.getElementById('reset-resources-btn');
-  const resultCountText = document.getElementById('resources-result-count');
+  const categoryButtons = document.querySelectorAll('.resource-cat-btn');
+  const levelSelect = document.getElementById('resource-level-select');
+  const resourceCards = document.querySelectorAll('.resource-card[data-category]');
+  const resultsCountEl = document.getElementById('resource-results-count');
+  const emptyStateEl = document.getElementById('resource-empty-state');
+  const resetBtn = document.getElementById('reset-resource-filters');
+  const clearBtn = document.getElementById('clear-resource-filters');
 
-  if (!resourceCards.length) return;
+  if (resourceCards.length === 0) return;
 
-  let currentCategory = 'all';
+  let activeCategory = 'all';
+  let activeLevel = 'all';
   let searchQuery = '';
 
-  const filterResources = () => {
+  const applyFilters = () => {
     let visibleCount = 0;
-    const totalCount = resourceCards.length;
+    const normalizedQuery = searchQuery.trim().toLowerCase();
 
-    resourceCards.forEach(card => {
-      const cardCategory = card.getAttribute('data-category') || '';
-      const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-      const cardTitle = (card.querySelector('h2')?.textContent || '').toLowerCase();
-      const cardDesc = (card.querySelector('p')?.textContent || '').toLowerCase();
+    resourceCards.forEach((card) => {
+      const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+      const cardLevel = (card.getAttribute('data-level') || '').toLowerCase();
+      const cardTitle = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+      const cardProvider = card.querySelector('.resource-provider')?.textContent.toLowerCase() || '';
+      const cardDesc = card.querySelector('.card-description')?.textContent.toLowerCase() || '';
+      const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
 
-      const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory || cardCategory.includes(currentCategory));
-      const matchesSearch = !searchQuery || 
-                            cardTitle.includes(searchQuery) || 
-                            cardDesc.includes(searchQuery) || 
-                            cardKeywords.includes(searchQuery);
+      const matchesCategory = activeCategory === 'all' || cardCat.split(/\s+/).includes(activeCategory);
+      const matchesLevel = activeLevel === 'all' || cardLevel === activeLevel;
+      const matchesSearch =
+        normalizedQuery === '' ||
+        cardTitle.includes(normalizedQuery) ||
+        cardProvider.includes(normalizedQuery) ||
+        cardDesc.includes(normalizedQuery) ||
+        cardTags.includes(normalizedQuery);
 
-      if (matchesCategory && matchesSearch) {
-        card.style.display = 'flex';
+      if (matchesCategory && matchesLevel && matchesSearch) {
+        card.classList.remove('hidden');
+        card.classList.add('is-revealed');
         visibleCount++;
       } else {
-        card.style.display = 'none';
+        card.classList.add('hidden');
       }
     });
 
-    if (noResultsMsg) {
-      noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-
-    if (resultCountText) {
-      resultCountText.textContent = `Showing ${visibleCount} of ${totalCount} Resources`;
-    }
-  };
-
-  /**
-   * Resets both search input and category filter back to default
-   */
-  const clearAllFilters = () => {
-    searchQuery = '';
-    currentCategory = 'all';
-
-    if (searchInput) {
-      searchInput.value = '';
-    }
-
-    filterButtons.forEach(btn => {
-      if (btn.getAttribute('data-category') === 'all') {
-        btn.classList.add('active');
+    if (resultsCountEl) {
+      const total = resourceCards.length;
+      if (activeCategory === 'all' && activeLevel === 'all' && normalizedQuery === '') {
+        resultsCountEl.textContent = `Showing all ${total} curated free learning resources`;
       } else {
-        btn.classList.remove('active');
+        resultsCountEl.textContent = `Showing ${visibleCount} of ${total} free resources`;
       }
-    });
+    }
 
-    filterResources();
+    if (clearBtn) {
+      const isFiltered = activeCategory !== 'all' || activeLevel !== 'all' || normalizedQuery !== '';
+      clearBtn.classList.toggle('hidden', !isFiltered);
+    }
+
+    if (emptyStateEl) {
+      if (visibleCount === 0) {
+        emptyStateEl.classList.remove('hidden');
+      } else {
+        emptyStateEl.classList.add('hidden');
+      }
+    }
   };
 
-  // Search input listener
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim().toLowerCase();
-      filterResources();
-    });
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category')?.toLowerCase();
+
+  if (categoryParam) {
+    const matchingBtn = Array.from(categoryButtons).find(
+      (btn) => btn.getAttribute('data-category') === categoryParam
+    );
+    if (matchingBtn) {
+      activeCategory = categoryParam;
+      categoryButtons.forEach((btn) => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      matchingBtn.classList.add('active');
+      matchingBtn.setAttribute('aria-pressed', 'true');
+    }
   }
 
-  // Filter pills click listener
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentCategory = btn.getAttribute('data-category') || 'all';
-      filterResources();
+  categoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      categoryButtons.forEach((btn) => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+
+      activeCategory = button.getAttribute('data-category') || 'all';
+      applyFilters();
     });
   });
 
-  // Clear & Reset buttons listeners
-  if (clearResourcesBtn) {
-    clearResourcesBtn.addEventListener('click', clearAllFilters);
-  }
-  if (resetResourcesBtn) {
-    resetResourcesBtn.addEventListener('click', clearAllFilters);
+  if (levelSelect) {
+    levelSelect.addEventListener('change', (event) => {
+      activeLevel = event.target.value;
+      applyFilters();
+    });
   }
 
-  // Initial result count
-  filterResources();
+  if (searchInput) {
+    searchInput.addEventListener('input', (event) => {
+      searchQuery = event.target.value;
+      applyFilters();
+    });
+  }
 
-});
+  const resetAllFilters = () => {
+    activeCategory = 'all';
+    activeLevel = 'all';
+    searchQuery = '';
+
+    if (searchInput) searchInput.value = '';
+    if (levelSelect) levelSelect.value = 'all';
+
+    categoryButtons.forEach((btn) => {
+      const isAll = btn.getAttribute('data-category') === 'all';
+      btn.classList.toggle('active', isAll);
+      btn.setAttribute('aria-pressed', String(isAll));
+    });
+
+    applyFilters();
+  };
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      resetAllFilters();
+      if (searchInput) searchInput.focus();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', resetAllFilters);
+  }
+
+  applyFilters();
+}

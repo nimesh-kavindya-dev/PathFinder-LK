@@ -3,37 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore top IT career roles in Sri Lanka including Software Engineer, Data Analyst, Data Engineer, Cybersecurity Analyst, and UI/UX Designer. Compare skills, responsibilities, and industry expectations.">
-  <meta name="keywords" content="IT careers, software engineer, data analyst, data engineer, cybersecurity analyst, UI UX designer, Sri Lanka tech jobs, compare IT careers">
-  <meta name="author" content="PathFinder LK Group">
-  
-  <meta property="og:title" content="Explore IT Careers | PathFinder LK">
-  <meta property="og:description" content="Discover in-demand IT specializations in Sri Lanka and compare career duties, tools, and entry expectations.">
+  <meta name="description" content="Explore and compare 15 high-demand careers in Sri Lanka across IT, Software, Data, Cloud, Cybersecurity, UI/UX, Business Analysis, Product Management, Digital Marketing, Finance, Multimedia, and Robotics.">
+  <meta name="keywords" content="careers Sri Lanka, software engineer, full-stack developer, cloud devops, data analyst, business analyst, product manager, digital marketing, financial analyst, robotics engineer">
+  <meta name="author" content="PathFinder LK Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Explore 15 Career Pathways | PathFinder LK">
+  <meta property="og:description" content="Search, filter, and compare 15 high-growth career pathways across IT, Business, Finance, Marketing, Creative Media & Engineering.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pathfinderlk.github.io/careers.html">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
-  
-  <title>PathFinder LK | Explore IT Careers &amp; Comparison</title>
-  
+  <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/careers.html">
+  <meta property="og:image" content="assets/images/photos/hero-campus.jpg">
+
+  <!-- Mobile Web App & PWA Capability -->
+  <meta name="theme-color" content="#050a15">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PathFinderLK">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <title>Explore 15 Career Pathways | PathFinder LK - Directory &amp; Comparison</title>
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
+
   <!-- Immediate Theme Engine Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/careers.js" defer></script>
 </head>
 <body>
-  <!-- Accessibility Skip Link -->
+  <!-- Glassmorphic Branded Loading Screen -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+      </div>
+      <div class="loader-brand">PathFinder <span>LK</span></div>
+      <div class="loader-subtext">Loading 15 Career Pathways...</div>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percent" aria-hidden="true">8%</div>
+    </div>
+  </div>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header -->
+  <!-- 1. NAVIGATION BAR -->
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
@@ -41,23 +71,22 @@
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
 
-      <!-- Primary Navigation Menu -->
-      <nav class="main-nav" id="primary-navigation" aria-label="Main Navigation">
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="careers.html" class="nav-link active">Explore Careers</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link active" aria-current="page">Explore Careers</a></li>
           <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
           <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Community &amp; FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
           <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
           <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+          <span class="theme-label">Dark</span>
         </button>
 
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -67,241 +96,1017 @@
     </div>
   </header>
 
-  <!-- Main Content Landmark -->
   <main id="main-content" class="main-content" role="main">
-    
-    <!-- Page Header Banner -->
-    <section class="page-header" aria-labelledby="careers-page-title">
+
+    <!-- 2. PAGE HERO BANNER -->
+    <section class="page-hero" aria-labelledby="page-heading">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <ol class="breadcrumb-list">
-            <li><a href="index.html">Home</a> &gt;</li>
-            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Explore Careers</li>
-          </ol>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Explore Careers</span>
         </nav>
-        <h1 id="careers-page-title">Explore In-Demand IT Careers</h1>
-        <p style="color: var(--text-secondary); max-width: 800px; font-size: 1.1rem;">
-          Discover key specializations in the technology sector. Review primary responsibilities, essential skills, and entry requirements to identify the path that fits your ambitions.
+        <h1 id="page-heading">Explore 15 High-Demand Career Pathways</h1>
+        <p class="page-hero-desc">
+          Compare core responsibilities, required skills, beginner difficulty levels, and structured learning roadmaps across Software &amp; IT, Data &amp; AI, Business &amp; Product Management, Digital Marketing, Corporate Finance, Creative Media, and Robotics Engineering.
         </p>
       </div>
     </section>
 
-    <!-- Search & Filter Controls -->
-    <section class="filter-section" style="padding: 2rem 0 1rem;" aria-label="Career Search and Filters">
+    <!-- 3. INTERACTIVE SEARCH & FILTER BAR + CAREER CARDS -->
+    <section class="section" aria-labelledby="directory-heading">
       <div class="container">
-        <div class="search-filter-box">
-          <div class="search-input-group">
-            <label for="career-search" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Search careers</label>
-            <input type="search" id="career-search" class="search-input" placeholder="Search by role, keyword, or skill (e.g. Java, SQL, Figma, Linux)..." aria-label="Search career roles">
+        <h2 id="directory-heading" class="sr-only">Career Directory</h2>
+
+        <!-- Filter & Search Control Bar -->
+        <div class="filter-bar" role="region" aria-label="Search and filter careers">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <label for="career-search" class="sr-only">Search careers by role, skill, or tool</label>
+            <input
+              type="search"
+              id="career-search"
+              class="search-input"
+              placeholder="Search by role or skill (e.g., Python, React, Business, Finance, Marketing, Figma, Robotics)..."
+              autocomplete="off"
+            >
           </div>
+
           <div class="filter-pills" role="group" aria-label="Filter careers by domain">
-            <button type="button" class="filter-btn active" data-category="all">All Fields (5)</button>
-            <button type="button" class="filter-btn" data-category="development">Development</button>
-            <button type="button" class="filter-btn" data-category="data">Data &amp; AI</button>
-            <button type="button" class="filter-btn" data-category="security">Cybersecurity</button>
-            <button type="button" class="filter-btn" data-category="design">UI/UX Design</button>
+            <button type="button" class="filter-btn career-filter-btn active" data-filter="all" aria-pressed="true">
+              All Fields (15)
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="development" aria-pressed="false">
+              Software &amp; Web
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="data" aria-pressed="false">
+              Data &amp; AI
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="business" aria-pressed="false">
+              Business &amp; Product
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="marketing" aria-pressed="false">
+              Digital Marketing
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="finance" aria-pressed="false">
+              Finance &amp; FinTech
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="design" aria-pressed="false">
+              UI/UX &amp; Creative
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="cloud" aria-pressed="false">
+              Cloud &amp; DevOps
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="security" aria-pressed="false">
+              Cybersecurity
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="qa" aria-pressed="false">
+              QA &amp; Testing
+            </button>
+            <button type="button" class="filter-btn career-filter-btn" data-filter="engineering" aria-pressed="false">
+              Robotics &amp; IoT
+            </button>
           </div>
-          <button type="button" id="clear-filters-btn" class="btn btn-secondary btn-sm" title="Clear all search inputs and category filters">Clear Filters</button>
         </div>
 
-        <!-- Live Results Counter -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span id="careers-result-count" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Showing 5 of 5 Careers</span>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">Use the search and filters above to narrow your results.</span>
+        <!-- Live Results Counter & Clear Action -->
+        <div class="results-status-bar">
+          <p id="career-results-count" class="results-count" aria-live="polite">
+            Showing all 15 career pathways
+          </p>
+          <div class="results-status-actions">
+            <button type="button" id="clear-career-search" class="btn btn-outline btn-sm hidden">
+              &#10005; Clear Active Filter
+            </button>
+            <a href="#career-comparison" class="text-link">Jump to Side-by-Side Comparison Matrix &darr;</a>
+          </div>
         </div>
 
-        <!-- No Results Alert (Hidden by default) -->
-        <div id="no-careers-msg" class="card" style="display: none; text-align: center; padding: 2.5rem 2rem; border-color: var(--primary-border); background-color: var(--bg-card-subtle); margin-bottom: 2rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
-          <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No Matching Careers Found</h3>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We couldn't find any career matching your active search and category filters.</p>
-          <button type="button" id="reset-search-btn" class="btn btn-primary btn-sm">Reset All Filters &amp; Show All Careers</button>
-        </div>
-      </div>
-    </section>
+        <!-- Career Cards Grid (15 Comprehensive Pathways with Real Photographic Banners) -->
+        <div class="grid grid-3" id="career-cards-grid">
 
-    <!-- Career Cards Grid Section -->
-    <section class="careers-catalog-section" style="padding: 1rem 0 3.5rem;" aria-label="Careers Directory">
-      <div class="container">
-        <div class="popular-careers-grid" id="careers-grid">
-          
-          <!-- Career 1: Software Engineer -->
-          <article class="career-card career-item" data-category="development" data-keywords="software engineer coding programming java python javascript react spring boot web mobile backend frontend fullstack oop git">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer icon" width="48" height="48">
+          <!-- 1. Software Engineer -->
+          <article
+            class="card career-card"
+            data-category="development"
+            data-keywords="software engineer backend frontend full stack java python c# javascript oop algorithms api git microservices"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/software-engineer.jpg" alt="Software Engineer writing backend code" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer Icon" width="40" height="40" class="card-icon">
               </div>
-              <span class="badge badge-blue">Development</span>
+              <span class="badge badge-blue">Software &amp; Web</span>
             </div>
-            <h2>Software Engineer</h2>
-            <p>
-              Designs, develops, tests, and maintains web, mobile, and enterprise software systems that solve real-world problems.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">React / Spring</span>
-              <span class="skill-tag">Git</span>
+            <div class="card-body">
+              <h3 class="card-title">Software Engineer</h3>
+              <p class="card-description">
+                Architect, code, test, and maintain reliable software applications, distributed backend services, and RESTful APIs using solid engineering principles.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate (Strong logic &amp; OOP)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">System Architecture, APIs &amp; Code</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (Product &amp; Export IT)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Java / Python</span>
+                <span class="tag">OOP &amp; DSA</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">SQL &amp; Git</span>
+              </div>
             </div>
-            <a href="career-details.html?career=software-engineer#software-engineer" class="btn btn-primary btn-sm">Explore More &rarr;</a>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#software-engineer" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=software-engineer" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
           </article>
 
-          <!-- Career 2: Data Analyst -->
-          <article class="career-card career-item" data-category="data" data-keywords="data analyst business intelligence sql excel python statistics tableau power bi dashboards reporting analytics">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst icon" width="48" height="48">
+          <!-- 2. Full-Stack Web Developer -->
+          <article
+            class="card career-card"
+            data-category="development"
+            data-keywords="full stack developer frontend backend react nextjs typescript nodejs express postgresql tailwind web apps"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/fullstack-developer.jpg" alt="Full-Stack Developer coding web application" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-cyan">Software &amp; Web</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Full-Stack Developer</h3>
+              <p class="card-description">
+                Build complete end-to-end web products—combining responsive React/Next.js frontend interfaces with Node.js backend APIs, authentication, and databases.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner–Moderate (Fast visual feedback)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Frontend UI + Backend APIs &amp; DBs</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (SaaS, Agencies &amp; Startups)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">TypeScript</span>
+                <span class="tag">React / Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#fullstack-developer" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=fullstack-developer" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Cloud & DevOps Engineer -->
+          <article
+            class="card career-card"
+            data-category="cloud"
+            data-keywords="cloud engineer devops sre aws azure gcp docker kubernetes terraform linux bash ci cd github actions"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/cloud-devops.jpg" alt="Cloud and DevOps global network infrastructure" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/cloud-devops.svg" alt="Cloud & DevOps Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-teal">Cloud &amp; DevOps</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cloud &amp; DevOps Engineer</h3>
+              <p class="card-description">
+                Automate CI/CD deployment pipelines, containerize microservices with Docker and Kubernetes, and manage scalable cloud infrastructure on AWS or Azure.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate–High (Linux &amp; networking)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Cloud Infra, CI/CD &amp; Reliability</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High &amp; Rapidly Growing</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Linux &amp; Bash</span>
+                <span class="tag">AWS / Azure</span>
+                <span class="tag">Docker &amp; K8s</span>
+                <span class="tag">Terraform</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#cloud-devops" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=cloud-devops" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Data Analyst -->
+          <article
+            class="card career-card"
+            data-category="data"
+            data-keywords="data analyst business intelligence sql excel power bi tableau python pandas statistics charts reporting"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/data-analyst.jpg" alt="Data Analyst interactive business intelligence dashboard" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst Icon" width="40" height="40" class="card-icon">
               </div>
               <span class="badge badge-green">Data &amp; AI</span>
             </div>
-            <h2>Data Analyst</h2>
-            <p>
-              Translates operational data and business numbers into clear visualizations, interactive dashboards, and strategic decisions.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Advanced SQL</span>
-              <span class="skill-tag">Power BI</span>
-              <span class="skill-tag">Excel Modeling</span>
-              <span class="skill-tag">Python (Pandas)</span>
-              <span class="skill-tag">Statistics</span>
+            <div class="card-body">
+              <h3 class="card-title">Data Analyst</h3>
+              <p class="card-description">
+                Transform raw organizational data into clear visual dashboards, statistical summaries, and actionable business intelligence for decision-makers.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner-Friendly (SQL &amp; BI focus)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">BI Dashboards, Trends &amp; Insights</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (Telco, FinTech, Retail, IT)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">SQL</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Power BI / Tableau</span>
+                <span class="tag">Python (Pandas)</span>
+              </div>
             </div>
-            <a href="career-details.html?career=data-analyst#data-analyst" class="btn btn-primary btn-sm">Explore More &rarr;</a>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#data-analyst" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=data-analyst" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
           </article>
 
-          <!-- Career 3: Data Engineer -->
-          <article class="career-card career-item" data-category="data" data-keywords="data engineer etl pipelines data warehouse big data spark hadoop sql python cloud aws azure airflow snowflake">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer icon" width="48" height="48">
+          <!-- 5. Data Engineer -->
+          <article
+            class="card career-card"
+            data-category="data"
+            data-keywords="data engineer etl pipelines big data sql python spark airflow cloud warehouse snowflake bigquery"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/data-engineer.jpg" alt="Data Engineer server cluster and ETL pipeline" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer Icon" width="40" height="40" class="card-icon">
               </div>
               <span class="badge badge-amber">Data &amp; AI</span>
             </div>
-            <h2>Data Engineer</h2>
-            <p>
-              Architects and manages automated data pipelines, data warehouses, and storage infrastructure for large datasets.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Python / Scala</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Apache Spark</span>
-              <span class="skill-tag">Airflow</span>
-              <span class="skill-tag">Snowflake</span>
+            <div class="card-body">
+              <h3 class="card-title">Data Engineer</h3>
+              <p class="card-description">
+                Design, build, and optimize automated ETL/ELT data pipelines and cloud data warehouses that make analytics and machine learning possible at scale.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate–High (Strong SQL &amp; Python)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Data Pipelines, Warehousing &amp; Scale</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Rapidly Growing (Global Data Teams)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Advanced SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">ETL / Airflow</span>
+                <span class="tag">Cloud Data</span>
+              </div>
             </div>
-            <a href="career-details.html?career=data-engineer#data-engineer" class="btn btn-primary btn-sm">Explore More &rarr;</a>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#data-engineer" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=data-engineer" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
           </article>
 
-          <!-- Career 4: Cybersecurity Analyst -->
-          <article class="career-card career-item" data-category="security" data-keywords="cybersecurity analyst security soc siem wireshark linux ethical hacking networking pentesting defense firewalls tcp ip">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst icon" width="48" height="48">
+          <!-- 6. Data Scientist & AI Engineer -->
+          <article
+            class="card career-card"
+            data-category="data"
+            data-keywords="data scientist machine learning ai artificial intelligence python pytorch scikit-learn llm deep learning statistics"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/data-scientist.jpg" alt="Data Scientist and AI neural network visualization" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/data-scientist.svg" alt="Data Scientist & AI Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-green">Data &amp; AI</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Data Scientist &amp; AI Engineer</h3>
+              <p class="card-description">
+                Build predictive machine learning models, natural language processing pipelines, and AI-powered applications using statistical modeling and deep learning.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">High (Math, Statistics &amp; Python ML)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Predictive ML Models &amp; Applied AI</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (R&amp;D, FinTech &amp; AI Startups)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Python &amp; ML</span>
+                <span class="tag">Scikit-Learn</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Applied AI</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#data-scientist" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=data-scientist" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Cybersecurity Analyst -->
+          <article
+            class="card career-card"
+            data-category="security"
+            data-keywords="cybersecurity analyst infosec soc network security linux ethical hacking penetration testing siem owasp firewall"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/cybersecurity.jpg" alt="Cybersecurity Analyst monitoring digital defense systems" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst Icon" width="40" height="40" class="card-icon">
               </div>
               <span class="badge badge-red">Cybersecurity</span>
             </div>
-            <h2>Cybersecurity Analyst</h2>
-            <p>
-              Monitors computer networks, identifies vulnerabilities, defends against cyberattacks, and enforces security standards.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">TCP/IP Networking</span>
-              <span class="skill-tag">Wireshark</span>
-              <span class="skill-tag">SIEM Tools</span>
-              <span class="skill-tag">Firewalls</span>
-            </div>
-            <a href="career-details.html?career=cybersecurity#cybersecurity" class="btn btn-primary btn-sm">Explore More &rarr;</a>
-          </article>
+            <div class="card-body">
+              <h3 class="card-title">Cybersecurity Analyst</h3>
+              <p class="card-description">
+                Monitor networks, investigate security incidents, perform vulnerability assessments, and harden cloud and enterprise systems against cyber attacks.
+              </p>
 
-          <!-- Career 5: UI/UX Designer -->
-          <article class="career-card career-item" data-category="design" data-keywords="ui ux designer design figma user research prototyping wireframing usability interface testing css hci visual">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer icon" width="48" height="48">
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate (Networking &amp; OS basics)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Threat Detection &amp; System Defense</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (Banking, SOCs &amp; Enterprise)</span>
+                </div>
               </div>
-              <span class="badge badge-purple">UI/UX Design</span>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Networking</span>
+                <span class="tag">Linux</span>
+                <span class="tag">SIEM Tools</span>
+                <span class="tag">OWASP Top 10</span>
+              </div>
             </div>
-            <h2>UI/UX Designer</h2>
-            <p>
-              Researches user needs, designs intuitive visual interfaces, and crafts interactive prototypes for web and mobile products.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">User Research</span>
-              <span class="skill-tag">Wireframing</span>
-              <span class="skill-tag">Design Systems</span>
-              <span class="skill-tag">HTML/CSS</span>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#cybersecurity" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=cybersecurity" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
             </div>
-            <a href="career-details.html?career=ui-ux#ui-ux" class="btn btn-primary btn-sm">Explore More &rarr;</a>
           </article>
 
+          <!-- 8. UI/UX Product Designer -->
+          <article
+            class="card career-card"
+            data-category="design"
+            data-keywords="ui ux designer product design figma wireframing prototyping user research usability accessibility design systems"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/ui-ux.jpg" alt="UI/UX Product Designer prototyping mobile and web layouts" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-purple">UI/UX &amp; Creative</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">UI/UX Product Designer</h3>
+              <p class="card-description">
+                Conduct user research, map information architecture, and design intuitive, accessible interfaces and interactive prototypes for web and mobile products.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner-Friendly (Low coding barrier)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">User Empathy, Prototypes &amp; Design</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (SaaS, Agencies &amp; Startups)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Figma</span>
+                <span class="tag">Wireframing</span>
+                <span class="tag">Prototyping</span>
+                <span class="tag">Usability Testing</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#ui-ux" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=ui-ux" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. QA & Test Automation Engineer -->
+          <article
+            class="card career-card"
+            data-category="qa security"
+            data-keywords="qa engineer quality assurance test automation sdet playwright cypress selenium postman api testing bug tracking"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/qa-engineer.jpg" alt="QA and Test Automation Engineer verifying software quality" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/qa-engineer.svg" alt="QA & Test Automation Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-amber">QA &amp; Testing</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">QA &amp; Test Automation Engineer</h3>
+              <p class="card-description">
+                Safeguard software quality by designing comprehensive test strategies, automating browser and API test suites, and integrating quality gates into CI/CD.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner–Moderate (Analytical mindset)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Test Automation, APIs &amp; Reliability</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (All Software Export Teams)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Technologies">
+                <span class="tag">Playwright / Selenium</span>
+                <span class="tag">Postman API</span>
+                <span class="tag">Java / JS</span>
+                <span class="tag">CI Testing</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#qa-engineer" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=qa-engineer" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Business Analyst & Project Manager (NEW) -->
+          <article
+            class="card career-card"
+            data-category="business"
+            data-keywords="business analyst project manager agile scrum pmp jira confluence bpmn requirements stakeholder consulting management erp"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst and Project Manager collaborating with stakeholders" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-blue">Business &amp; Product</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Business Analyst &amp; Project Manager</h3>
+              <p class="card-description">
+                Bridge corporate operations and project delivery by mapping business workflows, writing user stories, managing Agile/Scrum sprints, and aligning stakeholders.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner-Friendly (No heavy coding)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Process Analysis, Agile PM &amp; Strategy</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (Corporates, Banks &amp; IT)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">Agile &amp; Scrum</span>
+                <span class="tag">BPMN &amp; Visio</span>
+                <span class="tag">Jira &amp; Confluence</span>
+                <span class="tag">Power BI / SQL</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#business-analyst" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=business-analyst" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Product Manager (NEW) -->
+          <article
+            class="card career-card"
+            data-category="business"
+            data-keywords="product manager product owner roadmap strategy prd user discovery market research agile startup management"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/product-manager.jpg" alt="Product Manager leading product strategy workshop" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/product-manager.svg" alt="Product Manager Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-purple">Business &amp; Product</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Product Manager</h3>
+              <p class="card-description">
+                Define product vision, conduct customer discovery, prioritize feature roadmaps, and lead cross-functional design, engineering, and marketing teams.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate (Strategic &amp; UX mindset)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Product Strategy, Roadmaps &amp; Growth</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (SaaS, Telco &amp; Digital Ventures)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">Product Strategy</span>
+                <span class="tag">PRDs &amp; Roadmaps</span>
+                <span class="tag">User Discovery</span>
+                <span class="tag">Product Analytics</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#product-manager" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=product-manager" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Digital Marketing & Growth Strategist (NEW) -->
+          <article
+            class="card career-card"
+            data-category="marketing"
+            data-keywords="digital marketing seo sem social media marketing google ads meta ads content strategy branding e-commerce ga4 growth"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing Strategist reviewing campaign analytics" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-red">Digital Marketing</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Digital Marketing &amp; Growth Strategist</h3>
+              <p class="card-description">
+                Grow brand authority, organic search traffic, and customer conversion funnels through SEO, performance advertising (Google/Meta Ads), and content strategy.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner-Friendly (Creative + Analytics)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">SEO/SEM, Brand Campaigns &amp; ROI</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (Agencies, E-Commerce &amp; Export)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">SEO &amp; Content</span>
+                <span class="tag">Google &amp; Meta Ads</span>
+                <span class="tag">Google Analytics 4</span>
+                <span class="tag">CRM &amp; Email</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#digital-marketing" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=digital-marketing" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 13. Financial Analyst & FinTech Specialist (NEW) -->
+          <article
+            class="card career-card"
+            data-category="finance"
+            data-keywords="financial analyst fintech investment banking corporate finance accounting valuation excel power bi risk analysis cfa cima acca"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst working on financial valuation models" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-green">Finance &amp; FinTech</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Financial Analyst &amp; FinTech Specialist</h3>
+              <p class="card-description">
+                Build corporate financial models, perform investment valuations, analyze risk, and innovate digital payment and FinTech products for banks and enterprises.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate (Finance, Accounting &amp; Excel)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Financial Modeling, Valuation &amp; FinTech</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Very High (Banks, KPOs &amp; FinTech)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Advanced Excel</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Corporate Valuation</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#financial-analyst" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=financial-analyst" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 14. Creative Multimedia & Motion Designer (NEW) -->
+          <article
+            class="card career-card"
+            data-category="design"
+            data-keywords="multimedia designer motion graphics video editing premiere pro davinci resolve after effects blender 3d animation graphic design"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/multimedia-designer.jpg" alt="Creative Multimedia Designer editing video and motion graphics" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/multimedia-designer.svg" alt="Multimedia Designer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-amber">UI/UX &amp; Creative</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Creative Multimedia &amp; Motion Designer</h3>
+              <p class="card-description">
+                Produce high-impact digital video content, 2D/3D motion graphics, visual brand systems, and interactive media for global brands, studios, and creators.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Beginner-Friendly (Visual &amp; Creative)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Video Production, Motion &amp; 3D Visuals</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">High (Media Studios, Agencies &amp; Global Remote)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">DaVinci / Premiere</span>
+                <span class="tag">After Effects</span>
+                <span class="tag">Blender 3D</span>
+                <span class="tag">Visual Branding</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#multimedia-designer" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=multimedia-designer" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 15. Mechatronics, Robotics & IoT Engineer (NEW) -->
+          <article
+            class="card career-card"
+            data-category="engineering"
+            data-keywords="robotics engineer mechatronics iot internet of things embedded systems arduino esp32 raspberry pi sensors pcb cad automation"
+          >
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics and Robotics Engineer building IoT hardware" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/robotics-iot.svg" alt="Robotics & IoT Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-teal">Robotics &amp; IoT</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Mechatronics, Robotics &amp; IoT Engineer</h3>
+              <p class="card-description">
+                Combine electronics, embedded C/C++ programming, smart sensors, and mechanical CAD to build automated industrial machinery, robotics, and IoT systems.
+              </p>
+
+              <div class="career-meta-list">
+                <div class="career-meta-item">
+                  <span class="meta-label">Entry Difficulty:</span>
+                  <span class="meta-value">Moderate–High (Hardware + Embedded Code)</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">Primary Focus:</span>
+                  <span class="meta-value">Embedded Systems, IoT &amp; Automation</span>
+                </div>
+                <div class="career-meta-item">
+                  <span class="meta-label">SL Demand:</span>
+                  <span class="meta-value text-accent">Growing (Manufacturing, AgriTech &amp; R&amp;D)</span>
+                </div>
+              </div>
+
+              <div class="skill-tags" aria-label="Core Skills">
+                <span class="tag">Embedded C/C++</span>
+                <span class="tag">ESP32 / Arduino</span>
+                <span class="tag">MQTT &amp; IoT</span>
+                <span class="tag">PCB &amp; CAD</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions-pair">
+                <a href="career-details.html#robotics-iot" class="btn btn-primary btn-sm">View Full Details</a>
+                <a href="roadmaps.html?career=robotics-iot" class="btn btn-outline btn-sm">Roadmap</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty State (Shown when search/filter yields 0 matches) -->
+        <div id="career-empty-state" class="empty-state hidden" role="status">
+          <div class="empty-state-icon" aria-hidden="true">&#128270;</div>
+          <h3>No matching career pathways found</h3>
+          <p>We couldn't find any career pathways matching your search query or category filter.</p>
+          <button type="button" id="reset-career-filters" class="btn btn-primary">
+            Reset Search &amp; Filters
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Side-by-Side Career Comparison Table Section -->
-    <section class="comparison-section section-light" style="padding: 3.5rem 0;" aria-labelledby="comparison-title">
+    <!-- 4. SIDE-BY-SIDE 15-PATHWAY CAREER COMPARISON TABLE -->
+    <section id="career-comparison" class="section how-it-works-section" aria-labelledby="comparison-heading">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 2rem;">
-          <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Academic Comparison Matrix</span>
-          <h2 id="comparison-title">Side-by-Side Career Comparison</h2>
-          <p class="section-subtitle">
-            Compare all five disciplines across key technical dimensions to help you decide which path fits your academic strengths.
+        <div class="section-header">
+          <span class="section-subtitle">Side-by-Side Evaluation</span>
+          <h2 id="comparison-heading" class="section-title">15-Pathway Career Comparison Matrix</h2>
+          <p class="section-description">
+            Compare coding intensity, core mission, starter tools, and ideal student profiles across all 15 IT, Business, Finance, Marketing, Creative, and Engineering pathways.
           </p>
         </div>
 
-        <div class="table-responsive">
-          <table class="data-table" summary="Comparison matrix of 5 IT careers across primary focus, coding intensity, math requirement, popular tools, and Sri Lankan entry roles">
+        <div class="comparison-table-wrapper" role="region" aria-labelledby="comparison-heading" tabindex="0">
+          <table class="comparison-table">
             <thead>
               <tr>
-                <th scope="col">Career Title</th>
-                <th scope="col">Primary Focus</th>
-                <th scope="col">Coding Intensity</th>
-                <th scope="col">Math &amp; Logic</th>
-                <th scope="col">Primary Industry Tools</th>
-                <th scope="col">Common Sri Lankan Entry Roles</th>
+                <th scope="col">Career Role</th>
+                <th scope="col">Core Mission</th>
+                <th scope="col">Technical / Coding Intensity</th>
+                <th scope="col">Key Starter Tools</th>
+                <th scope="col">Ideal Student Profile</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row"><a href="career-details.html?career=software-engineer#software-engineer">Software Engineer</a></th>
-                <td>Application architecture &amp; feature development</td>
-                <td><span class="badge badge-blue">Very High</span></td>
-                <td>Moderate to High</td>
-                <td>Git, VS Code, Node.js, Spring Boot, Docker</td>
-                <td>Trainee Software Engineer, Associate SE</td>
+                <td><strong>Software Engineer</strong></td>
+                <td>Build scalable software systems, backend APIs &amp; services</td>
+                <td><span class="badge badge-blue">High (Daily Coding)</span></td>
+                <td>Python / Java, Git, PostgreSQL, REST</td>
+                <td>Enjoys algorithms, system design &amp; building logic</td>
+                <td><a href="career-details.html#software-engineer" class="text-link">Details &rarr;</a></td>
               </tr>
               <tr>
-                <th scope="row"><a href="career-details.html?career=data-analyst#data-analyst">Data Analyst</a></th>
-                <td>Business intelligence &amp; statistical reporting</td>
-                <td><span class="badge badge-green">Moderate</span></td>
-                <td>High (Statistics)</td>
-                <td>SQL, Power BI, Excel Modeling, Pandas</td>
-                <td>Junior Data Analyst, BI Trainee</td>
+                <td><strong>Full-Stack Developer</strong></td>
+                <td>Deliver complete web apps across frontend UI &amp; backend APIs</td>
+                <td><span class="badge badge-cyan">High (UI + API Code)</span></td>
+                <td>TypeScript, React, Node.js, Tailwind</td>
+                <td>Loves shipping visible, end-to-end web products</td>
+                <td><a href="career-details.html#fullstack-developer" class="text-link">Details &rarr;</a></td>
               </tr>
               <tr>
-                <th scope="row"><a href="career-details.html?career=data-engineer#data-engineer">Data Engineer</a></th>
-                <td>Data pipelines, storage &amp; ETL processing</td>
-                <td><span class="badge badge-amber">High</span></td>
-                <td>Moderate</td>
-                <td>SQL, Spark, Airflow, Snowflake, AWS</td>
-                <td>Associate Data Engineer, Pipeline Intern</td>
+                <td><strong>Cloud &amp; DevOps Engineer</strong></td>
+                <td>Automate CI/CD pipelines, containers &amp; cloud infrastructure</td>
+                <td><span class="badge badge-teal">Moderate (IaC &amp; Scripts)</span></td>
+                <td>Linux, Docker, AWS, GitHub Actions</td>
+                <td>Likes automation, cloud systems &amp; reliability</td>
+                <td><a href="career-details.html#cloud-devops" class="text-link">Details &rarr;</a></td>
               </tr>
               <tr>
-                <th scope="row"><a href="career-details.html?career=cybersecurity#cybersecurity">Cybersecurity Analyst</a></th>
-                <td>Defense, threat detection &amp; network security</td>
-                <td><span class="badge badge-red">Low to Moderate</span></td>
-                <td>Moderate (Networking)</td>
-                <td>Wireshark, SIEM, Kali Linux, Nmap</td>
-                <td>SOC Analyst Tier 1, Security Trainee</td>
+                <td><strong>Data Analyst</strong></td>
+                <td>Analyze datasets &amp; build visual business dashboards</td>
+                <td><span class="badge badge-green">Low–Moderate (SQL/Python)</span></td>
+                <td>SQL, Excel, Power BI, Pandas</td>
+                <td>Likes statistics, business KPIs &amp; data storytelling</td>
+                <td><a href="career-details.html#data-analyst" class="text-link">Details &rarr;</a></td>
               </tr>
               <tr>
-                <th scope="row"><a href="career-details.html?career=ui-ux#ui-ux">UI/UX Designer</a></th>
-                <td>User research, interaction &amp; visual design</td>
-                <td><span class="badge badge-purple">Low (HTML/CSS)</span></td>
-                <td>Low (Visual/Psych)</td>
-                <td>Figma, Adobe XD, Miro, FigJam</td>
-                <td>Junior UI/UX Designer, Product Design Intern</td>
+                <td><strong>Data Engineer</strong></td>
+                <td>Construct automated data pipelines &amp; cloud warehouses</td>
+                <td><span class="badge badge-amber">High (SQL &amp; Python)</span></td>
+                <td>SQL, Python, Apache Spark, Airflow</td>
+                <td>Likes database architecture &amp; large-scale systems</td>
+                <td><a href="career-details.html#data-engineer" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Data Scientist &amp; AI</strong></td>
+                <td>Train predictive ML models &amp; intelligent AI systems</td>
+                <td><span class="badge badge-green">High (Python &amp; ML)</span></td>
+                <td>Python, Scikit-Learn, PyTorch, SQL</td>
+                <td>Strong in math/probability &amp; curious about AI</td>
+                <td><a href="career-details.html#data-scientist" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Cybersecurity Analyst</strong></td>
+                <td>Defend networks, cloud &amp; apps from cyber threats</td>
+                <td><span class="badge badge-red">Low–Moderate (Scripting)</span></td>
+                <td>Linux, Wireshark, SIEM, TryHackMe</td>
+                <td>Investigative mindset, enjoys networking &amp; defense</td>
+                <td><a href="career-details.html#cybersecurity" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>UI/UX Product Designer</strong></td>
+                <td>Research users &amp; craft intuitive digital interfaces</td>
+                <td><span class="badge badge-purple">Low (Design-Focused)</span></td>
+                <td>Figma, FigJam, Design Systems</td>
+                <td>Creative, empathetic &amp; detail-oriented visual thinker</td>
+                <td><a href="career-details.html#ui-ux" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>QA &amp; Test Automation</strong></td>
+                <td>Verify software quality via automated E2E &amp; API tests</td>
+                <td><span class="badge badge-amber">Moderate (Test Scripts)</span></td>
+                <td>Playwright, Postman, Java/JS, Git</td>
+                <td>Detail-focused, loves finding edge cases &amp; automation</td>
+                <td><a href="career-details.html#qa-engineer" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Business Analyst &amp; PM</strong></td>
+                <td>Bridge business workflows, requirements &amp; Agile delivery</td>
+                <td><span class="badge badge-blue">Low (No-Code / BI)</span></td>
+                <td>Jira, Confluence, BPMN, Power BI</td>
+                <td>Strong communicator, organized leader &amp; problem solver</td>
+                <td><a href="career-details.html#business-analyst" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Product Manager</strong></td>
+                <td>Lead product vision, market strategy &amp; feature roadmaps</td>
+                <td><span class="badge badge-purple">Low (Strategic &amp; UX)</span></td>
+                <td>Notion, Figma, Jira, Mixpanel/GA4</td>
+                <td>Entrepreneurial thinker who loves user &amp; market strategy</td>
+                <td><a href="career-details.html#product-manager" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Digital Marketing Strategist</strong></td>
+                <td>Scale brand visibility, SEO traffic &amp; conversion funnels</td>
+                <td><span class="badge badge-red">Low (Analytics &amp; Web)</span></td>
+                <td>Google Analytics 4, Search Console, Meta Ads</td>
+                <td>Creative storyteller who enjoys growth metrics &amp; branding</td>
+                <td><a href="career-details.html#digital-marketing" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Financial Analyst &amp; FinTech</strong></td>
+                <td>Build financial models, valuations &amp; FinTech solutions</td>
+                <td><span class="badge badge-green">Low–Moderate (Excel/SQL)</span></td>
+                <td>Excel, Power BI, Financial Modeling, SQL</td>
+                <td>Strong with numbers, corporate finance &amp; investment logic</td>
+                <td><a href="career-details.html#financial-analyst" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Multimedia &amp; Motion Designer</strong></td>
+                <td>Produce video edits, 2D/3D motion graphics &amp; visual media</td>
+                <td><span class="badge badge-amber">Low (Creative Software)</span></td>
+                <td>DaVinci Resolve, After Effects, Blender</td>
+                <td>Artistic visual creator passionate about video &amp; animation</td>
+                <td><a href="career-details.html#multimedia-designer" class="text-link">Details &rarr;</a></td>
+              </tr>
+              <tr>
+                <td><strong>Robotics &amp; IoT Engineer</strong></td>
+                <td>Design embedded hardware, smart sensors &amp; robotics</td>
+                <td><span class="badge badge-teal">High (Embedded C/Python)</span></td>
+                <td>Arduino, ESP32, C/C++, MQTT, Fusion 360</td>
+                <td>Hands-on builder who loves electronics &amp; smart hardware</td>
+                <td><a href="career-details.html#robotics-iot" class="text-link">Details &rarr;</a></td>
               </tr>
             </tbody>
           </table>
@@ -309,17 +1114,18 @@
       </div>
     </section>
 
-    <!-- Quiz CTA Banner -->
-    <section class="cta-section" style="padding: 3.5rem 0;" aria-labelledby="careers-cta-title">
+    <!-- 5. QUIZ CTA -->
+    <section class="section cta-section" aria-labelledby="careers-cta-heading">
       <div class="container">
-        <div class="cta-content">
-          <h2 id="careers-cta-title" class="cta-heading">Still Unsure Which Role Matches Your Strengths?</h2>
-          <p class="cta-text">
-            Take our interactive 3-minute career assessment quiz to discover the discipline best suited to your study preferences and problem-solving style.
-          </p>
-          <div class="cta-actions">
-            <a href="quiz.html" class="btn btn-accent">Take the Career Quiz</a>
-            <a href="roadmaps.html" class="btn btn-outline-light">View Learning Roadmaps</a>
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2 id="careers-cta-heading" class="cta-title">Still Deciding Between Multiple Career Tracks?</h2>
+            <p class="cta-description">
+              Let our 9-question Career Match Quiz evaluate your working style and recommend the best starting pathway for your university journey.
+            </p>
+          </div>
+          <div class="cta-buttons">
+            <a href="quiz.html" class="btn btn-accent btn-lg">Take the Career Match Quiz &rarr;</a>
           </div>
         </div>
       </div>
@@ -327,66 +1133,62 @@
 
   </main>
 
-  <!-- Global Footer -->
+  <!-- 6. FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        
-        <!-- Column 1: Brand & Mission -->
-        <div class="footer-column">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
-            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
-          </div>
-          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
-            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
-          </p>
-          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
-            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+          </a>
+          <p class="footer-mission">
+            Empowering Sri Lankan university students with clear career guidance across IT, Business, Finance, Marketing, Design &amp; Engineering, structured roadmaps, and free resources.
           </p>
         </div>
 
-        <!-- Column 2: Navigation Links -->
-        <div class="footer-column">
-          <h3>Navigation Links</h3>
-          <ul>
+        <div class="footer-col">
+          <h3 class="footer-heading">Platform Navigation</h3>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="careers.html">Explore Careers</a></li>
-            <li><a href="quiz.html">Career Quiz</a></li>
-            <li><a href="roadmaps.html">Career Roadmaps</a></li>
-            <li><a href="resources.html">Learning Resources</a></li>
-            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+            <li><a href="careers.html">Explore 15 Career Paths</a></li>
+            <li><a href="quiz.html">Career Match Quiz</a></li>
+            <li><a href="roadmaps.html">Learning Roadmaps</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="contact.html">Community &amp; FAQ</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Useful Links -->
-        <div class="footer-column">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
-            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
-            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
-            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+        <div class="footer-col">
+          <h3 class="footer-heading">Career Pathways</h3>
+          <ul class="footer-links">
+            <li><a href="career-details.html#software-engineer">Software &amp; Full-Stack Dev</a></li>
+            <li><a href="career-details.html#data-analyst">Data, AI &amp; Cloud DevOps</a></li>
+            <li><a href="career-details.html#business-analyst">Business Analysis &amp; Product Mgmt</a></li>
+            <li><a href="career-details.html#digital-marketing">Digital Marketing &amp; Growth</a></li>
+            <li><a href="career-details.html#financial-analyst">Finance &amp; FinTech Specialist</a></li>
+            <li><a href="career-details.html#robotics-iot">UI/UX, Multimedia &amp; Robotics</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Academic Information -->
-        <div class="footer-column">
-          <h3>Academic Context</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
-            <strong>Project:</strong> Semester 1 Group Web Project<br>
-            <strong>Theme:</strong> Community-Focused Static Website<br>
-            <strong>Platform:</strong> PathFinder LK
+        <div class="footer-col">
+          <h3 class="footer-heading">Open Source &amp; Community</h3>
+          <p class="footer-note">
+            PathFinder LK is an open-source educational platform built for undergraduate students across Sri Lanka.
+          </p>
+          <p class="footer-Action">
+            <a href="https://github.com/nimesh-kavindya-dev/pathfinder-lk" target="_blank" rel="noopener noreferrer" class="footer-contact-link">GitHub Repository &rarr;</a>
           </p>
         </div>
-
       </div>
 
-      <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span class="current-year">2025</span> PathFinder LK. Built for Sri Lankan University Students.
+        </p>
+        <p class="footer-credits">
+          Open-Source Career Guidance Platform
+        </p>
       </div>
     </div>
   </footer>

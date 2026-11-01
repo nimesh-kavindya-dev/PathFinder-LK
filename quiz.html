@@ -3,37 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Take the PathFinder LK IT Career Match Quiz. Answer 9 practical questions covering coding, data, security, and design to receive tailored IT career recommendations.">
-  <meta name="keywords" content="IT career quiz, IT aptitude test, university career assessment, software engineering quiz, data analyst test, cybersecurity career guidance Sri Lanka">
-  <meta name="author" content="PathFinder LK Group">
-  
-  <meta property="og:title" content="Interactive IT Career Quiz | PathFinder LK">
-  <meta property="og:description" content="Discover which IT career area matches your study interests and problem-solving strengths in just 3 minutes.">
+  <meta name="description" content="Take the interactive 9-question PathFinder LK Career Match Quiz to discover which career path fits your skills and university goals best across 15 IT, Business, Finance, Marketing, Creative & Engineering roles.">
+  <meta name="keywords" content="career quiz Sri Lanka, tech and business career test, software engineer vs business analyst quiz, university career guidance">
+  <meta name="author" content="PathFinder LK Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Interactive Career Match Quiz (15 Pathways) | PathFinder LK">
+  <meta property="og:description" content="Answer 9 scenario-based questions to find your ideal match across 15 IT, Business, Finance, Marketing, Design & Engineering pathways.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pathfinderlk.github.io/quiz.html">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
-  
-  <title>PathFinder LK | Interactive IT Career Match Quiz</title>
-  
+  <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/quiz.html">
+  <meta property="og:image" content="assets/images/photos/hero-campus.jpg">
+
+  <!-- Mobile Web App & PWA Capability -->
+  <meta name="theme-color" content="#060b16">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PathFinderLK">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <title>Career Match Quiz (15 Pathways) | PathFinder LK - Find Your Ideal Role</title>
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
+
   <!-- Immediate Theme Engine Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/quiz.js" defer></script>
 </head>
 <body>
-  <!-- Accessibility Skip Link -->
+  <!-- Glassmorphic Branded Loading Screen -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+      </div>
+      <div class="loader-brand">PathFinder <span>LK</span></div>
+      <div class="loader-subtext">Loading Interactive Career Match Quiz...</div>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percent" aria-hidden="true">8%</div>
+    </div>
+  </div>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header -->
+  <!-- 1. NAVIGATION BAR -->
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
@@ -41,23 +71,22 @@
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
 
-      <!-- Primary Navigation Menu -->
-      <nav class="main-nav" id="primary-navigation" aria-label="Main Navigation">
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
-          <li class="nav-item"><a href="quiz.html" class="nav-link active">Career Quiz</a></li>
+          <li class="nav-item"><a href="quiz.html" class="nav-link active" aria-current="page">Career Quiz</a></li>
           <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Community &amp; FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
           <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
           <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+          <span class="theme-label">Dark</span>
         </button>
 
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -67,355 +96,391 @@
     </div>
   </header>
 
-  <!-- Main Content Landmark -->
   <main id="main-content" class="main-content" role="main">
-    
-    <!-- Page Header Banner -->
-    <section class="page-header" aria-labelledby="quiz-page-title">
+
+    <!-- 2. PAGE HERO -->
+    <section class="page-hero" aria-labelledby="quiz-page-heading">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <ol class="breadcrumb-list">
-            <li><a href="index.html">Home</a> &gt;</li>
-            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Career Quiz</li>
-          </ol>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Career Match Quiz</span>
         </nav>
-        <h1 id="quiz-page-title">Interactive IT Career Match Quiz</h1>
-        <p style="color: var(--text-secondary); max-width: 820px; font-size: 1.1rem;">
-          Unsure whether your natural talents lean towards Software Engineering, Data Analysis, Data Engineering, Cybersecurity, or UI/UX Design? Answer 9 self-reflection questions to receive a tailored recommendation.
+        <h1 id="quiz-page-heading">Interactive Multi-Disciplinary Career Match Quiz</h1>
+        <p class="page-hero-desc">
+          Answer 9 quick scenario-based questions about your interests, problem-solving style, and university project preferences to discover your best-fit pathway across all 15 IT, Business, Finance, Marketing, Creative, and Engineering tracks.
         </p>
       </div>
     </section>
 
-    <!-- Quiz Main Section -->
-    <section class="section" style="padding: 2.5rem 0 4rem;" aria-label="Career Questionnaire">
-      <div class="container" style="max-width: 860px;">
-        
-        <!-- Orientation & Instructions Box -->
-        <div class="card" style="margin-bottom: 2rem; background-color: var(--bg-alt); border-color: var(--border-color);">
-          <h2 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.5rem;">How It Works</h2>
-          <ul style="padding-left: 1.25rem; margin: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
-            <li>Select the answer that most genuinely reflects your natural study interests and problem-solving preferences.</li>
-            <li>There are no right or wrong answers; each choice highlights alignment with distinct IT disciplines.</li>
-            <li>Takes approximately 3–4 minutes to complete. All 9 questions are required for an accurate score.</li>
-          </ul>
+    <!-- 3. QUIZ SECTION -->
+    <section class="section" aria-labelledby="quiz-form-heading">
+      <div class="container quiz-container">
+        <h2 id="quiz-form-heading" class="sr-only">Career Assessment Questions</h2>
+
+        <!-- Sticky Progress Header -->
+        <div class="quiz-progress-wrapper" role="region" aria-label="Quiz Progress">
+          <div class="quiz-progress-header">
+            <span id="quiz-progress-text">0 of 9 questions answered</span>
+            <span id="quiz-progress-percent" class="text-accent">0%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div
+              id="quiz-progress-bar"
+              class="progress-bar-fill"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 0%;"
+            ></div>
+          </div>
         </div>
 
-        <!-- Live Progress Indicator Tracker -->
-        <div class="quiz-progress-box">
-          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--secondary-color);">
-            <span>Quiz Progress</span>
-            <span id="quiz-progress-text">0 of 9 Questions Answered (0%)</span>
-          </div>
-          <div class="quiz-progress-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Quiz completion progress">
-            <div id="quiz-progress-fill" class="quiz-progress-bar-fill"></div>
+        <!-- Validation Error Banner -->
+        <div id="quiz-error-banner" class="alert alert-error hidden" role="alert">
+          <span class="alert-icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Please answer all 9 questions before submitting.</strong>
+            <p style="margin: 0; font-size: 0.9rem;">We highlighted the first unanswered question below so you can complete your assessment.</p>
           </div>
         </div>
 
-        <!-- Validation Error Alert Banner -->
-        <div id="quiz-validation-banner" class="quiz-validation-banner" role="alert" aria-live="assertive"></div>
-
-        <!-- The 9-Question Quiz Form -->
+        <!-- Quiz Form -->
         <form id="career-quiz-form" novalidate>
 
-          <!-- Question 1: Problem-Solving Approach -->
-          <div id="q1-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 1 of 9 &bull; Problem Solving</span>
-              <legend class="quiz-question-legend">
-                When faced with a complex technical problem, what approach feels most natural and satisfying to you?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q1" value="se">
-                  <span><strong>Algorithmic thinking:</strong> Breaking the challenge into modular functions and writing code to build a software feature.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q1" value="da">
-                  <span><strong>Analytical investigation:</strong> Digging into historical numbers, spreadsheets, and charts to uncover patterns and trends.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q1" value="de">
-                  <span><strong>Pipeline architecture:</strong> Organizing how large volumes of data travel between different storage systems reliably.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q1" value="cs">
-                  <span><strong>Defensive inspection:</strong> Searching for security weaknesses, examining network traffic, and mitigating potential risks.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q1" value="uiux">
-                  <span><strong>User-centered design:</strong> Empathizing with user confusion and sketching intuitive visual screens to simplify the process.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 1 -->
+          <div class="quiz-question-card" id="question-1">
+            <span class="question-number">Question 1 of 9</span>
+            <h3 class="question-title">When starting a group project at university, which role do you naturally volunteer for first?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-1">
+              <label class="quiz-option-label">
+                <input type="radio" name="q1" value="fs" data-secondary="se">
+                <span class="quiz-option-text">Building the interactive web application features, user login, and connecting frontend pages to backend APIs.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q1" value="da" data-secondary="ds">
+                <span class="quiz-option-text">Analyzing sample datasets, finding statistical trends, and creating charts or predictive insights for the presentation.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q1" value="ba" data-secondary="pm">
+                <span class="quiz-option-text">Gathering stakeholder requirements, writing the project scope &amp; user stories, and coordinating sprint tasks across the team.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q1" value="dm" data-secondary="fa">
+                <span class="quiz-option-text">Planning the go-to-market campaign, SEO/growth strategy, or building the financial budget and ROI valuation model.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q1" value="uiux" data-secondary="mm">
+                <span class="quiz-option-text">Designing clean Figma interfaces, brand visuals, 3D/motion explainer videos, or prototyping embedded IoT hardware.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 2: Daily Workplace Activities -->
-          <div id="q2-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 2 of 9 &bull; Daily Work</span>
-              <legend class="quiz-question-legend">
-                Which daily workplace activity sounds most exciting to you?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q2" value="se">
-                  <span>Developing interactive web or mobile features and resolving backend logic bugs.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q2" value="da">
-                  <span>Building automated Power BI or Tableau dashboards and explaining KPI metrics to project managers.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q2" value="de">
-                  <span>Configuring automated cloud ETL workflows and optimizing high-volume database queries.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q2" value="cs">
-                  <span>Inspecting firewall logs, analyzing phishing attacks, and conducting vulnerability scans.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q2" value="uiux">
-                  <span>Conducting user research interviews and building clickable interactive prototypes in Figma.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 2 -->
+          <div class="quiz-question-card" id="question-2">
+            <span class="question-number">Question 2 of 9</span>
+            <h3 class="question-title">Which university lecture or workshop module do you find most engaging?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-2">
+              <label class="quiz-option-label">
+                <input type="radio" name="q2" value="se" data-secondary="de">
+                <span class="quiz-option-text">Object-Oriented Programming (OOP), Data Structures &amp; Algorithms, and Relational Database Engineering.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q2" value="ds" data-secondary="da">
+                <span class="quiz-option-text">Probability &amp; Statistics, Artificial Intelligence, Machine Learning, and Business Intelligence.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q2" value="cs" data-secondary="cloud">
+                <span class="quiz-option-text">Cloud Computing, DevOps Automation, Linux Operating Systems, and Cybersecurity Defense.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q2" value="fa" data-secondary="ba">
+                <span class="quiz-option-text">Corporate Finance, Financial Modeling, Agile Project Management, and Digital Product Strategy.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q2" value="iot" data-secondary="mm">
+                <span class="quiz-option-text">Embedded Microcontrollers &amp; Robotics OR Digital Multimedia, 3D Animation &amp; Human-Computer Interaction.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 3: Programming & Code Comfort -->
-          <div id="q3-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 3 of 9 &bull; Programming</span>
-              <legend class="quiz-question-legend">
-                How do you prefer to interact with programming and coding?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q3" value="se">
-                  <span><strong>Core application coding:</strong> Writing object-oriented and functional code in Java, Python, C#, or JavaScript every day.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q3" value="da">
-                  <span><strong>Targeted data queries:</strong> Writing focused SQL queries and Python data scripts (Pandas) to extract and calculate numbers.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q3" value="de">
-                  <span><strong>Infrastructure scripting:</strong> Writing Python or Scala pipeline scripts and SQL transformations to process massive data streams.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q3" value="cs">
-                  <span><strong>Security command-line:</strong> Using Linux terminal scripts, PowerShell, and security tools rather than writing large software applications.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q3" value="uiux">
-                  <span><strong>Visual UI markup:</strong> Focusing primarily on visual layouts, though I understand basic HTML and CSS to collaborate with developers.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 3 -->
+          <div class="quiz-question-card" id="question-3">
+            <span class="question-number">Question 3 of 9</span>
+            <h3 class="question-title">What type of challenge gives you the biggest sense of satisfaction when solved?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-3">
+              <label class="quiz-option-label">
+                <input type="radio" name="q3" value="se" data-secondary="fs">
+                <span class="quiz-option-text">Refactoring a slow algorithm or full-stack web service so it runs cleanly and handles high user traffic.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q3" value="pm" data-secondary="ba">
+                <span class="quiz-option-text">Interviewing customers, prioritizing the right product features using RICE, and aligning engineers and executives.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q3" value="qa" data-secondary="cs">
+                <span class="quiz-option-text">Writing an automated Playwright test suite or security scan that catches a critical edge-case bug before release.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q3" value="dm" data-secondary="da">
+                <span class="quiz-option-text">Doubling website conversion rates or organic search traffic using SEO, GA4 data analytics, and targeted ad campaigns.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q3" value="iot" data-secondary="cloud">
+                <span class="quiz-option-text">Soldering and programming an ESP32 sensor node—or automating a cloud Kubernetes deployment—that runs hands-free.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 4: Working with Databases -->
-          <div id="q4-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 4 of 9 &bull; Databases</span>
-              <legend class="quiz-question-legend">
-                What interests you most when working with databases and data systems?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q4" value="de">
-                  <span>Designing high-throughput database schemas, partitioning tables, and moving gigabytes of data reliably.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q4" value="da">
-                  <span>Writing analytical queries (joins, aggregations, window functions) to answer commercial and research questions.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q4" value="se">
-                  <span>Connecting databases to backend services, managing ORM entities, and querying data for API endpoints.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q4" value="cs">
-                  <span>Protecting database servers against SQL injection, unauthorized access, and credential leakage.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q4" value="uiux">
-                  <span>Structuring information architecture so that users can search and filter database records effortlessly on screen.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 4 -->
+          <div class="quiz-question-card" id="question-4">
+            <span class="question-number">Question 4 of 9</span>
+            <h3 class="question-title">Which professional toolkit would you be most excited to master over the next 6 months?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-4">
+              <label class="quiz-option-label">
+                <input type="radio" name="q4" value="fs" data-secondary="se">
+                <span class="quiz-option-text">TypeScript, React / Next.js, Node.js, Java Spring Boot, and PostgreSQL.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q4" value="de" data-secondary="cloud">
+                <span class="quiz-option-text">AWS / Azure Cloud, Docker, Kubernetes, Terraform, Apache Airflow, and Snowflake/dbt.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q4" value="fa" data-secondary="da">
+                <span class="quiz-option-text">Advanced Excel (3-Statement &amp; DCF Modeling), Power BI, SQL, and Python Financial/Data Analytics.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q4" value="ba" data-secondary="pm">
+                <span class="quiz-option-text">Atlassian Jira &amp; Confluence, BPMN 2.0 Process Modeling, Mixpanel Product Analytics, and Google Analytics 4.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q4" value="mm" data-secondary="uiux">
+                <span class="quiz-option-text">Figma Auto Layout, Adobe After Effects, DaVinci Resolve, and Blender 3D (or KiCad &amp; ESP32 for hardware).</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 5: Creativity & Aesthetics -->
-          <div id="q5-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 5 of 9 &bull; Creativity &amp; Design</span>
-              <legend class="quiz-question-legend">
-                How important is visual creativity, styling, and design in your ideal career?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q5" value="uiux">
-                  <span><strong>Essential:</strong> I love typography, color harmony, visual ergonomics, and designing aesthetic user interfaces.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q5" value="da">
-                  <span><strong>Visual storytelling:</strong> I care about choosing the right visual charts (bar, line, scatter) to present data clearly.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q5" value="se">
-                  <span><strong>Balanced:</strong> I appreciate clean UI components, but my primary focus is writing solid, bug-free application logic.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q5" value="cs">
-                  <span><strong>Not important:</strong> I am focused on system resilience, protocols, security policies, and threat prevention.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q5" value="de">
-                  <span><strong>Not important:</strong> I focus entirely on backend server pipelines, data warehousing, and system throughput.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 5 -->
+          <div class="quiz-question-card" id="question-5">
+            <span class="question-number">Question 5 of 9</span>
+            <h3 class="question-title">How do you feel about writing software code all day versus strategy, finance, design, or hardware?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-5">
+              <label class="quiz-option-label">
+                <input type="radio" name="q5" value="se" data-secondary="fs">
+                <span class="quiz-option-text">I love coding all day—building full-stack applications, backend APIs, and software logic is my favorite activity.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q5" value="ds" data-secondary="de">
+                <span class="quiz-option-text">I enjoy writing Python and SQL scripts to train AI models, build ETL pipelines, and uncover quantitative insights.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q5" value="ba" data-secondary="pm">
+                <span class="quiz-option-text">I prefer business strategy, stakeholder leadership, and product management over writing production code all day.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q5" value="fa" data-secondary="dm">
+                <span class="quiz-option-text">I thrive on commercial numbers—whether financial valuation models, FinTech metrics, or digital marketing ROAS.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q5" value="mm" data-secondary="iot">
+                <span class="quiz-option-text">I prefer visual storytelling (UI/UX, 3D motion, video) OR hands-on physical electronics and robotics engineering.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 6: Cybersecurity & System Defense -->
-          <div id="q6-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 6 of 9 &bull; Cybersecurity</span>
-              <legend class="quiz-question-legend">
-                How do you react when you hear about a major data breach or cyber attack?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q6" value="cs">
-                  <span>I want to investigate how the breach happened, what attack vector was used, and how to patch the vulnerability.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q6" value="de">
-                  <span>I think about whether the organization had proper data backups, access controls, and encrypted data storage.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q6" value="se">
-                  <span>I wonder if flawed application code or insecure API endpoints allowed unauthorized access.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q6" value="da">
-                  <span>I consider what specific customer metrics or financial records were exposed and what the business cost will be.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q6" value="uiux">
-                  <span>I evaluate how authentication screens, two-factor prompts, and error notifications affect user trust.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 6 -->
+          <div class="quiz-question-card" id="question-6">
+            <span class="question-number">Question 6 of 9</span>
+            <h3 class="question-title">Imagine launching a new Sri Lankan FinTech &amp; e-commerce super-app. Which mission excites you most?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-6">
+              <label class="quiz-option-label">
+                <input type="radio" name="q6" value="cloud" data-secondary="cs">
+                <span class="quiz-option-text">Architecting the AWS cloud infrastructure, CI/CD pipelines, and SIEM cybersecurity defense so it never goes down.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q6" value="pm" data-secondary="uiux">
+                <span class="quiz-option-text">Defining the product roadmap and crafting an effortless, multilingual UI/UX checkout experience in Figma.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q6" value="fa" data-secondary="da">
+                <span class="quiz-option-text">Modeling the payment unit economics, credit-risk scoring, and real-time Power BI financial dashboards.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q6" value="dm" data-secondary="mm">
+                <span class="quiz-option-text">Producing the viral 3D launch commercial and running the SEO + performance marketing campaign to acquire 100k users.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q6" value="qa" data-secondary="ba">
+                <span class="quiz-option-text">Leading Agile UAT sign-off and automated Playwright/API regression testing so zero payment bugs reach customers.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 7: Portfolio Project Types -->
-          <div id="q7-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 7 of 9 &bull; Project Goals</span>
-              <legend class="quiz-question-legend">
-                What kind of project would you be most proud to showcase on your university GitHub or portfolio?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q7" value="se">
-                  <span>A complete full-stack web or mobile application with user authentication, REST APIs, and database persistence.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q7" value="da">
-                  <span>A data analytics project on Kaggle exploring Sri Lankan economic trends with interactive Power BI dashboards.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q7" value="de">
-                  <span>An automated data pipeline extracting real-world API data, transforming it with Spark, and saving to a cloud warehouse.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q7" value="cs">
-                  <span>A security audit report detailing vulnerability scans, Wireshark packet captures, and ethical defense configurations.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q7" value="uiux">
-                  <span>A comprehensive Figma UX case study featuring user persona research, wireframes, and high-fidelity interactive prototypes.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 7 -->
+          <div class="quiz-question-card" id="question-7">
+            <span class="question-number">Question 7 of 9</span>
+            <h3 class="question-title">Which capstone or personal portfolio project sounds most exciting to build this semester?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-7">
+              <label class="quiz-option-label">
+                <input type="radio" name="q7" value="fs" data-secondary="de">
+                <span class="quiz-option-text">A full-stack SaaS web platform or automated cloud data pipeline with React, Node.js, Docker, and PostgreSQL.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q7" value="ds" data-secondary="cs">
+                <span class="quiz-option-text">An AI/Machine Learning predictive web app OR a home cybersecurity SOC lab &amp; automated Playwright test framework.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q7" value="ba" data-secondary="pm">
+                <span class="quiz-option-text">A complete Business Requirements Document (BRD), Product Teardown PRD, BPMN process map, and Jira Scrum backlog.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q7" value="fa" data-secondary="dm">
+                <span class="quiz-option-text">A 5-year DCF Valuation Model of a Colombo Stock Exchange company OR a live SEO &amp; Google Analytics growth study.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q7" value="iot" data-secondary="mm">
+                <span class="quiz-option-text">An ESP32 + MQTT Smart Agriculture IoT node with custom KiCad PCB OR a 60-second Blender 3D &amp; Motion Graphics showreel.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 8: University Course Modules -->
-          <div id="q8-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 8 of 9 &bull; Academic Modules</span>
-              <legend class="quiz-question-legend">
-                Which university course subject do you enjoy the most (or are you most eager to study)?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q8" value="se">
-                  <span>Object-Oriented Programming (Java/C++), Data Structures &amp; Algorithms, and Web Development.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q8" value="da">
-                  <span>Business Statistics, Relational Database Management, and Business Intelligence.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q8" value="de">
-                  <span>Advanced Database Systems, Cloud Computing, and Big Data Architecture.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q8" value="cs">
-                  <span>Computer Networks, Network Security, Operating Systems, and Cryptography.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q8" value="uiux">
-                  <span>Human-Computer Interaction (HCI), Usability Engineering, and Visual Communications.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 8 -->
+          <div class="quiz-question-card" id="question-8">
+            <span class="question-number">Question 8 of 9</span>
+            <h3 class="question-title">Which natural strength do friends or lecturers compliment you on most often?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-8">
+              <label class="quiz-option-label">
+                <input type="radio" name="q8" value="se" data-secondary="cloud">
+                <span class="quiz-option-text">Breaking complex logic into clean, modular code and automating systems so they run reliably.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q8" value="da" data-secondary="fa">
+                <span class="quiz-option-text">Spotting numerical patterns, financial ratios, and statistical trends—and explaining them clearly to decision-makers.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q8" value="pm" data-secondary="ba">
+                <span class="quiz-option-text">Organizing people, communicating clearly across different teams, and turning vague ideas into structured action plans.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q8" value="qa" data-secondary="cs">
+                <span class="quiz-option-text">Notice-everything attention to detail—finding edge cases, security loopholes, or bugs that everyone else missed.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q8" value="uiux" data-secondary="dm">
+                <span class="quiz-option-text">Visual creativity, persuasive storytelling, and understanding what makes people click, engage, and love a brand.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Question 9: Emerging Technology Interests -->
-          <div id="q9-card" class="quiz-card">
-            <fieldset style="border: none; padding: 0; margin: 0;">
-              <span class="quiz-question-tag">Question 9 of 9 &bull; Technology Curiosity</span>
-              <legend class="quiz-question-legend">
-                Which emerging technology topic sounds most intriguing for you to explore deeply?
-              </legend>
-              <div class="quiz-options-group">
-                <label class="quiz-option-label">
-                  <input type="radio" name="q9" value="se">
-                  <span>Modern full-stack web frameworks, cloud microservices, and cross-platform mobile apps.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q9" value="da">
-                  <span>Predictive data analytics, automated reporting models, and data-driven market forecasting.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q9" value="de">
-                  <span>Real-time streaming architectures (Kafka), distributed data computing (Spark), and cloud data lakes.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q9" value="cs">
-                  <span>Zero-trust network architectures, ethical hacking, digital forensics, and threat intelligence.</span>
-                </label>
-                <label class="quiz-option-label">
-                  <input type="radio" name="q9" value="uiux">
-                  <span>Design systems, web accessibility standards (WCAG), micro-interactions, and usability testing tools.</span>
-                </label>
-              </div>
-            </fieldset>
+          <!-- Question 9 -->
+          <div class="quiz-question-card" id="question-9">
+            <span class="question-number">Question 9 of 9</span>
+            <h3 class="question-title">Where do you see yourself thriving 3 years after graduating from university?</h3>
+            <div class="quiz-options-list" role="radiogroup" aria-labelledby="question-9">
+              <label class="quiz-option-label">
+                <input type="radio" name="q9" value="se" data-secondary="fs">
+                <span class="quiz-option-text">Senior Software Engineer, Full-Stack Lead, or Cloud/Data Architect building scalable global technology platforms.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q9" value="ds" data-secondary="cs">
+                <span class="quiz-option-text">AI/Data Science Lead, Cybersecurity Architect, or SDET Automation Lead solving high-stakes analytical &amp; security challenges.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q9" value="pm" data-secondary="ba">
+                <span class="quiz-option-text">Senior Product Manager or Lead Business Analyst/Delivery Manager steering product strategy and enterprise transformation.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q9" value="fa" data-secondary="dm">
+                <span class="quiz-option-text">Senior Financial/FinTech Analyst or Head of Digital Growth Marketing driving revenue, investment, and market expansion.</span>
+              </label>
+              <label class="quiz-option-label">
+                <input type="radio" name="q9" value="mm" data-secondary="iot">
+                <span class="quiz-option-text">Creative/UI-UX Design Director OR Lead Robotics &amp; Embedded IoT Systems Engineer innovating physical &amp; digital experiences.</span>
+              </label>
+            </div>
           </div>
 
-          <!-- Form Actions: Submit & Reset -->
-          <div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-start; flex-wrap: wrap; margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary" id="submit-quiz-btn">Calculate My Career Match &rarr;</button>
-            <button type="reset" class="btn btn-secondary" id="reset-quiz-btn">Clear All Answers</button>
+          <!-- Form Submit & Reset Controls -->
+          <div class="quiz-submit-bar">
+            <button type="submit" class="btn btn-accent btn-lg">
+              Calculate My Career Match &rarr;
+            </button>
+            <button type="button" id="reset-quiz-btn" class="btn btn-outline">
+              Clear Answers
+            </button>
           </div>
-
         </form>
 
-        <!-- Dynamic Results Container Section (Rendered via JS) -->
-        <div id="quiz-result" class="quiz-result-card" role="region" aria-live="polite">
-          <!-- Dynamic results inserted via js/quiz.js -->
+        <!-- 4. DYNAMIC RESULTS SECTION -->
+        <div id="quiz-results-section" class="quiz-results-card hidden" role="region" aria-live="polite" aria-labelledby="result-career-title">
+          <div class="results-banner">
+            <span id="result-match-badge" class="badge badge-hero">Top Career Recommendation</span>
+            <img
+              id="result-career-icon"
+              src="assets/images/careers/software-engineer.svg"
+              alt="Recommended Career Icon"
+              width="72"
+              height="72"
+              style="margin: 1rem auto; background: var(--bg-icon-box); padding: 12px; border-radius: 16px;"
+            >
+            <h2 id="result-career-title" class="results-career-title">Software Engineer</h2>
+            <p id="result-career-tagline" class="results-career-tagline">
+              Architect and build scalable software systems, backend services, and APIs.
+            </p>
+          </div>
+
+          <div class="results-body">
+            <p id="result-career-desc" style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1.5rem;"></p>
+
+            <div class="grid grid-2" style="margin-bottom: 2rem;">
+              <div class="detail-panel" style="margin-bottom: 0;">
+                <h3 style="font-size: 1.05rem;">Core Skills to Focus On</h3>
+                <div id="result-career-skills" class="skill-tags" style="margin-top: 0.75rem;"></div>
+              </div>
+
+              <div class="detail-panel" style="margin-bottom: 0;">
+                <h3 style="font-size: 1.05rem;">Recommended First 3 Steps</h3>
+                <ol id="result-career-steps" class="detail-list" style="margin-top: 0.5rem;"></ol>
+              </div>
+            </div>
+
+            <!-- Primary Action Links -->
+            <div class="hero-actions" style="justify-content: center; margin-bottom: 2rem;">
+              <a id="result-details-link" href="career-details.html#software-engineer" class="btn btn-primary">
+                Read Full Career Guide &rarr;
+              </a>
+              <a id="result-roadmap-link" href="roadmaps.html?career=software-engineer" class="btn btn-accent">
+                View 6-Stage Learning Roadmap
+              </a>
+              <a id="result-resources-link" href="resources.html" class="btn btn-outline">
+                Browse Free Courses
+              </a>
+            </div>
+
+            <!-- Runner-up & Full Score Breakdown -->
+            <div class="detail-panel" style="background-color: var(--bg-body); margin-bottom: 0;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                <div>
+                  <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Strong Alternative Path (Runner-Up)</span>
+                  <h4 id="runner-up-title" style="margin: 0.2rem 0 0; font-size: 1.15rem;">Full-Stack Web Developer</h4>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <span id="runner-up-percent" class="badge badge-blue">75% Affinity</span>
+                  <a id="runner-up-link" href="career-details.html#fullstack-developer" class="text-link">Explore Runner-Up &rarr;</a>
+                </div>
+              </div>
+
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.85rem;">Your Full Affinity Breakdown Across All 15 Pathways</h4>
+              <div id="result-score-breakdown" class="score-breakdown-list"></div>
+
+              <div style="text-align: center; margin-top: 1.5rem;">
+                <button type="button" id="retake-quiz-btn" class="btn btn-outline btn-sm">
+                  &#8634; Retake Quiz with Different Answers
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -423,66 +488,62 @@
 
   </main>
 
-  <!-- Global Footer -->
+  <!-- 5. FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        
-        <!-- Column 1: Brand & Mission -->
-        <div class="footer-column">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
-            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
-          </div>
-          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
-            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
-          </p>
-          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
-            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+          </a>
+          <p class="footer-mission">
+            Empowering Sri Lankan university students with clear career guidance across 15 IT, Business, Finance, Creative &amp; Engineering pathways, structured roadmaps, and free resources.
           </p>
         </div>
 
-        <!-- Column 2: Navigation Links -->
-        <div class="footer-column">
-          <h3>Navigation Links</h3>
-          <ul>
+        <div class="footer-col">
+          <h3 class="footer-heading">Platform Navigation</h3>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="careers.html">Explore Careers</a></li>
-            <li><a href="quiz.html">Career Quiz</a></li>
-            <li><a href="roadmaps.html">Career Roadmaps</a></li>
-            <li><a href="resources.html">Learning Resources</a></li>
-            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+            <li><a href="careers.html">Explore 15 Career Paths</a></li>
+            <li><a href="quiz.html">Career Match Quiz</a></li>
+            <li><a href="roadmaps.html">Learning Roadmaps</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="contact.html">Community &amp; FAQ</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Useful Links -->
-        <div class="footer-column">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
-            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
-            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
-            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+        <div class="footer-col">
+          <h3 class="footer-heading">Career Domains</h3>
+          <ul class="footer-links">
+            <li><a href="career-details.html#software-engineer">Software &amp; Full-Stack Dev</a></li>
+            <li><a href="career-details.html#data-analyst">Data Science, BI &amp; AI</a></li>
+            <li><a href="career-details.html#cloud-devops">Cloud, DevOps &amp; Cyber</a></li>
+            <li><a href="career-details.html#business-analyst">Business Analysis &amp; Product</a></li>
+            <li><a href="career-details.html#digital-marketing">Digital Marketing &amp; Finance</a></li>
+            <li><a href="career-details.html#robotics-iot">Multimedia &amp; Robotics/IoT</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Academic Information -->
-        <div class="footer-column">
-          <h3>Academic Context</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
-            <strong>Project:</strong> Semester 1 Group Web Project<br>
-            <strong>Theme:</strong> Community-Focused Static Website<br>
-            <strong>Platform:</strong> PathFinder LK
+        <div class="footer-col">
+          <h3 class="footer-heading">Open Source &amp; Community</h3>
+          <p class="footer-note">
+            PathFinder LK is an open-source educational platform built for undergraduate university students across Sri Lanka.
+          </p>
+          <p class="footer-Action">
+            <a href="https://github.com/nimesh-kavindya-dev/pathfinder-lk" target="_blank" rel="noopener noreferrer" class="footer-contact-link">GitHub Repository &rarr;</a>
           </p>
         </div>
-
       </div>
 
-      <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span class="current-year">2025</span> PathFinder LK. Built for Sri Lankan University Students.
+        </p>
+        <p class="footer-credits">
+          Open-Source Multi-Disciplinary Career Guidance Platform
+        </p>
       </div>
     </div>
   </footer>

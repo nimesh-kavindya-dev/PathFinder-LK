@@ -1,325 +1,506 @@
 /**
- * PathFinder LK - Interactive Career Quiz Script
- * Course: IS 1106 - Foundations of Web Technologies
- * Description: Vanilla JavaScript quiz logic, validation, scoring, tie handling,
- *              progress tracking, and dynamic results presentation.
+ * ============================================================================
+ * PathFinder LK - Interactive Career Match Quiz Script (quiz.js)
+ * ============================================================================
+ * Description: Powers the interactive career recommendation quiz across all
+ *              15 high-demand career pathways (IT, Business & Product,
+ *              Finance & FinTech, Digital Marketing, Creative Multimedia,
+ *              and Robotics/IoT Engineering).
+ * ============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCareerQuiz();
+});
 
+/**
+ * Comprehensive metadata for all 15 supported career pathways
+ */
+const CAREER_DATA = {
+  se: {
+    id: 'software-engineer',
+    title: 'Software Engineer',
+    tagline: 'Architect and build scalable software systems, backend services, and APIs.',
+    icon: 'assets/images/careers/software-engineer.svg',
+    description:
+      'You enjoy logical problem-solving, software architecture, and writing clean code to build reliable applications from the ground up.',
+    skills: ['Java / Python / C#', 'Data Structures & Algorithms', 'REST APIs & Microservices', 'Git & CI/CD'],
+    beginnerSteps: [
+      'Master one core object-oriented language (Python, Java, or C#) and OOP principles.',
+      'Build 2–3 RESTful web APIs connected to a relational database (PostgreSQL).',
+      'Practice algorithmic thinking and version control workflows on GitHub.',
+    ],
+    detailsUrl: 'career-details.html#software-engineer',
+    roadmapUrl: 'roadmaps.html?career=software-engineer',
+    resourcesUrl: 'resources.html?category=programming',
+  },
+  fs: {
+    id: 'fullstack-developer',
+    title: 'Full-Stack Web Developer',
+    tagline: 'Build complete end-to-end web products across frontend interfaces and backend APIs.',
+    icon: 'assets/images/careers/fullstack-developer.svg',
+    description:
+      'You love shipping complete web applications—combining responsive React/Next.js user interfaces with robust Node.js and PostgreSQL backends.',
+    skills: ['TypeScript & React / Next.js', 'Node.js & Express', 'PostgreSQL & Prisma', 'REST & Auth Systems'],
+    beginnerSteps: [
+      'Master semantic HTML5, modern CSS Grid/Flexbox, and JavaScript ES6+ fundamentals.',
+      'Learn React and TypeScript to build interactive component-driven single-page apps.',
+      'Connect your frontend to a Node.js/Express API with authentication and database storage.',
+    ],
+    detailsUrl: 'career-details.html#fullstack-developer',
+    roadmapUrl: 'roadmaps.html?career=fullstack-developer',
+    resourcesUrl: 'resources.html?category=programming',
+  },
+  cloud: {
+    id: 'cloud-devops',
+    title: 'Cloud & DevOps Engineer',
+    tagline: 'Automate CI/CD pipelines, Kubernetes clusters, and resilient cloud infrastructure.',
+    icon: 'assets/images/careers/cloud-devops.svg',
+    description:
+      'You thrive on automation, Linux systems, cloud architecture (AWS/Azure), and making deployments fast, repeatable, and fault-tolerant.',
+    skills: ['Linux & Bash Scripting', 'AWS / Azure Cloud', 'Docker & Kubernetes', 'Terraform & GitHub Actions'],
+    beginnerSteps: [
+      'Learn Linux command-line administration, networking fundamentals, and Bash scripting.',
+      'Containerize web applications using Docker and automate builds with GitHub Actions.',
+      'Explore AWS Cloud Practitioner concepts and provision cloud resources with Terraform.',
+    ],
+    detailsUrl: 'career-details.html#cloud-devops',
+    roadmapUrl: 'roadmaps.html?career=cloud-devops',
+    resourcesUrl: 'resources.html?category=cloud',
+  },
+  da: {
+    id: 'data-analyst',
+    title: 'Data Analyst',
+    tagline: 'Transform raw business data into actionable insights, KPIs, and visual dashboards.',
+    icon: 'assets/images/careers/data-analyst.svg',
+    description:
+      'You have a sharp eye for patterns, statistics, and storytelling with numbers—helping organizations make smarter, evidence-based decisions.',
+    skills: ['SQL & Database Querying', 'Python (Pandas & NumPy)', 'Power BI / Tableau', 'Descriptive Statistics'],
+    beginnerSteps: [
+      'Learn SQL thoroughly (SELECT, JOINs, GROUP BY, Window Functions) for data extraction.',
+      'Master spreadsheet modeling in Excel and build interactive dashboards in Power BI.',
+      'Use Python (Pandas, Matplotlib/Seaborn) to clean and analyze real-world datasets.',
+    ],
+    detailsUrl: 'career-details.html#data-analyst',
+    roadmapUrl: 'roadmaps.html?career=data-analyst',
+    resourcesUrl: 'resources.html?category=data',
+  },
+  de: {
+    id: 'data-engineer',
+    title: 'Data Engineer',
+    tagline: 'Design high-volume data pipelines, ETL workflows, and cloud data warehouses.',
+    icon: 'assets/images/careers/data-engineer.svg',
+    description:
+      'You enjoy large-scale systems architecture, databases, and automation—building the reliable data infrastructure that powers analytics and AI.',
+    skills: ['Advanced SQL & Data Modeling', 'Python & Apache Spark', 'ETL / ELT Pipelines (Airflow)', 'Cloud Warehouses'],
+    beginnerSteps: [
+      'Master relational database design, normalization, and advanced SQL query optimization.',
+      'Write Python scripts to extract data from public APIs, transform it, and load it into PostgreSQL.',
+      'Explore Docker, Linux basics, and workflow orchestration concepts (Apache Airflow / dbt).',
+    ],
+    detailsUrl: 'career-details.html#data-engineer',
+    roadmapUrl: 'roadmaps.html?career=data-engineer',
+    resourcesUrl: 'resources.html?category=data',
+  },
+  ds: {
+    id: 'data-scientist',
+    title: 'Data Scientist & AI Engineer',
+    tagline: 'Train predictive machine learning models and build intelligent AI-driven systems.',
+    icon: 'assets/images/careers/data-scientist.svg',
+    description:
+      'You are fascinated by machine learning, statistical modeling, and AI—turning complex datasets into predictive models and intelligent applications.',
+    skills: ['Python (Scikit-Learn / PyTorch)', 'Machine Learning & Statistics', 'Feature Engineering & SQL', 'LLM & Model Deployment'],
+    beginnerSteps: [
+      'Build a strong foundation in Python data science libraries (NumPy, Pandas, Matplotlib) and probability.',
+      'Train supervised and unsupervised machine learning models with Scikit-Learn on real datasets.',
+      'Deploy a trained ML model behind a FastAPI or Streamlit interface for interactive testing.',
+    ],
+    detailsUrl: 'career-details.html#data-scientist',
+    roadmapUrl: 'roadmaps.html?career=data-scientist',
+    resourcesUrl: 'resources.html?category=data',
+  },
+  cs: {
+    id: 'cybersecurity',
+    title: 'Cybersecurity Analyst',
+    tagline: 'Defend networks, cloud infrastructure, and applications against digital threats.',
+    icon: 'assets/images/careers/cybersecurity.svg',
+    description:
+      'You think like an investigator and protector—analyzing vulnerabilities, monitoring security events, and hardening systems against cyber attacks.',
+    skills: ['Networking (TCP/IP, OSI, DNS)', 'Linux & Windows Hardening', 'SIEM & Incident Response', 'Web App Security (OWASP)'],
+    beginnerSteps: [
+      'Build a rock-solid foundation in computer networking (TCP/IP, subnets, firewalls) and Linux CLI.',
+      'Practice hands-on defensive and ethical hacking labs on TryHackMe or Cisco NetAcad.',
+      'Study the OWASP Top 10 web vulnerabilities and learn how to configure SIEM monitoring tools.',
+    ],
+    detailsUrl: 'career-details.html#cybersecurity',
+    roadmapUrl: 'roadmaps.html?career=cybersecurity',
+    resourcesUrl: 'resources.html?category=cybersecurity',
+  },
+  uiux: {
+    id: 'ui-ux',
+    title: 'UI/UX Product Designer',
+    tagline: 'Craft intuitive, accessible, and human-centered digital product experiences.',
+    icon: 'assets/images/careers/ui-ux.svg',
+    description:
+      'You blend empathy, psychology, and visual craft—researching user needs and designing wireframes, prototypes, and design systems that people love using.',
+    skills: ['Figma & Interactive Prototyping', 'User Research & Wireframing', 'Design Systems & Typography', 'Usability & Accessibility (WCAG)'],
+    beginnerSteps: [
+      'Master visual hierarchy, layout grids, typography, and color contrast principles.',
+      'Learn Figma inside-out: Auto Layout, reusable components, variants, and interactive prototypes.',
+      'Redesign an existing Sri Lankan mobile app or campus portal and document your UX case study.',
+    ],
+    detailsUrl: 'career-details.html#ui-ux',
+    roadmapUrl: 'roadmaps.html?career=ui-ux',
+    resourcesUrl: 'resources.html?category=uiux',
+  },
+  qa: {
+    id: 'qa-engineer',
+    title: 'QA & Test Automation Engineer',
+    tagline: 'Ensure software reliability through automated end-to-end, API, and performance testing.',
+    icon: 'assets/images/careers/qa-engineer.svg',
+    description:
+      'You have an analytical eye for edge cases and quality—designing automated test suites and CI quality gates so software ships without critical bugs.',
+    skills: ['Playwright / Cypress / Selenium', 'API Testing (Postman & REST)', 'Test Strategy & Bug Triage', 'CI/CD Quality Gates'],
+    beginnerSteps: [
+      'Learn software testing fundamentals: test plans, boundary analysis, and structured bug reporting.',
+      'Master API testing with Postman and write automated end-to-end browser tests with Playwright.',
+      'Integrate your automated test suite into GitHub Actions so tests run on every pull request.',
+    ],
+    detailsUrl: 'career-details.html#qa-engineer',
+    roadmapUrl: 'roadmaps.html?career=qa-engineer',
+    resourcesUrl: 'resources.html?category=qa',
+  },
+  ba: {
+    id: 'business-analyst',
+    title: 'Business Analyst & Project Manager',
+    tagline: 'Bridge business strategy, stakeholder requirements, Agile delivery, and enterprise solutions.',
+    icon: 'assets/images/careers/business-analyst.svg',
+    description:
+      'You excel at communication, process modeling, and leadership—translating business challenges into structured project plans, user stories, and measurable outcomes.',
+    skills: ['Business Process Modeling (BPMN)', 'Agile / Scrum & Jira', 'Requirements Engineering', 'SQL & Power BI Basics'],
+    beginnerSteps: [
+      'Learn Agile/Scrum frameworks, user story writing, and acceptance criteria in Jira and Confluence.',
+      'Practice mapping business workflows using BPMN diagrams and stakeholder interview templates.',
+      'Build foundational data literacy with Excel, SQL basics, and Power BI KPI reporting.',
+    ],
+    detailsUrl: 'career-details.html#business-analyst',
+    roadmapUrl: 'roadmaps.html?career=business-analyst',
+    resourcesUrl: 'resources.html?category=business',
+  },
+  pm: {
+    id: 'product-manager',
+    title: 'Product Manager',
+    tagline: 'Define product vision, market strategy, feature prioritization, and cross-functional execution.',
+    icon: 'assets/images/careers/product-manager.svg',
+    description:
+      'You think like a mini-CEO for a product—combining customer discovery, competitive market analysis, UX intuition, and product roadmapping.',
+    skills: ['Product Strategy & Roadmapping', 'User Discovery & PRDs', 'Product Analytics (Mixpanel/GA4)', 'Cross-Functional Leadership'],
+    beginnerSteps: [
+      'Learn how to conduct customer discovery interviews and write clear Product Requirement Documents (PRDs).',
+      'Master prioritization frameworks (RICE, MoSCoW) and product metrics (Retention, Conversion, NPS).',
+      'Create a complete Product Case Study & Roadmap for a real Sri Lankan digital service or startup idea.',
+    ],
+    detailsUrl: 'career-details.html#product-manager',
+    roadmapUrl: 'roadmaps.html?career=product-manager',
+    resourcesUrl: 'resources.html?category=business',
+  },
+  dm: {
+    id: 'digital-marketing',
+    title: 'Digital Marketing & Growth Strategist',
+    tagline: 'Drive brand visibility, SEO/SEM customer acquisition, social media strategy, and conversion growth.',
+    icon: 'assets/images/careers/digital-marketing.svg',
+    description:
+      'You combine creative storytelling with data-driven marketing—growing brands through search engines, paid campaigns, content strategy, and analytics.',
+    skills: ['SEO & Content Strategy', 'Google Ads & Meta Ads', 'Google Analytics 4 (GA4)', 'Conversion Rate Optimization'],
+    beginnerSteps: [
+      'Complete Google Digital Garage and HubSpot Inbound Marketing fundamentals.',
+      'Learn Search Engine Optimization (SEO), keyword research, and Google Analytics 4 tracking.',
+      'Launch and measure a real social media or content growth campaign for a campus club or small business.',
+    ],
+    detailsUrl: 'career-details.html#digital-marketing',
+    roadmapUrl: 'roadmaps.html?career=digital-marketing',
+    resourcesUrl: 'resources.html?category=marketing',
+  },
+  fa: {
+    id: 'financial-analyst',
+    title: 'Financial Analyst & FinTech Specialist',
+    tagline: 'Lead corporate financial modeling, investment analysis, valuation, and digital banking innovation.',
+    icon: 'assets/images/careers/financial-analyst.svg',
+    description:
+      'You thrive on financial markets, corporate valuation, accounting logic, and FinTech—turning financial statements and market data into strategic investments.',
+    skills: ['Financial Modeling & Valuation', 'Advanced Excel & Power BI', 'Corporate Finance & Accounting', 'FinTech & Risk Analysis'],
+    beginnerSteps: [
+      'Master 3-statement financial modeling (Income Statement, Balance Sheet, Cash Flow) in Excel.',
+      'Study corporate valuation (DCF), ratio analysis, and digital payments/FinTech ecosystems.',
+      'Build an interactive equity research report and financial dashboard for a Colombo Stock Exchange company.',
+    ],
+    detailsUrl: 'career-details.html#financial-analyst',
+    roadmapUrl: 'roadmaps.html?career=financial-analyst',
+    resourcesUrl: 'resources.html?category=finance',
+  },
+  mm: {
+    id: 'multimedia-designer',
+    title: 'Creative Multimedia & Motion Designer',
+    tagline: 'Create compelling motion graphics, video production, 3D visuals, and brand identities.',
+    icon: 'assets/images/careers/multimedia-designer.svg',
+    description:
+      'You bring stories to life visually—combining video editing, 2D/3D motion graphics, sound design, and visual branding for digital media and agencies.',
+    skills: ['Video Editing (Premiere / DaVinci)', 'Motion Graphics (After Effects)', '3D & Visual Design (Blender / Illustrator)', 'Brand Storytelling'],
+    beginnerSteps: [
+      'Master visual composition, color grading, typography, and storyboarding fundamentals.',
+      'Learn DaVinci Resolve / Premiere Pro for editing and After Effects / Blender for motion and 3D.',
+      'Produce a 60-second high-impact showreel featuring brand animations, motion titles, and visual edits.',
+    ],
+    detailsUrl: 'career-details.html#multimedia-designer',
+    roadmapUrl: 'roadmaps.html?career=multimedia-designer',
+    resourcesUrl: 'resources.html?category=uiux',
+  },
+  iot: {
+    id: 'robotics-iot',
+    title: 'Mechatronics, Robotics & IoT Engineer',
+    tagline: 'Build smart connected hardware, embedded systems, industrial automation, and robotics.',
+    icon: 'assets/images/careers/robotics-iot.svg',
+    description:
+      'You love bridging physical hardware and software—programming microcontrollers, sensors, robotics, and smart IoT systems for industry and agriculture.',
+    skills: ['Embedded C/C++ & MicroPython', 'ESP32 / Arduino / Raspberry Pi', 'IoT Protocols (MQTT) & Sensors', 'PCB & 3D CAD Prototyping'],
+    beginnerSteps: [
+      'Learn electronics fundamentals, circuit design, and C/C++ programming on Arduino or ESP32.',
+      'Connect temperature, motion, or agricultural sensors to cloud dashboards via Wi-Fi and MQTT.',
+      'Design and 3D-print a smart IoT or robotics prototype solving a real Sri Lankan industry problem.',
+    ],
+    detailsUrl: 'career-details.html#robotics-iot',
+    roadmapUrl: 'roadmaps.html?career=robotics-iot',
+    resourcesUrl: 'resources.html?category=engineering',
+  },
+};
+
+function initCareerQuiz() {
   const quizForm = document.getElementById('career-quiz-form');
-  const resultContainer = document.getElementById('quiz-result');
-  const validationBanner = document.getElementById('quiz-validation-banner');
-  const progressBarFill = document.getElementById('quiz-progress-fill');
+  const questionCards = document.querySelectorAll('.quiz-question-card');
+  const progressBar = document.getElementById('quiz-progress-bar');
   const progressText = document.getElementById('quiz-progress-text');
-  const resetBtn = document.getElementById('reset-quiz-btn');
+  const progressPercentEl = document.getElementById('quiz-progress-percent');
+  const errorBanner = document.getElementById('quiz-error-banner');
+  const resultsSection = document.getElementById('quiz-results-section');
+  const retakeBtn = document.getElementById('retake-quiz-btn');
+  const resetFormBtn = document.getElementById('reset-quiz-btn');
 
-  if (!quizForm) return;
+  if (!quizForm || questionCards.length === 0) return;
 
-  const TOTAL_QUESTIONS = 9;
+  const totalQuestions = questionCards.length;
 
-  // Career details dictionary for dynamic results
-  const CAREER_DATA = {
-    se: {
-      id: 'software-engineer',
-      title: 'Software Engineer',
-      domain: 'Software Development & Architecture',
-      badgeClass: 'badge-blue',
-      icon: 'assets/images/careers/software-engineer.svg',
-      description: 'You enjoy solving logical computational problems, writing clean code, and engineering complete applications from frontend interfaces to backend microservices.',
-      skills: [
-        'Core Object-Oriented Programming (Java, Python, C#, or TypeScript)',
-        'Data Structures & Algorithms (arrays, trees, searching, sorting)',
-        'Web Fundamentals & APIs (RESTful APIs, HTTP, JSON)',
-        'Relational Databases & SQL queries',
-        'Version control with Git and team workflow on GitHub'
-      ],
-      detailsUrl: 'career-details.html?career=software-engineer#software-engineer',
-      roadmapUrl: 'roadmaps.html#roadmap-se'
-    },
-    da: {
-      id: 'data-analyst',
-      title: 'Data Analyst',
-      domain: 'Business Intelligence & Data Analytics',
-      badgeClass: 'badge-green',
-      icon: 'assets/images/careers/data-analyst.svg',
-      description: 'You thrive on analyzing operational numbers, discovering patterns in complex datasets, and designing visual dashboards that help organizations make data-driven decisions.',
-      skills: [
-        'Advanced Relational SQL (multi-table joins, subqueries, aggregations)',
-        'Business Intelligence Tools (Microsoft Power BI, Tableau)',
-        'Spreadsheet Modeling (Excel formulas, Pivot Tables, VLOOKUP/XLOOKUP)',
-        'Exploratory Data Analysis using Python (Pandas, NumPy, Matplotlib)',
-        'Statistical reasoning, KPI evaluation, and data storytelling'
-      ],
-      detailsUrl: 'career-details.html?career=data-analyst#data-analyst',
-      roadmapUrl: 'roadmaps.html#roadmap-da'
-    },
-    de: {
-      id: 'data-engineer',
-      title: 'Data Engineer',
-      domain: 'Big Data & Cloud Data Pipelines',
-      badgeClass: 'badge-amber',
-      icon: 'assets/images/careers/data-engineer.svg',
-      description: 'You are fascinated by the plumbing of big data—architecting automated ETL pipelines, cloud data warehouses, and moving massive data volumes smoothly and reliably.',
-      skills: [
-        'Pipeline scripting in Python, SQL, or Scala',
-        'Distributed Computing Frameworks (Apache Spark, PySpark)',
-        'Workflow Orchestration using Apache Airflow',
-        'Cloud Data Warehousing (Snowflake, Google BigQuery, AWS S3)',
-        'Database modeling (Star/Snowflake schemas) and Linux administration'
-      ],
-      detailsUrl: 'career-details.html?career=data-engineer#data-engineer',
-      roadmapUrl: 'roadmaps.html#roadmap-de'
-    },
-    cs: {
-      id: 'cybersecurity',
-      title: 'Cybersecurity Analyst',
-      domain: 'Information Security & Threat Defense',
-      badgeClass: 'badge-red',
-      icon: 'assets/images/careers/cybersecurity.svg',
-      description: 'You enjoy investigating system boundaries, inspecting network traffic, discovering vulnerabilities, defending systems against attacks, and enforcing digital security standards.',
-      skills: [
-        'Computer Networking Fundamentals (TCP/IP, OSI model, DNS, subnets, routing)',
-        'Linux Terminal Administration, file permissions, and system hardening',
-        'Network Packet Analysis using Wireshark and Nmap',
-        'Security Information & Event Management (SIEM) log analysis',
-        'Web Security Standards (OWASP Top 10) and ethical security testing'
-      ],
-      detailsUrl: 'career-details.html?career=cybersecurity#cybersecurity',
-      roadmapUrl: 'roadmaps.html#roadmap-cs'
-    },
-    uiux: {
-      id: 'ui-ux',
-      title: 'UI/UX Designer',
-      domain: 'Human-Computer Interaction & Interface Design',
-      badgeClass: 'badge-purple',
-      icon: 'assets/images/careers/ui-ux.svg',
-      description: 'You have a natural passion for human empathy, aesthetics, and usability—designing intuitive user flows, accessible wireframes, and interactive product prototypes.',
-      skills: [
-        'Interactive Prototyping and Design Systems in Figma (auto-layout, components)',
-        'User Research Methodologies (interviews, surveys, persona creation)',
-        'Information Architecture, wireframing, and user journey mapping',
-        'Web Accessibility Standards (WCAG 2.1 AA) and responsive layouts',
-        'Foundational knowledge of HTML5 and CSS3 for developer handoff'
-      ],
-      detailsUrl: 'career-details.html?career=ui-ux#ui-ux',
-      roadmapUrl: 'roadmaps.html#roadmap-uiux'
-    }
-  };
-
-  /**
-   * Updates live progress bar as questions are answered
-   */
   const updateProgress = () => {
-    let answeredCount = 0;
-    for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
-      const selected = quizForm.querySelector(`input[name="q${i}"]:checked`);
-      if (selected) answeredCount++;
-    }
+    const answeredCount = quizForm.querySelectorAll('input[type="radio"]:checked').length;
+    const percentage = Math.round((answeredCount / totalQuestions) * 100);
 
-    const percentage = Math.round((answeredCount / TOTAL_QUESTIONS) * 100);
-    if (progressBarFill) {
-      progressBarFill.style.width = `${percentage}%`;
+    if (progressBar) {
+      progressBar.style.width = `${percentage}%`;
+      progressBar.setAttribute('aria-valuenow', String(percentage));
     }
     if (progressText) {
-      progressText.textContent = `${answeredCount} of ${TOTAL_QUESTIONS} Questions Answered (${percentage}%)`;
+      progressText.textContent = `${answeredCount} of ${totalQuestions} questions answered`;
+    }
+    if (progressPercentEl) {
+      progressPercentEl.textContent = `${percentage}%`;
+    }
+
+    questionCards.forEach((card) => {
+      const checkedRadio = card.querySelector('input[type="radio"]:checked');
+      if (checkedRadio) {
+        card.classList.add('is-answered');
+        card.classList.remove('has-error');
+      }
+    });
+
+    if (answeredCount === totalQuestions && errorBanner) {
+      errorBanner.classList.add('hidden');
     }
   };
 
-  // Listen to any radio change to update styles and progress
-  quizForm.addEventListener('change', (e) => {
-    if (e.target && e.target.type === 'radio') {
-      const questionCard = e.target.closest('.quiz-card');
+  const radioInputs = quizForm.querySelectorAll('input[type="radio"]');
+  radioInputs.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      const questionCard = radio.closest('.quiz-question-card');
       if (questionCard) {
-        questionCard.classList.remove('unanswered-error');
-      }
-
-      // Update active option styling
-      const fieldset = e.target.closest('fieldset');
-      if (fieldset) {
-        const labels = fieldset.querySelectorAll('.quiz-option-label');
-        labels.forEach(lbl => lbl.classList.remove('checked'));
-        const activeLabel = e.target.closest('.quiz-option-label');
-        if (activeLabel) activeLabel.classList.add('checked');
-      }
-
-      updateProgress();
-    }
-  });
-
-  /**
-   * Quiz Form Submission & Scoring Handler
-   */
-  quizForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const unansweredQuestions = [];
-    const scores = { se: 0, da: 0, de: 0, cs: 0, uiux: 0 };
-
-    // Validate all 9 questions
-    for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
-      const selected = quizForm.querySelector(`input[name="q${i}"]:checked`);
-      const card = document.getElementById(`q${i}-card`);
-
-      if (!selected) {
-        unansweredQuestions.push(i);
-        if (card) card.classList.add('unanswered-error');
-      } else {
-        if (card) card.classList.remove('unanswered-error');
-        const value = selected.value;
-        if (scores.hasOwnProperty(value)) {
-          scores[value]++;
+        questionCard.querySelectorAll('.quiz-option-label').forEach((lbl) => {
+          lbl.classList.remove('is-selected');
+        });
+        const parentLabel = radio.closest('.quiz-option-label');
+        if (parentLabel) {
+          parentLabel.classList.add('is-selected');
         }
       }
-    }
+      updateProgress();
+    });
+  });
 
-    // Handle Unanswered Validation
-    if (unansweredQuestions.length > 0) {
-      if (validationBanner) {
-        const questionList = unansweredQuestions.map(n => `Q${n}`).join(', ');
-        validationBanner.innerHTML = `
-          <strong>Incomplete Submission:</strong> Please answer all ${TOTAL_QUESTIONS} questions before submitting.<br>
-          <span style="font-weight: 400; font-size: 0.9rem;">Remaining unanswered: ${questionList}</span>
-        `;
-        validationBanner.style.display = 'block';
-      }
+  quizForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-      // Smooth scroll to the first unanswered question
-      const firstUnansweredCard = document.getElementById(`q${unansweredQuestions[0]}-card`);
-      if (firstUnansweredCard) {
-        firstUnansweredCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const scores = {};
+    Object.keys(CAREER_DATA).forEach((k) => {
+      scores[k] = 0;
+    });
+
+    let firstUnansweredCard = null;
+
+    questionCards.forEach((card, index) => {
+      const questionNumber = index + 1;
+      const selectedRadio = quizForm.querySelector(`input[name="q${questionNumber}"]:checked`);
+
+      if (!selectedRadio) {
+        card.classList.add('has-error');
+        if (!firstUnansweredCard) {
+          firstUnansweredCard = card;
+        }
+      } else {
+        card.classList.remove('has-error');
+        const primaryKey = selectedRadio.value;
+        const secondaryKey = selectedRadio.getAttribute('data-secondary');
+
+        if (scores[primaryKey] !== undefined) {
+          scores[primaryKey] += 2;
+        }
+        if (secondaryKey && scores[secondaryKey] !== undefined) {
+          scores[secondaryKey] += 1;
+        }
       }
+    });
+
+    if (firstUnansweredCard) {
+      if (errorBanner) {
+        errorBanner.classList.remove('hidden');
+      }
+      const headerOffset = 95;
+      const elementPosition = firstUnansweredCard.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       return;
     }
 
-    // Hide validation banner if all questions are answered
-    if (validationBanner) {
-      validationBanner.style.display = 'none';
+    if (errorBanner) {
+      errorBanner.classList.add('hidden');
     }
 
-    // Calculate Highest Score & Detect Ties
-    let highestScore = -1;
-    let topCareers = [];
+    const sortedCareers = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+    const topMatchKey = sortedCareers[0];
+    const runnerUpKey = sortedCareers[1];
 
-    for (const [careerKey, score] of Object.entries(scores)) {
-      if (score > highestScore) {
-        highestScore = score;
-        topCareers = [careerKey];
-      } else if (score === highestScore) {
-        topCareers.push(careerKey);
-      }
-    }
-
-    const primaryCareerKey = topCareers[0];
-    const careerInfo = CAREER_DATA[primaryCareerKey];
-    const matchPercentage = Math.round((highestScore / TOTAL_QUESTIONS) * 100);
-
-    // Build tie notification if there are tied top results
-    let tieHtml = '';
-    if (topCareers.length > 1) {
-      const tiedTitles = topCareers
-        .filter(k => k !== primaryCareerKey)
-        .map(k => `<strong>${CAREER_DATA[k].title}</strong>`)
-        .join(' and ');
-      
-      tieHtml = `
-        <div class="tie-alert-box" role="status">
-          <strong>Close Career Alignment:</strong> You also scored equally high in ${tiedTitles}! Your multifaceted interests make you suitable for more than one IT specialization. Review both paths to decide what resonates most.
-        </div>
-      `;
-    }
-
-    // Render the Result Section dynamically
-    if (resultContainer && careerInfo) {
-      resultContainer.innerHTML = `
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <div style="display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; background-color: var(--bg-alt); border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1rem;">
-            <img src="${careerInfo.icon}" alt="${careerInfo.title} icon" width="56" height="56">
-          </div>
-          <div>
-            <span class="badge ${careerInfo.badgeClass}" style="margin-bottom: 0.5rem;">${careerInfo.domain}</span>
-            <h2 style="font-size: 2.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">
-              Recommended Match: <span style="color: var(--primary-color);">${careerInfo.title}</span>
-            </h2>
-            <div style="display: inline-block; background-color: var(--badge-blue-bg); border: 1px solid var(--border-color); padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; color: var(--badge-blue-text); font-size: 0.95rem; margin-top: 0.5rem;">
-              Career Match Score: ${highestScore} / ${TOTAL_QUESTIONS} (${matchPercentage}% Alignment)
-            </div>
-          </div>
-        </div>
-
-        ${tieHtml}
-
-        <div style="background-color: var(--bg-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.5rem;">Why This Role Fits You</h3>
-          <p style="color: var(--text-secondary); font-size: 1rem; margin: 0; line-height: 1.7;">
-            ${careerInfo.description}
-          </p>
-        </div>
-
-        <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.75rem;">Key Technical &amp; Practical Skills to Develop</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8; color: var(--text-secondary);">
-            ${careerInfo.skills.map(s => `<li>${s}</li>`).join('')}
-          </ul>
-        </div>
-
-        <div style="background-color: var(--bg-alt); border: 1px solid var(--border-color); padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2rem;">
-          <strong>Educational Guidance Notice:</strong> This quiz provides general orientation based on your self-reported study preferences. It is an educational tool designed to help university students explore career domains and is not an absolute or scientific determinant of your future career path.
-        </div>
-
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="${careerInfo.detailsUrl}" class="btn btn-primary">Explore ${careerInfo.title} Details &rarr;</a>
-          <a href="${careerInfo.roadmapUrl}" class="btn btn-secondary">View Learning Roadmap</a>
-          <button type="button" id="restart-quiz-btn" class="btn btn-accent">Restart Quiz</button>
-        </div>
-      `;
-
-      resultContainer.style.display = 'block';
-
-      // Scroll smoothly to the result card
-      setTimeout(() => {
-        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-
-      // Attach listener to newly created Restart button inside results
-      const restartBtn = document.getElementById('restart-quiz-btn');
-      if (restartBtn) {
-        restartBtn.addEventListener('click', handleRestart);
-      }
-    }
+    renderQuizResults(topMatchKey, runnerUpKey, scores, totalQuestions);
   });
 
-  /**
-   * Reset / Restart Handler
-   */
-  const handleRestart = () => {
+  const resetQuiz = () => {
     quizForm.reset();
+    questionCards.forEach((card) => {
+      card.classList.remove('is-answered', 'has-error');
+      card.querySelectorAll('.quiz-option-label').forEach((lbl) => {
+        lbl.classList.remove('is-selected');
+      });
+    });
 
-    // Clear active option styling
-    const labels = quizForm.querySelectorAll('.quiz-option-label');
-    labels.forEach(lbl => lbl.classList.remove('checked'));
+    if (errorBanner) errorBanner.classList.add('hidden');
+    if (resultsSection) resultsSection.classList.add('hidden');
 
-    // Remove any error highlights
-    const cards = quizForm.querySelectorAll('.quiz-card');
-    cards.forEach(card => card.classList.remove('unanswered-error'));
-
-    // Hide validation banner & result container
-    if (validationBanner) validationBanner.style.display = 'none';
-    if (resultContainer) resultContainer.style.display = 'none';
-
-    // Reset progress tracker
-    if (progressBarFill) progressBarFill.style.width = '0%';
-    if (progressText) progressText.textContent = `0 of ${TOTAL_QUESTIONS} Questions Answered (0%)`;
-
-    // Scroll smoothly back to quiz top
-    const pageHeader = document.querySelector('.page-header');
-    if (pageHeader) {
-      pageHeader.scrollIntoView({ behavior: 'smooth' });
-    }
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (resetBtn) {
-    resetBtn.addEventListener('click', handleRestart);
+  if (retakeBtn) {
+    retakeBtn.addEventListener('click', resetQuiz);
+  }
+  if (resetFormBtn) {
+    resetFormBtn.addEventListener('click', resetQuiz);
   }
 
-});
+  updateProgress();
+}
+
+function renderQuizResults(topKey, secondKey, scores, totalQuestions) {
+  const resultsSection = document.getElementById('quiz-results-section');
+  if (!resultsSection) return;
+
+  const primaryCareer = CAREER_DATA[topKey];
+  const secondaryCareer = CAREER_DATA[secondKey];
+
+  const totalPointsAwarded = Object.values(scores).reduce((sum, val) => sum + val, 0) || 1;
+  const topMatchPercent = Math.min(98, Math.max(72, Math.round((scores[topKey] / (totalQuestions * 1.4)) * 100)));
+  const secondMatchPercent = Math.min(89, Math.max(52, Math.round((scores[secondKey] / (totalQuestions * 1.4)) * 100)));
+
+  const iconEl = document.getElementById('result-career-icon');
+  const badgeEl = document.getElementById('result-match-badge');
+  const titleEl = document.getElementById('result-career-title');
+  const taglineEl = document.getElementById('result-career-tagline');
+  const descEl = document.getElementById('result-career-desc');
+  const skillsContainer = document.getElementById('result-career-skills');
+  const stepsList = document.getElementById('result-career-steps');
+  const detailsBtn = document.getElementById('result-details-link');
+  const roadmapBtn = document.getElementById('result-roadmap-link');
+  const resourcesBtn = document.getElementById('result-resources-link');
+
+  if (iconEl) {
+    iconEl.src = primaryCareer.icon;
+    iconEl.alt = `${primaryCareer.title} Icon`;
+  }
+  if (badgeEl) badgeEl.textContent = `${topMatchPercent}% Profile Affinity — Top Recommendation`;
+  if (titleEl) titleEl.textContent = primaryCareer.title;
+  if (taglineEl) taglineEl.textContent = primaryCareer.tagline;
+  if (descEl) descEl.textContent = primaryCareer.description;
+
+  if (skillsContainer) {
+    skillsContainer.innerHTML = primaryCareer.skills
+      .map((skill) => `<span class="tag">${skill}</span>`)
+      .join('');
+  }
+
+  if (stepsList) {
+    stepsList.innerHTML = primaryCareer.beginnerSteps
+      .map((step) => `<li>${step}</li>`)
+      .join('');
+  }
+
+  if (detailsBtn) detailsBtn.href = primaryCareer.detailsUrl;
+  if (roadmapBtn) roadmapBtn.href = primaryCareer.roadmapUrl;
+  if (resourcesBtn) resourcesBtn.href = primaryCareer.resourcesUrl;
+
+  const secondTitleEl = document.getElementById('runner-up-title');
+  const secondPercentEl = document.getElementById('runner-up-percent');
+  const secondLinkEl = document.getElementById('runner-up-link');
+
+  if (secondTitleEl) secondTitleEl.textContent = secondaryCareer.title;
+  if (secondPercentEl) secondPercentEl.textContent = `${secondMatchPercent}% Affinity`;
+  if (secondLinkEl) secondLinkEl.href = secondaryCareer.detailsUrl;
+
+  const breakdownContainer = document.getElementById('result-score-breakdown');
+  if (breakdownContainer) {
+    const orderedKeys = Object.keys(CAREER_DATA)
+      .sort((a, b) => scores[b] - scores[a])
+      .slice(0, 8);
+    breakdownContainer.innerHTML = orderedKeys
+      .map((key) => {
+        const career = CAREER_DATA[key];
+        const count = scores[key];
+        const pct = Math.min(100, Math.round((count / totalPointsAwarded) * 190));
+        return `
+          <div class="breakdown-row">
+            <div class="breakdown-label">
+              <span>${career.title}</span>
+              <span class="breakdown-score">${count} pts</span>
+            </div>
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" style="width: ${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      })
+      .join('');
+  }
+
+  resultsSection.classList.remove('hidden');
+
+  setTimeout(() => {
+    const headerOffset = 85;
+    const elementPosition = resultsSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+  }, 100);
+}

@@ -1,169 +1,212 @@
 /**
- * PathFinder LK - Careers Page & Career Details Script
- * Course: IS 1106 - Foundations of Web Technologies
- * Description: Live search and category filtering for careers.html with clear filter capability,
- *              and URL query/hash handler for career-details.html.
+ * ============================================================================
+ * PathFinder LK - Careers Exploration & Filtering Script (careers.js)
+ * ============================================================================
+ * Description: Handles interactive search, category pill filtering across all
+ *              15 career pathways (IT, Business, Finance, Marketing, Creative,
+ *              and Engineering), URL query pre-selection, live result counts,
+ *              and career detail role switcher synchronization.
+ * ============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCareerFilters();
+  initCareerDetailsNavigation();
+});
 
-  /* ==========================================================================
-     1. Explore Careers Page (careers.html) Search & Filter
-     ========================================================================== */
+/**
+ * 1. Career Search & Category Filtering (careers.html)
+ */
+function initCareerFilters() {
   const searchInput = document.getElementById('career-search');
-  const filterButtons = document.querySelectorAll('.filter-pills .filter-btn');
-  const careerCards = document.querySelectorAll('.career-item');
-  const noResultsMsg = document.getElementById('no-careers-msg');
-  const clearFiltersBtn = document.getElementById('clear-filters-btn');
-  const resetSearchBtn = document.getElementById('reset-search-btn');
-  const resultCountText = document.getElementById('careers-result-count');
+  const filterButtons = document.querySelectorAll('.career-filter-btn');
+  const careerCards = document.querySelectorAll('.career-card[data-category]');
+  const resultsCountEl = document.getElementById('career-results-count');
+  const emptyStateEl = document.getElementById('career-empty-state');
+  const resetFilterBtn = document.getElementById('reset-career-filters');
+  const clearSearchBtn = document.getElementById('clear-career-search');
 
-  if (careerCards.length > 0) {
-    let currentCategory = 'all';
-    let searchQuery = '';
+  if (careerCards.length === 0) return;
 
-    /**
-     * Filters career cards based on BOTH category selection AND search query
-     */
-    const filterCareers = () => {
-      let visibleCount = 0;
-      const totalCount = careerCards.length;
+  let activeCategory = 'all';
+  let searchQuery = '';
 
-      careerCards.forEach(card => {
-        const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
-        const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-        const cardTitle = (card.querySelector('h2')?.textContent || '').toLowerCase();
-        const cardDesc = (card.querySelector('p')?.textContent || '').toLowerCase();
+  const setActiveCategoryButton = (category) => {
+    filterButtons.forEach((btn) => {
+      const btnCat = btn.getAttribute('data-filter') || 'all';
+      const isMatch = btnCat === category;
+      btn.classList.toggle('active', isMatch);
+      btn.setAttribute('aria-pressed', String(isMatch));
+    });
+  };
 
-        // Check if category matches
-        const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory || cardCategory.includes(currentCategory));
+  const filterCards = () => {
+    let visibleCount = 0;
+    const normalizedQuery = searchQuery.trim().toLowerCase();
 
-        // Check if search query matches name, keywords, or description
-        const matchesSearch = !searchQuery || 
-                              cardTitle.includes(searchQuery) || 
-                              cardKeywords.includes(searchQuery) || 
-                              cardDesc.includes(searchQuery);
+    careerCards.forEach((card) => {
+      const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
+      const cardTitle = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+      const cardDesc = card.querySelector('.card-description')?.textContent.toLowerCase() || '';
+      const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
 
-        // Combined logic: must satisfy both criteria
-        if (matchesCategory && matchesSearch) {
-          card.style.display = 'flex';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      const matchesCategory =
+        activeCategory === 'all' || cardCategory.split(/\s+/).includes(activeCategory);
 
-      // Update No Results Display
-      if (noResultsMsg) {
-        noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+      const matchesSearch =
+        normalizedQuery === '' ||
+        cardTitle.includes(normalizedQuery) ||
+        cardDesc.includes(normalizedQuery) ||
+        cardKeywords.includes(normalizedQuery);
+
+      if (matchesCategory && matchesSearch) {
+        card.classList.remove('hidden');
+        card.classList.add('is-revealed');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
       }
-
-      // Update Result Counter
-      if (resultCountText) {
-        resultCountText.textContent = `Showing ${visibleCount} of ${totalCount} Careers`;
-      }
-    };
-
-    /**
-     * Resets both search input and category filter back to default
-     */
-    const clearAllFilters = () => {
-      searchQuery = '';
-      currentCategory = 'all';
-
-      if (searchInput) {
-        searchInput.value = '';
-      }
-
-      filterButtons.forEach(btn => {
-        if (btn.getAttribute('data-category') === 'all') {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-
-      filterCareers();
-    };
-
-    // Live Search Input Listener
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim().toLowerCase();
-        filterCareers();
-      });
-    }
-
-    // Category Filter Buttons Listener
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = (btn.getAttribute('data-category') || 'all').toLowerCase();
-        filterCareers();
-      });
     });
 
-    // Clear Filters Button Listeners
-    if (clearFiltersBtn) {
-      clearFiltersBtn.addEventListener('click', clearAllFilters);
-    }
-    if (resetSearchBtn) {
-      resetSearchBtn.addEventListener('click', clearAllFilters);
+    if (resultsCountEl) {
+      const totalCount = careerCards.length;
+      if (activeCategory === 'all' && normalizedQuery === '') {
+        resultsCountEl.textContent = `Showing all ${totalCount} career pathways`;
+      } else {
+        resultsCountEl.textContent = `Showing ${visibleCount} of ${totalCount} career pathways`;
+      }
     }
 
-    // Initialize result count
-    filterCareers();
+    if (clearSearchBtn) {
+      const hasActiveFilter = activeCategory !== 'all' || normalizedQuery !== '';
+      clearSearchBtn.classList.toggle('hidden', !hasActiveFilter);
+    }
+
+    if (emptyStateEl) {
+      if (visibleCount === 0) {
+        emptyStateEl.classList.remove('hidden');
+      } else {
+        emptyStateEl.classList.add('hidden');
+      }
+    }
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialCategory = (urlParams.get('category') || '').toLowerCase().trim();
+  const initialSearch = (urlParams.get('search') || '').trim();
+
+  if (initialCategory) {
+    const matchingBtn = Array.from(filterButtons).find(
+      (btn) => (btn.getAttribute('data-filter') || '').toLowerCase() === initialCategory
+    );
+    if (matchingBtn) {
+      activeCategory = initialCategory;
+      setActiveCategoryButton(activeCategory);
+    }
   }
 
-  /* ==========================================================================
-     2. Career Details Page (career-details.html) Navigation & URL Handler
-     ========================================================================== */
-  const careerArticles = document.querySelectorAll('.career-detail-article');
-  const roleJumpLinks = document.querySelectorAll('.role-switcher-btn');
+  if (initialSearch && searchInput) {
+    searchInput.value = initialSearch;
+    searchQuery = initialSearch;
+  }
 
-  if (careerArticles.length > 0) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramCareer = urlParams.get('career');
-    const hashCareer = window.location.hash.replace('#', '');
-    const targetCareerId = paramCareer || hashCareer;
+  if (searchInput) {
+    searchInput.addEventListener('input', (event) => {
+      searchQuery = event.target.value;
+      filterCards();
+    });
+  }
 
-    const highlightActiveCareer = (targetId) => {
-      if (!targetId) return;
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeCategory = button.getAttribute('data-filter') || 'all';
+      setActiveCategoryButton(activeCategory);
+      filterCards();
+    });
+  });
 
-      roleJumpLinks.forEach(link => {
-        const linkTarget = link.getAttribute('data-target') || link.getAttribute('href').replace('#', '');
-        if (linkTarget === targetId) {
-          link.classList.add('active');
-          link.style.backgroundColor = 'var(--primary-color)';
-          link.style.color = '#ffffff';
-          link.style.borderColor = 'var(--primary-color)';
-        } else {
-          link.classList.remove('active');
-          link.style.backgroundColor = '#ffffff';
-          link.style.color = 'var(--secondary-color)';
-          link.style.borderColor = 'var(--border-color)';
-        }
-      });
+  const resetAllFilters = () => {
+    activeCategory = 'all';
+    searchQuery = '';
+    if (searchInput) {
+      searchInput.value = '';
+    }
+    setActiveCategoryButton('all');
+    filterCards();
+  };
 
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
+  if (resetFilterBtn) {
+    resetFilterBtn.addEventListener('click', () => {
+      resetAllFilters();
+      if (searchInput) searchInput.focus();
+    });
+  }
+
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', resetAllFilters);
+  }
+
+  filterCards();
+}
+
+/**
+ * 2. Career Details Role Switcher & Deep-Linking (career-details.html)
+ */
+function initCareerDetailsNavigation() {
+  const roleNavLinks = document.querySelectorAll('.role-switcher-btn');
+  const careerSections = document.querySelectorAll('.career-detail-section');
+
+  if (roleNavLinks.length === 0 || careerSections.length === 0) return;
+
+  const setActiveRoleLink = (targetId) => {
+    roleNavLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href === `#${targetId}`) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const handleInitialHash = () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      const targetSection = document.getElementById(hash);
+      if (targetSection) {
+        setActiveRoleLink(hash);
         setTimeout(() => {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const headerOffset = 136;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }, 100);
       }
+    } else if (careerSections[0]) {
+      setActiveRoleLink(careerSections[0].id);
+    }
+  };
+
+  handleInitialHash();
+  window.addEventListener('hashchange', handleInitialHash);
+
+  if ('IntersectionObserver' in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-25% 0px -65% 0px',
+      threshold: 0,
     };
 
-    if (targetCareerId) {
-      highlightActiveCareer(targetCareerId);
-    }
-
-    roleJumpLinks.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target') || btn.getAttribute('href').replace('#', '');
-        highlightActiveCareer(targetId);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveRoleLink(entry.target.id);
+        }
       });
-    });
-  }
+    }, observerOptions);
 
-});
+    careerSections.forEach((section) => observer.observe(section));
+  }
+}

@@ -3,37 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Detailed IT career profiles for Software Engineer, Data Analyst, Data Engineer, Cybersecurity Analyst, and UI/UX Designer. Learn job roles, technical skills, tools, and entry-level opportunities in Sri Lanka.">
-  <meta name="keywords" content="Software engineer career, Data analyst skills, Data engineer role, Cybersecurity analyst Sri Lanka, UI UX designer career, university IT degree">
-  <meta name="author" content="PathFinder LK Group">
-  
-  <meta property="og:title" content="Career Details &amp; Specialization Profiles | PathFinder LK">
-  <meta property="og:description" content="In-depth role overviews, technical skills, soft skills, common tools, learning paths, and entry-level job opportunities in Sri Lanka.">
+  <meta name="description" content="In-depth career profiles for Sri Lankan university students: responsibilities, required technical and soft skills, beginner tools, learning sequence, project ideas, and career progression across 15 IT, Business, Finance, Marketing, Creative & Engineering roles.">
+  <meta name="keywords" content="software engineer career guide, full-stack developer, cloud devops engineer, data analyst, data engineer, data scientist, cybersecurity analyst, UI UX designer, QA engineer, business analyst, product manager, digital marketing, financial analyst, multimedia designer, robotics IoT Sri Lanka">
+  <meta name="author" content="PathFinder LK Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="In-Depth Career Details & Skill Guides (15 Pathways) | PathFinder LK">
+  <meta property="og:description" content="Explore responsibilities, required technical stacks, project ideas, and career progression for 15 major IT, Business, Finance, Creative, and Engineering pathways.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pathfinderlk.github.io/career-details.html">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
-  
-  <title>PathFinder LK | Career Details &amp; Specialization Profiles</title>
-  
+  <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/career-details.html">
+  <meta property="og:image" content="assets/images/photos/hero-campus.jpg">
+
+  <!-- Mobile Web App & PWA Capability -->
+  <meta name="theme-color" content="#060b16">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PathFinderLK">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <title>Career Details &amp; Skill Guides | PathFinder LK - 15 In-Depth Profiles</title>
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
+
   <!-- Immediate Theme Engine Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/careers.js" defer></script>
 </head>
 <body>
-  <!-- Accessibility Skip Link -->
+  <!-- Glassmorphic Branded Loading Screen -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+      </div>
+      <div class="loader-brand">PathFinder <span>LK</span></div>
+      <div class="loader-subtext">Loading 15 Comprehensive Career Profiles...</div>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percent" aria-hidden="true">8%</div>
+    </div>
+  </div>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header -->
+  <!-- 1. NAVIGATION BAR -->
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
@@ -41,23 +71,22 @@
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
 
-      <!-- Primary Navigation Menu -->
       <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="careers.html" class="nav-link active">Explore Careers</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link active" aria-current="page">Explore Careers</a></li>
           <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
           <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Community &amp; FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
           <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
           <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+          <span class="theme-label">Dark</span>
         </button>
 
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -67,805 +96,1731 @@
     </div>
   </header>
 
-  <!-- Main Content Landmark -->
   <main id="main-content" class="main-content" role="main">
-    
-    <!-- Page Header Banner -->
-    <section class="page-header" aria-labelledby="details-page-title">
+
+    <!-- 2. PAGE HERO -->
+    <section class="page-hero" aria-labelledby="details-page-heading">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <ol class="breadcrumb-list">
-            <li><a href="index.html">Home</a> &gt;</li>
-            <li><a href="careers.html">Explore Careers</a> &gt;</li>
-            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Career Details</li>
-          </ol>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="careers.html">Explore Careers</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Career Details</span>
         </nav>
-        <h1 id="details-page-title">Detailed Career Specialization Profiles</h1>
-        <p style="color: var(--text-secondary); max-width: 820px; font-size: 1.1rem;">
-          In-depth guides designed for university undergraduates. Examine primary job roles, day-to-day responsibilities, technical requirements, essential soft skills, recommended degree modules, and entry-level pathways in Sri Lanka.
+        <h1 id="details-page-heading">In-Depth Career Profiles &amp; Skill Guides (15 Tracks)</h1>
+        <p class="page-hero-desc">
+          Everything you need to know about each of our 15 career pathways across IT, Business, Product Management, Finance, Digital Marketing, Creative Media, and Robotics/IoT: core responsibilities, technical &amp; soft skills, beginner tools, portfolio project ideas, and career progression.
         </p>
       </div>
     </section>
 
-    <!-- Quick Role Switcher Navigation Bar -->
-    <section class="role-switcher-bar" aria-label="Role Switcher">
-      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
-        <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">Select Career Profile:</span>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <a href="#software-engineer" class="btn btn-secondary btn-sm role-switcher-btn active" data-target="software-engineer">Software Engineer</a>
-          <a href="#data-analyst" class="btn btn-secondary btn-sm role-switcher-btn" data-target="data-analyst">Data Analyst</a>
-          <a href="#data-engineer" class="btn btn-secondary btn-sm role-switcher-btn" data-target="data-engineer">Data Engineer</a>
-          <a href="#cybersecurity" class="btn btn-secondary btn-sm role-switcher-btn" data-target="cybersecurity">Cybersecurity Analyst</a>
-          <a href="#ui-ux" class="btn btn-secondary btn-sm role-switcher-btn" data-target="ui-ux">UI/UX Designer</a>
+    <!-- 3. STICKY SUB-NAVIGATION FOR 15 ROLES -->
+    <nav class="role-switcher-bar" aria-label="Jump to specific career profile">
+      <div class="container">
+        <div class="role-switcher-list">
+          <a href="#software-engineer" class="filter-btn role-switcher-btn active">1. Software Engineer</a>
+          <a href="#fullstack-developer" class="filter-btn role-switcher-btn">2. Full-Stack Dev</a>
+          <a href="#cloud-devops" class="filter-btn role-switcher-btn">3. Cloud &amp; DevOps</a>
+          <a href="#data-analyst" class="filter-btn role-switcher-btn">4. Data Analyst</a>
+          <a href="#data-engineer" class="filter-btn role-switcher-btn">5. Data Engineer</a>
+          <a href="#data-scientist" class="filter-btn role-switcher-btn">6. Data Scientist &amp; AI</a>
+          <a href="#cybersecurity" class="filter-btn role-switcher-btn">7. Cybersecurity</a>
+          <a href="#ui-ux" class="filter-btn role-switcher-btn">8. UI/UX Designer</a>
+          <a href="#qa-engineer" class="filter-btn role-switcher-btn">9. QA &amp; Automation</a>
+          <a href="#business-analyst" class="filter-btn role-switcher-btn">10. Business Analyst &amp; PM</a>
+          <a href="#product-manager" class="filter-btn role-switcher-btn">11. Product Manager</a>
+          <a href="#digital-marketing" class="filter-btn role-switcher-btn">12. Digital Marketing</a>
+          <a href="#financial-analyst" class="filter-btn role-switcher-btn">13. Finance &amp; FinTech</a>
+          <a href="#multimedia-designer" class="filter-btn role-switcher-btn">14. Creative Multimedia</a>
+          <a href="#robotics-iot" class="filter-btn role-switcher-btn">15. Robotics &amp; IoT</a>
         </div>
       </div>
-    </section>
+    </nav>
 
-    <!-- Detailed Career Articles Container -->
-    <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
-      
-      <!-- ====================================================================
+    <div class="container section">
+
+      <!-- ==================================================================
            CAREER 1: SOFTWARE ENGINEER
-           ==================================================================== -->
-      <article id="software-engineer" class="card career-detail-article" style="margin-bottom: 3.5rem; scroll-margin-top: 140px; padding: 2.5rem;">
-        
-        <!-- Header & Identity -->
-        <header style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-          <div class="career-icon-wrapper" style="width: 80px; height: 80px; background-color: rgba(2, 132, 199, 0.12);">
-            <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer icon" width="56" height="56">
+           ================================================================== -->
+      <section id="software-engineer" class="career-detail-section" aria-labelledby="se-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer Icon" width="60" height="60">
           </div>
-          <div>
-            <span class="badge badge-blue">Development &amp; Architecture</span>
-            <h2 style="font-size: 2.15rem; margin-top: 0.35rem; margin-bottom: 0.25rem;">1. Software Engineer</h2>
-            <p style="color: var(--text-muted); margin: 0; font-size: 1.05rem;">
-              Building robust, scalable, and maintainable software applications for web, mobile, and enterprise environments.
+          <div class="detail-title-group">
+            <span class="badge badge-blue">Software Development &amp; Systems</span>
+            <h2 id="se-title" style="margin-top: 0.5rem;">Software Engineer</h2>
+            <p class="detail-tagline">
+              Design, build, test, and scale reliable software applications, distributed backend services, and enterprise APIs.
             </p>
           </div>
-        </header>
-
-        <!-- 1. Career Introduction -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">1. Career Introduction</h3>
-          <p>
-            Software Engineering represents the systematic application of engineering principles, computational logic, and design patterns to the creation of software systems. In Sri Lanka, the software engineering sector forms the largest portion of the ICT export industry, servicing international clients in North America, Europe, Australia, and Asia across domains such as financial services, telecommunications, travel, and healthcare.
-          </p>
-        </section>
-
-        <!-- 2. Job Role -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">2. Job Role</h3>
-          <p>
-            A Software Engineer transforms business specifications and user stories into functioning, secure, and bug-free code. Working as part of an agile software engineering sprint team, they collaborate directly with quality assurance (QA) engineers, UI/UX designers, tech leads, and product owners to design, implement, test, and release digital features.
-          </p>
-        </section>
-
-        <!-- 3. Main Responsibilities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">3. Main Responsibilities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li>Writing clean, efficient, and well-commented code following established object-oriented and functional paradigms.</li>
-            <li>Designing and consuming RESTful and GraphQL APIs for front-end and microservice communication.</li>
-            <li>Participating actively in agile ceremonies: daily stand-ups, sprint planning, and retrospective meetings.</li>
-            <li>Conducting thorough peer code reviews to maintain code quality and prevent software regressions.</li>
-            <li>Writing automated unit and integration tests using frameworks like JUnit, Jest, or PyTest.</li>
-            <li>Diagnosing, debugging, and resolving software defects reported in testing and production environments.</li>
-            <li>Managing source code branches, resolving merge conflicts, and participating in CI/CD deployment pipelines.</li>
-          </ul>
-        </section>
-
-        <!-- 4. Required Technical Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">4. Required Technical Skills</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Programming &amp; Paradigms</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Solid grasp of Object-Oriented Programming (OOP), Data Structures (arrays, trees, graphs), and Algorithm Complexity (Big O notation).</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Web Foundations &amp; APIs</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">HTTP protocol, status codes, REST architecture, JSON serialization, client-server communication, and state management.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Databases &amp; Storage</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Relational schema design, writing complex SQL queries (joins, indexing), ORMs (Hibernate, Prisma), and basic NoSQL concepts.</p>
-            </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=software-engineer" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=programming" class="btn btn-outline">Free Coding Courses</a>
           </div>
-        </section>
-
-        <!-- 5. Required Soft Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">5. Required Soft Skills</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Analytical Problem-Solving:</strong> Breaking complex business requirements into smaller, logically sound algorithmic steps.</li>
-            <li><strong>Collaborative Communication:</strong> Explaining technical decisions clearly to non-technical stakeholders and receiving feedback productively.</li>
-            <li><strong>Continuous Learning Mindset:</strong> Eagerness to explore modern frameworks, libraries, and best practices as industry tooling updates.</li>
-            <li><strong>Attention to Detail:</strong> Thoroughness in catching edge cases, validating user inputs, and writing reliable code.</li>
-          </ul>
-        </section>
-
-        <!-- 6. Common Tools and Technologies -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">6. Common Tools and Technologies</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            <span class="skill-tag">Java (Spring Boot)</span>
-            <span class="skill-tag">JavaScript / TypeScript</span>
-            <span class="skill-tag">Python (Django / FastAPI)</span>
-            <span class="skill-tag">C# (.NET Core)</span>
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Node.js / Express</span>
-            <span class="skill-tag">PostgreSQL / MySQL</span>
-            <span class="skill-tag">Git / GitHub</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">VS Code / IntelliJ IDEA</span>
-          </div>
-        </section>
-
-        <!-- 7. Educational Background or Learning Path -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">7. Educational Background or Learning Path</h3>
-          <p>
-            <strong>University Background:</strong> Bachelor's degree in Software Engineering, Computer Science, Information Systems (IS), or Information Technology (IT) from state or private universities in Sri Lanka.
-          </p>
-          <p>
-            <strong>Key Academic Modules:</strong> Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), Database Management Systems (DBMS), Web Application Development, Software Architecture &amp; Design.
-          </p>
-          <p>
-            <strong>Practical Milestone:</strong> Constructing 2–3 full-stack capstone projects during your university studies and committing clean code with documentation to your public GitHub profile.
-          </p>
-        </section>
-
-        <!-- 8. Career Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">8. Career Opportunities</h3>
-          <p>
-            Software engineering graduates enjoy widespread employment opportunities across local tier-1 software exporters, banking technology divisions, international remote tech firms, and local tech startups.
-          </p>
-          <p>
-            <strong>Long-term Career Ladder:</strong><br>
-            Trainee / Intern &rarr; Associate Software Engineer (ASE) &rarr; Software Engineer (SE) &rarr; Senior Software Engineer (SSE) &rarr; Technical Lead &rarr; Solutions Architect or Engineering Manager.
-          </p>
-        </section>
-
-        <!-- 9. Entry-Level Job Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: var(--primary-color); font-size: 1.25rem; margin-bottom: 0.5rem;">9. Entry-Level Job Opportunities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Software Engineering Intern:</strong> Standard 6-month placement undertaken in the 3rd year of university degrees.</li>
-            <li><strong>Trainee Software Engineer:</strong> Fast-track development programs for fresh university graduates.</li>
-            <li><strong>Associate Software Engineer (ASE):</strong> Core entry-level position responsible for building production features under mentorship.</li>
-            <li><strong>Junior Frontend / Backend Developer:</strong> Specialized entry roles focusing specifically on user interfaces or backend microservices.</li>
-          </ul>
-        </section>
-
-        <!-- Action Links -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <a href="roadmaps.html" class="btn btn-primary btn-sm">View Software Engineering Roadmap &rarr;</a>
-          <a href="resources.html" class="btn btn-secondary btn-sm">Access Free Study Resources</a>
-          <a href="careers.html" class="btn btn-secondary btn-sm">&larr; Back to Career Catalog</a>
         </div>
 
-      </article>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128187;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Software Engineers apply computer science principles and engineering practices to build software systems that solve real-world problems. In Sri Lanka's technology sector—spanning global product companies, fintech leaders, and export engineering hubs—Software Engineers form the largest and most versatile hiring group for university graduates.
+              </p>
+              <ul class="detail-list">
+                <li>Write clean, maintainable, and well-documented code using languages such as Java, Python, C#, or TypeScript.</li>
+                <li>Design and build RESTful APIs, microservices, and backend business logic that power web and mobile products.</li>
+                <li>Model relational and NoSQL databases, optimize queries, and ensure data integrity under concurrent traffic.</li>
+                <li>Write automated unit and integration tests and participate in peer code reviews via Git/GitHub pull requests.</li>
+                <li>Debug production issues, profile performance bottlenecks, and collaborate in Agile/Scrum sprint teams.</li>
+              </ul>
+            </div>
 
-      <!-- ====================================================================
-           CAREER 2: DATA ANALYST
-           ==================================================================== -->
-      <article id="data-analyst" class="card career-detail-article" style="margin-bottom: 3.5rem; scroll-margin-top: 140px; padding: 2.5rem;">
-        
-        <!-- Header & Identity -->
-        <header style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-          <div class="career-icon-wrapper" style="width: 80px; height: 80px; background-color: rgba(16, 185, 129, 0.12);">
-            <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst icon" width="56" height="56">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">OOP Principles</span>
+                    <span class="tag">Data Structures &amp; Algorithms</span>
+                    <span class="tag">Java / Python / C#</span>
+                    <span class="tag">RESTful APIs</span>
+                    <span class="tag">SQL (PostgreSQL / MySQL)</span>
+                    <span class="tag">Git &amp; GitHub</span>
+                    <span class="tag">Unit Testing (JUnit / PyTest)</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">VS Code / IntelliJ IDEA</span>
+                    <span class="tag">Python 3 or Java LTS</span>
+                    <span class="tag">Spring Boot / FastAPI</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Postman API Client</span>
+                    <span class="tag">Docker Basics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>University Library &amp; Book Reservation REST API:</strong> Build a backend service with Spring Boot or FastAPI featuring JWT authentication, role-based access, due-date fine calculation, and PostgreSQL persistence.</li>
+                <li><strong>Personal Expense &amp; Budget Tracker CLI/Web App:</strong> Create a modular CRUD application that categorizes student expenses, exports monthly CSV reports, and includes unit tests.</li>
+                <li><strong>URL Shortener &amp; Click Analytics Service:</strong> Design a fast microservice that generates short links, redirects users, and tracks click timestamps in a relational database.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="badge badge-green">Business Intelligence &amp; Analytics</span>
-            <h2 style="font-size: 2.15rem; margin-top: 0.35rem; margin-bottom: 0.25rem;">2. Data Analyst</h2>
-            <p style="color: var(--text-muted); margin: 0; font-size: 1.05rem;">
-              Translating organizational data into actionable business intelligence, interactive dashboards, and strategic growth insights.
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Analytical Problem-Solving:</strong> Breaking complex requirements into modular functions.</li>
+                <li><strong>Code Review Communication:</strong> Giving and receiving constructive technical feedback.</li>
+                <li><strong>Continuous Learning:</strong> Adapting to new frameworks and architectural patterns.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master one core language (Python or Java) + OOP.</li>
+                <li>Learn Git version control &amp; Linux CLI basics.</li>
+                <li>Study Data Structures, Algorithms &amp; SQL databases.</li>
+                <li>Build REST APIs with a backend framework + unit tests.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Software Engineering Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Software Engineer (ASE)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Software Engineer (SE)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior SE &rarr; Tech Lead / Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 2: FULL-STACK WEB DEVELOPER
+           ================================================================== -->
+      <section id="fullstack-developer" class="career-detail-section" aria-labelledby="fs-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-cyan">End-to-End Web Engineering</span>
+            <h2 id="fs-title" style="margin-top: 0.5rem;">Full-Stack Web Developer</h2>
+            <p class="detail-tagline">
+              Build complete web products from responsive React and TypeScript interfaces to Node.js backend APIs and databases.
             </p>
           </div>
-        </header>
-
-        <!-- 1. Career Introduction -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">1. Career Introduction</h3>
-          <p>
-            Data Analysis is the practice of inspecting, cleansing, transforming, and modeling data to discover useful patterns, inform conclusions, and support business decision-making. In Sri Lanka, organizations across banking, telecommunications, retail, and FMCG sectors rely on Data Analysts to understand market demands, track KPIs, and identify operational bottlenecks.
-          </p>
-        </section>
-
-        <!-- 2. Job Role -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">2. Job Role</h3>
-          <p>
-            A Data Analyst acts as the bridge between technical database architectures and non-technical business managers. They query databases, build intuitive visual dashboards, evaluate historical trends, and prepare concise reports that guide leadership decisions.
-          </p>
-        </section>
-
-        <!-- 3. Main Responsibilities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">3. Main Responsibilities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li>Writing efficient SQL queries to extract, filter, join, and aggregate transactional datasets from enterprise databases.</li>
-            <li>Cleaning, validating, and preprocessing messy raw datasets to remove errors, anomalies, and duplicates.</li>
-            <li>Designing interactive visual reporting dashboards in Microsoft Power BI, Tableau, or Google Looker Studio.</li>
-            <li>Calculating key performance indicators (KPIs) and performing trend and cohort analyses.</li>
-            <li>Conducting exploratory data analysis (EDA) using Python libraries to spot statistical correlations.</li>
-            <li>Presenting visual findings in clear, non-technical language to management and department heads.</li>
-            <li>Automating weekly and monthly reporting processes to eliminate manual spreadsheet maintenance.</li>
-          </ul>
-        </section>
-
-        <!-- 4. Required Technical Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">4. Required Technical Skills</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Advanced Relational SQL</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Mastery of multi-table joins, subqueries, grouping, aggregate functions, and window functions (RANK, ROW_NUMBER).</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Data Visualization &amp; BI</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Designing clean dashboards in Power BI or Tableau; DAX measures, data modeling, and relationship cardinality.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Statistics &amp; Scripting</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Descriptive statistics (variance, correlation, standard deviation), and data wrangling using Python (Pandas, NumPy).</p>
-            </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=fullstack-developer" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=programming" class="btn btn-outline">Free Web Dev Courses</a>
           </div>
-        </section>
-
-        <!-- 5. Required Soft Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">5. Required Soft Skills</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Data Storytelling:</strong> Ability to explain what the numbers mean in practical, commercial terms rather than technical jargon.</li>
-            <li><strong>Commercial Curiosity:</strong> Asking the right questions about why business numbers rise or fall.</li>
-            <li><strong>Meticulous Accuracy:</strong> Verifying data integrity so that company decisions are based on verified facts.</li>
-            <li><strong>Effective Presentation:</strong> Presenting dashboard insights confidently to diverse teams.</li>
-          </ul>
-        </section>
-
-        <!-- 6. Common Tools and Technologies -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">6. Common Tools and Technologies</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            <span class="skill-tag">Microsoft Power BI</span>
-            <span class="skill-tag">SQL (PostgreSQL / MSSQL)</span>
-            <span class="skill-tag">Advanced Microsoft Excel (VLOOKUP, Pivot)</span>
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Python (Pandas, NumPy, Matplotlib)</span>
-            <span class="skill-tag">Jupyter Notebooks</span>
-            <span class="skill-tag">Google Looker Studio</span>
-          </div>
-        </section>
-
-        <!-- 7. Educational Background or Learning Path -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">7. Educational Background or Learning Path</h3>
-          <p>
-            <strong>University Background:</strong> Degree in Information Systems (IS), Business Information Technology (BIT), Statistics, Data Science, or Computer Science.
-          </p>
-          <p>
-            <strong>Key Academic Modules:</strong> Database Management Systems (DBMS), Business Statistics, Business Intelligence, Data Mining, and Quantitative Research Methods.
-          </p>
-          <p>
-            <strong>Practical Milestone:</strong> Completing public dataset analyses (e.g. Sri Lankan trade or tourism statistics) on Kaggle and sharing interactive Power BI reports.
-          </p>
-        </section>
-
-        <!-- 8. Career Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">8. Career Opportunities</h3>
-          <p>
-            Strong demand across commercial banks, digital payment networks, telecommunications operators, logistics providers, and IT consultancies.
-          </p>
-          <p>
-            <strong>Long-term Career Ladder:</strong><br>
-            Data Analyst Intern &rarr; Junior Data / BI Analyst &rarr; Data Analyst &rarr; Senior Data Analyst &rarr; Business Intelligence Lead &rarr; Head of Analytics.
-          </p>
-        </section>
-
-        <!-- 9. Entry-Level Job Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #059669; font-size: 1.25rem; margin-bottom: 0.5rem;">9. Entry-Level Job Opportunities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Data Analyst Intern:</strong> Assisting senior analysts with query extraction, spreadsheet verification, and report formatting.</li>
-            <li><strong>Junior Business Intelligence Analyst:</strong> Designing routine KPI dashboards and validating source database feeds.</li>
-            <li><strong>MIS / Reporting Trainee:</strong> Managing scheduled company operational reports in enterprise environments.</li>
-          </ul>
-        </section>
-
-        <!-- Action Links -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <a href="roadmaps.html" class="btn btn-primary btn-sm">View Data Analyst Roadmap &rarr;</a>
-          <a href="resources.html" class="btn btn-secondary btn-sm">Access Free Study Resources</a>
-          <a href="careers.html" class="btn btn-secondary btn-sm">&larr; Back to Career Catalog</a>
         </div>
 
-      </article>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#127760;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Full-Stack Web Developers bridge frontend user experience and backend server engineering. Because they can take a product feature from a Figma design all the way to a database table and deployed URL, Full-Stack Developers are in high demand across SaaS companies, digital agencies, and startups in Sri Lanka and remotely worldwide.
+              </p>
+              <ul class="detail-list">
+                <li>Build responsive, accessible user interfaces using semantic HTML5, modern CSS (Grid/Flexbox/Tailwind), React, and TypeScript.</li>
+                <li>Develop server-side APIs, authentication flows (OAuth/JWT), and business logic using Node.js, Express, or Next.js.</li>
+                <li>Design relational database schemas in PostgreSQL or MySQL using ORMs like Prisma or Drizzle.</li>
+                <li>Optimize web performance (Core Web Vitals), state management, and client-server data fetching.</li>
+                <li>Deploy full-stack applications to cloud platforms with automated preview builds and environment configuration.</li>
+              </ul>
+            </div>
 
-      <!-- ====================================================================
-           CAREER 3: DATA ENGINEER
-           ==================================================================== -->
-      <article id="data-engineer" class="card career-detail-article" style="margin-bottom: 3.5rem; scroll-margin-top: 140px; padding: 2.5rem;">
-        
-        <!-- Header & Identity -->
-        <header style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-          <div class="career-icon-wrapper" style="width: 80px; height: 80px; background-color: rgba(245, 158, 11, 0.12);">
-            <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer icon" width="56" height="56">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">HTML5 &amp; CSS3 (Grid/Flex)</span>
+                    <span class="tag">JavaScript (ES6+) &amp; TypeScript</span>
+                    <span class="tag">React / Next.js</span>
+                    <span class="tag">Node.js &amp; Express</span>
+                    <span class="tag">PostgreSQL &amp; Prisma ORM</span>
+                    <span class="tag">REST APIs &amp; Auth</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">VS Code &amp; Browser DevTools</span>
+                    <span class="tag">Vite + React</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Node.js LTS</span>
+                    <span class="tag">Supabase / PostgreSQL</span>
+                    <span class="tag">Git &amp; Vercel / Render</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>University Kuppi &amp; Study Group Finder Platform:</strong> A full-stack React + Node.js web app where students create study sessions by module, RSVP, and share revision notes.</li>
+                <li><strong>Kanban Project &amp; Assignment Tracker:</strong> An interactive board with drag-and-drop task columns, deadline filters, dark mode, and persistent PostgreSQL storage.</li>
+                <li><strong>Local SME Appointment &amp; Inventory Portal:</strong> A responsive web dashboard with role-based login for customers and store administrators.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="badge badge-amber">Big Data &amp; Pipelines</span>
-            <h2 style="font-size: 2.15rem; margin-top: 0.35rem; margin-bottom: 0.25rem;">3. Data Engineer</h2>
-            <p style="color: var(--text-muted); margin: 0; font-size: 1.05rem;">
-              Designing, building, and maintaining automated data pipelines, cloud warehouses, and big data infrastructure.
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Product Mindset:</strong> Caring about both user experience and backend reliability.</li>
+                <li><strong>Cross-Functional Collaboration:</strong> Working seamlessly with UI/UX designers and QA engineers.</li>
+                <li><strong>Rapid Prototyping:</strong> Turning ideas into testable web MVPs quickly.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master HTML5, CSS Flexbox/Grid &amp; Vanilla JavaScript DOM.</li>
+                <li>Learn TypeScript, Git &amp; React component architecture.</li>
+                <li>Build backend APIs with Node.js, Express &amp; PostgreSQL.</li>
+                <li>Combine frontend + backend with Auth &amp; deploy live.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Full-Stack / Web Developer Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Full-Stack Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Full-Stack Software Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Full-Stack &rarr; Staff / Product Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 3: CLOUD & DEVOPS ENGINEER
+           ================================================================== -->
+      <section id="cloud-devops" class="career-detail-section" aria-labelledby="cloud-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/cloud-devops.svg" alt="Cloud & DevOps Engineer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-teal">Cloud Infrastructure &amp; SRE</span>
+            <h2 id="cloud-title" style="margin-top: 0.5rem;">Cloud &amp; DevOps Engineer</h2>
+            <p class="detail-tagline">
+              Automate CI/CD software delivery, orchestrate Docker &amp; Kubernetes containers, and architect resilient AWS/Azure cloud infrastructure.
             </p>
           </div>
-        </header>
-
-        <!-- 1. Career Introduction -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">1. Career Introduction</h3>
-          <p>
-            Data Engineering is the discipline responsible for constructing the foundational data plumbing that organizations depend upon. Before a Data Analyst can visualize numbers or a Machine Learning model can be trained, Data Engineers must build scalable, fault-tolerant pipelines that collect, clean, and organize millions of data records from diverse source systems.
-          </p>
-        </section>
-
-        <!-- 2. Job Role -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">2. Job Role</h3>
-          <p>
-            A Data Engineer builds and manages automated data extraction, transformation, and loading (ETL/ELT) workflows. They ensure that high volumes of real-time and batch data flow seamlessly into centralized cloud data warehouses while upholding strict data quality, governance, and security standards.
-          </p>
-        </section>
-
-        <!-- 3. Main Responsibilities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">3. Main Responsibilities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li>Architecting, developing, and operating automated ETL/ELT pipelines using Apache Airflow and Python.</li>
-            <li>Designing optimized data models (Star and Snowflake schemas) for cloud warehouses like Snowflake or BigQuery.</li>
-            <li>Writing distributed computing transformations using Apache Spark and PySpark.</li>
-            <li>Converting unstructured and semi-structured data (JSON, CSV, logs) into optimized columnar formats (Parquet).</li>
-            <li>Monitoring pipeline latency, failure rates, and resource utilization to prevent processing downtime.</li>
-            <li>Implementing data validation tests and quality checks within pipeline transformations.</li>
-            <li>Collaborating with software engineers to ingest transactional database changes via Change Data Capture (CDC).</li>
-          </ul>
-        </section>
-
-        <!-- 4. Required Technical Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">4. Required Technical Skills</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Pipeline Programming</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Proficiency in Python, SQL, or Scala for writing data extraction scripts and pipeline orchestrations.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Distributed Computing &amp; ETL</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Knowledge of Apache Spark, PySpark, Airflow DAGs, batch processing vs. stream processing.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Cloud Data Warehousing</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Dimensional modeling, partitioning, clustering, and storage schemas in Snowflake, BigQuery, or Redshift.</p>
-            </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=cloud-devops" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=cloud" class="btn btn-outline">Free Cloud Courses</a>
           </div>
-        </section>
-
-        <!-- 5. Required Soft Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">5. Required Soft Skills</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Systems-Level Thinking:</strong> Envisioning end-to-end data flows, bandwidth constraints, and potential failure points.</li>
-            <li><strong>Patience &amp; Root-Cause Debugging:</strong> Systematically tracking down silent data corruptions or pipeline schema mismatches.</li>
-            <li><strong>Cross-Team Coordination:</strong> Collaborating with data analysts to understand reporting schema requirements.</li>
-          </ul>
-        </section>
-
-        <!-- 6. Common Tools and Technologies -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">6. Common Tools and Technologies</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            <span class="skill-tag">Python (PySpark)</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Apache Airflow</span>
-            <span class="skill-tag">Apache Spark</span>
-            <span class="skill-tag">Snowflake</span>
-            <span class="skill-tag">Google BigQuery</span>
-            <span class="skill-tag">AWS (S3, Glue, Athena)</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Linux / Bash</span>
-            <span class="skill-tag">Git</span>
-          </div>
-        </section>
-
-        <!-- 7. Educational Background or Learning Path -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">7. Educational Background or Learning Path</h3>
-          <p>
-            <strong>University Background:</strong> Degree in Computer Science, Software Engineering, Information Technology, or Data Science.
-          </p>
-          <p>
-            <strong>Key Academic Modules:</strong> Advanced Database Management, Operating Systems, Distributed Systems, Cloud Computing, Algorithm Design.
-          </p>
-          <p>
-            <strong>Practical Milestone:</strong> Constructing an end-to-end automated data pipeline that pulls data from an open web API, transforms it in Python, and loads it into a cloud database.
-          </p>
-        </section>
-
-        <!-- 8. Career Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">8. Career Opportunities</h3>
-          <p>
-            Surging demand as Sri Lankan tech enterprises expand their cloud infrastructure and international clients migrate legacy databases to modern cloud architectures.
-          </p>
-          <p>
-            <strong>Long-term Career Ladder:</strong><br>
-            Data Engineering Intern &rarr; Associate Data Engineer &rarr; Data Engineer &rarr; Senior Data Engineer &rarr; Lead Data Architect.
-          </p>
-        </section>
-
-        <!-- 9. Entry-Level Job Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #d97706; font-size: 1.25rem; margin-bottom: 0.5rem;">9. Entry-Level Job Opportunities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Data Engineering Intern:</strong> Assisting with pipeline maintenance, SQL query optimization, and documentation.</li>
-            <li><strong>Associate Data Engineer:</strong> Building supervised pipeline components and writing transformation scripts.</li>
-            <li><strong>Junior Database / ETL Developer:</strong> Managing database migrations and routine data loads.</li>
-          </ul>
-        </section>
-
-        <!-- Action Links -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <a href="roadmaps.html" class="btn btn-primary btn-sm">View Data Engineer Roadmap &rarr;</a>
-          <a href="resources.html" class="btn btn-secondary btn-sm">Access Free Study Resources</a>
-          <a href="careers.html" class="btn btn-secondary btn-sm">&larr; Back to Career Catalog</a>
         </div>
 
-      </article>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#9729;&#65039;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Cloud &amp; DevOps Engineers sit at the intersection of software development and cloud systems operations. They eliminate manual server setup by writing Infrastructure as Code (IaC) and automated CI/CD pipelines so engineering teams can deploy code safely dozens of times a day with 99.9%+ uptime.
+              </p>
+              <ul class="detail-list">
+                <li>Design and automate Continuous Integration and Continuous Deployment (CI/CD) pipelines using GitHub Actions or GitLab CI.</li>
+                <li>Containerize applications using Docker and orchestrate scalable clusters with Kubernetes (EKS/AKS).</li>
+                <li>Provision cloud infrastructure (VPCs, compute, load balancers, managed databases) on AWS, Azure, or Google Cloud using Terraform.</li>
+                <li>Configure observability, centralized logging, and real-time alerting with Prometheus and Grafana.</li>
+                <li>Enforce cloud security best practices, IAM least-privilege policies, and automated disaster recovery backups.</li>
+              </ul>
+            </div>
 
-      <!-- ====================================================================
-           CAREER 4: CYBERSECURITY ANALYST
-           ==================================================================== -->
-      <article id="cybersecurity" class="card career-detail-article" style="margin-bottom: 3.5rem; scroll-margin-top: 140px; padding: 2.5rem;">
-        
-        <!-- Header & Identity -->
-        <header style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-          <div class="career-icon-wrapper" style="width: 80px; height: 80px; background-color: rgba(244, 63, 94, 0.12);">
-            <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst icon" width="56" height="56">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Linux System Admin</span>
+                    <span class="tag">Bash &amp; Python Scripting</span>
+                    <span class="tag">Networking (DNS, TCP/IP, TLS)</span>
+                    <span class="tag">Docker &amp; Kubernetes</span>
+                    <span class="tag">AWS / Azure Cloud</span>
+                    <span class="tag">Terraform (IaC)</span>
+                    <span class="tag">CI/CD (GitHub Actions)</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Ubuntu Linux (WSL2 / VM)</span>
+                    <span class="tag">Docker Desktop</span>
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">AWS Free Tier / Azure Student</span>
+                    <span class="tag">Terraform CLI</span>
+                    <span class="tag">Prometheus &amp; Grafana</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Multi-Container Docker &amp; Nginx Reverse Proxy Stack:</strong> Containerize a web frontend, Node/Python API, and PostgreSQL database with Docker Compose and automated health checks.</li>
+                <li><strong>Automated CI/CD Pipeline with GitHub Actions:</strong> Build a workflow that lints code, runs unit tests, builds a Docker image, scans for vulnerabilities, and deploys to a cloud VM on every push.</li>
+                <li><strong>Terraform Cloud Infrastructure Blueprint:</strong> Write reusable Terraform modules to provision a secure cloud VPC, subnet, security group, and web server automatically.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="badge badge-red">Security &amp; Defense</span>
-            <h2 style="font-size: 2.15rem; margin-top: 0.35rem; margin-bottom: 0.25rem;">4. Cybersecurity Analyst</h2>
-            <p style="color: var(--text-muted); margin: 0; font-size: 1.05rem;">
-              Protecting corporate networks, digital systems, and confidential information from unauthorized access, cyber threats, and attacks.
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Automation-First Mindset:</strong> Replacing manual repetitive tasks with reliable scripts.</li>
+                <li><strong>Calm Incident Troubleshooting:</strong> Diagnosing outages methodically under pressure.</li>
+                <li><strong>Cross-Team Empathy:</strong> Helping developers ship faster without friction.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master Linux CLI, Bash scripting &amp; computer networking.</li>
+                <li>Learn Git workflows &amp; containerize apps with Docker.</li>
+                <li>Build CI/CD pipelines with GitHub Actions &amp; AWS basics.</li>
+                <li>Learn Terraform (IaC), Kubernetes &amp; Grafana monitoring.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>DevOps / Cloud Engineering Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate DevOps / Cloud Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>DevOps Engineer / Site Reliability Engineer (SRE)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior SRE &rarr; Principal Cloud Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 4: DATA ANALYST
+           ================================================================== -->
+      <section id="data-analyst" class="career-detail-section" aria-labelledby="da-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-green">Data &amp; Business Intelligence</span>
+            <h2 id="da-title" style="margin-top: 0.5rem;">Data Analyst</h2>
+            <p class="detail-tagline">
+              Turn raw organizational data into clear statistical insights, visual KPI dashboards, and evidence-based business decisions.
             </p>
           </div>
-        </header>
-
-        <!-- 1. Career Introduction -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">1. Career Introduction</h3>
-          <p>
-            Cybersecurity is the discipline focused on protecting digital systems, networks, devices, and sensitive organizational data from unauthorized intrusion, theft, or sabotage. In Sri Lanka, the rapid growth of online banking, fintech platforms, government e-services, and cloud systems has made cybersecurity a critical national and commercial necessity.
-          </p>
-        </section>
-
-        <!-- 2. Job Role -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">2. Job Role</h3>
-          <p>
-            A Cybersecurity Analyst (often serving in a Security Operations Center - SOC) acts as a front-line defender. They monitor network traffic, evaluate security alerts, patch discovered vulnerabilities, enforce security protocols, and respond immediately to suspected security incidents.
-          </p>
-        </section>
-
-        <!-- 3. Main Responsibilities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">3. Main Responsibilities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li>Monitoring real-time network traffic and security event logs using SIEM software (Splunk, Elastic).</li>
-            <li>Triage and investigating security alerts to determine whether an activity is a false positive or an actual threat.</li>
-            <li>Conducting vulnerability scans on servers, web applications, and network devices using tools like Nessus or Nmap.</li>
-            <li>Assisting with incident response when malware, ransomware, or unauthorized intrusions occur.</li>
-            <li>Configuring and auditing firewalls, VPNs, and Endpoint Detection and Response (EDR) agents.</li>
-            <li>Analyzing phishing email reports and inspecting suspicious file attachments in sandboxed environments.</li>
-            <li>Drafting comprehensive incident post-mortem reports and conducting employee security awareness briefings.</li>
-          </ul>
-        </section>
-
-        <!-- 4. Required Technical Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">4. Required Technical Skills</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Networking Protocols</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Deep knowledge of the OSI model, TCP/IP, IP addressing, DNS, DHCP, SSL/TLS, and subnetting.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Operating System Hardening</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Proficiency in Linux terminal commands, permissions, Windows active directory, and security auditing.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Threat &amp; Attack Knowledge</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Understanding OWASP Top 10 web vulnerabilities (SQLi, XSS, CSRF), malware types, and MITRE ATT&amp;CK framework.</p>
-            </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=data-analyst" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=data" class="btn btn-outline">Free Data Courses</a>
           </div>
-        </section>
-
-        <!-- 5. Required Soft Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">5. Required Soft Skills</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>High Integrity &amp; Discretion:</strong> Strict ethical conduct when handling sensitive access credentials and corporate data.</li>
-            <li><strong>Inquisitive Mindset:</strong> Thinking like an attacker to discover subtle weaknesses in existing defense mechanisms.</li>
-            <li><strong>Composure Under Pressure:</strong> Staying calm, methodical, and disciplined during high-stress security incidents.</li>
-            <li><strong>Detailed Documentation:</strong> Writing clear, factual technical incident reports for executive management.</li>
-          </ul>
-        </section>
-
-        <!-- 6. Common Tools and Technologies -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">6. Common Tools and Technologies</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            <span class="skill-tag">Wireshark (Packet Analysis)</span>
-            <span class="skill-tag">Nmap (Network Scanner)</span>
-            <span class="skill-tag">SIEM (Splunk / Elastic)</span>
-            <span class="skill-tag">Linux (Ubuntu / Kali)</span>
-            <span class="skill-tag">Burp Suite</span>
-            <span class="skill-tag">Metasploit Basics</span>
-            <span class="skill-tag">Nessus</span>
-            <span class="skill-tag">Python Scripting</span>
-            <span class="skill-tag">Bash Scripting</span>
-          </div>
-        </section>
-
-        <!-- 7. Educational Background or Learning Path -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">7. Educational Background or Learning Path</h3>
-          <p>
-            <strong>University Background:</strong> Degree in Cybersecurity, Computer Networks, Information Technology (IT), or Computer Science.
-          </p>
-          <p>
-            <strong>Key Academic Modules:</strong> Computer Networks, Network Security, Operating Systems, Cryptography, Information Assurance, System Administration.
-          </p>
-          <p>
-            <strong>Practical Milestone:</strong> Completing hands-on security wargames (OverTheWire Bandit), TryHackMe pathways, or obtaining foundational certifications (CompTIA Security+).
-          </p>
-        </section>
-
-        <!-- 8. Career Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">8. Career Opportunities</h3>
-          <p>
-            High-demand career tracks across commercial banks, telecom operators, security consultancies, managed security service providers (MSSPs), and national defense bodies like Sri Lanka CERT.
-          </p>
-          <p>
-            <strong>Long-term Career Ladder:</strong><br>
-            SOC Analyst Tier 1 &rarr; SOC Analyst Tier 2 / Incident Responder &rarr; Senior Security Engineer &rarr; Penetration Tester / Consultant &rarr; Chief Information Security Officer (CISO).
-          </p>
-        </section>
-
-        <!-- 9. Entry-Level Job Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 0.5rem;">9. Entry-Level Job Opportunities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>SOC Analyst Tier 1 (Trainee):</strong> Frontline monitoring of SIEM security events and initial ticket escalation.</li>
-            <li><strong>Information Security Intern:</strong> Assisting in vulnerability scanning, policy documentation, and phishing awareness drills.</li>
-            <li><strong>Junior Network Security Associate:</strong> Assisting in firewall maintenance and basic network audits.</li>
-          </ul>
-        </section>
-
-        <!-- Action Links -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <a href="roadmaps.html" class="btn btn-primary btn-sm">View Cybersecurity Roadmap &rarr;</a>
-          <a href="resources.html" class="btn btn-secondary btn-sm">Access Free Study Resources</a>
-          <a href="careers.html" class="btn btn-secondary btn-sm">&larr; Back to Career Catalog</a>
         </div>
 
-      </article>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128202;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Data Analysts bridge the gap between raw database tables and executive strategy. Across Sri Lanka's telecommunications, banking, retail, logistics, and tech companies, Data Analysts uncover why customer behavior changes, which products are most profitable, and where operational bottlenecks occur.
+              </p>
+              <ul class="detail-list">
+                <li>Write SQL queries to extract, join, and aggregate data from relational databases and cloud warehouses.</li>
+                <li>Clean, validate, and transform messy datasets using Python (Pandas) or Power Query to handle missing or inconsistent records.</li>
+                <li>Perform Exploratory Data Analysis (EDA) and statistical hypothesis testing to identify meaningful trends.</li>
+                <li>Design interactive, self-service Business Intelligence (BI) dashboards in Microsoft Power BI or Tableau.</li>
+                <li>Present clear data stories and actionable recommendations to product managers and business stakeholders.</li>
+              </ul>
+            </div>
 
-      <!-- ====================================================================
-           CAREER 5: UI/UX DESIGNER
-           ==================================================================== -->
-      <article id="ui-ux" class="card career-detail-article" style="margin-bottom: 3.5rem; scroll-margin-top: 140px; padding: 2.5rem;">
-        
-        <!-- Header & Identity -->
-        <header style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-          <div class="career-icon-wrapper" style="width: 80px; height: 80px; background-color: rgba(168, 85, 247, 0.12);">
-            <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer icon" width="56" height="56">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">SQL (JOINs, CTEs, Window Functions)</span>
+                    <span class="tag">Advanced Excel &amp; Pivot Tables</span>
+                    <span class="tag">Microsoft Power BI &amp; DAX</span>
+                    <span class="tag">Python (Pandas, NumPy)</span>
+                    <span class="tag">Data Visualization (Matplotlib/Seaborn)</span>
+                    <span class="tag">Descriptive Statistics</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">PostgreSQL / SQLite</span>
+                    <span class="tag">Power BI Desktop</span>
+                    <span class="tag">Jupyter Notebooks / Google Colab</span>
+                    <span class="tag">Kaggle Datasets</span>
+                    <span class="tag">Microsoft Excel</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Sri Lanka Tourism &amp; Economic Recovery Dashboard:</strong> Clean public arrival and revenue datasets using Python/SQL and build an interactive Power BI dashboard tracking seasonal trends.</li>
+                <li><strong>E-Commerce Customer Churn &amp; Cohort Analysis:</strong> Query a transactional retail database with SQL Window Functions to identify high-value customer segments and repeat purchase rates.</li>
+                <li><strong>Supermarket Sales &amp; Margin Explorer:</strong> Build an automated Excel + Power BI report that highlights top-performing product categories and regional store KPIs.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="badge badge-purple">Human-Computer Interaction &amp; Design</span>
-            <h2 style="font-size: 2.15rem; margin-top: 0.35rem; margin-bottom: 0.25rem;">5. UI/UX Designer</h2>
-            <p style="color: var(--text-muted); margin: 0; font-size: 1.05rem;">
-              Crafting intuitive user experiences, wireframes, accessible design systems, and beautiful digital product prototypes.
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Data Storytelling:</strong> Translating numbers into clear business narratives.</li>
+                <li><strong>Curiosity &amp; Skepticism:</strong> Questioning anomalies and verifying data accuracy.</li>
+                <li><strong>Business Acumen:</strong> Understanding the KPIs that matter to stakeholders.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master spreadsheets (Excel formulas, Pivot Tables) &amp; statistics.</li>
+                <li>Learn SQL thoroughly for querying relational databases.</li>
+                <li>Build interactive visual dashboards in Power BI or Tableau.</li>
+                <li>Learn Python (Pandas &amp; Seaborn) for automated EDA.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Data / BI Analyst Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Junior / Associate Data Analyst</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Data Analyst / BI Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Data Analyst &rarr; Analytics Manager</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 5: DATA ENGINEER
+           ================================================================== -->
+      <section id="data-engineer" class="career-detail-section" aria-labelledby="de-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-amber">Data Infrastructure &amp; Pipelines</span>
+            <h2 id="de-title" style="margin-top: 0.5rem;">Data Engineer</h2>
+            <p class="detail-tagline">
+              Architect automated ETL/ELT pipelines, distributed data processing systems, and cloud data warehouses at scale.
             </p>
           </div>
-        </header>
-
-        <!-- 1. Career Introduction -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">1. Career Introduction</h3>
-          <p>
-            UI/UX Design unites human psychology, user research, and visual aesthetics to create digital products that are intuitive, easy to navigate, and satisfying to use. In Sri Lanka’s software export sector, companies increasingly differentiate themselves by delivering world-class user experiences rather than just functional software code.
-          </p>
-        </section>
-
-        <!-- 2. Job Role -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">2. Job Role</h3>
-          <p>
-            A UI/UX Designer investigates how users interact with technology (UX - User Experience) and designs the digital screens, buttons, navigation flows, and visual styling (UI - User Interface). They translate business requirements into wireframes, clickable prototypes, and design systems for frontend developers to construct.
-          </p>
-        </section>
-
-        <!-- 3. Main Responsibilities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">3. Main Responsibilities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li>Conducting user research through interviews, surveys, card sorting, and competitive analysis.</li>
-            <li>Synthesizing research into user personas, empathy maps, and user journey maps.</li>
-            <li>Creating information architecture, site maps, and low-fidelity paper and digital wireframes.</li>
-            <li>Designing high-fidelity interactive, clickable prototypes in Figma for desktop, tablet, and mobile views.</li>
-            <li>Building and maintaining reusable design systems (typography scales, color palettes, accessible component libraries).</li>
-            <li>Conducting usability testing sessions with real users to identify design friction points.</li>
-            <li>Collaborating closely with frontend developers to ensure design accuracy and responsive implementation.</li>
-          </ul>
-        </section>
-
-        <!-- 4. Required Technical Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">4. Required Technical Skills</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Industry Design Tools</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Advanced Figma proficiency: auto-layout, components, variants, interactive prototyping, and design libraries.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">UX Research &amp; Evaluation</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Heuristic evaluation, usability testing protocols, user journey mapping, and information architecture.</p>
-            </div>
-            <div style="background-color: var(--bg-page); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <h4 style="font-size: 1rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Web Accessibility (WCAG)</h4>
-              <p style="font-size: 0.95rem; margin: 0; color: var(--text-muted);">Color contrast ratios, readable typography, responsive layouts, and basic familiarity with HTML5 &amp; CSS3.</p>
-            </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=data-engineer" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=data" class="btn btn-outline">Free Data Engineering Courses</a>
           </div>
-        </section>
-
-        <!-- 5. Required Soft Skills -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">5. Required Soft Skills</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Empathy:</strong> Stepping outside personal preferences to understand the frustrations and needs of diverse users.</li>
-            <li><strong>Receptiveness to Feedback:</strong> Iterating designs positively based on usability testing and stakeholder critiques.</li>
-            <li><strong>Visual Communication:</strong> Articulating the clear design rationale behind layouts, button placements, and typography.</li>
-            <li><strong>Cross-Functional Teamwork:</strong> Working side-by-side with frontend developers and product owners.</li>
-          </ul>
-        </section>
-
-        <!-- 6. Common Tools and Technologies -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">6. Common Tools and Technologies</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            <span class="skill-tag">Figma (Auto-layout &amp; Prototyping)</span>
-            <span class="skill-tag">FigJam / Miro (Brainstorming)</span>
-            <span class="skill-tag">Adobe XD</span>
-            <span class="skill-tag">HTML5 &amp; CSS3 Basics</span>
-            <span class="skill-tag">Maze (Usability Testing)</span>
-            <span class="skill-tag">Notion (Documentation)</span>
-          </div>
-        </section>
-
-        <!-- 7. Educational Background or Learning Path -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">7. Educational Background or Learning Path</h3>
-          <p>
-            <strong>University Background:</strong> Degree in Information Systems, Human-Computer Interaction (HCI), Computer Science, Multimedia Design, or IT.
-          </p>
-          <p>
-            <strong>Key Academic Modules:</strong> Human-Computer Interaction (HCI), Usability Engineering, Web Design &amp; Development, Multimedia Systems.
-          </p>
-          <p>
-            <strong>Practical Milestone:</strong> Producing 2 in-depth UI/UX case studies documenting the complete design thinking process (research $\rightarrow$ wireframing $\rightarrow$ Figma prototype $\rightarrow$ usability test results).
-          </p>
-        </section>
-
-        <!-- 8. Career Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">8. Career Opportunities</h3>
-          <p>
-            High demand across software product development companies, digital agencies, fintech platforms, and remote global product teams.
-          </p>
-          <p>
-            <strong>Long-term Career Ladder:</strong><br>
-            UI/UX Design Intern &rarr; Associate UI/UX Designer &rarr; UI/UX Designer &rarr; Senior Product Designer &rarr; Lead UX Researcher / UX Architect &rarr; Head of Design.
-          </p>
-        </section>
-
-        <!-- 9. Entry-Level Job Opportunities -->
-        <section style="margin-bottom: 2rem;">
-          <h3 style="color: #7e22ce; font-size: 1.25rem; margin-bottom: 0.5rem;">9. Entry-Level Job Opportunities</h3>
-          <ul style="padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>UI/UX Design Intern:</strong> Assisting design teams with icon preparation, wireframes, and usability test transcription.</li>
-            <li><strong>Associate UI/UX Designer:</strong> Designing feature screens, maintaining component variants in Figma, and conducting user tests.</li>
-            <li><strong>Junior Product Designer:</strong> Working on end-to-end mobile and web interfaces under senior guidance.</li>
-          </ul>
-        </section>
-
-        <!-- Action Links -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <a href="roadmaps.html" class="btn btn-primary btn-sm">View UI/UX Design Roadmap &rarr;</a>
-          <a href="resources.html" class="btn btn-secondary btn-sm">Access Free Study Resources</a>
-          <a href="careers.html" class="btn btn-secondary btn-sm">&larr; Back to Career Catalog</a>
         </div>
 
-      </article>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#9881;&#65039;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                While Data Analysts and Data Scientists analyze clean tables, Data Engineers build the automated highways and warehouses that collect, clean, and deliver that data reliably every day. It is one of the fastest-growing engineering specialties in global data consultancies and enterprise tech teams in Sri Lanka.
+              </p>
+              <ul class="detail-list">
+                <li>Design and maintain automated ETL/ELT pipelines that ingest data from APIs, transactional databases, and event streams.</li>
+                <li>Model scalable cloud data warehouses (Star and Snowflake schemas) using Snowflake, BigQuery, or Amazon Redshift.</li>
+                <li>Write modular data transformation models and automated data quality tests using SQL and dbt (data build tool).</li>
+                <li>Orchestrate scheduled workflows using Apache Airflow or Prefect and process large datasets with Apache Spark.</li>
+                <li>Optimize query execution performance, partitioning, and cloud storage costs.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Advanced SQL &amp; Indexing</span>
+                    <span class="tag">Python (Scripting &amp; APIs)</span>
+                    <span class="tag">Dimensional Data Modeling</span>
+                    <span class="tag">ETL / ELT &amp; dbt</span>
+                    <span class="tag">Apache Airflow</span>
+                    <span class="tag">Apache Spark / PySpark</span>
+                    <span class="tag">Cloud Warehouses</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">PostgreSQL &amp; Docker</span>
+                    <span class="tag">Python 3 &amp; Pandas</span>
+                    <span class="tag">dbt Core</span>
+                    <span class="tag">Google BigQuery Sandbox</span>
+                    <span class="tag">Apache Airflow (Docker)</span>
+                    <span class="tag">Git &amp; Linux CLI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Automated Weather &amp; Air Quality ETL Pipeline:</strong> Write a Python script scheduled with Airflow/GitHub Actions that fetches live API metrics, normalizes records, and loads them into PostgreSQL.</li>
+                <li><strong>End-to-End ELT Warehouse with dbt &amp; BigQuery:</strong> Load raw e-commerce CSV data into Google BigQuery, build staging and fact/dimension models in dbt, and enforce automated schema tests.</li>
+                <li><strong>Real-Time Crypto/Stock Price Stream Processor:</strong> Ingest live price ticks via WebSockets, buffer them, and store aggregated candlestick intervals in a time-series table.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Systems Thinking:</strong> Designing pipelines that recover gracefully when upstream APIs fail.</li>
+                <li><strong>Data Governance Awareness:</strong> Ensuring privacy, security, and schema consistency.</li>
+                <li><strong>Cross-Team Collaboration:</strong> Partnering with backend engineers and data analysts.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master advanced SQL, database indexing &amp; Python scripting.</li>
+                <li>Learn Linux, Docker &amp; dimensional data modeling (Star schema).</li>
+                <li>Build automated pipelines with Airflow and transformations with dbt.</li>
+                <li>Explore cloud warehouses (BigQuery/Snowflake) &amp; PySpark.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Data Engineering Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Data Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Data Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Data Engineer &rarr; Data Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 6: DATA SCIENTIST & AI ENGINEER
+           ================================================================== -->
+      <section id="data-scientist" class="career-detail-section" aria-labelledby="ds-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/data-scientist.svg" alt="Data Scientist & AI Engineer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-green">Machine Learning &amp; Applied AI</span>
+            <h2 id="ds-title" style="margin-top: 0.5rem;">Data Scientist &amp; AI Engineer</h2>
+            <p class="detail-tagline">
+              Build predictive machine learning models, NLP systems, and intelligent AI-powered applications from complex data.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=data-scientist" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=data" class="btn btn-outline">Free ML &amp; AI Courses</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129504;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Data Scientists and AI Engineers combine mathematics, statistics, and software engineering to build systems that learn from data and predict future outcomes. From fraud detection and credit scoring in fintech to demand forecasting and generative AI applications, this track suits students with strong mathematical curiosity.
+              </p>
+              <ul class="detail-list">
+                <li>Frame business problems as supervised or unsupervised machine learning tasks (classification, regression, clustering).</li>
+                <li>Perform feature engineering, statistical analysis, and data preprocessing using Python (NumPy, Pandas, Scikit-Learn).</li>
+                <li>Train, cross-validate, and tune machine learning and deep learning models (XGBoost, PyTorch, TensorFlow).</li>
+                <li>Build applied AI solutions including Natural Language Processing (NLP), Retrieval-Augmented Generation (RAG), and computer vision.</li>
+                <li>Deploy trained models into production REST APIs using FastAPI and monitor model drift over time.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Python (NumPy, Pandas)</span>
+                    <span class="tag">Probability, Linear Algebra &amp; Stats</span>
+                    <span class="tag">Scikit-Learn &amp; XGBoost</span>
+                    <span class="tag">Deep Learning (PyTorch)</span>
+                    <span class="tag">SQL &amp; Feature Engineering</span>
+                    <span class="tag">Model Deployment (FastAPI)</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Google Colab / JupyterLab</span>
+                    <span class="tag">Scikit-Learn</span>
+                    <span class="tag">Kaggle Notebooks</span>
+                    <span class="tag">Streamlit / Gradio</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Git &amp; Hugging Face</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Colombo Real Estate Price Predictor:</strong> Engineer location and property features, compare Random Forest vs. Gradient Boosting models in Scikit-Learn, and deploy an interactive Streamlit web app.</li>
+                <li><strong>Telco Customer Churn Early-Warning System:</strong> Train a classification model handling class imbalance, explain feature importance using SHAP values, and expose predictions via a FastAPI endpoint.</li>
+                <li><strong>Sinhala/English News Topic Classifier:</strong> Fine-tune a text classification pipeline to categorize local news articles automatically with accuracy/F1 evaluation metrics.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Scientific Rigor:</strong> Designing fair validation splits and avoiding data leakage.</li>
+                <li><strong>Clear Communication:</strong> Explaining model trade-offs (precision vs. recall) simply.</li>
+                <li><strong>Pragmatism:</strong> Starting with simple baseline models before complex neural networks.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master Python, SQL, Linear Algebra &amp; Probability foundations.</li>
+                <li>Learn Pandas, data visualization &amp; exploratory analysis.</li>
+                <li>Master classical ML (Scikit-Learn, feature engineering, evaluation).</li>
+                <li>Learn PyTorch deep learning &amp; deploy models with FastAPI.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Data Science / AI Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Data Scientist / ML Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Data Scientist / AI Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Data Scientist &rarr; Lead AI Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 7: CYBERSECURITY ANALYST
+           ================================================================== -->
+      <section id="cybersecurity" class="career-detail-section" aria-labelledby="cs-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-red">Information Security &amp; Cyber Defense</span>
+            <h2 id="cs-title" style="margin-top: 0.5rem;">Cybersecurity Analyst</h2>
+            <p class="detail-tagline">
+              Protect enterprise networks, cloud infrastructure, and web applications through threat monitoring, vulnerability assessment, and incident response.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=cybersecurity" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=cybersecurity" class="btn btn-outline">Free Security Labs</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128737;&#65039;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Cybersecurity Analysts are the frontline defenders of digital infrastructure. As banks, telecommunications providers, government institutions, and global software exporters in Sri Lanka expand their cloud footprint, Security Operations Centers (SOCs) and InfoSec teams actively recruit graduates with strong networking and security fundamentals.
+              </p>
+              <ul class="detail-list">
+                <li>Monitor Security Information and Event Management (SIEM) dashboards to detect suspicious network traffic and intrusion attempts.</li>
+                <li>Conduct vulnerability scans and web application security audits aligned with the OWASP Top 10 framework.</li>
+                <li>Investigate security alerts, analyze phishing payloads or system logs, and execute incident response playbooks.</li>
+                <li>Harden Linux and Windows servers, configure firewall rules, and enforce Identity and Access Management (IAM) policies.</li>
+                <li>Assist with security compliance frameworks (ISO 27001, SOC 2) and employee security awareness.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Networking (TCP/IP, OSI, DNS)</span>
+                    <span class="tag">Linux &amp; Windows Admin</span>
+                    <span class="tag">OWASP Top 10 Web Security</span>
+                    <span class="tag">SIEM &amp; Log Analysis</span>
+                    <span class="tag">Wireshark &amp; Nmap</span>
+                    <span class="tag">Bash &amp; Python Scripting</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">TryHackMe Labs</span>
+                    <span class="tag">Wireshark Packet Analyzer</span>
+                    <span class="tag">Cisco Packet Tracer</span>
+                    <span class="tag">Ubuntu / Kali Linux VM</span>
+                    <span class="tag">OWASP ZAP / Burp Suite</span>
+                    <span class="tag">Splunk / Wazuh SIEM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Home Virtual SOC Lab with Wazuh:</strong> Deploy an open-source SIEM in VirtualBox, connect a Linux/Windows VM, simulate brute-force SSH logins, and document your detection rules.</li>
+                <li><strong>Network Traffic &amp; Port Security Auditor in Python:</strong> Write a Python script that scans authorized local network ports, checks TLS certificate expiration, and generates a security report.</li>
+                <li><strong>OWASP Juice Shop Vulnerability Walkthrough Report:</strong> Identify and document 5 critical vulnerabilities (SQLi, XSS, Broken Access Control) on an intentionally vulnerable lab app, including remediation patches.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>High Ethical Integrity:</strong> Strictly respecting legal authorization boundaries.</li>
+                <li><strong>Investigative Persistence:</strong> Connecting subtle clues across system logs.</li>
+                <li><strong>Clear Incident Reporting:</strong> Writing concise post-mortems for technical and non-technical leaders.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master computer networking (TCP/IP, DNS, HTTP) &amp; Linux CLI.</li>
+                <li>Learn Windows administration, firewalls &amp; Bash/Python scripting.</li>
+                <li>Study OWASP Top 10 web vulnerabilities &amp; packet analysis.</li>
+                <li>Practice SOC log monitoring (SIEM) &amp; TryHackMe defense paths.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Cybersecurity / SOC Analyst Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Security Analyst (Tier 1 SOC)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Cybersecurity Engineer / Incident Responder</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Security Architect / CISO Track</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 8: UI/UX DESIGNER
+           ================================================================== -->
+      <section id="ui-ux" class="career-detail-section" aria-labelledby="uiux-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-purple">Product Design &amp; User Experience</span>
+            <h2 id="uiux-title" style="margin-top: 0.5rem;">UI/UX Designer</h2>
+            <p class="detail-tagline">
+              Research human behavior, architect intuitive user flows, and craft accessible, high-converting digital interfaces and design systems.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=ui-ux" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=uiux" class="btn btn-outline">Free UI/UX Courses</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#127912;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                UI/UX Designers ensure that software products are both intuitive to navigate (User Experience) and visually cohesive (User Interface). It is an ideal IT pathway for students who combine visual creativity, human psychology, and structured problem-solving without wanting to write backend code all day.
+              </p>
+              <ul class="detail-list">
+                <li>Conduct user interviews, usability audits, and competitor research to understand real user pain points.</li>
+                <li>Create user personas, information architecture maps, and low-fidelity wireframes to validate workflows early.</li>
+                <li>Design high-fidelity screens, responsive layouts, and interactive clickable prototypes in Figma.</li>
+                <li>Build and maintain scalable Design Systems (reusable components, typography tokens, and WCAG accessible color palettes).</li>
+                <li>Collaborate closely with frontend developers during design handoff to ensure pixel-accurate implementation.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Figma (Auto Layout &amp; Variants)</span>
+                    <span class="tag">User Research &amp; Personas</span>
+                    <span class="tag">Wireframing &amp; User Flows</span>
+                    <span class="tag">Interactive Prototyping</span>
+                    <span class="tag">Design Systems &amp; Tokens</span>
+                    <span class="tag">WCAG Accessibility</span>
+                    <span class="tag">HTML/CSS Fundamentals</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Figma (Free Education Plan)</span>
+                    <span class="tag">FigJam Whiteboarding</span>
+                    <span class="tag">WebAIM Contrast Checker</span>
+                    <span class="tag">Google Fonts</span>
+                    <span class="tag">Notion (Case Studies)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Sri Lankan Train / Bus Ticketing App UX Case Study:</strong> Research commuter pain points, map a simplified 3-tap booking flow, and build an interactive Figma prototype in English, Sinhala, and Tamil.</li>
+                <li><strong>University LMS Mobile Companion Redesign:</strong> Audit your campus learning portal for usability bottlenecks and design an accessible, mobile-first assignment &amp; timetable experience.</li>
+                <li><strong>Multi-Theme SaaS Component Library in Figma:</strong> Create a reusable design system featuring button states, form inputs, and cards with Dark/Light mode variables.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>User Empathy:</strong> Designing for real users rather than personal assumptions.</li>
+                <li><strong>Receptiveness to Critique:</strong> Iterating on designs based on usability test feedback.</li>
+                <li><strong>Visual Storytelling:</strong> Presenting design rationale clearly to product teams.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Learn visual hierarchy, typography, grid systems &amp; color theory.</li>
+                <li>Master Figma frames, Auto Layout, components &amp; prototyping.</li>
+                <li>Study UX research, user flows, wireframing &amp; usability testing.</li>
+                <li>Publish 2–3 complete UX case studies + learn basic HTML/CSS.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>UI/UX Design Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate UI/UX Designer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Product Designer / UI/UX Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior Product Designer &rarr; Design Lead</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 9: QA & TEST AUTOMATION ENGINEER
+           ================================================================== -->
+      <section id="qa-engineer" class="career-detail-section" aria-labelledby="qa-title">
+        <div class="detail-header-card">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/qa-engineer.svg" alt="QA & Test Automation Engineer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-amber">Quality Assurance &amp; SDET</span>
+            <h2 id="qa-title" style="margin-top: 0.5rem;">QA &amp; Test Automation Engineer</h2>
+            <p class="detail-tagline">
+              Safeguard software reliability by designing comprehensive test strategies and automated browser, API, and performance test suites.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=qa-engineer" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=qa" class="btn btn-outline">Free QA Automation Courses</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#9989;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Quality Assurance (QA) and Test Automation Engineers (SDETs) ensure that software products work flawlessly across browsers, devices, and high-traffic conditions before reaching customers. Virtually every medium-to-large software engineering company in Sri Lanka hires dedicated QA and Test Automation Engineers alongside developers.
+              </p>
+              <ul class="detail-list">
+                <li>Analyze product requirements to design structured test plans, boundary test cases, and acceptance criteria.</li>
+                <li>Write automated End-to-End (E2E) browser test suites using Playwright, Cypress, or Selenium WebDriver.</li>
+                <li>Perform automated REST API functional, contract, and security testing using Postman and RestAssured/Supertest.</li>
+                <li>Execute load and performance testing using k6 or Apache JMeter to verify system stability under traffic spikes.</li>
+                <li>Integrate automated regression tests into CI/CD pipelines (GitHub Actions) and log reproducible bug reports in Jira.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Playwright / Cypress / Selenium</span>
+                    <span class="tag">JavaScript / TypeScript or Java</span>
+                    <span class="tag">API Testing (Postman)</span>
+                    <span class="tag">Test Case Design &amp; Bug Triage</span>
+                    <span class="tag">SQL Data Verification</span>
+                    <span class="tag">Performance Testing (k6 / JMeter)</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Playwright Test Runner</span>
+                    <span class="tag">Postman &amp; Newman CLI</span>
+                    <span class="tag">VS Code</span>
+                    <span class="tag">Git &amp; GitHub Actions</span>
+                    <span class="tag">Chrome DevTools</span>
+                    <span class="tag">Jira / GitHub Issues</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Playwright E2E Automation Suite for an E-Commerce Store:</strong> Automate user login, product search, cart checkout, and responsive mobile checks using Page Object Model (POM) and HTML test reports.</li>
+                <li><strong>Automated REST API Test Collection with Postman &amp; Newman:</strong> Build a test suite verifying status codes, JSON schemas, auth tokens, and negative edge cases, running automatically in GitHub Actions.</li>
+                <li><strong>API Load &amp; Stress Benchmark with k6:</strong> Script a virtual-user load test against a sample web API and document response-time percentiles (p95/p99).</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Edge-Case Curiosity:</strong> Thinking of unusual user inputs that developers overlook.</li>
+                <li><strong>Diplomatic Communication:</strong> Reporting bugs clearly and constructively with reproduction steps.</li>
+                <li><strong>Quality Advocacy:</strong> Championing user reliability and accessibility across the team.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Learn software testing fundamentals, test design &amp; bug reporting.</li>
+                <li>Master HTML/CSS selectors, SQL basics &amp; JavaScript/Java syntax.</li>
+                <li>Learn Postman API testing &amp; Playwright browser automation.</li>
+                <li>Integrate automated tests into GitHub Actions CI &amp; learn k6/JMeter.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>QA / Test Automation Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate QA Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>QA Engineer / SDET (Automation)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior SDET &rarr; QA Lead / Quality Architect</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 10: BUSINESS ANALYST & PROJECT MANAGER
+           ================================================================== -->
+      <section id="business-analyst" class="career-detail-section" aria-labelledby="ba-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst & Project Manager Session" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-blue">Business &amp; Agile Delivery</span>
+            <h2 id="ba-title" style="margin-top: 0.5rem;">Business Analyst &amp; Project Manager</h2>
+            <p class="detail-tagline">
+              Bridge business strategy and engineering execution through requirements elicitation, BPMN process modeling, and Agile Scrum delivery.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=business-analyst" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=business" class="btn btn-outline">Free Business &amp; Agile Courses</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128188;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Business Analysts (BAs) and Project Managers (PMs) are among the highest-demand non-coding and hybrid graduates across Sri Lankan IT consulting firms, banks, conglomerates, and multinational service centers. They translate complex stakeholder needs into structured user stories, process models, and predictable Agile delivery plans.
+              </p>
+              <ul class="detail-list">
+                <li>Conduct stakeholder interviews and workshops to gather business requirements, pain points, and KPIs.</li>
+                <li>Write clear Business Requirement Documents (BRDs), Software Requirement Specifications (SRS), and User Stories with Gherkin acceptance criteria.</li>
+                <li>Model "As-Is" and "To-Be" business processes using BPMN 2.0, UML diagrams, and wireframes.</li>
+                <li>Facilitate Agile Scrum ceremonies (Sprint Planning, Daily Standups, Retrospectives) and manage backlogs in Jira &amp; Confluence.</li>
+                <li>Coordinate User Acceptance Testing (UAT), track project risks, and report milestone progress to executives.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Technical &amp; Domain Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Agile Scrum &amp; Kanban</span>
+                    <span class="tag">User Stories &amp; Acceptance Criteria</span>
+                    <span class="tag">BPMN 2.0 &amp; UML Modeling</span>
+                    <span class="tag">Jira &amp; Confluence</span>
+                    <span class="tag">SQL &amp; Power BI Reporting</span>
+                    <span class="tag">UAT &amp; Risk Management</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Atlassian Jira &amp; Confluence</span>
+                    <span class="tag">Draw.io / Lucidchart (BPMN)</span>
+                    <span class="tag">Figma / Balsamiq Wireframes</span>
+                    <span class="tag">Microsoft Excel &amp; Power BI</span>
+                    <span class="tag">Notion / Trello</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Complete BRD &amp; Agile Backlog for a Hospital Telemedicine Platform:</strong> Write a full Business Requirements Document, BPMN patient booking workflow, 25 prioritized Jira user stories, and low-fidelity wireframes.</li>
+                <li><strong>ERP / Inventory Process Optimization Case Study:</strong> Map an inefficient manual retail supply chain ("As-Is") and design an automated digital workflow ("To-Be") with quantified time and cost savings.</li>
+                <li><strong>Sprint Delivery &amp; Risk Dashboard in Power BI:</strong> Build an interactive project management dashboard tracking sprint velocity, burn-down charts, and RAID (Risks, Assumptions, Issues, Dependencies) logs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Active Listening &amp; Elicitation:</strong> Uncovering unspoken stakeholder needs.</li>
+                <li><strong>Structured Documentation:</strong> Writing unambiguous specifications for developers.</li>
+                <li><strong>Servant Leadership:</strong> Unblocking cross-functional teams under tight deadlines.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Learn SDLC models, Agile Scrum framework &amp; requirement elicitation.</li>
+                <li>Master writing User Stories, BRDs &amp; BPMN 2.0 process diagrams.</li>
+                <li>Practice managing sprints in Jira, Confluence &amp; Figma wireframing.</li>
+                <li>Learn SQL basics &amp; Power BI to back business cases with data.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Business Analyst / Project Coordinator Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Business Analyst / Junior Scrum Master</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Business Analyst / Technical Project Manager</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Senior BA / Delivery Manager &rarr; Head of PMO</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 11: PRODUCT MANAGER
+           ================================================================== -->
+      <section id="product-manager" class="career-detail-section" aria-labelledby="pm-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/product-manager.jpg" alt="Product Manager Roadmap Strategy" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/product-manager.svg" alt="Product Manager Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-purple">Product Strategy &amp; SaaS</span>
+            <h2 id="pm-title" style="margin-top: 0.5rem;">Product Manager</h2>
+            <p class="detail-tagline">
+              Own the "Why" and "What" of digital products—aligning customer discovery, product strategy, UX design, and engineering roadmaps.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=product-manager" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=business" class="btn btn-outline">Free Product Strategy Guides</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#127919;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Product Managers (PMs) sit at the intersection of business viability, user experience, and technology feasibility. While Project Managers focus on *when* and *how* a project is delivered, Product Managers define *what* product should be built and *why* it matters to customers and revenue growth.
+              </p>
+              <ul class="detail-list">
+                <li>Conduct customer discovery interviews, market sizing, and competitive analysis to spot high-value product opportunities.</li>
+                <li>Define product vision, North Star metrics, OKRs, and multi-quarter product roadmaps using prioritization frameworks (RICE, MoSCoW).</li>
+                <li>Write clear Product Requirement Documents (PRDs) and partner with UI/UX designers on user flows and prototypes.</li>
+                <li>Analyze product telemetry (retention cohorts, activation funnels, A/B experiments) to iterate on features post-launch.</li>
+                <li>Lead cross-functional Go-To-Market (GTM) launches alongside marketing, sales, and customer success teams.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Product Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Product Discovery &amp; PRDs</span>
+                    <span class="tag">Roadmapping (RICE / Kano)</span>
+                    <span class="tag">Product Analytics (Mixpanel / GA4)</span>
+                    <span class="tag">Funnel &amp; Cohort Metrics</span>
+                    <span class="tag">A/B Experimentation</span>
+                    <span class="tag">UX Wireframing &amp; APIs</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Notion / Confluence (PRDs)</span>
+                    <span class="tag">Figma &amp; FigJam</span>
+                    <span class="tag">Jira Product Discovery</span>
+                    <span class="tag">Mixpanel / PostHog / Amplitude</span>
+                    <span class="tag">SQL &amp; Google Sheets</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Product Teardown &amp; Growth PRD for a Sri Lankan Super-App (PickMe / Helakuru):</strong> Audit user onboarding friction, survey 20 users, prioritize 3 high-impact features using RICE, and write a full PRD with Figma wireframes and success metrics.</li>
+                <li><strong>0-to-1 Campus EdTech SaaS Product Spec:</strong> Define problem statements, user personas, MVP scope, pricing model, and a 3-quarter product roadmap.</li>
+                <li><strong>Funnel Drop-Off &amp; Retention Cohort Analysis:</strong> Analyze a sample SaaS dataset to diagnose why new users churn in Week 1 and propose an A/B experiment hypothesis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Influence Without Authority:</strong> Aligning engineers, designers, and executives around a shared vision.</li>
+                <li><strong>Ruthless Prioritization:</strong> Saying "no" to low-impact feature requests.</li>
+                <li><strong>Customer Obsession:</strong> Falling in love with the user's problem, not just your first solution.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Learn product thinking, user research &amp; Jobs-to-be-Done (JTBD).</li>
+                <li>Master writing PRDs, wireframing in Figma &amp; RICE prioritization.</li>
+                <li>Study SaaS metrics (CAC, LTV, Churn, Retention) &amp; SQL/Mixpanel.</li>
+                <li>Publish 2–3 public Product Teardowns and PRDs in your portfolio.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Product Management Intern / Associate PM (APM)</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Product Manager</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Senior Product Manager / Group PM</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Director of Product &rarr; VP of Product / CPO</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 12: DIGITAL MARKETING & GROWTH STRATEGIST
+           ================================================================== -->
+      <section id="digital-marketing" class="career-detail-section" aria-labelledby="dm-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing & Growth Analytics" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-cyan">Marketing &amp; Growth</span>
+            <h2 id="dm-title" style="margin-top: 0.5rem;">Digital Marketing &amp; Growth Strategist</h2>
+            <p class="detail-tagline">
+              Drive measurable customer acquisition, brand authority, and e-commerce revenue using SEO, performance marketing, GA4 analytics, and CRM automation.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=digital-marketing" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=marketing" class="btn btn-outline">Free Marketing Certifications</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Modern Digital Marketing and Growth Strategy is an analytical, creative, and high-growth career open to students from Business, Marketing, Arts, Media, or IT backgrounds. Export brands, tourism groups, SaaS startups, and global digital agencies in Sri Lanka actively hire specialists who can turn content and ad spend into measurable ROI.
+              </p>
+              <ul class="detail-list">
+                <li>Execute Technical &amp; On-Page SEO strategies (keyword research, search intent mapping, content optimization) to grow organic search traffic.</li>
+                <li>Plan, launch, and optimize paid performance campaigns across Google Ads (Search/Display) and Meta Ads Manager.</li>
+                <li>Track conversion events, attribution funnels, and Return on Ad Spend (ROAS) using Google Analytics 4 (GA4), Tag Manager, and Looker Studio.</li>
+                <li>Design automated email lifecycle flows, lead-nurture sequences, and CRM segmentation in HubSpot or Mailchimp.</li>
+                <li>Run landing page Conversion Rate Optimization (CRO) experiments and A/B tests on headlines, CTAs, and social proof.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Marketing &amp; Growth Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">SEO &amp; Content Strategy</span>
+                    <span class="tag">Google Ads &amp; Meta Ads</span>
+                    <span class="tag">Google Analytics 4 (GA4)</span>
+                    <span class="tag">Conversion Copywriting</span>
+                    <span class="tag">CRM &amp; Email Automation</span>
+                    <span class="tag">Looker Studio Reporting</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Google Search Console &amp; GA4</span>
+                    <span class="tag">Google Tag Manager</span>
+                    <span class="tag">Ahrefs / Semrush Free Tools</span>
+                    <span class="tag">HubSpot CRM (Free Tier)</span>
+                    <span class="tag">Canva / Figma &amp; WordPress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Complete SEO &amp; Conversion Audit for a Sri Lankan Brand:</strong> Audit site speed, meta tags, keyword gaps, and mobile UX for a local hospitality or e-commerce site and publish a 10-page actionable growth playbook.</li>
+                <li><strong>Live Content Website or Niche Newsletter Growth Case Study:</strong> Launch a blog or LinkedIn/Substack newsletter, optimize 10 articles for search intent, track traffic in GA4, and build a Looker Studio performance dashboard.</li>
+                <li><strong>Multi-Channel Go-To-Market Campaign Plan:</strong> Design ad creatives, landing page copy, audience targeting, and ROAS budget models for a new product launch.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Persuasive Copywriting:</strong> Crafting clear headlines that resonate with buyer psychology.</li>
+                <li><strong>Data-Backed Creativity:</strong> Testing creative ideas against real click-through and conversion numbers.</li>
+                <li><strong>Adaptability:</strong> Staying ahead of search engine and social algorithm shifts.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Learn marketing funnels, buyer personas &amp; persuasive copywriting.</li>
+                <li>Master SEO fundamentals, Google Search Console &amp; WordPress/Webflow.</li>
+                <li>Complete Google Analytics 4 (GA4) &amp; HubSpot Digital Marketing certs.</li>
+                <li>Learn Google/Meta Ads budgeting, CRO testing &amp; Looker Studio dashboards.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Digital Marketing / SEO Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Digital Marketing Executive / Performance Marketer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Growth Marketing Manager / Digital Strategist</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Head of Growth &rarr; Chief Marketing Officer (CMO)</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 13: FINANCIAL ANALYST & FINTECH SPECIALIST
+           ================================================================== -->
+      <section id="financial-analyst" class="career-detail-section" aria-labelledby="fa-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst & FinTech Valuation" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-green">Finance, Corporate &amp; FinTech</span>
+            <h2 id="fa-title" style="margin-top: 0.5rem;">Financial Analyst &amp; FinTech Specialist</h2>
+            <p class="detail-tagline">
+              Build 3-statement financial models, DCF valuations, corporate FP&amp;A forecasts, and automated FinTech risk and payment analytics.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=financial-analyst" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=finance" class="btn btn-outline">Free Finance &amp; Modeling Resources</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128176;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Financial Analysts and FinTech Specialists power investment decisions, corporate budgeting, equity research, and digital banking innovation. In Sri Lanka, commercial banks, investment banks, Big-4 advisory firms, KPOs (such as Acuity Knowledge Partners and Moody's/Amba), and FinTech providers recruit graduates who combine accounting/finance rigor with modern Excel, Power BI, and Python/SQL skills.
+              </p>
+              <ul class="detail-list">
+                <li>Analyze historical Income Statements, Balance Sheets, and Cash Flow Statements to evaluate company profitability and liquidity.</li>
+                <li>Build dynamic 3-Statement financial models, Discounted Cash Flow (DCF) valuations, and sensitivity scenarios in Excel.</li>
+                <li>Prepare monthly Financial Planning &amp; Analysis (FP&amp;A) variance reports, unit-economics models, and executive board decks.</li>
+                <li>Automate financial reporting, credit risk scoring, and payment fraud detection using Power BI, SQL, and Python.</li>
+                <li>Evaluate digital banking products, payment gateways (LankaQR/ISO 20022), and regulatory compliance metrics.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Finance &amp; FinTech Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">3-Statement Financial Modeling</span>
+                    <span class="tag">DCF &amp; Relative Valuation</span>
+                    <span class="tag">Corporate Budgeting (FP&amp;A)</span>
+                    <span class="tag">Advanced Excel &amp; Power Query</span>
+                    <span class="tag">Power BI &amp; SQL for Finance</span>
+                    <span class="tag">Credit Risk &amp; FinTech Analytics</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Microsoft Excel (Dynamic Arrays)</span>
+                    <span class="tag">Power BI Desktop</span>
+                    <span class="tag">CSE / SEC Annual Reports</span>
+                    <span class="tag">Python (Pandas / Quant)</span>
+                    <span class="tag">TradingView / Yahoo Finance API</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Equity Research &amp; DCF Valuation of a Colombo Stock Exchange (CSE) Listed Company:</strong> Build a 5-year 3-statement forecast and DCF model in Excel from published annual reports and write an institutional-style investment memo.</li>
+                <li><strong>Automated Corporate FP&amp;A P&amp;L Dashboard in Power BI:</strong> Transform raw general ledger CSV exports into an interactive Actual-vs-Budget variance and cash-runway dashboard.</li>
+                <li><strong>FinTech Loan Default &amp; Credit Risk Scoring Notebook:</strong> Use SQL and Python to analyze borrower repayment datasets and visualize risk tiers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Quantitative Precision:</strong> Auditing financial formulas so models balance without errors.</li>
+                <li><strong>Commercial Judgment:</strong> Connecting macroeconomic trends (interest rates, FX) to business impact.</li>
+                <li><strong>Executive Presentation:</strong> Summarizing complex valuation models into clear recommendations.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master accounting fundamentals &amp; reading 3 financial statements.</li>
+                <li>Build advanced Excel skills (XLOOKUP, INDEX/MATCH, Pivot Tables).</li>
+                <li>Learn 3-statement financial modeling, DCF valuation &amp; FP&amp;A budgeting.</li>
+                <li>Add Power BI, SQL &amp; Python to stand out in FinTech and KPO interviews.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Finance / Investment Research Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Junior Financial Analyst / FinTech Analyst</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Senior Financial Analyst / FP&amp;A Manager</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>VP of Finance / Portfolio Manager &rarr; CFO</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 14: CREATIVE MULTIMEDIA & MOTION DESIGNER
+           ================================================================== -->
+      <section id="multimedia-designer" class="career-detail-section" aria-labelledby="mm-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/multimedia-designer.jpg" alt="Creative Multimedia & Motion Designer Studio" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/multimedia-designer.svg" alt="Creative Multimedia Designer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-purple">Creative Media, 3D &amp; Motion</span>
+            <h2 id="mm-title" style="margin-top: 0.5rem;">Creative Multimedia &amp; Motion Designer</h2>
+            <p class="detail-tagline">
+              Craft brand identities, 2D/3D motion graphics, commercial video edits, and interactive digital media for global agencies and studios.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=multimedia-designer" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=uiux" class="btn btn-outline">Free Design &amp; 3D Courses</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#127916;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Creative Multimedia &amp; Motion Designers bring brands, digital products, and stories to life through visual identity systems, motion graphics, video production, and 3D visualization. It is a thriving pathway for visually driven students looking to work with advertising agencies, SaaS product marketing teams, media houses, or global remote clients.
+              </p>
+              <ul class="detail-list">
+                <li>Design cohesive brand identity systems, vector illustrations, social media campaigns, and packaging guidelines.</li>
+                <li>Create 2D/3D motion graphics, kinetic typography, UI animations, and SaaS product explainer videos in After Effects.</li>
+                <li>Edit commercial video content, perform color grading, and mix clean audio in Premiere Pro or DaVinci Resolve.</li>
+                <li>Model, texture, light, and render 3D product visualizations and interactive environments in Blender.</li>
+                <li>Collaborate with marketing directors, UI/UX teams, and content creators from storyboard to final render.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Creative &amp; Production Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Brand Identity &amp; Typography</span>
+                    <span class="tag">2D/3D Motion Graphics</span>
+                    <span class="tag">Video Editing &amp; Color Grading</span>
+                    <span class="tag">3D Modeling &amp; Lighting (Blender)</span>
+                    <span class="tag">Storyboarding &amp; Art Direction</span>
+                    <span class="tag">Lottie / Web Motion</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Blender 3D (100% Free &amp; Open-Source)</span>
+                    <span class="tag">DaVinci Resolve (Free Version)</span>
+                    <span class="tag">Adobe After Effects &amp; Illustrator</span>
+                    <span class="tag">Figma &amp; Rive / LottieFiles</span>
+                    <span class="tag">Behance &amp; ArtStation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>60-Second Motion Graphics Showreel:</strong> Produce a high-energy showreel combining kinetic typography, logo reveals, UI micro-animations, and 3D product shots.</li>
+                <li><strong>Complete Brand Identity &amp; 3D Packaging System for a Ceylon Tea / Artisan Brand:</strong> Design the logo system, typography guidelines, and photorealistic 3D product renders in Blender.</li>
+                <li><strong>30-Second SaaS Product Launch Explainer Video:</strong> Storyboard, animate, sound-design, and color-grade a commercial product teaser.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Visual Rhythm &amp; Timing:</strong> Pacing cuts and easing curves so animations feel natural.</li>
+                <li><strong>Creative Storytelling:</strong> Communicating emotion and brand value in seconds.</li>
+                <li><strong>Client Collaboration:</strong> Iterating smoothly from rough storyboards to final delivery.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master composition, color theory, typography &amp; vector illustration.</li>
+                <li>Learn video editing, pacing, audio mixing &amp; color grading in DaVinci Resolve.</li>
+                <li>Study keyframe animation, easing &amp; motion graphics in After Effects/Rive.</li>
+                <li>Learn 3D modeling, materials &amp; lighting in Blender and publish your showreel.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Multimedia / Motion Design Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Junior Motion &amp; Brand Designer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>Senior Multimedia / 3D Motion Designer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Art Director &rarr; Creative Director</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CAREER 15: MECHATRONICS, ROBOTICS & IOT ENGINEER
+           ================================================================== -->
+      <section id="robotics-iot" class="career-detail-section" aria-labelledby="iot-title">
+        <div class="detail-header-card">
+          <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics, Robotics & IoT Hardware Lab" class="detail-photo-thumb" loading="lazy">
+          <div class="detail-icon-box">
+            <img src="assets/images/careers/robotics-iot.svg" alt="Robotics & IoT Engineer Icon" width="60" height="60">
+          </div>
+          <div class="detail-title-group">
+            <span class="badge badge-amber">Engineering, Hardware &amp; IoT</span>
+            <h2 id="iot-title" style="margin-top: 0.5rem;">Mechatronics, Robotics &amp; IoT Engineer</h2>
+            <p class="detail-tagline">
+              Combine embedded C/C++ firmware, microcontrollers (ESP32/STM32), PCB design, industrial automation, and cloud IoT telemetry.
+            </p>
+          </div>
+          <div class="detail-header-actions">
+            <a href="roadmaps.html?career=robotics-iot" class="btn btn-primary">View 6-Stage Roadmap &rarr;</a>
+            <a href="resources.html?category=engineering" class="btn btn-outline">Free Embedded &amp; IoT Resources</a>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-main">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129302;</span> Career Overview &amp; Main Responsibilities</h3>
+              <p>
+                Mechatronics, Robotics &amp; IoT Engineers bridge the physical world of electronics, sensors, and actuators with intelligent firmware and cloud telemetry. In Sri Lanka, export manufacturing leaders, smart-agriculture startups, renewable energy companies, and R&amp;D hardware labs recruit engineers who can prototype connected devices and industrial automation systems.
+              </p>
+              <ul class="detail-list">
+                <li>Write reliable Embedded C/C++ and MicroPython firmware for microcontrollers (ESP32, STM32, Arduino, Raspberry Pi).</li>
+                <li>Interface industrial sensors, motor drivers, and actuators using I2C, SPI, UART, CAN bus, and Modbus protocols.</li>
+                <li>Design schematic diagrams and multi-layer Printed Circuit Boards (PCBs) using KiCad or Altium Designer.</li>
+                <li>Build real-time IoT communication pipelines using MQTT, HTTP/REST, and AWS IoT Core / Node-RED dashboards.</li>
+                <li>Program robotics kinematics, PID control loops, ROS2 (Robot Operating System) nodes, and PLC industrial automation logic.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128736;</span> Required Technical Skills &amp; Recommended Beginner Technologies</h3>
+              <div class="detail-subgrid">
+                <div class="detail-subcard">
+                  <h4>Core Hardware &amp; Embedded Skills</h4>
+                  <div class="skill-tags">
+                    <span class="tag">Embedded C / C++ &amp; Python</span>
+                    <span class="tag">ESP32 / STM32 / Raspberry Pi</span>
+                    <span class="tag">I2C, SPI, UART &amp; MQTT</span>
+                    <span class="tag">PCB Design (KiCad)</span>
+                    <span class="tag">RTOS &amp; Sensor Fusion</span>
+                    <span class="tag">ROS2 &amp; Industrial PLC</span>
+                  </div>
+                </div>
+                <div class="detail-subcard">
+                  <h4>Recommended Beginner Toolkit</h4>
+                  <div class="skill-tags">
+                    <span class="tag">ESP32 DevKit &amp; Arduino IDE / PlatformIO</span>
+                    <span class="tag">Wokwi Online Simulator (Free)</span>
+                    <span class="tag">KiCad PCB Design (Open-Source)</span>
+                    <span class="tag">Mosquitto MQTT &amp; Node-RED</span>
+                    <span class="tag">Ubuntu &amp; ROS2 Humble</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128640;</span> Beginner-Friendly Portfolio Project Ideas</h3>
+              <ul class="detail-list">
+                <li><strong>Smart Greenhouse / Precision Agriculture IoT Node with ESP32 &amp; MQTT:</strong> Read soil moisture, temperature, and humidity sensors, trigger automated irrigation relays, and stream live telemetry to a cloud Grafana/Node-RED dashboard.</li>
+                <li><strong>Custom 2-Layer Sensor Shield PCB in KiCad:</strong> Design a custom schematic and PCB layout with voltage regulation and sensor headers, including Gerber manufacturing files and 3D board views.</li>
+                <li><strong>Autonomous Obstacle-Avoiding / Line-Following Robot with PID Control:</strong> Implement closed-loop PID motor speed control and ultrasonic/LiDAR obstacle navigation, documented with circuit schematics and code on GitHub.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#129309;</span> Useful Soft Skills</h3>
+              <ul class="detail-list">
+                <li><strong>Hardware-Software Debugging:</strong> Isolating whether a bug is in a solder joint, sensor voltage, or C++ pointer.</li>
+                <li><strong>Systems Thinking:</strong> Balancing power consumption, thermal limits, and wireless latency.</li>
+                <li><strong>Hands-On Prototyping:</strong> Iterating quickly in the lab from breadboard to enclosure.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128203;</span> Suggested Learning Sequence</h3>
+              <ol class="detail-list">
+                <li>Master basic electronics, Ohm's law, digital logic &amp; Embedded C/C++.</li>
+                <li>Program ESP32/Arduino sensors, PWM motors &amp; I2C/SPI/UART protocols.</li>
+                <li>Connect devices to the cloud via Wi-Fi, MQTT, Node-RED &amp; InfluxDB.</li>
+                <li>Learn KiCad PCB design, FreeRTOS multitasking &amp; ROS2 robotics simulation.</li>
+              </ol>
+            </div>
+
+            <div class="detail-panel">
+              <h3><span class="panel-icon" aria-hidden="true">&#128200;</span> Career Progression Path</h3>
+              <div class="progression-steps">
+                <div class="prog-step"><span class="prog-Step-badge">Level 1</span>Embedded Systems / Robotics &amp; IoT Intern</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 2</span>Associate Embedded / Mechatronics Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 3</span>IoT Systems &amp; Robotics Engineer</div>
+                <div class="prog-step"><span class="prog-Step-badge">Level 4</span>Lead Hardware &amp; IoT Architect / R&amp;D Manager</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
 
     </div>
-
   </main>
 
-  <!-- Global Footer -->
+  <!-- 4. FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        
-        <!-- Column 1: Brand & Mission -->
-        <div class="footer-column">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
-            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
-          </div>
-          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
-            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
-          </p>
-          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
-            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+          </a>
+          <p class="footer-mission">
+            Empowering Sri Lankan university students with clear career guidance across 15 IT, Business, Finance, Creative &amp; Engineering pathways, structured roadmaps, and free resources.
           </p>
         </div>
 
-        <!-- Column 2: Navigation Links -->
-        <div class="footer-column">
-          <h3>Navigation Links</h3>
-          <ul>
+        <div class="footer-col">
+          <h3 class="footer-heading">Platform Navigation</h3>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="careers.html">Explore Careers</a></li>
-            <li><a href="quiz.html">Career Quiz</a></li>
-            <li><a href="roadmaps.html">Career Roadmaps</a></li>
-            <li><a href="resources.html">Learning Resources</a></li>
-            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+            <li><a href="careers.html">Explore 15 Career Paths</a></li>
+            <li><a href="quiz.html">Career Match Quiz</a></li>
+            <li><a href="roadmaps.html">Learning Roadmaps</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="contact.html">Community &amp; FAQ</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Useful Links -->
-        <div class="footer-column">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
-            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
-            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
-            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+        <div class="footer-col">
+          <h3 class="footer-heading">Career Domains</h3>
+          <ul class="footer-links">
+            <li><a href="career-details.html#software-engineer">Software &amp; Full-Stack Dev</a></li>
+            <li><a href="career-details.html#data-analyst">Data Science, BI &amp; AI</a></li>
+            <li><a href="career-details.html#cloud-devops">Cloud, DevOps &amp; Cyber</a></li>
+            <li><a href="career-details.html#business-analyst">Business Analysis &amp; Product</a></li>
+            <li><a href="career-details.html#digital-marketing">Digital Marketing &amp; Finance</a></li>
+            <li><a href="career-details.html#robotics-iot">Multimedia &amp; Robotics/IoT</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Academic Information -->
-        <div class="footer-column">
-          <h3>Academic Context</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
-            <strong>Project:</strong> Semester 1 Group Web Project<br>
-            <strong>Theme:</strong> Community-Focused Static Website<br>
-            <strong>Platform:</strong> PathFinder LK
+        <div class="footer-col">
+          <h3 class="footer-heading">Open Source &amp; Community</h3>
+          <p class="footer-note">
+            PathFinder LK is an open-source educational platform built for undergraduate university students across Sri Lanka.
+          </p>
+          <p class="footer-Action">
+            <a href="https://github.com/nimesh-kavindya-dev/pathfinder-lk" target="_blank" rel="noopener noreferrer" class="footer-contact-link">GitHub Repository &rarr;</a>
           </p>
         </div>
-
       </div>
 
-      <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span class="current-year">2025</span> PathFinder LK. Built for Sri Lankan University Students.
+        </p>
+        <p class="footer-credits">
+          Open-Source Multi-Disciplinary Career Guidance Platform
+        </p>
       </div>
     </div>
   </footer>

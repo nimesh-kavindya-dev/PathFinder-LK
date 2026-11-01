@@ -3,37 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curated 100% free learning platforms, courses, and documentation for IT university students in Sri Lanka. Explore resources for Software Engineering, Data Analytics, Cybersecurity, and UI/UX Design.">
-  <meta name="keywords" content="Free IT resources, FreeCodeCamp, W3Schools, MDN Web Docs, Kaggle, Cisco Networking Academy, Figma Learn, free university student perks">
-  <meta name="author" content="PathFinder LK Group">
-  
-  <meta property="og:title" content="Curated Free IT Learning Resources | PathFinder LK">
-  <meta property="og:description" content="Access verified, high-quality, 100% free educational platforms and developer student perks to boost your tech career.">
+  <meta name="description" content="Access curated 100% free learning resources for Sri Lankan university students covering Programming, Data Science, Cloud, Cybersecurity, UI/UX, QA, Business & Agile, Digital Marketing, Finance, Creative 3D, and Robotics/IoT.">
+  <meta name="keywords" content="free IT and business courses Sri Lanka, freeCodeCamp, CS50, Kaggle Learn, AWS Skill Builder, TryHackMe, Figma tutorials, HubSpot Academy, Corporate Finance Institute, Blender, Wokwi IoT">
+  <meta name="author" content="PathFinder LK Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Free Learning Resources (16 Platforms) | PathFinder LK">
+  <meta property="og:description" content="16 curated, 100% free global learning platforms, documentation hubs, and student developer packs for university undergraduates.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pathfinderlk.github.io/resources.html">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
-  
-  <title>PathFinder LK | Curated Free IT Learning Resources</title>
-  
+  <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/resources.html">
+  <meta property="og:image" content="assets/images/photos/hero-campus.jpg">
+
+  <!-- Mobile Web App & PWA Capability -->
+  <meta name="theme-color" content="#060b16">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PathFinderLK">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <title>Free Learning Resources (16 Platforms) | PathFinder LK - Courses &amp; Student Perks</title>
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
+
   <!-- Immediate Theme Engine Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/resources.js" defer></script>
 </head>
 <body>
-  <!-- Accessibility Skip Link -->
+  <!-- Glassmorphic Branded Loading Screen -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+      </div>
+      <div class="loader-brand">PathFinder <span>LK</span></div>
+      <div class="loader-subtext">Loading Curated Learning Resources...</div>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percent" aria-hidden="true">8%</div>
+    </div>
+  </div>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header -->
+  <!-- 1. NAVIGATION BAR -->
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
@@ -41,23 +71,22 @@
         <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
       </a>
 
-      <!-- Primary Navigation Menu -->
-      <nav class="main-nav" id="primary-navigation" aria-label="Main Navigation">
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
           <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
           <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
-          <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link active" aria-current="page">Resources</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Community &amp; FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action Controls: Theme Switcher & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
           <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
           <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+          <span class="theme-label">Dark</span>
         </button>
 
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -67,344 +96,624 @@
     </div>
   </header>
 
-  <!-- Main Content Landmark -->
   <main id="main-content" class="main-content" role="main">
-    
-    <!-- Page Header Banner -->
-    <section class="page-header" aria-labelledby="resources-page-title">
+
+    <!-- 2. PAGE HERO -->
+    <section class="page-hero" aria-labelledby="resources-page-heading">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <ol class="breadcrumb-list">
-            <li><a href="index.html">Home</a> &gt;</li>
-            <li aria-current="page" style="color: var(--primary-color); font-weight: 600;">Learning Resources</li>
-          </ol>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Free Learning Resources</span>
         </nav>
-        <h1 id="resources-page-title">Curated Free Learning Resources</h1>
-        <p style="color: var(--text-secondary); max-width: 820px; font-size: 1.1rem;">
-          High-quality education should be accessible to every university student. Explore this curated directory of verified, 100% free learning platforms, documentation, interactive sandboxes, and student perks.
+        <h1 id="resources-page-heading">Curated Free Learning Resources (16 Platforms)</h1>
+        <p class="page-hero-desc">
+          You don't need expensive subscriptions to build world-class technical, business, financial, or creative skills. Explore our verified directory of 16 free courses, interactive labs, and university student perks.
         </p>
       </div>
     </section>
 
-    <!-- Search & Filter Controls -->
-    <section class="filter-section" style="padding: 2rem 0 1rem;" aria-label="Resource Search and Filter">
+    <!-- 3. FILTERABLE RESOURCES DIRECTORY -->
+    <section class="section" aria-labelledby="resources-directory-heading">
       <div class="container">
-        <div class="search-filter-box">
-          <div class="search-input-group">
-            <label for="resource-search" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Search resources</label>
-            <input type="search" id="resource-search" class="search-input" placeholder="Search resources by platform, title, or topic (e.g. Python, SQL, CSS, Security)..." aria-label="Search resources">
+        <h2 id="resources-directory-heading" class="sr-only">Resource Directory</h2>
+
+        <!-- Search, Category Pills & Level Select -->
+        <div class="filter-bar" role="region" aria-label="Filter learning resources">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <label for="resource-search" class="sr-only">Search resources by name, topic, or skill</label>
+            <input
+              type="search"
+              id="resource-search"
+              class="search-input"
+              placeholder="Search platforms or topics (e.g., Python, SQL, AWS, Figma, Jira, SEO, Finance, Blender, ESP32)..."
+              autocomplete="off"
+            >
           </div>
-          <div class="filter-pills" role="group" aria-label="Filter resources by career domain">
-            <button type="button" class="filter-btn resource-filter-btn active" data-category="all">All Resources (10)</button>
-            <button type="button" class="filter-btn resource-filter-btn" data-category="development">Software Engineering</button>
-            <button type="button" class="filter-btn resource-filter-btn" data-category="data">Data &amp; AI</button>
-            <button type="button" class="filter-btn resource-filter-btn" data-category="security">Cybersecurity</button>
-            <button type="button" class="filter-btn resource-filter-btn" data-category="design">UI/UX Design</button>
+
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label for="resource-level-select" class="sr-only">Filter by difficulty level</label>
+            <select id="resource-level-select" class="form-select" style="width: auto; min-width: 165px; padding: 0.65rem 1rem;">
+              <option value="all">All Difficulty Levels</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+            </select>
           </div>
-          <button type="button" id="clear-resources-btn" class="btn btn-secondary btn-sm" title="Clear all search inputs and category filters">Clear Filters</button>
         </div>
 
-        <!-- Live Results Counter -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span id="resources-result-count" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Showing 10 of 10 Resources</span>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">Use the search and filters above to find learning materials.</span>
+        <!-- Category Filter Buttons -->
+        <div class="filter-pills" role="group" aria-label="Filter resources by career track" style="margin-bottom: 1.5rem;">
+          <button type="button" class="filter-btn resource-cat-btn active" data-category="all" aria-pressed="true">
+            All Resources (16)
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="programming" aria-pressed="false">
+            Software &amp; Web Dev
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="data" aria-pressed="false">
+            Data, BI &amp; AI
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="cloud" aria-pressed="false">
+            Cloud &amp; DevOps
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="cybersecurity" aria-pressed="false">
+            Cybersecurity
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="uiux" aria-pressed="false">
+            Design &amp; 3D Media
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="qa" aria-pressed="false">
+            QA &amp; Testing
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="business" aria-pressed="false">
+            Business &amp; Product
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="marketing" aria-pressed="false">
+            Digital Marketing
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="finance" aria-pressed="false">
+            Finance &amp; FinTech
+          </button>
+          <button type="button" class="filter-btn resource-cat-btn" data-category="engineering" aria-pressed="false">
+            Robotics &amp; IoT
+          </button>
         </div>
 
-        <!-- No Results Notification Container -->
-        <div id="no-resources-msg" class="card" style="display: none; text-align: center; padding: 2.5rem 2rem; border-color: var(--primary-border); background-color: var(--bg-card-subtle); margin-bottom: 2rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
-          <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No Matching Learning Resources Found</h3>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We couldn't find any resource matching your active search and category filters.</p>
-          <button type="button" id="reset-resources-btn" class="btn btn-primary btn-sm">Reset All Filters &amp; Show All Resources</button>
+        <div class="results-status-bar">
+          <p id="resource-results-count" class="results-count" aria-live="polite">
+            Showing all 16 curated free learning resources
+          </p>
+          <div class="results-status-actions">
+            <button type="button" id="clear-resource-filters" class="btn btn-outline btn-sm hidden">
+              &#10005; Clear Active Filters
+            </button>
+            <a href="#student-perks" class="text-link">View Free University Student Packs &darr;</a>
+          </div>
+        </div>
+
+        <!-- Resource Cards Grid (16 Items) -->
+        <div class="grid grid-3" id="resources-grid">
+
+          <!-- 1. CS50x -->
+          <article class="card resource-card" data-category="programming general" data-level="beginner" data-tags="harvard cs50 computer science c python sql algorithms">
+            <div class="resource-card-top">
+              <span class="badge badge-blue">Programming &amp; CS</span>
+              <span class="resource-cost-tag">Beginner &bull; Free</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Harvard University (edX / OpenCourseWare)</span>
+            </div>
+            <h3 class="card-title">CS50x: Introduction to Computer Science</h3>
+            <p class="card-description">
+              The gold-standard university introduction to computer science, algorithms, memory management, C, Python, SQL, and web development taught by Prof. David J. Malan.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">C &amp; Python</span>
+              <span class="tag">SQL</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Visit CS50x OpenCourseWare &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. freeCodeCamp -->
+          <article class="card resource-card" data-category="programming data" data-level="beginner" data-tags="freecodecamp html css javascript react python backend sql">
+            <div class="resource-card-top">
+              <span class="badge badge-blue">Software &amp; Web Dev</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Certs</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">freeCodeCamp.org</span>
+            </div>
+            <h3 class="card-title">freeCodeCamp Full-Stack &amp; Python Curriculum</h3>
+            <p class="card-description">
+              Interactive, browser-based coding challenges and certification projects covering Responsive Web Design, JavaScript, Front-End Libraries, Backend APIs, and Relational Databases.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">React &amp; Node</span>
+              <span class="tag">Python</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Start on freeCodeCamp &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. The Odin Project -->
+          <article class="card resource-card" data-category="programming" data-level="intermediate" data-tags="the odin project full stack javascript nodejs react git linux">
+            <div class="resource-card-top">
+              <span class="badge badge-cyan">Full-Stack Web</span>
+              <span class="resource-cost-tag">Intermediate &bull; Project-Based</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">The Odin Project Community</span>
+            </div>
+            <h3 class="card-title">The Odin Project (Full-Stack JavaScript)</h3>
+            <p class="card-description">
+              Teaches you how to set up a real Linux/VS Code developer environment, use Git from day one, and build portfolio-ready full-stack web apps without hand-holding.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Git &amp; CLI</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React &amp; Express</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Explore The Odin Project &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. MDN Web Docs -->
+          <article class="card resource-card" data-category="programming uiux" data-level="beginner" data-tags="mdn mozilla documentation html css javascript web apis accessibility">
+            <div class="resource-card-top">
+              <span class="badge badge-blue">Web Standards</span>
+              <span class="resource-cost-tag">Beginner &bull; Reference</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Mozilla Developer Network</span>
+            </div>
+            <h3 class="card-title">MDN Web Docs &amp; Learn Web Development</h3>
+            <p class="card-description">
+              The definitive reference documentation and structured learning pathway for semantic HTML5, modern CSS Grid/Flexbox, DOM scripting, and WCAG web accessibility.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">HTML5 &amp; CSS3</span>
+              <span class="tag">Web APIs</span>
+              <span class="tag">Accessibility</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Read MDN Learning Area &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. Kaggle Learn -->
+          <article class="card resource-card" data-category="data" data-level="beginner" data-tags="kaggle learn python pandas sql data visualization machine learning scikit-learn">
+            <div class="resource-card-top">
+              <span class="badge badge-green">Data, BI &amp; AI</span>
+              <span class="resource-cost-tag">Beginner &bull; Cloud Notebooks</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Kaggle (Google)</span>
+            </div>
+            <h3 class="card-title">Kaggle Learn Micro-Courses &amp; Datasets</h3>
+            <p class="card-description">
+              Fast, hands-on micro-courses with zero-setup cloud Jupyter notebooks covering Python, Pandas, Intro &amp; Advanced SQL, Data Cleaning, and Intro to Machine Learning.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Pandas</span>
+              <span class="tag">SQL &amp; BigQuery</span>
+              <span class="tag">Scikit-Learn</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Launch Kaggle Learn &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. SQLBolt & Mode SQL -->
+          <article class="card resource-card" data-category="data programming" data-level="beginner" data-tags="sqlbolt mode sql database queries joins aggregations data engineer analyst">
+            <div class="resource-card-top">
+              <span class="badge badge-amber">Data &amp; Databases</span>
+              <span class="resource-cost-tag">Beginner &bull; Interactive</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">SQLBolt.com</span>
+            </div>
+            <h3 class="card-title">SQLBolt Interactive SQL Lessons</h3>
+            <p class="card-description">
+              Learn relational database querying directly in your browser through 18 bite-sized interactive lessons covering SELECT, JOINs, GROUP BY, and table schemas.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">SQL Queries</span>
+              <span class="tag">JOINs</span>
+              <span class="tag">Relational DBs</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Practice on SQLBolt &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 7. Microsoft Learn Power BI & Data Engineering -->
+          <article class="card resource-card" data-category="data cloud" data-level="intermediate" data-tags="microsoft learn power bi azure data engineer sql pipelines">
+            <div class="resource-card-top">
+              <span class="badge badge-green">BI &amp; Data Engineering</span>
+              <span class="resource-cost-tag">Intermediate &bull; Official</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Microsoft Learn</span>
+            </div>
+            <h3 class="card-title">Microsoft Learn: Power BI &amp; Azure Data Paths</h3>
+            <p class="card-description">
+              Official self-paced modules for building executive dashboards in Power BI (PL-300 track) and designing cloud data pipelines and warehouses (DP-203 track).
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Power BI &amp; DAX</span>
+              <span class="tag">Data Modeling</span>
+              <span class="tag">Cloud ETL</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://learn.microsoft.com/en-us/training/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Browse Microsoft Learn &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 8. AWS Skill Builder & Cloud Essentials -->
+          <article class="card resource-card" data-category="cloud programming" data-level="beginner" data-tags="aws skill builder cloud devops docker kubernetes linux terraform">
+            <div class="resource-card-top">
+              <span class="badge badge-teal">Cloud &amp; DevOps</span>
+              <span class="resource-cost-tag">Beginner &bull; 600+ Free Courses</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Amazon Web Services (AWS)</span>
+            </div>
+            <h3 class="card-title">AWS Skill Builder &amp; Cloud Practitioner Essentials</h3>
+            <p class="card-description">
+              Master cloud computing fundamentals, IAM security, EC2, S3, Serverless Lambda, and container orchestration through AWS's official free digital training catalog.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">AWS Cloud</span>
+              <span class="tag">Containers</span>
+              <span class="tag">DevOps CI/CD</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://explore.skillbuilder.aws/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Explore AWS Skill Builder &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 9. TryHackMe & PortSwigger -->
+          <article class="card resource-card" data-category="cybersecurity" data-level="beginner" data-tags="tryhackme cybersecurity linux networking ethical hacking soc siem owasp">
+            <div class="resource-card-top">
+              <span class="badge badge-red">Cybersecurity</span>
+              <span class="resource-cost-tag">Beginner &bull; Hands-On Labs</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">TryHackMe</span>
+            </div>
+            <h3 class="card-title">TryHackMe Pre-Security &amp; Cyber Defense Labs</h3>
+            <p class="card-description">
+              Gamified, browser-based virtual security labs teaching Linux fundamentals, networking, web application vulnerabilities (OWASP Top 10), and SOC log analysis.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Linux &amp; Networks</span>
+              <span class="tag">OWASP Top 10</span>
+              <span class="tag">SOC Defense</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Start TryHackMe Labs &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 10. Cisco Networking Academy -->
+          <article class="card resource-card" data-category="cybersecurity cloud" data-level="beginner" data-tags="cisco skills for all networking tcp ip routing switching cybersecurity">
+            <div class="resource-card-top">
+              <span class="badge badge-red">Networking &amp; Security</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Badges</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Cisco Networking Academy</span>
+            </div>
+            <h3 class="card-title">Cisco Networking Basics &amp; Junior Cybersecurity</h3>
+            <p class="card-description">
+              Build a rock-solid understanding of TCP/IP, subnetting, packet routing, firewalls, and endpoint defense using Cisco Packet Tracer simulations and digital badges.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">TCP/IP &amp; DNS</span>
+              <span class="tag">Packet Tracer</span>
+              <span class="tag">Network Defense</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://www.netacad.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Visit Cisco NetAcad &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 11. Figma Learn & Laws of UX -->
+          <article class="card resource-card" data-category="uiux" data-level="beginner" data-tags="figma learn ui ux design wireframing auto layout prototyping components">
+            <div class="resource-card-top">
+              <span class="badge badge-purple">UI/UX Design</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Education Plan</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Figma Official Help &amp; Community</span>
+            </div>
+            <h3 class="card-title">Figma Learn: UI Design &amp; Interactive Prototyping</h3>
+            <p class="card-description">
+              Official step-by-step video courses and project files for mastering frames, typography scales, Auto Layout, reusable component variants, and interactive flows.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Auto Layout</span>
+              <span class="tag">Design Systems</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://help.figma.com/hc/en-us/categories/360002051613-Get-started" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Open Figma Learn &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 12. Test Automation University -->
+          <article class="card resource-card" data-category="qa programming" data-level="beginner" data-tags="test automation university qa playwright cypress selenium postman api testing">
+            <div class="resource-card-top">
+              <span class="badge badge-amber">QA &amp; Test Automation</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Courses</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Test Automation University (Applitools)</span>
+            </div>
+            <h3 class="card-title">Test Automation University (Playwright &amp; API Testing)</h3>
+            <p class="card-description">
+              Free video courses with quizzes and completion certificates covering Playwright, Cypress, Selenium WebDriver, Postman API automation, and continuous testing in CI/CD.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Playwright</span>
+              <span class="tag">Postman API</span>
+              <span class="tag">QA Strategy</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://testautomationu.applitools.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Visit Test Automation U &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 13. Atlassian University & Scrum.org -->
+          <article class="card resource-card" data-category="business" data-level="beginner" data-tags="atlassian university jira confluence agile scrum business analyst product manager roadmap brd">
+            <div class="resource-card-top">
+              <span class="badge badge-blue">Business &amp; Product</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Agile Paths</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Atlassian University &amp; Scrum.org</span>
+            </div>
+            <h3 class="card-title">Atlassian Agile, Jira &amp; Product Discovery Training</h3>
+            <p class="card-description">
+              Free self-paced courses covering Agile Scrum ceremonies, writing User Stories, managing Jira backlogs, Confluence requirements documentation, and Product Roadmapping.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Jira &amp; Confluence</span>
+              <span class="tag">Agile Scrum</span>
+              <span class="tag">Product Specs</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://university.atlassian.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Explore Atlassian University &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 14. HubSpot Academy & Google Skillshop -->
+          <article class="card resource-card" data-category="marketing business" data-level="beginner" data-tags="hubspot academy google skillshop digital marketing seo ga4 google ads copywriting crm">
+            <div class="resource-card-top">
+              <span class="badge badge-cyan">Digital Marketing</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Certifications</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">HubSpot Academy &amp; Google Skillshop</span>
+            </div>
+            <h3 class="card-title">HubSpot Digital Marketing, SEO &amp; GA4 Certifications</h3>
+            <p class="card-description">
+              Industry-recognized free certifications in Search Engine Optimization (SEO), Content Marketing, Inbound CRM Automation, Google Analytics 4 (GA4), and Performance Ads.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">SEO &amp; Content</span>
+              <span class="tag">Google Analytics 4</span>
+              <span class="tag">CRM &amp; Ads</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://academy.hubspot.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Start HubSpot Academy &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 15. Corporate Finance Institute (CFI) & Khan Academy Finance -->
+          <article class="card resource-card" data-category="finance data" data-level="beginner" data-tags="corporate finance institute cfi excel financial modeling dcf valuation accounting fintech">
+            <div class="resource-card-top">
+              <span class="badge badge-green">Finance &amp; FinTech</span>
+              <span class="resource-cost-tag">Beginner &bull; Free Foundations</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Corporate Finance Institute (CFI) &amp; edX</span>
+            </div>
+            <h3 class="card-title">Financial Accounting, Excel Modeling &amp; Valuation</h3>
+            <p class="card-description">
+              Learn how to read 3-statement financial reports, build dynamic Excel models, calculate DCF valuations, and analyze corporate FP&amp;A and FinTech unit economics.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Excel Modeling</span>
+              <span class="tag">3-Statement &amp; DCF</span>
+              <span class="tag">Corporate Finance</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://corporatefinanceinstitute.com/resources/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Browse CFI Free Resources &#8599;
+              </a>
+            </div>
+          </article>
+
+          <!-- 16. Blender Studio & Wokwi Embedded IoT Simulator -->
+          <article class="card resource-card" data-category="engineering uiux" data-level="intermediate" data-tags="blender 3d motion graphics wokwi esp32 arduino kicad robotics iot embedded c">
+            <div class="resource-card-top">
+              <span class="badge badge-amber">3D Media &amp; Robotics/IoT</span>
+              <span class="resource-cost-tag">Intermediate &bull; Free Simulators</span>
+            </div>
+            <div class="resource-meta-row">
+              <span class="resource-provider">Wokwi IoT Simulator &amp; Blender Official</span>
+            </div>
+            <h3 class="card-title">Wokwi ESP32/IoT Simulator &amp; Blender 3D Fundamentals</h3>
+            <p class="card-description">
+              Simulate ESP32, STM32, Arduino, sensors, and MQTT IoT circuits directly in your browser on Wokwi, or master open-source 3D modeling and motion rendering in Blender.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">ESP32 &amp; IoT</span>
+              <span class="tag">Embedded C++</span>
+              <span class="tag">Blender 3D</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://wokwi.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Launch Wokwi IoT Lab &#8599;
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty State -->
+        <div id="resource-empty-state" class="empty-state hidden" role="status">
+          <div class="empty-state-icon" aria-hidden="true">&#128218;</div>
+          <h3>No matching resources found</h3>
+          <p>Try clearing your search term or switching the category/difficulty filters above.</p>
+          <button type="button" id="reset-resource-filters" class="btn btn-primary">
+            Reset All Resource Filters
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Resources Card Grid Directory -->
-    <section class="section" style="padding: 1rem 0 3.5rem;" aria-label="Learning Platforms Directory">
+    <!-- 4. UNIVERSITY STUDENT DEVELOPER PERKS -->
+    <section id="student-perks" class="section how-it-works-section" aria-labelledby="perks-heading">
       <div class="container">
-        <div class="popular-careers-grid" id="resources-grid">
-          
-          <!-- Resource 1: freeCodeCamp -->
-          <article class="card resource-card" data-category="development" data-keywords="freecodecamp coding web development responsive html css javascript fullstack apis certifications">
-            <div class="career-card-top">
-              <span class="badge badge-blue">Interactive Platform</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">freeCodeCamp.org</span>
-            </div>
-            <h2>freeCodeCamp</h2>
-            <p>
-              A world-renowned free interactive platform offering comprehensive hands-on curriculum in Responsive Web Design, JavaScript Algorithms, Front End Libraries, and Backend APIs with verified completion certificates.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer</span>
-            </div>
-            <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit freeCodeCamp &#8599;</a>
-          </article>
-
-          <!-- Resource 2: W3Schools -->
-          <article class="card resource-card" data-category="development data" data-keywords="w3schools web tutorials html css javascript sql python reference try it yourself beginner">
-            <div class="career-card-top">
-              <span class="badge badge-blue">Reference &amp; Tutorials</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">W3Schools</span>
-            </div>
-            <h2>W3Schools Online Web Tutorials</h2>
-            <p>
-              The web's most popular beginner learning portal featuring clear code references, structured tutorials, and live "Try It Yourself" browser code sandboxes for HTML, CSS, JavaScript, and relational SQL.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer &amp; Data Analyst</span>
-            </div>
-            <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit W3Schools &#8599;</a>
-          </article>
-
-          <!-- Resource 3: MDN Web Docs -->
-          <article class="card resource-card" data-category="development design" data-keywords="mdn web docs mozilla documentation standards html5 css3 javascript apis accessibility reference">
-            <div class="career-card-top">
-              <span class="badge badge-blue">Official Documentation</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Mozilla</span>
-            </div>
-            <h2>MDN Web Docs</h2>
-            <p>
-              The industry gold-standard documentation for web developers maintained by Mozilla. In-depth, accurate references and guided tutorials covering HTML5, CSS3, modern JavaScript, Web APIs, and WCAG accessibility standards.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer &amp; UI/UX Designer</span>
-            </div>
-            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit MDN Web Docs &#8599;</a>
-          </article>
-
-          <!-- Resource 4: Kaggle Learn -->
-          <article class="card resource-card" data-category="data" data-keywords="kaggle learn python sql pandas data analysis datasets jupyter notebooks micro-courses">
-            <div class="career-card-top">
-              <span class="badge badge-green">Hands-on Micro-Courses</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Kaggle / Google</span>
-            </div>
-            <h2>Kaggle Learn &amp; Datasets</h2>
-            <p>
-              Practical, bite-sized tutorials on Python, SQL, Pandas, Data Cleaning, and Data Visualization with live browser-based Jupyter environments and access to thousands of open real-world datasets for portfolio practice.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: #059669; font-weight: 600;">Data Analyst &amp; Data Engineer</span>
-            </div>
-            <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Kaggle Learn &#8599;</a>
-          </article>
-
-          <!-- Resource 5: Cisco Networking Academy (Skills for All) -->
-          <article class="card resource-card" data-category="security" data-keywords="cisco networking academy skills for all cybersecurity defense security basics digital badges credentials">
-            <div class="career-card-top">
-              <span class="badge badge-red">Security Academy</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Cisco</span>
-            </div>
-            <h2>Cisco Networking Academy</h2>
-            <p>
-              Free self-paced training pathways directly from Cisco Networking Academy (Skills for All) covering networking essentials, defense principles, threat defense, and verifiable digital completion badges on Credly.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: #dc2626; font-weight: 600;">Cybersecurity Analyst</span>
-            </div>
-            <a href="https://skillsforall.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Cisco Academy &#8599;</a>
-          </article>
-
-          <!-- Resource 6: Figma Learn -->
-          <article class="card resource-card" data-category="design" data-keywords="figma learn tutorials prototyping ui ux design systems auto-layout wireframing interface design">
-            <div class="career-card-top">
-              <span class="badge badge-purple">Official Tutorials</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Figma</span>
-            </div>
-            <h2>Figma Learn &amp; Help Center</h2>
-            <p>
-              Official guided tutorials and video walkthroughs covering UI wireframing, Figma Auto-Layout constraints, interactive prototype micro-animations, component variants, and design system governance.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: #7e22ce; font-weight: 600;">UI/UX Designer</span>
-            </div>
-            <a href="https://help.figma.com/hc/en-us/categories/360002042553-Figma-Design" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Figma Learn &#8599;</a>
-          </article>
-
-          <!-- Resource 7: SQLBolt -->
-          <article class="card resource-card" data-category="data development" data-keywords="sqlbolt interactive sql queries database joins aggregations subqueries practice">
-            <div class="career-card-top">
-              <span class="badge badge-green">Interactive Practice</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">SQLBolt</span>
-            </div>
-            <h2>SQLBolt: Interactive SQL Lessons</h2>
-            <p>
-              Interactive browser-based tutorials that teach relational database querying from basic SELECT statements to multi-table joins, subqueries, and table constraints with instant exercise feedback.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: #059669; font-weight: 600;">Data Analyst &amp; Data Engineer</span>
-            </div>
-            <a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit SQLBolt &#8599;</a>
-          </article>
-
-          <!-- Resource 8: OverTheWire Bandit -->
-          <article class="card resource-card" data-category="security" data-keywords="overthewire bandit wargames linux ssh terminal security file permissions ethical hacking">
-            <div class="career-card-top">
-              <span class="badge badge-red">Hands-on Wargames</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">OverTheWire</span>
-            </div>
-            <h2>OverTheWire: Bandit Wargame</h2>
-            <p>
-              A hands-on, gamified security wargame aimed at beginners to master Linux commands, SSH authentication, directory navigation, hidden files, and file permissions in a live terminal sandbox.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: #dc2626; font-weight: 600;">Cybersecurity Analyst</span>
-            </div>
-            <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Bandit Wargame &#8599;</a>
-          </article>
-
-          <!-- Resource 9: CS50 Harvard -->
-          <article class="card resource-card" data-category="development" data-keywords="cs50 harvard university computer science c algorithms python sql memory data structures">
-            <div class="career-card-top">
-              <span class="badge badge-blue">University Course</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Harvard University / edX</span>
-            </div>
-            <h2>CS50: Intro to Computer Science</h2>
-            <p>
-              Harvard University's legendary open introduction to computer science and programming. Covers C, memory management, algorithms, Python, SQL, and web foundations. Available 100% free via the edX audit track.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Software Engineer</span>
-            </div>
-            <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit CS50 Harvard &#8599;</a>
-          </article>
-
-          <!-- Resource 10: Roadmap.sh -->
-          <article class="card resource-card" data-category="development data security design" data-keywords="roadmap.sh developer roadmaps community visual guides technology trees frontend backend devops">
-            <div class="career-card-top">
-              <span class="badge badge-blue">Visual Technology Trees</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Roadmap.sh</span>
-            </div>
-            <h2>Roadmap.sh Developer Roadmaps</h2>
-            <p>
-              Community-driven visual technology roadmaps, career paths, and study guides for frontend, backend, DevOps, data analysis, and cybersecurity roles across the global software development industry.
-            </p>
-            <div style="background-color: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); display: block;">Related Career Area:</span>
-              <span style="font-size: 0.9rem; color: var(--secondary-color); font-weight: 600;">All 5 IT Career Areas</span>
-            </div>
-            <a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">Visit Roadmap.sh &#8599;</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Student Developer Perks Spotlight Section -->
-    <section class="perks-section section-light" style="padding: 3.5rem 0;" aria-labelledby="perks-title">
-      <div class="container">
-        <div class="section-header" style="margin-bottom: 2.5rem;">
-          <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Student Privileges</span>
-          <h2 id="perks-title">Free Industry Developer Perks for University Students</h2>
-          <p class="section-subtitle">
-            Take advantage of exclusive student packages by registering with your university email address (`.ac.lk`).
+        <div class="section-header">
+          <span class="section-subtitle">University Email Benefits (.ac.lk)</span>
+          <h2 id="perks-heading" class="section-title">Unlock Free Pro Developer Tools with Your University Email</h2>
+          <p class="section-description">
+            If you have a valid Sri Lankan university email address (such as <code>.ac.lk</code>) or student ID card, you can unlock thousands of dollars worth of professional software for free.
           </p>
         </div>
 
-        <div class="popular-careers-grid">
-          
+        <div class="grid grid-3">
           <div class="card">
-            <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Developer Tools</span>
-            <h3 style="margin-bottom: 0.5rem;">GitHub Student Developer Pack</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
-              Free access to GitHub Copilot, free custom domains from Namecheap, cloud hosting credits on DigitalOcean, and dozens of premium developer tools.
+            <span class="badge badge-blue" style="align-self: flex-start; margin-bottom: 0.75rem;"> Essential for All Tracks</span>
+            <h3 class="card-title">GitHub Student Developer Pack</h3>
+            <p class="card-description">
+              Grants free access to GitHub Pro, GitHub Copilot, JetBrains IDEs, Namecheap domains, DigitalOcean cloud credits, DataCamp (3 months), and Frontend Masters (6 months).
             </p>
-            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Claim GitHub Pack &#8599;</a>
+            <div class="card-footer">
+              <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="text-link">Apply with University ID &#8599;</a>
+            </div>
           </div>
 
           <div class="card">
-            <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Professional IDEs</span>
-            <h3 style="margin-bottom: 0.5rem;">JetBrains Educational License</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
-              100% free annual subscriptions to professional IDEs including IntelliJ IDEA Ultimate, PyCharm Professional, WebStorm, and DataGrip for database work.
+            <span class="badge badge-purple" style="align-self: flex-start; margin-bottom: 0.75rem;">Essential for UI/UX &amp; Teams</span>
+            <h3 class="card-title">Figma for Education (Professional Plan)</h3>
+            <p class="card-description">
+              University students receive the full Figma Professional plan and FigJam for free—unlocking unlimited projects, shared team libraries, and advanced prototyping variables.
             </p>
-            <a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Apply for License &#8599;</a>
+            <div class="card-footer">
+              <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="text-link">Verify Student Status &#8599;</a>
+            </div>
           </div>
 
           <div class="card">
-            <span class="badge badge-purple" style="margin-bottom: 0.75rem;">Design Suite</span>
-            <h3 style="margin-bottom: 0.5rem;">Figma for Education</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
-              Free upgrade to Figma Professional features, unlimited version history, shared team design libraries, and collaboration spaces for students.
+            <span class="badge badge-green" style="align-self: flex-start; margin-bottom: 0.75rem;">Essential for Cloud &amp; Data</span>
+            <h3 class="card-title">Azure for Students ($100 Cloud Credit)</h3>
+            <p class="card-description">
+              Activate $100 in Microsoft Azure cloud credits plus free tier Linux VMs, Azure SQL databases, and AI services without requiring a credit card using your university email.
             </p>
-            <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">Get Figma Education &#8599;</a>
+            <div class="card-footer">
+              <a href="https://azure.microsoft.com/en-us/free/students/" target="_blank" rel="noopener noreferrer" class="text-link">Claim Student Cloud Credit &#8599;</a>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Global Footer -->
+  <!-- 5. FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        
-        <!-- Column 1: Brand & Mission -->
-        <div class="footer-column">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
-            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
-          </div>
-          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
-            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
-          </p>
-          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
-            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+          </a>
+          <p class="footer-mission">
+            Empowering Sri Lankan university students with clear career guidance across 15 IT, Business, Finance, Creative &amp; Engineering pathways, structured roadmaps, and free resources.
           </p>
         </div>
 
-        <!-- Column 2: Navigation Links -->
-        <div class="footer-column">
-          <h3>Navigation Links</h3>
-          <ul>
+        <div class="footer-col">
+          <h3 class="footer-heading">Platform Navigation</h3>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="careers.html">Explore Careers</a></li>
-            <li><a href="quiz.html">Career Quiz</a></li>
-            <li><a href="roadmaps.html">Career Roadmaps</a></li>
-            <li><a href="resources.html">Learning Resources</a></li>
-            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+            <li><a href="careers.html">Explore 15 Career Paths</a></li>
+            <li><a href="quiz.html">Career Match Quiz</a></li>
+            <li><a href="roadmaps.html">Learning Roadmaps</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="contact.html">Community &amp; FAQ</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Useful Links -->
-        <div class="footer-column">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
-            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
-            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
-            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+        <div class="footer-col">
+          <h3 class="footer-heading">Career Domains</h3>
+          <ul class="footer-links">
+            <li><a href="career-details.html#software-engineer">Software &amp; Full-Stack Dev</a></li>
+            <li><a href="career-details.html#data-analyst">Data Science, BI &amp; AI</a></li>
+            <li><a href="career-details.html#cloud-devops">Cloud, DevOps &amp; Cyber</a></li>
+            <li><a href="career-details.html#business-analyst">Business Analysis &amp; Product</a></li>
+            <li><a href="career-details.html#digital-marketing">Digital Marketing &amp; Finance</a></li>
+            <li><a href="career-details.html#robotics-iot">Multimedia &amp; Robotics/IoT</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Academic Information -->
-        <div class="footer-column">
-          <h3>Academic Context</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
-            <strong>Project:</strong> Semester 1 Group Web Project<br>
-            <strong>Theme:</strong> Community-Focused Static Website<br>
-            <strong>Platform:</strong> PathFinder LK
+        <div class="footer-col">
+          <h3 class="footer-heading">Open Source &amp; Community</h3>
+          <p class="footer-note">
+            PathFinder LK is an open-source educational platform built for undergraduate university students across Sri Lanka.
+          </p>
+          <p class="footer-Action">
+            <a href="https://github.com/nimesh-kavindya-dev/pathfinder-lk" target="_blank" rel="noopener noreferrer" class="footer-contact-link">GitHub Repository &rarr;</a>
           </p>
         </div>
-
       </div>
 
-      <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span class="current-year">2025</span> PathFinder LK. Built for Sri Lankan University Students.
+        </p>
+        <p class="footer-credits">
+          Open-Source Multi-Disciplinary Career Guidance Platform
+        </p>
       </div>
     </div>
   </footer>

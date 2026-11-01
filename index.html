@@ -3,33 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PathFinder LK is an IT career guidance platform helping Sri Lankan university students explore IT careers, identify essential skills, follow structured roadmaps, and access free resources.">
-  <meta name="keywords" content="PathFinder LK, IT careers Sri Lanka, university students, software engineer roadmap, data analyst, data engineer, cybersecurity analyst, UI UX designer, free IT learning">
-  <meta name="author" content="PathFinder LK Group">
-  
-  <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="PathFinder LK | IT Career Guidance for Sri Lankan University Students">
-  <meta property="og:description" content="Discover your IT career path, follow structured learning roadmaps, and access free resources tailored for university undergraduates.">
+  <meta name="description" content="PathFinder LK is a comprehensive career guidance platform helping Sri Lankan university students explore 15 high-demand career pathways across IT, Business, Finance, Marketing, Creative Media, and Engineering.">
+  <meta name="keywords" content="PathFinder LK, career guidance Sri Lanka, university students, software engineer, data analyst, business analyst, product manager, digital marketing, financial analyst, robotics engineer, UI UX designer">
+  <meta name="author" content="PathFinder LK Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="PathFinder LK | Career Guidance Platform for University Students">
+  <meta property="og:description" content="Explore 15 high-demand career pathways across IT, Business, Finance, Digital Marketing, Creative Media & Engineering, take the career quiz, and follow 6-stage roadmaps.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pathfinderlk.github.io/">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
-  
-  <title>PathFinder LK | Home - IT Career Guidance for University Students</title>
-  
+  <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/">
+  <meta property="og:image" content="assets/images/photos/hero-campus.jpg">
+
+  <!-- Mobile Web App & PWA Capability -->
+  <meta name="theme-color" content="#050a15">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PathFinderLK">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <title>PathFinder LK | Career Guidance Platform for University Students</title>
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
+
   <!-- Immediate Theme Engine Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme'),p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Glassmorphic Branded Loading Screen -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+      </div>
+      <div class="loader-brand">PathFinder <span>LK</span></div>
+      <div class="loader-subtext">Initializing Career Guidance Platform...</div>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percent" aria-hidden="true">8%</div>
+    </div>
+  </div>
+
   <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -44,12 +74,12 @@
       <!-- Primary Navigation Links -->
       <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
           <li class="nav-item"><a href="careers.html" class="nav-link">Explore Careers</a></li>
           <li class="nav-item"><a href="quiz.html" class="nav-link">Career Quiz</a></li>
           <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Community &amp; FAQ</a></li>
         </ul>
       </nav>
 
@@ -58,6 +88,7 @@
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light theme" title="Toggle theme (Dark / Light)">
           <span class="theme-icon sun-icon" aria-hidden="true">&#9728;&#65039;</span>
           <span class="theme-icon moon-icon" aria-hidden="true">&#127769;</span>
+          <span class="theme-label">Dark</span>
         </button>
 
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -69,301 +100,678 @@
 
   <!-- Main Content Area -->
   <main id="main-content" class="main-content" role="main">
-    
-    <!-- 2. HERO SECTION -->
+
+    <!-- 2. HERO SECTION (WITH REAL PHOTOGRAPHIC SHOWCASE) -->
     <section class="hero-section" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
             <div class="hero-tag">
-              <span class="badge badge-hero"><span class="badge-pulse"></span> University Career Companion</span>
+              <span class="badge badge-hero"><span class="badge-pulse"></span> Sri Lanka's Undergraduate Career Guidance Platform</span>
             </div>
-            <h1 id="hero-heading" class="hero-heading">
-              Discover Your True Career Path in the <span class="hero-heading-gradient">Sri Lankan IT Industry</span>
+            <h1 id="hero-heading" class="hero-title">
+              Navigate Your Future Across <span class="text-gradient">Tech, Business &amp; Modern Careers</span>
             </h1>
-            <p class="hero-intro">
-              PathFinder LK helps university undergraduates navigate the tech world with clarity. Explore diverse IT careers, understand essential industry skills, follow step-by-step learning roadmaps, and access 100% free learning resources.
+            <p class="hero-description">
+              Bridge the gap between university lectures and industry careers. Compare 15 high-demand pathways across IT, Data &amp; AI, Business &amp; Product Management, Finance, Digital Marketing, Creative Media, and Robotics—backed by 6-stage roadmaps and 100% free resources.
             </p>
             <div class="hero-actions">
-              <a href="careers.html" class="btn btn-primary">Explore Careers &rarr;</a>
-              <a href="quiz.html" class="btn btn-secondary">&#128640; Take Career Quiz</a>
+              <a href="careers.html" class="btn btn-accent btn-lg">Explore All 15 Career Paths</a>
+              <a href="quiz.html" class="btn btn-outline-light btn-lg">Take Career Match Quiz</a>
+            </div>
+            <div class="hero-trust-note">
+              <span class="trust-check">&#10003;</span> 15 Career Pathways (IT &amp; Beyond)
+              <span class="trust-divider">&bull;</span>
+              <span class="trust-check">&#10003;</span> 90 Roadmap Stages
+              <span class="trust-divider">&bull;</span>
+              <span class="trust-check">&#10003;</span> 100% Free Curated Courses
             </div>
           </div>
-          <div class="hero-media">
-            <div class="hero-image-wrapper">
-              <img src="assets/images/hero/hero-illustration.svg" alt="Visual representation of IT careers: Software Engineering, Data Analysis, Cybersecurity, and UI/UX Design" width="600" height="400" class="hero-image">
+
+          <div class="hero-visual">
+            <div class="hero-illustration-wrapper">
+              <div class="hero-photo-frame">
+                <img
+                  src="assets/images/photos/hero-campus.jpg"
+                  alt="University students collaborating on technology, business analytics, and product design projects"
+                  width="600"
+                  height="450"
+                  class="hero-img-real"
+                >
+              </div>
+              <div class="hero-glass-overlay-bar">
+                <div class="hero-glass-chip">
+                  <span class="hero-chip-icon" aria-hidden="true">&#129517;</span>
+                  <div class="hero-chip-text">
+                    <span class="hero-chip-title">15 Career Pathways</span>
+                    <span class="hero-chip-sub">IT, Business, Finance, Media &amp; Eng</span>
+                  </div>
+                </div>
+                <div class="hero-glass-chip">
+                  <span class="hero-chip-icon" aria-hidden="true">&#128640;</span>
+                  <div class="hero-chip-text">
+                    <span class="hero-chip-title">6-Stage Roadmaps</span>
+                    <span class="hero-chip-sub">Year 1 to Internship Ready</span>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Platform Key Metrics Strip -->
+        <div class="hero-metrics-strip" aria-label="Platform Highlights">
+          <div class="hero-metric-item">
+            <span class="hero-metric-value">15</span>
+            <span class="hero-metric-label">High-Demand Career Tracks</span>
+          </div>
+          <div class="hero-metric-item">
+            <span class="hero-metric-value">90</span>
+            <span class="hero-metric-label">Structured Learning Stages</span>
+          </div>
+          <div class="hero-metric-item">
+            <span class="hero-metric-value">9-Step</span>
+            <span class="hero-metric-label">Aptitude &amp; Interest Quiz</span>
+          </div>
+          <div class="hero-metric-item">
+            <span class="hero-metric-value">100% Free</span>
+            <span class="hero-metric-label">Verified Global Resources</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. ABOUT SECTION -->
-    <section id="about" class="section section-light" aria-labelledby="about-heading">
+    <!-- 3. CAREER CATEGORY PREVIEW (9 MULTI-DISCIPLINARY DOMAINS) -->
+    <section class="section category-preview-section" aria-labelledby="categories-heading">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-blue" style="margin-bottom: 0.5rem;">About The Platform</span>
-          <h2 id="about-heading">Empowering Undergraduates to Build Fulfilling IT Careers</h2>
-          <p class="section-subtitle">
-            Bridging the gap between university lecture halls and the practical expectations of the technology sector.
+          <span class="section-subtitle">Explore by Career Domain</span>
+          <h2 id="categories-heading" class="section-title">Nine Core Career Pillars for Undergraduates</h2>
+          <p class="section-description">
+            Whether you study Computing, Management, Finance, Creative Arts, or Engineering—filter our 15 structured career pathways by discipline.
           </p>
         </div>
 
-        <div class="about-grid">
-          <!-- Text Narrative Column -->
-          <div class="about-intro-text">
-            <h3>What is PathFinder LK?</h3>
-            <p>
-              <strong>PathFinder LK</strong> is an educational career navigation website designed specifically for Sri Lankan university students pursuing degrees in Computing, Information Systems, Software Engineering, and related disciplines.
-            </p>
-            
-            <h3>Why IT Career Guidance Matters</h3>
-            <p>
-              The technology landscape evolves at lightning speed. While universities provide strong theoretical foundations, students often encounter overwhelming career choices and uncertainty regarding what industry employers actually look for. Without clear direction, undergraduates can spend months learning mismatched tools rather than building high-value competencies.
-            </p>
-            
-            <div class="about-highlight-box">
-              <p>
-                Our mission is to eliminate confusion by offering transparent, realistic guidance tailored to the Sri Lankan tech ecosystem, helping students prepare early for successful internships and graduate roles.
+        <div class="category-preview-grid">
+          <a href="careers.html?category=development" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128187;</div>
+              <span class="category-preview-count">2 Pathways</span>
+            </div>
+            <h3>Software &amp; Web Engineering</h3>
+            <p>Architect scalable backend services, APIs, and responsive full-stack web applications using modern frameworks.</p>
+            <span class="category-preview-link">Browse Development Roles &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=data" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128202;</div>
+              <span class="category-preview-count">3 Pathways</span>
+            </div>
+            <h3>Data Analytics, Engineering &amp; AI</h3>
+            <p>Transform raw datasets into executive BI dashboards, automated cloud data pipelines, and predictive ML models.</p>
+            <span class="category-preview-link">Browse Data &amp; AI Roles &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=business" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128188;</div>
+              <span class="category-preview-count">2 Pathways</span>
+            </div>
+            <h3>Business Analysis &amp; Product Management</h3>
+            <p>Lead Agile projects, translate stakeholder needs into product roadmaps, and bridge business strategy with execution.</p>
+            <span class="category-preview-link">Browse Business &amp; Product &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=marketing" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128227;</div>
+              <span class="category-preview-count">1 Pathway</span>
+            </div>
+            <h3>Digital Marketing &amp; Brand Growth</h3>
+            <p>Scale digital brands through SEO/SEM, social media campaigns, content strategy, and Google Analytics 4 conversion funnels.</p>
+            <span class="category-preview-link">Browse Marketing Roles &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=finance" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128176;</div>
+              <span class="category-preview-count">1 Pathway</span>
+            </div>
+            <h3>Corporate Finance &amp; FinTech</h3>
+            <p>Master financial modeling, equity valuation, corporate budgeting, and digital banking innovation.</p>
+            <span class="category-preview-link">Browse Finance &amp; FinTech &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=design" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#127912;</div>
+              <span class="category-preview-count">2 Pathways</span>
+            </div>
+            <h3>UI/UX Design &amp; Creative Multimedia</h3>
+            <p>Craft human-centered interfaces in Figma or produce motion graphics, video edits, and 3D digital brand experiences.</p>
+            <span class="category-preview-link">Browse Design &amp; Media &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=cloud" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#9729;&#65039;</div>
+              <span class="category-preview-count">1 Pathway</span>
+            </div>
+            <h3>Cloud &amp; DevOps Infrastructure</h3>
+            <p>Automate CI/CD deployment pipelines, containerize microservices with Docker &amp; Kubernetes, and manage AWS/Azure clouds.</p>
+            <span class="category-preview-link">Browse Cloud &amp; DevOps &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=security" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#128737;&#65039;</div>
+              <span class="category-preview-count">2 Pathways</span>
+            </div>
+            <h3>Cybersecurity &amp; Quality Assurance</h3>
+            <p>Protect enterprise networks with SIEM &amp; ethical hacking, or build automated Playwright &amp; API test suites.</p>
+            <span class="category-preview-link">Browse Security &amp; QA &rarr;</span>
+          </a>
+
+          <a href="careers.html?category=engineering" class="category-preview-card">
+            <div class="category-preview-top">
+              <div class="category-preview-icon" aria-hidden="true">&#129302;</div>
+              <span class="category-preview-count">1 Pathway</span>
+            </div>
+            <h3>Robotics, Mechatronics &amp; IoT</h3>
+            <p>Design smart connected hardware, ESP32/Arduino embedded systems, industrial automation, and robotics prototypes.</p>
+            <span class="category-preview-link">Browse Engineering &amp; IoT &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. POPULAR CAREER CARDS PREVIEW (WITH REAL PHOTOGRAPHIC BANNERS) -->
+    <section class="section featured-careers-section" aria-labelledby="featured-careers-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">High-Demand Graduate Pathways</span>
+          <h2 id="featured-careers-heading" class="section-title">Featured Career Pathways Across Disciplines</h2>
+          <p class="section-description">
+            Explore nine popular graduate career tracks spanning Software Engineering, Data Analytics, Business &amp; Product Management, Digital Marketing, Finance, Design, and Robotics—or view all 15 pathways in our directory.
+          </p>
+        </div>
+
+        <div class="grid grid-3 careers-preview-grid">
+          <!-- Card 1: Software Engineer -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/software-engineer.jpg" alt="Software Engineer working on code architecture" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-blue">Software Development</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Software Engineer</h3>
+              <p class="card-description">
+                Design, develop, test, and maintain scalable applications, backend services, and enterprise software systems using clean architecture principles.
               </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Java / Python</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Git &amp; SQL</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#software-engineer" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Full-Stack Developer -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/fullstack-developer.jpg" alt="Full-Stack Developer building modern web interfaces" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-cyan">Web Engineering</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Full-Stack Developer</h3>
+              <p class="card-description">
+                Deliver complete web applications from interactive React and TypeScript user interfaces to Node.js backend APIs and relational databases.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">React / Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Node.js</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#fullstack-developer" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Data Analyst -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/data-analyst.jpg" alt="Data Analyst visualizing business intelligence dashboards" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-green">Data &amp; BI</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Data Analyst</h3>
+              <p class="card-description">
+                Collect, clean, and interpret complex datasets to uncover business trends, build interactive KPI dashboards, and guide executive decisions.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">SQL</span>
+                <span class="tag">Python (Pandas)</span>
+                <span class="tag">Power BI</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#data-analyst" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 4: Business Analyst & Project Manager -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst and Project Manager leading strategy session" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-amber">Business &amp; Agile PM</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Business Analyst &amp; Project Manager</h3>
+              <p class="card-description">
+                Bridge corporate strategy and execution by analyzing business processes, gathering stakeholder requirements, and leading Agile/Scrum delivery teams.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Agile &amp; Scrum</span>
+                <span class="tag">BPMN &amp; Jira</span>
+                <span class="tag">Stakeholder Mgmt</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#business-analyst" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 5: Product Manager -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/product-manager.jpg" alt="Product Manager planning product roadmap with team" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/product-manager.svg" alt="Product Manager Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-purple">Product Strategy</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Product Manager</h3>
+              <p class="card-description">
+                Own product strategy, market research, customer discovery, and feature prioritization—guiding engineering, design, and business teams to launch high-impact products.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Product Strategy</span>
+                <span class="tag">PRDs &amp; Roadmaps</span>
+                <span class="tag">Product Analytics</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#product-manager" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 6: Digital Marketing & Growth Strategist -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing Strategist analyzing campaign growth metrics" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-red">Marketing &amp; Growth</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Digital Marketing &amp; Growth Strategist</h3>
+              <p class="card-description">
+                Drive brand awareness, customer acquisition, and e-commerce revenue using SEO/SEM, social media campaigns, content marketing, and Google Analytics 4.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">SEO &amp; SEM</span>
+                <span class="tag">Google &amp; Meta Ads</span>
+                <span class="tag">GA4 Analytics</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#digital-marketing" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 7: Financial Analyst & FinTech Specialist -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst reviewing corporate valuation and market charts" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-green">Finance &amp; FinTech</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Financial Analyst &amp; FinTech Specialist</h3>
+              <p class="card-description">
+                Build 3-statement financial models, evaluate corporate investments, manage risk, and drive innovation across banking, capital markets, and FinTech platforms.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Excel &amp; Power BI</span>
+                <span class="tag">Valuation &amp; FinTech</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#financial-analyst" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 8: UI/UX & Creative Multimedia -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/ui-ux.jpg" alt="UI/UX Designer creating digital wireframes and visual interfaces" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-purple">Product Design</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">UI/UX Product Designer</h3>
+              <p class="card-description">
+                Research user behavior, craft wireframes, and design accessible, visually compelling digital interfaces and interactive prototypes in Figma.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Figma</span>
+                <span class="tag">Wireframing</span>
+                <span class="tag">User Research</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#ui-ux" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 9: Mechatronics, Robotics & IoT Engineer -->
+          <article class="card career-card">
+            <div class="card-photo-banner">
+              <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics and Robotics Engineer testing smart hardware prototype" width="400" height="225" loading="lazy" class="card-photo-img">
+            </div>
+            <div class="card-header">
+              <div class="card-icon-wrapper">
+                <img src="assets/images/careers/robotics-iot.svg" alt="Robotics and IoT Engineer Icon" width="40" height="40" class="card-icon">
+              </div>
+              <span class="badge badge-teal">Engineering &amp; IoT</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Mechatronics, Robotics &amp; IoT Engineer</h3>
+              <p class="card-description">
+                Design smart connected hardware, embedded microcontroller systems (ESP32/Arduino), industrial automation, and robotics solutions.
+              </p>
+              <div class="skill-tags" aria-label="Key Skills">
+                <span class="tag">Embedded C/C++</span>
+                <span class="tag">ESP32 &amp; Arduino</span>
+                <span class="tag">IoT &amp; Robotics</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="career-details.html#robotics-iot" class="btn btn-outline btn-block">Explore Career Path &rarr;</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-cta-center">
+          <a href="careers.html" class="btn btn-primary btn-lg">View All 15 Career Pathways &amp; Comparison Matrix &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW PATHFINDER LK WORKS -->
+    <section class="section how-it-works-section" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Structured 4-Step Framework</span>
+          <h2 id="how-it-works-heading" class="section-title">How PathFinder LK Works</h2>
+          <p class="section-description">
+            Move from uncertainty in your first year to a focused, internship-ready professional portfolio by following four clear milestones.
+          </p>
+        </div>
+
+        <div class="grid grid-4 steps-grid">
+          <div class="card step-card">
+            <div class="step-number" aria-hidden="true">01</div>
+            <h3 class="step-title">Explore 15 Career Tracks</h3>
+            <p class="step-description">
+              Compare day-to-day responsibilities, core skills, and career progression across 15 specialized IT, Business, Finance, Creative, and Engineering roles.
+            </p>
+          </div>
+
+          <div class="card step-card">
+            <div class="step-number" aria-hidden="true">02</div>
+            <h3 class="step-title">Take the Career Quiz</h3>
+            <p class="step-description">
+              Answer 9 scenario-based questions about your problem-solving style and interests to uncover your top career match.
+            </p>
+          </div>
+
+          <div class="card step-card">
+            <div class="step-number" aria-hidden="true">03</div>
+            <h3 class="step-title">Follow the Roadmap</h3>
+            <p class="step-description">
+              Track a stage-by-stage learning progression from foundational university concepts to capstone portfolio projects.
+            </p>
+          </div>
+
+          <div class="card step-card">
+            <div class="step-number" aria-hidden="true">04</div>
+            <h3 class="step-title">Learn with Free Tools</h3>
+            <p class="step-description">
+              Build practical skills using curated, 100% free global platforms like CS50, freeCodeCamp, Kaggle, HubSpot, and Google Digital Garage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE QUIZ & LEARNING ROADMAP PREVIEW -->
+    <section class="section tools-preview-section" aria-labelledby="interactive-tools-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Interactive Guidance Tools</span>
+          <h2 id="interactive-tools-heading" class="section-title">Match Your Strengths &amp; Plan Every Semester</h2>
+          <p class="section-description">
+            Combine personalized career matching with concrete semester-by-semester skill milestones.
+          </p>
+        </div>
+
+        <div class="grid grid-2 split-feature-grid">
+          <!-- Career Quiz Preview Card -->
+          <div class="card feature-highlight-card quiz-preview-card">
+            <div class="feature-badge-row">
+              <span class="badge badge-accent">Interactive Assessment</span>
+              <span class="feature-time-estimate">&#9201; Takes ~2 Minutes</span>
+            </div>
+            <h3 class="feature-title">Not Sure Which Career Path Fits You Best?</h3>
+            <p class="feature-description">
+              Our 9-question Career Match Quiz evaluates whether you thrive on software engineering, business &amp; product strategy, data analytics, digital marketing, finance, creative media, or robotics—and calculates your primary and runner-up affinities.
+            </p>
+            <ul class="feature-checklist">
+              <li>Evaluates across all 15 career pathways (IT &amp; Non-IT)</li>
+              <li>Instant primary &amp; runner-up career match breakdown</li>
+              <li>Recommended beginner tools &amp; next steps</li>
+            </ul>
+            <div class="feature-action">
+              <a href="quiz.html" class="btn btn-accent">Start the Career Quiz &rarr;</a>
             </div>
           </div>
 
-          <!-- Feature Cards Column -->
-          <div class="about-cards-col">
-            <article class="about-feature-card">
-              <div class="about-feature-icon" aria-hidden="true">&#127891;</div>
-              <div>
-                <h3>Academic &amp; Industry Alignment</h3>
-                <p>
-                  We map university course modules directly to real-world job roles, showing how your current studies translate into industry careers.
-                </p>
-              </div>
-            </article>
-
-            <article class="about-feature-card">
-              <div class="about-feature-icon" aria-hidden="true">&#128506;&#65039;</div>
-              <div>
-                <h3>Progressive Learning Roadmaps</h3>
-                <p>
-                  From 1st-year programming logic to 3rd-year internship preparation, our roadmaps outline what to learn at each stage of your degree.
-                </p>
-              </div>
-            </article>
-
-            <article class="about-feature-card">
-              <div class="about-feature-icon" aria-hidden="true">&#128161;</div>
-              <div>
-                <h3>Verified Free Learning Resources</h3>
-                <p>
-                  No expensive courses required. We curate reputable free documentation, tutorials, and student benefits like the GitHub Student Pack.
-                </p>
-              </div>
-            </article>
+          <!-- Learning Roadmap Preview Card -->
+          <div class="card feature-highlight-card roadmap-preview-card">
+            <div class="feature-badge-row">
+              <span class="badge badge-blue">6-Stage Progression</span>
+              <span class="feature-time-estimate">&#128204; Beginner to Internship-Ready</span>
+            </div>
+            <h3 class="feature-title">Structured Learning Roadmaps</h3>
+            <p class="feature-description">
+              Stop jumping between random tutorials. Each of our 15 career roadmaps breaks your journey into 6 logical stages—showing exactly what to study, which tools to master, and what portfolio projects to build.
+            </p>
+            <div class="mini-roadmap-preview" aria-label="Sample Roadmap Stages">
+              <div class="mini-stage"><span class="mini-dot">1</span> Core Foundations &amp; Domain Concepts</div>
+              <div class="mini-stage"><span class="mini-dot">2</span> Industry Tools &amp; Analytical Workflows</div>
+              <div class="mini-stage"><span class="mini-dot">3</span> Frameworks, Strategy &amp; Execution</div>
+              <div class="mini-stage"><span class="mini-dot">4</span> Capstone Portfolio &amp; Internship Prep</div>
+            </div>
+            <div class="feature-action">
+              <a href="roadmaps.html" class="btn btn-primary">Explore All 15 Roadmaps &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. POPULAR CAREERS SECTION -->
-    <section id="popular-careers" class="section" aria-labelledby="careers-heading">
+    <!-- 7. FREE LEARNING RESOURCES PREVIEW -->
+    <section class="section resources-preview-section" aria-labelledby="resources-preview-heading">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-green" style="margin-bottom: 0.5rem;">Career Catalog</span>
-          <h2 id="careers-heading">Popular IT Careers in Sri Lanka</h2>
-          <p class="section-subtitle">
-            Explore the five highest-demand career areas in today's tech ecosystem. Click any card to review required skills, day-to-day duties, and career growth.
+          <span class="section-subtitle">Zero-Cost Skill Building</span>
+          <h2 id="resources-preview-heading" class="section-title">Top Free Learning Resources</h2>
+          <p class="section-description">
+            World-class courses, interactive labs, and official certifications across Computing, Business, Finance, Marketing, and Design—100% free for students.
           </p>
         </div>
 
-        <div class="popular-careers-grid">
-          
-          <!-- Career 1: Software Engineer -->
-          <article class="career-card">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer icon" width="48" height="48">
-              </div>
-              <span class="badge badge-blue">Development</span>
+        <div class="grid grid-3 resources-preview-grid">
+          <article class="card resource-card">
+            <div class="resource-card-top">
+              <span class="badge badge-blue">Software, Data &amp; Cloud</span>
+              <span class="resource-cost-tag">100% Free</span>
             </div>
-            <h3>Software Engineer</h3>
-            <p>
-              Builds robust, scalable web, mobile, and enterprise applications using modern programming languages and architectural patterns.
+            <h3 class="card-title">CS50x, freeCodeCamp &amp; Kaggle</h3>
+            <p class="card-description">
+              Master computer science fundamentals with Harvard's CS50x, build full-stack web apps on freeCodeCamp, and practice Data &amp; ML on Kaggle Learn.
             </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">React / Spring</span>
-              <span class="skill-tag">Git</span>
+            <div class="card-footer">
+              <a href="resources.html?category=programming" class="text-link">Browse Tech &amp; Data Resources &rarr;</a>
             </div>
-            <a href="career-details.html?career=software-engineer" class="btn btn-primary btn-sm">View Career Details &rarr;</a>
           </article>
 
-          <!-- Career 2: Data Analyst -->
-          <article class="career-card">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst icon" width="48" height="48">
-              </div>
-              <span class="badge badge-green">Analytics</span>
+          <article class="card resource-card">
+            <div class="resource-card-top">
+              <span class="badge badge-amber">Business, Marketing &amp; Finance</span>
+              <span class="resource-cost-tag">100% Free</span>
             </div>
-            <h3>Data Analyst</h3>
-            <p>
-              Extracts, cleans, and translates complex operational datasets into interactive visual dashboards and strategic business insights.
+            <h3 class="card-title">Google Digital Garage, HubSpot &amp; CFI</h3>
+            <p class="card-description">
+              Earn free industry certifications in Digital Marketing, Agile Project Management, Product Strategy, and Financial Modeling from global leaders.
             </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Advanced SQL</span>
-              <span class="skill-tag">Power BI</span>
-              <span class="skill-tag">Excel Modeling</span>
-              <span class="skill-tag">Python (Pandas)</span>
+            <div class="card-footer">
+              <a href="resources.html?category=business" class="text-link">Browse Business &amp; Finance Resources &rarr;</a>
             </div>
-            <a href="career-details.html?career=data-analyst" class="btn btn-primary btn-sm">View Career Details &rarr;</a>
           </article>
 
-          <!-- Career 3: Data Engineer -->
-          <article class="career-card">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer icon" width="48" height="48">
-              </div>
-              <span class="badge badge-amber">Big Data</span>
+          <article class="card resource-card">
+            <div class="resource-card-top">
+              <span class="badge badge-purple">Design, Media &amp; Engineering</span>
+              <span class="resource-cost-tag">100% Free</span>
             </div>
-            <h3>Data Engineer</h3>
-            <p>
-              Architects and manages automated ETL pipelines, cloud data warehouses, and high-volume data streaming infrastructure.
+            <h3 class="card-title">Figma Learn, DaVinci Resolve &amp; Arduino</h3>
+            <p class="card-description">
+              Learn UI/UX prototyping in Figma, professional video and motion editing with DaVinci Resolve &amp; Blender, and IoT hardware simulation with Tinkercad.
             </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Python / Scala</span>
-              <span class="skill-tag">Apache Spark</span>
-              <span class="skill-tag">Airflow</span>
-              <span class="skill-tag">Snowflake</span>
+            <div class="card-footer">
+              <a href="resources.html" class="text-link">View All 16+ Curated Platforms &rarr;</a>
             </div>
-            <a href="career-details.html?career=data-engineer" class="btn btn-primary btn-sm">View Career Details &rarr;</a>
-          </article>
-
-          <!-- Career 4: Cybersecurity Analyst -->
-          <article class="career-card">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst icon" width="48" height="48">
-              </div>
-              <span class="badge badge-red">Security</span>
-            </div>
-            <h3>Cybersecurity Analyst</h3>
-            <p>
-              Protects digital networks, servers, and sensitive corporate data by monitoring threats, analyzing logs, and patching vulnerabilities.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">TCP/IP Networking</span>
-              <span class="skill-tag">Wireshark</span>
-              <span class="skill-tag">SIEM Tools</span>
-            </div>
-            <a href="career-details.html?career=cybersecurity" class="btn btn-primary btn-sm">View Career Details &rarr;</a>
-          </article>
-
-          <!-- Career 5: UI/UX Designer -->
-          <article class="career-card">
-            <div class="career-card-top">
-              <div class="career-icon-wrapper">
-                <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer icon" width="48" height="48">
-              </div>
-              <span class="badge badge-purple">Design</span>
-            </div>
-            <h3>UI/UX Designer</h3>
-            <p>
-              Conducts user research, crafts wireframes, designs intuitive UI prototypes, and tests digital experiences for maximum usability.
-            </p>
-            <div class="career-skills-tags">
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">User Research</span>
-              <span class="skill-tag">Wireframing</span>
-              <span class="skill-tag">Design Systems</span>
-            </div>
-            <a href="career-details.html?career=ui-ux" class="btn btn-primary btn-sm">View Career Details &rarr;</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. HOW IT WORKS SECTION -->
-    <section id="how-it-works" class="section section-light" aria-labelledby="how-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Platform Guide</span>
-          <h2 id="how-heading">How PathFinder LK Works</h2>
-          <p class="section-subtitle">
-            Follow this five-step process to transition from a student learner to a confident IT job candidate.
-          </p>
-        </div>
-
-        <div class="how-it-works-grid">
-          <!-- Step 1 -->
-          <article class="step-card">
-            <span class="step-number">1</span>
-            <h3>Explore Careers</h3>
-            <p>
-              Browse in-demand IT specializations and see how different technical fields compare side-by-side.
-            </p>
-            <a href="careers.html" class="step-link">Browse Careers &rarr;</a>
-          </article>
-
-          <!-- Step 2 -->
-          <article class="step-card">
-            <span class="step-number">2</span>
-            <h3>Discover Details</h3>
-            <p>
-              Learn about daily responsibilities, required tools, career ladders, and university course alignments.
-            </p>
-            <a href="career-details.html" class="step-link">Read Profiles &rarr;</a>
-          </article>
-
-          <!-- Step 3 -->
-          <article class="step-card">
-            <span class="step-number">3</span>
-            <h3>Take Career Quiz</h3>
-            <p>
-              Answer 9 targeted questions to receive personalized role recommendations matching your problem-solving style.
-            </p>
-            <a href="quiz.html" class="step-link">Start Quiz &rarr;</a>
-          </article>
-
-          <!-- Step 4 -->
-          <article class="step-card">
-            <span class="step-number">4</span>
-            <h3>Follow Roadmaps</h3>
-            <p>
-              Navigate structured milestones from 1st-year computational logic to 3rd-year industrial internship readiness.
-            </p>
-            <a href="roadmaps.html" class="step-link">View Milestones &rarr;</a>
-          </article>
-
-          <!-- Step 5 -->
-          <article class="step-card">
-            <span class="step-number">5</span>
-            <h3>Access Resources</h3>
-            <p>
-              Study with 100% free verified tutorials, official documentation, interactive labs, and student developer packs.
-            </p>
-            <a href="resources.html" class="step-link">Access Resources &rarr;</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 6. CALL-TO-ACTION SECTION -->
-    <section class="cta-section" aria-labelledby="cta-heading">
+    <!-- 8. PROJECT CONTRIBUTORS / OUR TEAM -->
+    <section class="section team-section" aria-labelledby="team-heading">
       <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-heading" class="cta-heading">Ready to Take Control of Your IT Future?</h2>
-          <p class="cta-text">
-            Do not wait until your final year to prepare for the tech industry. Assess your strengths with our 3-minute quiz or explore the comprehensive learning roadmaps today.
+        <div class="section-header">
+          <span class="section-subtitle">Platform Collaborators</span>
+          <h2 id="team-heading" class="section-title">Built by University Undergraduates for Students</h2>
+          <p class="section-description">
+            PathFinder LK is an open-source career guidance initiative created collaboratively to help undergraduate students navigate Sri Lanka's technology, business, and engineering ecosystem.
           </p>
-          <div class="cta-actions">
-            <a href="quiz.html" class="btn btn-accent">Take the Career Quiz</a>
-            <a href="careers.html" class="btn btn-outline-light">Explore All 5 Careers</a>
+        </div>
+
+        <div class="grid grid-4 team-grid">
+          <article class="card team-card">
+            <div class="team-avatar" aria-hidden="true">01</div>
+            <span class="team-role-badge">Project Lead &amp; Architecture</span>
+            <h3 class="team-name">Nimesh Kavindya</h3>
+            <p class="team-contrib">
+              Platform architecture, core responsive layout system, dark/light theme engine, and GitHub repository maintenance.
+            </p>
+          </article>
+
+          <article class="card team-card">
+            <div class="team-avatar" aria-hidden="true">02</div>
+            <span class="team-role-badge">UI/UX &amp; Visual Design</span>
+            <h3 class="team-name">Team Collaborator 02 <span class="team-placeholder-tag">(Update Name)</span></h3>
+            <p class="team-contrib">
+              Design system typography, career visuals, interactive component states, and cross-device visual alignment.
+            </p>
+          </article>
+
+          <article class="card team-card">
+            <div class="team-avatar" aria-hidden="true">03</div>
+            <span class="team-role-badge">Career &amp; Roadmap Research</span>
+            <h3 class="team-name">Team Collaborator 03 <span class="team-placeholder-tag">(Update Name)</span></h3>
+            <p class="team-contrib">
+              Curriculum alignment, 6-stage learning roadmaps across 15 tracks, skill mapping, and curated free learning resources.
+            </p>
+          </article>
+
+          <article class="card team-card">
+            <div class="team-avatar" aria-hidden="true">04</div>
+            <span class="team-role-badge">Interactive Tools &amp; QA</span>
+            <h3 class="team-name">Team Collaborator 04 <span class="team-placeholder-tag">(Update Name)</span></h3>
+            <p class="team-contrib">
+              Career Match Quiz scoring logic, real-time search and category filtering, accessibility checks, and responsive testing.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FINAL CALL-TO-ACTION BANNER -->
+    <section class="section cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2 id="cta-heading" class="cta-title">Ready to Discover Your Ideal Career Path?</h2>
+            <p class="cta-description">
+              Take our 2-minute Career Match Quiz to get a personalized recommendation or jump straight into our 15 structured career profiles.
+            </p>
+          </div>
+          <div class="cta-buttons">
+            <a href="quiz.html" class="btn btn-accent btn-lg">Take the Career Quiz</a>
+            <a href="careers.html" class="btn btn-outline-light btn-lg">Browse All 15 Careers</a>
           </div>
         </div>
       </div>
@@ -371,66 +779,62 @@
 
   </main>
 
-  <!-- 7. FOOTER -->
+  <!-- 10. FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        
-        <!-- Column 1: Website Logo & Mission -->
-        <div class="footer-column">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="32" height="32">
-            <span class="brand-text" style="color: #ffffff;">PathFinder <span class="brand-highlight">LK</span></span>
-          </div>
-          <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
-            A community-focused IT career navigation platform developed for Sri Lankan university undergraduates as part of the IS 1106 Foundations of Web Technologies course module.
-          </p>
-          <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
-            100% Static &bull; Pure HTML5 &bull; CSS3 &bull; Vanilla JS &bull; Hosted on GitHub Pages
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <span class="brand-text">PathFinder <span class="brand-highlight">LK</span></span>
+          </a>
+          <p class="footer-mission">
+            Empowering Sri Lankan university students with clear career guidance across IT, Business, Finance, Marketing, Design &amp; Engineering, structured roadmaps, and free resources.
           </p>
         </div>
 
-        <!-- Column 2: Navigation Links -->
-        <div class="footer-column">
-          <h3>Navigation Links</h3>
-          <ul>
+        <div class="footer-col">
+          <h3 class="footer-heading">Platform Navigation</h3>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="careers.html">Explore Careers</a></li>
-            <li><a href="quiz.html">Career Quiz</a></li>
-            <li><a href="roadmaps.html">Career Roadmaps</a></li>
-            <li><a href="resources.html">Learning Resources</a></li>
-            <li><a href="contact.html">Contact Us &amp; FAQ</a></li>
+            <li><a href="careers.html">Explore 15 Career Paths</a></li>
+            <li><a href="quiz.html">Career Match Quiz</a></li>
+            <li><a href="roadmaps.html">Learning Roadmaps</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="contact.html">Community &amp; FAQ</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Useful Links -->
-        <div class="footer-column">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs &#8599;</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp &#8599;</a></li>
-            <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Pack &#8599;</a></li>
-            <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard CS50 Course &#8599;</a></li>
-            <li><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">Developer Roadmaps &#8599;</a></li>
+        <div class="footer-col">
+          <h3 class="footer-heading">Career Pathways</h3>
+          <ul class="footer-links">
+            <li><a href="career-details.html#software-engineer">Software &amp; Full-Stack Dev</a></li>
+            <li><a href="career-details.html#data-analyst">Data, AI &amp; Cloud DevOps</a></li>
+            <li><a href="career-details.html#business-analyst">Business Analysis &amp; Product Mgmt</a></li>
+            <li><a href="career-details.html#digital-marketing">Digital Marketing &amp; Growth</a></li>
+            <li><a href="career-details.html#financial-analyst">Finance &amp; FinTech Specialist</a></li>
+            <li><a href="career-details.html#robotics-iot">UI/UX, Multimedia &amp; Robotics</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Academic Information -->
-        <div class="footer-column">
-          <h3>Academic Context</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-            <strong>Module:</strong> IS 1106 – Foundations of Web Technologies<br>
-            <strong>Project:</strong> Semester 1 Group Web Project<br>
-            <strong>Theme:</strong> Community-Focused Static Website<br>
-            <strong>Platform:</strong> PathFinder LK
+        <div class="footer-col">
+          <h3 class="footer-heading">Open Source &amp; Community</h3>
+          <p class="footer-note">
+            PathFinder LK is an open-source educational platform built for undergraduate students across Sri Lanka.
+          </p>
+          <p class="footer-Action">
+            <a href="https://github.com/nimesh-kavindya-dev/pathfinder-lk" target="_blank" rel="noopener noreferrer" class="footer-contact-link">GitHub Repository &rarr;</a>
           </p>
         </div>
-
       </div>
 
-      <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> PathFinder LK. Built for university students. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span class="current-year">2025</span> PathFinder LK. Built for Sri Lankan University Students.
+        </p>
+        <p class="footer-credits">
+          Open-Source Career Guidance Platform
+        </p>
       </div>
     </div>
   </footer>
