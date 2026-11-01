@@ -57,6 +57,8 @@ function initRoadmapsPage() {
 
   if (tabButtons.length === 0 || roadmapPanes.length === 0) return;
 
+  const topHeroSection = document.querySelector('main#main-content > section:first-of-type');
+
   const switchRoadmap = (targetPaneId, animateSwitch = false) => {
     tabButtons.forEach((btn) => {
       const btnTarget = btn.getAttribute('data-target');
@@ -64,6 +66,12 @@ function initRoadmapsPage() {
 
       btn.classList.toggle('active', isMatch);
       btn.setAttribute('aria-selected', String(isMatch));
+      if (isMatch && topHeroSection) {
+        const activeSlug = btn.getAttribute('data-career-slug');
+        if (activeSlug) {
+          topHeroSection.setAttribute('data-active-career', activeSlug);
+        }
+      }
     });
 
     roadmapPanes.forEach((pane) => {
