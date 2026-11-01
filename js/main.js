@@ -3,13 +3,13 @@
  * PathFinder LK - Global Main Script (main.js)
  * ============================================================================
  * Description: Handles global UI logic across all pages, including:
- *              0. Glassy Branded Loading Screen Controller (Extended ~1.6s Delay)
- *              1. Smooth Scroll-Reveal Card Transition Engine (IntersectionObserver)
+ *              0. Glassy Branded Loading Screen Controller (Single-Run per Page)
+ *              1. Smooth Scroll-Reveal Card Transition Engine & Metric Counters
  *              2. Dark / Light Theme System (localStorage + OS preference)
  *              3. Mobile Hamburger Drawer + Native-Style Mobile Bottom Nav Dock
  *              4. PWA Service Worker Registration & In-App Mobile Install Flow
  *              5. Active Navigation Link Highlighting
- *              6. Smooth Scrolling for Anchor Links
+ *              6. Universal Smooth Scrolling (In-Page, Header, Footer & Hash Links)
  *              7. Dynamic Copyright Year Update in Footer
  *              8. Standalone FAQ Accordion Controller
  * ============================================================================
@@ -18,6 +18,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initPageLoader();
   initScrollReveal();
+  initMetricCounters();
   initThemeToggle();
   initMobileNav();
   initMobileBottomDock();
@@ -29,13 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 0. Glassy Branded Loading Screen Controller
- * Displays a smooth, clearly visible glassmorphic loading screen (~1.6s) with
- * live percentage counter and status updates on initial entry and page navigation.
+ * 0. Glassy Branded Loading Screen Controller (Single-Run Guarantee)
+ * Runs once when a page loads (~1.5s smooth progress to 100%) and never
+ * triggers a duplicate pre-navigation loader on the outgoing page.
  */
 function initPageLoader() {
   const loader = document.getElementById('page-loader');
   if (!loader) return;
+
+  // Prevent duplicate execution if initPageLoader is ever invoked more than once
+  if (loader.dataset.loaderInitialized === 'true') return;
+  loader.dataset.loaderInitialized = 'true';
 
   const fillEl = loader.querySelector('.loader-bar-fill');
   const percentEl = loader.querySelector('.loader-percent');
@@ -48,22 +53,25 @@ function initPageLoader() {
     'Ready to Explore!'
   ];
 
-  let progress = 8;
+  let progress = 12;
   if (fillEl) fillEl.style.width = `${progress}%`;
   if (percentEl) percentEl.textContent = `${progress}%`;
 
   const interval = setInterval(() => {
-    progress = Math.min(96, progress + Math.floor(Math.random() * 9) + 6);
+    progress = Math.min(96, progress + Math.floor(Math.random() * 10) + 7);
     if (fillEl) fillEl.style.width = `${progress}%`;
     if (percentEl) percentEl.textContent = `${progress}%`;
     if (subtextEl) {
-      if (progress < 35) subtextEl.textContent = statusMessages[0];
-      else if (progress < 70) subtextEl.textContent = statusMessages[1];
+      if (progress < 38) subtextEl.textContent = statusMessages[0];
+      else if (progress < 72) subtextEl.textContent = statusMessages[1];
       else subtextEl.textContent = statusMessages[2];
     }
-  }, 115);
+  }, 110);
 
+  let isDismissed = false;
   const dismissLoader = () => {
+    if (isDismissed) return;
+    isDismissed = true;
     clearInterval(interval);
     if (fillEl) fillEl.style.width = '100%';
     if (percentEl) percentEl.textContent = '100%';
@@ -72,94 +80,80 @@ function initPageLoader() {
     setTimeout(() => {
       loader.classList.add('is-hidden');
       loader.setAttribute('aria-busy', 'false');
-    }, 240);
+    }, 220);
   };
 
-  // Deliberate ~1.45s loading sequence + 240ms completion hold (~1.7s total)
-  setTimeout(dismissLoader, 1450);
+  // Single smooth ~1.35s loading sequence + 220ms completion fade (~1.57s total)
+  setTimeout(dismissLoader, 1350);
 
-  // Brief glassy loading transition when clicking internal navigation links
-  const internalLinks = document.querySelectorAll(
-    'a[href$=".html"], a[href*=".html?"], a[href*=".html#"]'
-  );
-  internalLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      const href = link.getAttribute('href');
-      if (
-        !href ||
-        link.target === '_blank' ||
-        event.ctrlKey ||
-        event.metaKey ||
-        event.shiftKey ||
-        event.altKey
-      ) {
-        return;
-      }
-
-      const targetPage = href.split('#')[0].split('?')[0];
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      if (targetPage === currentPage && href.includes('#')) {
-        return; // Same-page hash scroll, do not show full-page loader
-      }
-
-      event.preventDefault();
-      if (fillEl) fillEl.style.width = '35%';
-      if (percentEl) percentEl.textContent = '35%';
-      if (subtextEl) subtextEl.textContent = 'Loading Next Page...';
-      loader.classList.remove('is-hidden');
-      loader.setAttribute('aria-busy', 'true');
-
-      setTimeout(() => {
-        if (fillEl) fillEl.style.width = '90%';
-        if (percentEl) percentEl.textContent = '90%';
-      }, 220);
-
-      setTimeout(() => {
-        window.location.href = href;
-      }, 480);
-    });
+  // Ensure Back/Forward browser cache restoration never leaves the loader visible
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      dismissLoader();
+    }
   });
 }
 
 /**
  * 1. Smooth Scroll-Reveal Card Transition Engine
- * Animates cards, panels, headers, and banners smoothly into view as the user scrolls.
+ * Animates hero columns, cards, panels, headers, and banners smoothly into view
+ * as the user scrolls down the page.
  */
 function initScrollReveal() {
+  const heroContent = document.querySelector('.hero-content');
+  const heroVisual = document.querySelector('.hero-visual');
+
+  if (heroContent) {
+    heroContent.classList.add('scroll-reveal', 'scroll-reveal-left');
+    heroContent.style.setProperty('--reveal-delay', '60ms');
+  }
+  if (heroVisual) {
+    heroVisual.classList.add('scroll-reveal', 'scroll-reveal-right');
+    heroVisual.style.setProperty('--reveal-delay', '140ms');
+  }
+
   const revealSelectors = [
     '.card',
     '.category-preview-card',
     '.hero-metric-item',
-    '.hero-illustration-wrapper',
     '.detail-header-card',
     '.detail-panel',
+    '.detail-subcard',
     '.accordion-item',
     '.quiz-question-card',
     '.contact-channel-card',
     '.section-header',
     '.cta-banner',
-    '.comparison-table-wrapper'
+    '.comparison-table-wrapper',
+    '.filter-bar'
   ];
 
   const elements = document.querySelectorAll(revealSelectors.join(', '));
-  if (elements.length === 0) return;
+  const allRevealTargets = [
+    ...(heroContent ? [heroContent] : []),
+    ...(heroVisual ? [heroVisual] : []),
+    ...Array.from(elements)
+  ];
+
+  if (allRevealTargets.length === 0) return;
 
   elements.forEach((el, idx) => {
     el.classList.add('scroll-reveal');
-    // Stagger siblings within the same grid row
     const parent = el.parentElement;
     if (parent) {
-      const siblings = Array.from(parent.children);
-      const siblingIndex = siblings.indexOf(el);
-      const delayMs = (siblingIndex % 4) * 75;
+      const siblings = Array.from(parent.children).filter((child) =>
+        child.classList.contains('scroll-reveal') || child === el
+      );
+      const siblingIndex = Math.max(0, siblings.indexOf(el));
+      const delayMs = (siblingIndex % 4) * 80;
       el.style.setProperty('--reveal-delay', `${delayMs}ms`);
     } else {
-      el.style.setProperty('--reveal-delay', `${(idx % 3) * 70}ms`);
+      el.style.setProperty('--reveal-delay', `${(idx % 3) * 75}ms`);
     }
   });
 
   if (!('IntersectionObserver' in window)) {
-    elements.forEach((el) => el.classList.add('is-revealed'));
+    allRevealTargets.forEach((el) => el.classList.add('is-revealed'));
     return;
   }
 
@@ -173,12 +167,62 @@ function initScrollReveal() {
     },
     {
       root: null,
-      rootMargin: '0px 0px -28px 0px',
-      threshold: 0.08,
+      rootMargin: '0px 0px -24px 0px',
+      threshold: 0.06,
     }
   );
 
-  elements.forEach((el) => observer.observe(el));
+  allRevealTargets.forEach((el) => observer.observe(el));
+}
+
+/**
+ * 1B. Animated Metric Counters on Homepage Hero Strip
+ */
+function initMetricCounters() {
+  const metricValues = document.querySelectorAll('.hero-metric-value');
+  if (metricValues.length === 0 || !('IntersectionObserver' in window)) return;
+
+  const animateValue = (el) => {
+    if (el.dataset.counted === 'true') return;
+    const rawText = el.textContent.trim();
+    const match = rawText.match(/^(\d+)(.*)$/);
+    if (!match) return;
+
+    el.dataset.counted = 'true';
+    const targetNum = parseInt(match[1], 10);
+    const suffix = match[2] || '';
+    const duration = 1100;
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(targetNum * eased);
+      el.textContent = `${current}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = rawText;
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateValue(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  metricValues.forEach((el) => observer.observe(el));
 }
 
 /**
@@ -303,6 +347,7 @@ function initMobileNav() {
 }
 
 function closeMobileMenu(toggleBtn, navMenu) {
+  if (!toggleBtn || !navMenu) return;
   toggleBtn.setAttribute('aria-expanded', 'false');
   navMenu.classList.remove('is-open');
   document.body.classList.remove('mobile-menu-open');
@@ -475,31 +520,142 @@ function highlightActiveNavLink() {
 }
 
 /**
- * 7. Smooth Scrolling for In-Page Anchor Links
+ * 7. Universal Smooth Scrolling for All Anchor, Header & Footer Links
+ * Handles:
+ * - In-page hash links (href="#section")
+ * - Same-page links with hashes (e.g., footer links career-details.html#data-analyst while on career-details.html)
+ * - Header, brand logo, mobile dock & footer links pointing to the current page (smoothly scrolls to top instead of reloading)
+ * - Cross-page hash arrival on initial page load
  */
+function getStickyHeaderOffset() {
+  const header = document.querySelector('.site-header');
+  const roleSwitcher = document.querySelector('.role-switcher-bar');
+  let offset = 18;
+  if (header) {
+    offset += header.getBoundingClientRect().height;
+  }
+  if (roleSwitcher) {
+    offset += roleSwitcher.getBoundingClientRect().height;
+  }
+  return offset;
+}
+
+function smoothScrollToTarget(targetElement, hashId, updateHistory = true) {
+  if (!targetElement) return;
+
+  const headerOffset = getStickyHeaderOffset();
+  const elementPosition = targetElement.getBoundingClientRect().top;
+  const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - headerOffset);
+
+  // Reveal all .scroll-reveal elements up to and inside the target so nothing flashes blank during smooth scroll
+  const targetBottom = offsetPosition + window.innerHeight;
+  document.querySelectorAll('.scroll-reveal:not(.is-revealed)').forEach((el) => {
+    const elTop = el.getBoundingClientRect().top + window.pageYOffset;
+    if (elTop <= targetBottom) {
+      el.classList.add('is-revealed');
+    }
+  });
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+
+  // Ensure target and any reveal children inside it are revealed immediately
+  targetElement.classList.add('is-revealed');
+  targetElement.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('is-revealed'));
+
+  // Brief visual highlight on the target card/section
+  const highlightBox = targetElement.querySelector('.detail-header-card') || targetElement;
+  highlightBox.classList.remove('anchor-target-highlight');
+  void highlightBox.offsetWidth;
+  highlightBox.classList.add('anchor-target-highlight');
+
+  if (updateHistory && hashId && history.pushState) {
+    history.pushState(null, null, `#${hashId}`);
+  }
+}
+
 function initSmoothScroll() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-  const headerOffset = 88;
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
 
-  anchorLinks.forEach((anchor) => {
-    anchor.addEventListener('click', function (event) {
-      const targetId = this.getAttribute('href').substring(1);
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    if (
+      link.target === '_blank' ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    const rawHref = link.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('mailto:') || rawHref.startsWith('tel:')) {
+      return;
+    }
+
+    // 1. Pure hash link on the current page (e.g. href="#compare-careers" or href="#")
+    if (rawHref.startsWith('#')) {
+      if (rawHref === '#' || rawHref === '#top') {
+        event.preventDefault();
+        closeMobileMenu(navToggle, mainNav);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      const targetId = rawHref.substring(1);
       const targetElement = document.getElementById(targetId);
-
       if (targetElement) {
         event.preventDefault();
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-
-        history.pushState(null, null, `#${targetId}`);
+        closeMobileMenu(navToggle, mainNav);
+        smoothScrollToTarget(targetElement, targetId, true);
       }
-    });
+      return;
+    }
+
+    // 2. Relative page link (with or without #hash)
+    const [pathAndQuery, hashPart] = rawHref.split('#');
+    const [pathOnly, queryPart] = pathAndQuery.split('?');
+    const normalizedTargetPage = pathOnly || currentPage;
+
+    // If link points to the exact page we are already viewing (and has no different query string)
+    const currentQuery = window.location.search.replace(/^\?/, '');
+    if (normalizedTargetPage === currentPage && (queryPart || '') === currentQuery) {
+      if (hashPart) {
+        const targetElement = document.getElementById(hashPart);
+        if (targetElement) {
+          event.preventDefault();
+          closeMobileMenu(navToggle, mainNav);
+          smoothScrollToTarget(targetElement, hashPart, true);
+        }
+      } else {
+        // Clicking active header/footer/logo/dock link for the current page -> smooth scroll to top
+        event.preventDefault();
+        closeMobileMenu(navToggle, mainNav);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.location.hash && history.pushState) {
+          history.pushState(null, null, window.location.pathname + window.location.search);
+        }
+      }
+    }
   });
+
+  // 3. Smooth scroll to #hash target when arriving from another page
+  if (window.location.hash && window.location.hash.length > 1) {
+    const initialHashId = window.location.hash.substring(1);
+    const targetElement = document.getElementById(initialHashId);
+    if (targetElement) {
+      setTimeout(() => {
+        smoothScrollToTarget(targetElement, initialHashId, false);
+      }, 180);
+    }
+  }
 }
 
 /**

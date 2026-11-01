@@ -2,10 +2,10 @@
  * ============================================================================
  * PathFinder LK - Interactive Learning Roadmaps Script (roadmaps.js)
  * ============================================================================
- * Description: Powers the interactive career roadmap switcher, collapsible
- *              learning stage accordions, expand/collapse all controls, and
- *              URL parameter/hash deep-linking for all 15 career pathways on
- *              roadmaps.html.
+ * Description: Powers the interactive career roadmap switcher, staggered stage
+ *              entrance animations, collapsible learning stage accordions,
+ *              expand/collapse all controls, and URL parameter/hash deep-linking
+ *              for all 15 career pathways on roadmaps.html.
  * ============================================================================
  */
 
@@ -57,7 +57,7 @@ function initRoadmapsPage() {
 
   if (tabButtons.length === 0 || roadmapPanes.length === 0) return;
 
-  const switchRoadmap = (targetPaneId) => {
+  const switchRoadmap = (targetPaneId, animateSwitch = false) => {
     tabButtons.forEach((btn) => {
       const btnTarget = btn.getAttribute('data-target');
       const isMatch = btnTarget === targetPaneId;
@@ -69,7 +69,16 @@ function initRoadmapsPage() {
     roadmapPanes.forEach((pane) => {
       if (pane.id === targetPaneId) {
         pane.classList.remove('hidden');
-        pane.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('is-revealed'));
+        const animatedItems = pane.querySelectorAll('.detail-header-card, .accordion-item');
+        animatedItems.forEach((el, idx) => {
+          el.classList.add('is-revealed');
+          if (animateSwitch) {
+            el.classList.remove('card-filter-enter');
+            void el.offsetWidth;
+            el.style.setProperty('--stagger-delay', `${idx * 60}ms`);
+            el.classList.add('card-filter-enter');
+          }
+        });
       } else {
         pane.classList.add('hidden');
       }
@@ -81,7 +90,7 @@ function initRoadmapsPage() {
       const targetPaneId = button.getAttribute('data-target');
       if (!targetPaneId) return;
 
-      switchRoadmap(targetPaneId);
+      switchRoadmap(targetPaneId, true);
 
       const careerSlug = button.getAttribute('data-career-slug');
       if (careerSlug && history.replaceState) {
@@ -142,9 +151,9 @@ function initRoadmapsPage() {
 
     const lookupKey = careerParam || hashParam;
     if (lookupKey && CAREER_MAP[lookupKey]) {
-      switchRoadmap(CAREER_MAP[lookupKey]);
+      switchRoadmap(CAREER_MAP[lookupKey], false);
     } else {
-      switchRoadmap('roadmap-se');
+      switchRoadmap('roadmap-se', false);
     }
   };
 

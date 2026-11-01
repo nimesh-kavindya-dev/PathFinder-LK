@@ -4,8 +4,9 @@
  * ============================================================================
  * Description: Handles interactive search, category pill filtering across all
  *              15 career pathways (IT, Business, Finance, Marketing, Creative,
- *              and Engineering), URL query pre-selection, live result counts,
- *              and career detail role switcher synchronization.
+ *              and Engineering), staggered card entrance animations, URL query
+ *              pre-selection, live result counts, and career detail role
+ *              switcher synchronization.
  * ============================================================================
  */
 
@@ -40,7 +41,7 @@ function initCareerFilters() {
     });
   };
 
-  const filterCards = () => {
+  const filterCards = (animateEntrance = false) => {
     let visibleCount = 0;
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
@@ -62,9 +63,16 @@ function initCareerFilters() {
       if (matchesCategory && matchesSearch) {
         card.classList.remove('hidden');
         card.classList.add('is-revealed');
+        if (animateEntrance) {
+          card.classList.remove('card-filter-enter');
+          void card.offsetWidth;
+          card.style.setProperty('--stagger-delay', `${(visibleCount % 9) * 55}ms`);
+          card.classList.add('card-filter-enter');
+        }
         visibleCount++;
       } else {
         card.classList.add('hidden');
+        card.classList.remove('card-filter-enter');
       }
     });
 
@@ -113,7 +121,7 @@ function initCareerFilters() {
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       searchQuery = event.target.value;
-      filterCards();
+      filterCards(true);
     });
   }
 
@@ -121,7 +129,7 @@ function initCareerFilters() {
     button.addEventListener('click', () => {
       activeCategory = button.getAttribute('data-filter') || 'all';
       setActiveCategoryButton(activeCategory);
-      filterCards();
+      filterCards(true);
     });
   });
 
@@ -132,7 +140,7 @@ function initCareerFilters() {
       searchInput.value = '';
     }
     setActiveCategoryButton('all');
-    filterCards();
+    filterCards(true);
   };
 
   if (resetFilterBtn) {
@@ -146,7 +154,7 @@ function initCareerFilters() {
     clearSearchBtn.addEventListener('click', resetAllFilters);
   }
 
-  filterCards();
+  filterCards(false);
 }
 
 /**
@@ -164,6 +172,17 @@ function initCareerDetailsNavigation() {
       if (href === `#${targetId}`) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'true');
+        const listContainer = link.closest('.role-switcher-list');
+        if (listContainer) {
+          const linkRect = link.getBoundingClientRect();
+          const containerRect = listContainer.getBoundingClientRect();
+          if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+            listContainer.scrollTo({
+              left: link.offsetLeft - listContainer.clientWidth / 2 + link.clientWidth / 2,
+              behavior: 'smooth',
+            });
+          }
+        }
       } else {
         link.classList.remove('active');
         link.removeAttribute('aria-current');
@@ -171,31 +190,31 @@ function initCareerDetailsNavigation() {
     });
   };
 
-  const handleInitialHash = () => {
+  const syncRoleFromHash = () => {
     const hash = window.location.hash.substring(1);
-    if (hash) {
-      const targetSection = document.getElementById(hash);
-      if (targetSection) {
-        setActiveRoleLink(hash);
-        setTimeout(() => {
-          const headerOffset = 136;
-          const elementPosition = targetSection.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }, 100);
-      }
+    if (hash && document.getElementById(hash)) {
+      setActiveRoleLink(hash);
     } else if (careerSections[0]) {
       setActiveRoleLink(careerSections[0].id);
     }
   };
 
-  handleInitialHash();
-  window.addEventListener('hashchange', handleInitialHash);
+  syncRoleFromHash();
+  window.addEventListener('hashchange', syncRoleFromHash);
+
+  roleNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const targetId = (link.getAttribute('href') || '').replace('#', '');
+      if (targetId) {
+        setActiveRoleLink(targetId);
+      }
+    });
+  });
 
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '-25% 0px -65% 0px',
+      rootMargin: '-22% 0px -65% 0px',
       threshold: 0,
     };
 

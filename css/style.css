@@ -687,18 +687,26 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 2.75rem;
   align-items: center;
 }
 
+.hero-content,
+.hero-visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .hero-tag {
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 .badge-hero {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.4rem 0.95rem;
   background-color: var(--primary-light);
@@ -712,6 +720,10 @@ img {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   box-shadow: var(--shadow-xs);
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
 }
 
 .badge-pulse {
@@ -1191,6 +1203,7 @@ img {
 
 .cta-content {
   max-width: 640px;
+  min-width: 0;
 }
 
 .cta-title {
@@ -1228,9 +1241,13 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.1fr 1.1fr;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.1fr);
   gap: 2.25rem;
   margin-bottom: 2.5rem;
+}
+
+.footer-col {
+  min-width: 0;
 }
 
 .footer-logo .brand-text {

@@ -4,7 +4,8 @@
  * ============================================================================
  * Description: Powers real-time search, category filtering (Software, Data,
  *              Cloud, Security, Design/Media, QA, Business & Management,
- *              Marketing, Finance, Engineering), and difficulty filtering.
+ *              Marketing, Finance, Engineering), difficulty filtering, and
+ *              staggered card entrance transitions.
  * ============================================================================
  */
 
@@ -28,7 +29,7 @@ function initResourcesFilter() {
   let activeLevel = 'all';
   let searchQuery = '';
 
-  const applyFilters = () => {
+  const applyFilters = (animateEntrance = false) => {
     let visibleCount = 0;
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
@@ -52,9 +53,16 @@ function initResourcesFilter() {
       if (matchesCategory && matchesLevel && matchesSearch) {
         card.classList.remove('hidden');
         card.classList.add('is-revealed');
+        if (animateEntrance) {
+          card.classList.remove('card-filter-enter');
+          void card.offsetWidth;
+          card.style.setProperty('--stagger-delay', `${(visibleCount % 9) * 55}ms`);
+          card.classList.add('card-filter-enter');
+        }
         visibleCount++;
       } else {
         card.classList.add('hidden');
+        card.classList.remove('card-filter-enter');
       }
     });
 
@@ -109,21 +117,21 @@ function initResourcesFilter() {
       button.setAttribute('aria-pressed', 'true');
 
       activeCategory = button.getAttribute('data-category') || 'all';
-      applyFilters();
+      applyFilters(true);
     });
   });
 
   if (levelSelect) {
     levelSelect.addEventListener('change', (event) => {
       activeLevel = event.target.value;
-      applyFilters();
+      applyFilters(true);
     });
   }
 
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       searchQuery = event.target.value;
-      applyFilters();
+      applyFilters(true);
     });
   }
 
@@ -141,7 +149,7 @@ function initResourcesFilter() {
       btn.setAttribute('aria-pressed', String(isAll));
     });
 
-    applyFilters();
+    applyFilters(true);
   };
 
   if (resetBtn) {
@@ -155,5 +163,5 @@ function initResourcesFilter() {
     clearBtn.addEventListener('click', resetAllFilters);
   }
 
-  applyFilters();
+  applyFilters(false);
 }
