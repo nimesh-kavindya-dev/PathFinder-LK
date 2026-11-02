@@ -17,6 +17,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initPageLoader();
+  initPageTransitions();
   initScrollReveal();
   initMetricCounters();
   initThemeToggle();
@@ -30,88 +31,406 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 0. Glassy Branded Loading Screen Controller (Single-Run Guarantee)
- * Runs once when a page loads (~1.5s smooth progress to 100%) and never
- * triggers a duplicate pre-navigation loader on the outgoing page.
+ * 0A. Glassy Branded Loading Screen Controller (Initial Open & Browser Refresh)
+ *     - Appears when the website is opened for the first time OR refreshed/reloaded
+ *     - Skipped during internal page-to-page navigation so internal switches never show the loader
  */
 function initPageLoader() {
   const loader = document.getElementById('page-loader');
   if (!loader) return;
 
-  // Prevent duplicate execution if initPageLoader is ever invoked more than once
-  if (loader.dataset.loaderInitialized === 'true') return;
-  loader.dataset.loaderInitialized = 'true';
+  // If marked as an internal fallback navigation, hide loader immediately without animation
+  if (document.documentElement.classList.contains('pf-skip-loader')) {
+    loader.classList.add('is-loaded');
+    return;
+  }
 
-  const fillEl = loader.querySelector('.loader-bar-fill');
-  const percentEl = loader.querySelector('.loader-percent');
-  const subtextEl = loader.querySelector('.loader-subtext');
+  const progressFill = document.getElementById('loader-progress-fill');
+  const percentEl = document.getElementById('loader-percent');
+  const statusEl = document.getElementById('loader-status-text');
 
-  const statusMessages = [
-    'Initializing Career Guidance Platform...',
-    'Loading 15 Career Pathways & Roadmaps...',
-    'Preparing Glassmorphic Interface...',
-    'Ready to Explore!'
-  ];
+  const prefersReducedMotion =
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let progress = 12;
-  if (fillEl) fillEl.style.width = `${progress}%`;
-  if (percentEl) percentEl.textContent = `${progress}%`;
-
-  const interval = setInterval(() => {
-    progress = Math.min(96, progress + Math.floor(Math.random() * 10) + 7);
-    if (fillEl) fillEl.style.width = `${progress}%`;
-    if (percentEl) percentEl.textContent = `${progress}%`;
-    if (subtextEl) {
-      if (progress < 38) subtextEl.textContent = statusMessages[0];
-      else if (progress < 72) subtextEl.textContent = statusMessages[1];
-      else subtextEl.textContent = statusMessages[2];
-    }
-  }, 110);
-
-  let isDismissed = false;
-  const dismissLoader = () => {
-    if (isDismissed) return;
-    isDismissed = true;
-    clearInterval(interval);
-    if (fillEl) fillEl.style.width = '100%';
+  if (prefersReducedMotion) {
+    if (progressFill) progressFill.style.width = '100%';
     if (percentEl) percentEl.textContent = '100%';
-    if (subtextEl) subtextEl.textContent = statusMessages[3];
+    loader.classList.add('is-loaded');
+    return;
+  }
 
-    setTimeout(() => {
-      loader.classList.add('is-hidden');
-      loader.setAttribute('aria-busy', 'false');
-    }, 220);
+  let finished = false;
+  const totalDurationMs = 1350;
+  const startTime = performance.now();
+
+  const getStatusForPercent = (pct) => {
+    if (pct < 36) return 'Initializing Career Pathways...';
+    if (pct < 74) return 'Loading Roadmaps & Resources...';
+    if (pct < 100) return 'Preparing Glassmorphic Interface...';
+    return 'Ready';
   };
 
-  // Single smooth ~1.35s loading sequence + 220ms completion fade (~1.57s total)
-  setTimeout(dismissLoader, 1350);
+  const updateBar = (pct) => {
+    const clamped = Math.max(0, Math.min(100, Math.round(pct)));
+    if (progressFill) progressFill.style.width = `${clamped}%`;
+    if (percentEl) percentEl.textContent = `${clamped}%`;
+    if (statusEl) statusEl.textContent = getStatusForPercent(clamped);
+  };
 
-  // Ensure Back/Forward browser cache restoration never leaves the loader visible
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      dismissLoader();
+  const completeLoader = () => {
+    if (finished) return;
+    finished = true;
+    updateBar(100);
+
+    setTimeout(() => {
+      loader.classList.add('is-loaded');
+      const mainEl = document.querySelector('main#main-content');
+      if (mainEl) {
+        mainEl.classList.add('pf-transition-enter');
+        setTimeout(() => {
+          mainEl.classList.remove('pf-transition-enter', 'pf-entering');
+        }, 260);
+      }
+    }, 180);
+  };
+
+  const tick = (now) => {
+    if (finished) return;
+    const elapsed = now - startTime;
+    const rawProgress = Math.min(1, elapsed / totalDurationMs);
+    // Smooth ease-in-out progression curve from 0% to 100%
+    const easedProgress =
+      rawProgress < 0.5
+        ? 2 * rawProgress * rawProgress
+        : 1 - Math.pow(-2 * rawProgress + 2, 2) / 2;
+    const currentPct = Math.round(easedProgress * 100);
+    updateBar(currentPct);
+
+    if (rawProgress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      completeLoader();
+    }
+  };
+
+  updateBar(0);
+  requestAnimationFrame(tick);
+
+  // Strict fail-safe so the loader can never remain stuck if tab is backgrounded
+  setTimeout(completeLoader, totalDurationMs + 350);
+}
+
+/**
+ * Helper to re-initialize all page-specific interactive modules after internal <main> swap
+ */
+function reinitCurrentPageContent() {
+  initScrollReveal();
+  initMetricCounters();
+  highlightActiveNavLink();
+  updateMobileBottomDockActiveState();
+  updateFooterYear();
+  initStandaloneAccordions();
+
+  if (typeof window.initCareerFilters === 'function') {
+    window.initCareerFilters();
+  }
+  if (typeof window.initCareerDetailsNavigation === 'function') {
+    window.initCareerDetailsNavigation();
+  }
+  if (typeof window.initCareerQuiz === 'function') {
+    window.initCareerQuiz();
+  }
+  if (typeof window.initRoadmapsPage === 'function') {
+    window.initRoadmapsPage();
+  }
+  if (typeof window.initResourcesFilter === 'function') {
+    window.initResourcesFilter();
+  }
+}
+
+function updateMobileBottomDockActiveState() {
+  const dock = document.getElementById('mobile-bottom-dock');
+  if (!dock) return;
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const dockLinks = dock.querySelectorAll('.mobile-dock-item');
+  dockLinks.forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    const isActive =
+      href === currentPath ||
+      (currentPath === '' && href === 'index.html') ||
+      (currentPath === 'career-details.html' && href === 'careers.html');
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
     }
   });
 }
 
 /**
- * 1. Smooth Scroll-Reveal Card Transition Engine
- * Animates hero columns, cards, panels, headers, and banners smoothly into view
- * as the user scrolls down the page.
+ * 0B. Smooth Water-Like Internal Page-to-Page Transition Controller
+ *     - Keeps top <header class="site-header"> and #mobile-bottom-dock 100% persistent
+ *       so nothing in the top dashboard/navbar ever refreshes on page switch
+ *     - Never triggers #page-loader during internal navigation
+ *     - Smoothly blurs/fades <main id="main-content"> out and in without blank screens
+ *     - Supports browser Back/Forward (popstate), query parameters, and #hash deep links
+ */
+function initPageTransitions() {
+  if (window.__pfTransitionsInitialized) return;
+  window.__pfTransitionsInitialized = true;
+
+  const pageHtmlCache = new Map();
+  const inFlightFetches = new Map();
+  let activeNavToken = 0;
+
+  const normalizeCacheKey = (urlObj) => {
+    let pathname = urlObj.pathname;
+    if (pathname.endsWith('/')) {
+      pathname += 'index.html';
+    }
+    return urlObj.origin + pathname;
+  };
+
+  const fetchAndCachePage = async (urlObj) => {
+    const key = normalizeCacheKey(urlObj);
+    if (pageHtmlCache.has(key)) {
+      return pageHtmlCache.get(key);
+    }
+    if (inFlightFetches.has(key)) {
+      return inFlightFetches.get(key);
+    }
+    const fetchPromise = fetch(urlObj.href, { credentials: 'same-origin' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((htmlText) => {
+        pageHtmlCache.set(key, htmlText);
+        inFlightFetches.delete(key);
+        return htmlText;
+      })
+      .catch((err) => {
+        inFlightFetches.delete(key);
+        throw err;
+      });
+
+    inFlightFetches.set(key, fetchPromise);
+    return fetchPromise;
+  };
+
+  // Seed cache with current page and pre-warm core internal pages after initial load
+  try {
+    const currentUrl = new URL(window.location.href);
+    pageHtmlCache.set(normalizeCacheKey(currentUrl), document.documentElement.outerHTML);
+    setTimeout(() => {
+      const pages = [
+        'index.html',
+        'careers.html',
+        'career-details.html',
+        'quiz.html',
+        'roadmaps.html',
+        'resources.html',
+        'contact.html',
+      ];
+      pages.forEach((p) => {
+        try {
+          const u = new URL(p, window.location.href);
+          fetchAndCachePage(u).catch(() => {});
+        } catch (_e) {}
+      });
+    }, 600);
+  } catch (_e) {
+    // Ignore
+  }
+
+  // Warm cache on hover/touchstart for zero-latency internal transitions
+  const prefetchLink = (event) => {
+    if (!event.target || typeof event.target.closest !== 'function') return;
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const rawHref = (link.getAttribute('href') || '').trim();
+    if (
+      !rawHref ||
+      rawHref.startsWith('#') ||
+      rawHref.startsWith('mailto:') ||
+      rawHref.startsWith('tel:') ||
+      rawHref.startsWith('javascript:')
+    ) {
+      return;
+    }
+    try {
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      fetchAndCachePage(url).catch(() => {});
+    } catch (_e) {
+      // Ignore invalid URLs
+    }
+  };
+
+  document.addEventListener('mouseover', prefetchLink, { passive: true });
+  document.addEventListener('touchstart', prefetchLink, { passive: true });
+
+  const waitMs = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const performInternalNavigation = async (targetUrl, pushHistory = true) => {
+    const myToken = ++activeNavToken;
+    const mainEl = document.querySelector('main#main-content');
+    if (!mainEl) {
+      window.location.href = targetUrl.href;
+      return;
+    }
+
+    const prefersReducedMotion =
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Close mobile menu if open without touching the header DOM node
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    closeMobileMenu(navToggle, mainNav);
+
+    // Pre-highlight the target nav item immediately so the header feels responsive
+    const targetFile = targetUrl.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.main-nav .nav-link').forEach((navLink) => {
+      const cleanHref = (navLink.getAttribute('href') || '').split('#')[0].split('?')[0];
+      const isMatch =
+        cleanHref === targetFile ||
+        (targetFile === 'career-details.html' && cleanHref === 'careers.html');
+      navLink.classList.toggle('active', isMatch);
+      if (isMatch) {
+        navLink.setAttribute('aria-current', 'page');
+      } else {
+        navLink.removeAttribute('aria-current');
+      }
+    });
+
+    // Start subtle non-blanking blur exit on <main> while fetching HTML in parallel
+    mainEl.classList.remove('pf-transition-enter', 'pf-entering');
+    if (!prefersReducedMotion) {
+      mainEl.classList.add('pf-transition-exit');
+    }
+
+    let htmlText;
+    try {
+      const [fetchedHtml] = await Promise.all([
+        fetchAndCachePage(targetUrl),
+        prefersReducedMotion ? Promise.resolve() : waitMs(85),
+      ]);
+      htmlText = fetchedHtml;
+    } catch (_err) {
+      // Graceful fallback if fetch fails
+      try {
+        sessionStorage.setItem('pf_internal_nav', '1');
+      } catch (_e) {}
+      window.location.href = targetUrl.href;
+      return;
+    }
+
+    if (myToken !== activeNavToken) return;
+
+    const parser = new DOMParser();
+    const nextDoc = parser.parseFromString(htmlText, 'text/html');
+    const nextMain = nextDoc.querySelector('main#main-content') || nextDoc.querySelector('main');
+
+    if (!nextMain) {
+      try {
+        sessionStorage.setItem('pf_internal_nav', '1');
+      } catch (_e) {}
+      window.location.href = targetUrl.href;
+      return;
+    }
+
+    // Update URL before running page-specific scripts so URLSearchParams & location.hash match
+    if (pushHistory && history.pushState) {
+      history.pushState({ pfSpa: true, url: targetUrl.href }, '', targetUrl.href);
+    }
+
+    // Update document title and meta description without touching <header class="site-header">
+    if (nextDoc.title) {
+      document.title = nextDoc.title;
+    }
+    const nextDesc = nextDoc.querySelector('meta[name="description"]')?.getAttribute('content');
+    const curDesc = document.querySelector('meta[name="description"]');
+    if (nextDesc && curDesc) {
+      curDesc.setAttribute('content', nextDesc);
+    }
+
+    // Swap <main> content
+    mainEl.innerHTML = nextMain.innerHTML;
+
+    // Re-initialize page-specific modules and active nav states
+    reinitCurrentPageContent();
+
+    // Scroll to #hash target if specified, otherwise scroll cleanly to top
+    if (targetUrl.hash && targetUrl.hash.length > 1) {
+      const hashId = targetUrl.hash.substring(1);
+      const hashTarget = document.getElementById(hashId);
+      if (hashTarget) {
+        const headerOffset = getStickyHeaderOffset();
+        const targetTop = Math.max(
+          0,
+          hashTarget.getBoundingClientRect().top + window.pageYOffset - headerOffset
+        );
+        window.scrollTo({ top: targetTop, behavior: 'auto' });
+        const highlightBox = hashTarget.querySelector('.detail-header-card') || hashTarget;
+        highlightBox.classList.remove('anchor-target-highlight');
+        void highlightBox.offsetWidth;
+        highlightBox.classList.add('anchor-target-highlight');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    // Trigger smooth water-like blur/fade entrance on <main>
+    mainEl.classList.remove('pf-transition-exit');
+    if (!prefersReducedMotion) {
+      void mainEl.offsetWidth;
+      mainEl.classList.add('pf-transition-enter');
+      setTimeout(() => {
+        if (myToken === activeNavToken) {
+          mainEl.classList.remove('pf-transition-enter');
+        }
+      }, 250);
+    }
+  };
+
+  // Expose internal navigation helper for initSmoothScroll / link interception
+  window.__pfPerformInternalNavigation = performInternalNavigation;
+  window.__pfLastLocationPathAndSearch =
+    window.location.pathname + window.location.search;
+
+  // Handle Browser Back / Forward buttons smoothly without refreshing the top header
+  window.addEventListener('popstate', () => {
+    const currentPathAndSearch = window.location.pathname + window.location.search;
+    if (currentPathAndSearch === window.__pfLastLocationPathAndSearch) {
+      // Only the #hash changed on the same page
+      if (window.location.hash && window.location.hash.length > 1) {
+        const targetId = window.location.hash.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          smoothScrollToTarget(targetEl, targetId, false);
+        }
+      }
+      return;
+    }
+    window.__pfLastLocationPathAndSearch = currentPathAndSearch;
+    const targetUrl = new URL(window.location.href);
+    performInternalNavigation(targetUrl, false);
+  });
+}
+
+/**
+ * 1. Immediate Card & Section Visibility Engine
+ *    - Ensures all cards, panels, and sections remain 100% visible immediately
+ *      without setting opacity: 0 or hiding content before scroll
  */
 function initScrollReveal() {
-  const heroContent = document.querySelector('.hero-content');
-  const heroVisual = document.querySelector('.hero-visual');
-
-  if (heroContent) {
-    heroContent.classList.add('scroll-reveal', 'scroll-reveal-left');
-    heroContent.style.setProperty('--reveal-delay', '60ms');
-  }
-  if (heroVisual) {
-    heroVisual.classList.add('scroll-reveal', 'scroll-reveal-right');
-    heroVisual.style.setProperty('--reveal-delay', '140ms');
-  }
-
   const revealSelectors = [
     '.card',
     '.category-preview-card',
@@ -129,50 +448,10 @@ function initScrollReveal() {
   ];
 
   const elements = document.querySelectorAll(revealSelectors.join(', '));
-  const allRevealTargets = [
-    ...(heroContent ? [heroContent] : []),
-    ...(heroVisual ? [heroVisual] : []),
-    ...Array.from(elements)
-  ];
-
-  if (allRevealTargets.length === 0) return;
-
-  elements.forEach((el, idx) => {
-    el.classList.add('scroll-reveal');
-    const parent = el.parentElement;
-    if (parent) {
-      const siblings = Array.from(parent.children).filter((child) =>
-        child.classList.contains('scroll-reveal') || child === el
-      );
-      const siblingIndex = Math.max(0, siblings.indexOf(el));
-      const delayMs = (siblingIndex % 4) * 80;
-      el.style.setProperty('--reveal-delay', `${delayMs}ms`);
-    } else {
-      el.style.setProperty('--reveal-delay', `${(idx % 3) * 75}ms`);
-    }
+  elements.forEach((el) => {
+    el.classList.remove('scroll-reveal');
+    el.classList.add('is-revealed');
   });
-
-  if (!('IntersectionObserver' in window)) {
-    allRevealTargets.forEach((el) => el.classList.add('is-revealed'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-        }
-      });
-    },
-    {
-      root: null,
-      rootMargin: '0px 0px -24px 0px',
-      threshold: 0.06,
-    }
-  );
-
-  allRevealTargets.forEach((el) => observer.observe(el));
 }
 
 /**
@@ -401,9 +680,14 @@ function initMobileBottomDock() {
 function initPWACapability() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {
-        // Ignore service worker registration errors in restricted frames
-      });
+      navigator.serviceWorker
+        .register('sw.js')
+        .then((reg) => {
+          reg.update().catch(() => {});
+        })
+        .catch(() => {
+          // Ignore service worker registration errors in restricted frames
+        });
     });
   }
 
@@ -577,16 +861,13 @@ function smoothScrollToTarget(targetElement, hashId, updateHistory = true) {
 }
 
 function initSmoothScroll() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.querySelector('.main-nav');
 
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('a[href]');
-    if (!link) return;
-
     if (
-      link.target === '_blank' ||
+      event.defaultPrevented ||
+      event.button !== 0 ||
       event.ctrlKey ||
       event.metaKey ||
       event.shiftKey ||
@@ -595,8 +876,22 @@ function initSmoothScroll() {
       return;
     }
 
-    const rawHref = link.getAttribute('href');
-    if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('mailto:') || rawHref.startsWith('tel:')) {
+    if (!event.target || typeof event.target.closest !== 'function') return;
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    if (link.hasAttribute('download') || (link.target && link.target !== '_self')) {
+      return;
+    }
+
+    const rawHref = (link.getAttribute('href') || '').trim();
+    if (
+      !rawHref ||
+      rawHref.startsWith('http') ||
+      rawHref.startsWith('mailto:') ||
+      rawHref.startsWith('tel:') ||
+      rawHref.startsWith('javascript:')
+    ) {
       return;
     }
 
@@ -619,7 +914,8 @@ function initSmoothScroll() {
       return;
     }
 
-    // 2. Relative page link (with or without #hash)
+    // 2. Relative internal page link (with or without ?query or #hash)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const [pathAndQuery, hashPart] = rawHref.split('#');
     const [pathOnly, queryPart] = pathAndQuery.split('?');
     const normalizedTargetPage = pathOnly || currentPage;
@@ -643,10 +939,27 @@ function initSmoothScroll() {
           history.pushState(null, null, window.location.pathname + window.location.search);
         }
       }
+      return;
+    }
+
+    // 3. Internal navigation to another page (keep top header persistent & run smooth blur transition on <main>)
+    try {
+      const targetUrl = new URL(link.href, window.location.href);
+      if (targetUrl.origin === window.location.origin) {
+        event.preventDefault();
+        window.__pfLastLocationPathAndSearch = targetUrl.pathname + targetUrl.search;
+        if (typeof window.__pfPerformInternalNavigation === 'function') {
+          window.__pfPerformInternalNavigation(targetUrl, true);
+        } else {
+          window.location.href = targetUrl.href;
+        }
+      }
+    } catch (_err) {
+      // Fall back to default browser navigation if URL fails to parse
     }
   });
 
-  // 3. Smooth scroll to #hash target when arriving from another page
+  // 4. Smooth scroll to #hash target when arriving on initial page load
   if (window.location.hash && window.location.hash.length > 1) {
     const initialHashId = window.location.hash.substring(1);
     const targetElement = document.getElementById(initialHashId);

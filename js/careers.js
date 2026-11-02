@@ -200,6 +200,10 @@ function initCareerDetailsNavigation() {
   };
 
   syncRoleFromHash();
+  if (window.__pfCareerDetailsHashHandler) {
+    window.removeEventListener('hashchange', window.__pfCareerDetailsHashHandler);
+  }
+  window.__pfCareerDetailsHashHandler = syncRoleFromHash;
   window.addEventListener('hashchange', syncRoleFromHash);
 
   roleNavLinks.forEach((link) => {
@@ -210,6 +214,10 @@ function initCareerDetailsNavigation() {
       }
     });
   });
+
+  if (window.__pfCareerDetailsObserver) {
+    window.__pfCareerDetailsObserver.disconnect();
+  }
 
   if ('IntersectionObserver' in window) {
     const observerOptions = {
@@ -227,5 +235,9 @@ function initCareerDetailsNavigation() {
     }, observerOptions);
 
     careerSections.forEach((section) => observer.observe(section));
+    window.__pfCareerDetailsObserver = observer;
   }
 }
+
+window.initCareerFilters = initCareerFilters;
+window.initCareerDetailsNavigation = initCareerDetailsNavigation;

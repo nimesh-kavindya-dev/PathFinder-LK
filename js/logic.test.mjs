@@ -41,11 +41,17 @@ describe('PathFinder LK Pure Logic Tests', () => {
     assert.equal(filterCareerItems(sampleCareers, 'development', 'kubernetes').length, 0);
   });
 
-  test('resolveRoadmapPane maps all 9 career slugs and falls back to roadmap-se', () => {
+  test('resolveRoadmapPane maps all 15 career slugs and falls back to roadmap-se', () => {
     assert.equal(resolveRoadmapPane('fullstack-developer'), 'roadmap-fs');
     assert.equal(resolveRoadmapPane('cloud-devops'), 'roadmap-cloud');
     assert.equal(resolveRoadmapPane('data-scientist'), 'roadmap-ds');
     assert.equal(resolveRoadmapPane('qa-engineer'), 'roadmap-qa');
+    assert.equal(resolveRoadmapPane('business-analyst'), 'roadmap-ba');
+    assert.equal(resolveRoadmapPane('product-manager'), 'roadmap-pm');
+    assert.equal(resolveRoadmapPane('digital-marketing'), 'roadmap-dm');
+    assert.equal(resolveRoadmapPane('financial-analyst'), 'roadmap-fa');
+    assert.equal(resolveRoadmapPane('multimedia-designer'), 'roadmap-mm');
+    assert.equal(resolveRoadmapPane('robotics-iot'), 'roadmap-iot');
     assert.equal(resolveRoadmapPane('unknown-slug'), 'roadmap-se');
     assert.equal(resolveRoadmapPane(''), 'roadmap-se');
   });

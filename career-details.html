@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="PathFinderLK">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
 
   <title>Career Details &amp; Skill Guides | PathFinder LK - 15 In-Depth Profiles</title>
 
@@ -36,28 +36,32 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <!-- Immediate Theme & Loader Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}if(sessionStorage.getItem('pf_internal_nav')==='1'){sessionStorage.removeItem('pf_internal_nav');document.documentElement.classList.add('pf-skip-loader');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/careers.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/roadmaps.js" defer></script>
+  <script src="js/resources.js" defer></script>
 </head>
 <body>
-  <!-- Glassmorphic Branded Loading Screen -->
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
-    <div class="loader-content">
-      <div class="loader-logo-wrap">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+  <!-- Glassy Branded Loading Screen (Initial Open & Browser Refresh) -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading PathFinder LK">
+    <div class="loader-glass-card">
+      <div class="loader-compass-ring">
+        <div class="loader-ring-orbit"></div>
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass" width="46" height="46" loading="lazy" decoding="async" class="loader-logo-img">
       </div>
-      <div class="loader-brand">PathFinder <span>LK</span></div>
-      <div class="loader-subtext">Loading 15 Comprehensive Career Profiles...</div>
-      <div class="loader-bar-track" aria-hidden="true">
-        <div class="loader-bar-fill"></div>
+      <div class="loader-brand-name">PathFinder<span class="brand-highlight">-LK</span></div>
+      <p class="loader-status-text" id="loader-status-text">Initializing Career Pathways...</p>
+      <div class="loader-progress-track" aria-hidden="true">
+        <div class="loader-progress-fill" id="loader-progress-fill"></div>
       </div>
-      <div class="loader-percent" aria-hidden="true">8%</div>
+      <div class="loader-percent" id="loader-percent">0%</div>
     </div>
   </div>
 
@@ -67,7 +71,7 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass Logo" width="38" height="38" loading="lazy" decoding="async" class="logo-img">
         <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
       </a>
 
@@ -146,7 +150,7 @@
       <section id="software-engineer" class="career-detail-section" aria-labelledby="se-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/software-engineer.jpg" alt="Software Engineer" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-blue">Software Development &amp; Systems</span>
@@ -255,7 +259,7 @@
       <section id="fullstack-developer" class="career-detail-section" aria-labelledby="fs-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer Icon" width="60" height="60">
+            <img src="assets/images/careers/fullstack-developer.jpg" alt="Full-Stack Developer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-cyan">End-to-End Web Engineering</span>
@@ -363,7 +367,7 @@
       <section id="cloud-devops" class="career-detail-section" aria-labelledby="cloud-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/cloud-devops.svg" alt="Cloud & DevOps Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/cloud-devops.jpg" alt="Cloud & DevOps Engineer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-teal">Cloud Infrastructure &amp; SRE</span>
@@ -472,7 +476,7 @@
       <section id="data-analyst" class="career-detail-section" aria-labelledby="da-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst Icon" width="60" height="60">
+            <img src="assets/images/careers/data-analyst.jpg" alt="Data Analyst Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-green">Data &amp; Business Intelligence</span>
@@ -579,7 +583,7 @@
       <section id="data-engineer" class="career-detail-section" aria-labelledby="de-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/data-engineer.jpg" alt="Data Engineer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-amber">Data Infrastructure &amp; Pipelines</span>
@@ -688,7 +692,7 @@
       <section id="data-scientist" class="career-detail-section" aria-labelledby="ds-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/data-scientist.svg" alt="Data Scientist & AI Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/data-scientist.jpg" alt="Data Scientist & AI Engineer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-green">Machine Learning &amp; Applied AI</span>
@@ -796,7 +800,7 @@
       <section id="cybersecurity" class="career-detail-section" aria-labelledby="cs-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst Icon" width="60" height="60">
+            <img src="assets/images/careers/cybersecurity.jpg" alt="Cybersecurity Analyst Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-red">Information Security &amp; Cyber Defense</span>
@@ -904,7 +908,7 @@
       <section id="ui-ux" class="career-detail-section" aria-labelledby="uiux-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer Icon" width="60" height="60">
+            <img src="assets/images/careers/ui-ux.jpg" alt="UI/UX Designer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-purple">Product Design &amp; User Experience</span>
@@ -1012,7 +1016,7 @@
       <section id="qa-engineer" class="career-detail-section" aria-labelledby="qa-title">
         <div class="detail-header-card">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/qa-engineer.svg" alt="QA & Test Automation Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/qa-engineer.jpg" alt="QA & Test Automation Engineer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-amber">Quality Assurance &amp; SDET</span>
@@ -1119,9 +1123,8 @@
            ================================================================== -->
       <section id="business-analyst" class="career-detail-section" aria-labelledby="ba-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst & Project Manager Session" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst Icon" width="60" height="60">
+            <img src="assets/images/careers/business-analyst.jpg" alt="Business Analyst Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-blue">Business &amp; Agile Delivery</span>
@@ -1227,9 +1230,8 @@
            ================================================================== -->
       <section id="product-manager" class="career-detail-section" aria-labelledby="pm-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/product-manager.jpg" alt="Product Manager Roadmap Strategy" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/product-manager.svg" alt="Product Manager Icon" width="60" height="60">
+            <img src="assets/images/careers/product-manager.jpg" alt="Product Manager Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-purple">Product Strategy &amp; SaaS</span>
@@ -1335,9 +1337,8 @@
            ================================================================== -->
       <section id="digital-marketing" class="career-detail-section" aria-labelledby="dm-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing & Growth Analytics" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing Icon" width="60" height="60">
+            <img src="assets/images/careers/digital-marketing.jpg" alt="Digital Marketing Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-cyan">Marketing &amp; Growth</span>
@@ -1443,9 +1444,8 @@
            ================================================================== -->
       <section id="financial-analyst" class="career-detail-section" aria-labelledby="fa-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst & FinTech Valuation" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst Icon" width="60" height="60">
+            <img src="assets/images/careers/financial-analyst.jpg" alt="Financial Analyst Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-green">Finance, Corporate &amp; FinTech</span>
@@ -1551,9 +1551,8 @@
            ================================================================== -->
       <section id="multimedia-designer" class="career-detail-section" aria-labelledby="mm-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/multimedia-designer.jpg" alt="Creative Multimedia & Motion Designer Studio" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/multimedia-designer.svg" alt="Creative Multimedia Designer Icon" width="60" height="60">
+            <img src="assets/images/careers/multimedia-designer.jpg" alt="Creative Multimedia Designer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-purple">Creative Media, 3D &amp; Motion</span>
@@ -1659,9 +1658,8 @@
            ================================================================== -->
       <section id="robotics-iot" class="career-detail-section" aria-labelledby="iot-title">
         <div class="detail-header-card">
-          <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics, Robotics & IoT Hardware Lab" class="detail-photo-thumb" loading="lazy">
           <div class="detail-icon-box">
-            <img src="assets/images/careers/robotics-iot.svg" alt="Robotics & IoT Engineer Icon" width="60" height="60">
+            <img src="assets/images/careers/robotics-iot.jpg" alt="Robotics & IoT Engineer Icon" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="detail-title-group">
             <span class="badge badge-amber">Engineering, Hardware &amp; IoT</span>
@@ -1771,7 +1769,7 @@
       <div class="footer-grid">
         <div class="footer-col footer-brand-col">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <img src="assets/icons/logo.png" alt="PathFinder LK Logo" width="34" height="34" loading="lazy" decoding="async">
             <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
           </a>
           <p class="footer-mission">

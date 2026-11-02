@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Software Engineer icon">
-  <rect width="120" height="120" rx="18" fill="#0284c7" fill-opacity="0.14"/>
-  <rect x="20" y="24" width="80" height="58" rx="8" fill="#0284c7" fill-opacity="0.12" stroke="#0284c7" stroke-width="3.5"/>
-  <rect x="48" y="82" width="24" height="12" fill="#0ea5e9" fill-opacity="0.4"/>
-  <rect x="36" y="94" width="48" height="6" rx="3" fill="#0284c7"/>
-  <path d="M42 46 L34 53 L42 60" fill="none" stroke="#0284c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M78 46 L86 53 L78 60" fill="none" stroke="#0284c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="64" y1="44" x2="56" y2="62" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
-</svg>

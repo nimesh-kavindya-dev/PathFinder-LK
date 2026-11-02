@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Product Manager icon">
-  <rect width="120" height="120" rx="18" fill="#8b5cf6" fill-opacity="0.14"/>
-  <rect x="24" y="26" width="30" height="30" rx="6" fill="none" stroke="#8b5cf6" stroke-width="4"/>
-  <rect x="66" y="26" width="30" height="30" rx="6" fill="none" stroke="#06b6d4" stroke-width="4"/>
-  <rect x="24" y="66" width="30" height="30" rx="6" fill="none" stroke="#0ea5e9" stroke-width="4"/>
-  <circle cx="81" cy="81" r="15" fill="none" stroke="#f59e0b" stroke-width="4"/>
-  <path d="M76 81l4 4 8-8" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>

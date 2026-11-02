@@ -165,3 +165,5 @@ function initResourcesFilter() {
 
   applyFilters(false);
 }
+
+window.initResourcesFilter = initResourcesFilter;

@@ -21,7 +21,7 @@ const CAREER_DATA = {
     id: 'software-engineer',
     title: 'Software Engineer',
     tagline: 'Architect and build scalable software systems, backend services, and APIs.',
-    icon: 'assets/images/careers/software-engineer.svg',
+    icon: 'assets/images/careers/software-engineer.jpg',
     description:
       'You enjoy logical problem-solving, software architecture, and writing clean code to build reliable applications from the ground up.',
     skills: ['Java / Python / C#', 'Data Structures & Algorithms', 'REST APIs & Microservices', 'Git & CI/CD'],
@@ -38,7 +38,7 @@ const CAREER_DATA = {
     id: 'fullstack-developer',
     title: 'Full-Stack Web Developer',
     tagline: 'Build complete end-to-end web products across frontend interfaces and backend APIs.',
-    icon: 'assets/images/careers/fullstack-developer.svg',
+    icon: 'assets/images/careers/fullstack-developer.jpg',
     description:
       'You love shipping complete web applications—combining responsive React/Next.js user interfaces with robust Node.js and PostgreSQL backends.',
     skills: ['TypeScript & React / Next.js', 'Node.js & Express', 'PostgreSQL & Prisma', 'REST & Auth Systems'],
@@ -55,7 +55,7 @@ const CAREER_DATA = {
     id: 'cloud-devops',
     title: 'Cloud & DevOps Engineer',
     tagline: 'Automate CI/CD pipelines, Kubernetes clusters, and resilient cloud infrastructure.',
-    icon: 'assets/images/careers/cloud-devops.svg',
+    icon: 'assets/images/careers/cloud-devops.jpg',
     description:
       'You thrive on automation, Linux systems, cloud architecture (AWS/Azure), and making deployments fast, repeatable, and fault-tolerant.',
     skills: ['Linux & Bash Scripting', 'AWS / Azure Cloud', 'Docker & Kubernetes', 'Terraform & GitHub Actions'],
@@ -72,7 +72,7 @@ const CAREER_DATA = {
     id: 'data-analyst',
     title: 'Data Analyst',
     tagline: 'Transform raw business data into actionable insights, KPIs, and visual dashboards.',
-    icon: 'assets/images/careers/data-analyst.svg',
+    icon: 'assets/images/careers/data-analyst.jpg',
     description:
       'You have a sharp eye for patterns, statistics, and storytelling with numbers—helping organizations make smarter, evidence-based decisions.',
     skills: ['SQL & Database Querying', 'Python (Pandas & NumPy)', 'Power BI / Tableau', 'Descriptive Statistics'],
@@ -89,7 +89,7 @@ const CAREER_DATA = {
     id: 'data-engineer',
     title: 'Data Engineer',
     tagline: 'Design high-volume data pipelines, ETL workflows, and cloud data warehouses.',
-    icon: 'assets/images/careers/data-engineer.svg',
+    icon: 'assets/images/careers/data-engineer.jpg',
     description:
       'You enjoy large-scale systems architecture, databases, and automation—building the reliable data infrastructure that powers analytics and AI.',
     skills: ['Advanced SQL & Data Modeling', 'Python & Apache Spark', 'ETL / ELT Pipelines (Airflow)', 'Cloud Warehouses'],
@@ -106,7 +106,7 @@ const CAREER_DATA = {
     id: 'data-scientist',
     title: 'Data Scientist & AI Engineer',
     tagline: 'Train predictive machine learning models and build intelligent AI-driven systems.',
-    icon: 'assets/images/careers/data-scientist.svg',
+    icon: 'assets/images/careers/data-scientist.jpg',
     description:
       'You are fascinated by machine learning, statistical modeling, and AI—turning complex datasets into predictive models and intelligent applications.',
     skills: ['Python (Scikit-Learn / PyTorch)', 'Machine Learning & Statistics', 'Feature Engineering & SQL', 'LLM & Model Deployment'],
@@ -123,7 +123,7 @@ const CAREER_DATA = {
     id: 'cybersecurity',
     title: 'Cybersecurity Analyst',
     tagline: 'Defend networks, cloud infrastructure, and applications against digital threats.',
-    icon: 'assets/images/careers/cybersecurity.svg',
+    icon: 'assets/images/careers/cybersecurity.jpg',
     description:
       'You think like an investigator and protector—analyzing vulnerabilities, monitoring security events, and hardening systems against cyber attacks.',
     skills: ['Networking (TCP/IP, OSI, DNS)', 'Linux & Windows Hardening', 'SIEM & Incident Response', 'Web App Security (OWASP)'],
@@ -140,7 +140,7 @@ const CAREER_DATA = {
     id: 'ui-ux',
     title: 'UI/UX Product Designer',
     tagline: 'Craft intuitive, accessible, and human-centered digital product experiences.',
-    icon: 'assets/images/careers/ui-ux.svg',
+    icon: 'assets/images/careers/ui-ux.jpg',
     description:
       'You blend empathy, psychology, and visual craft—researching user needs and designing wireframes, prototypes, and design systems that people love using.',
     skills: ['Figma & Interactive Prototyping', 'User Research & Wireframing', 'Design Systems & Typography', 'Usability & Accessibility (WCAG)'],
@@ -157,7 +157,7 @@ const CAREER_DATA = {
     id: 'qa-engineer',
     title: 'QA & Test Automation Engineer',
     tagline: 'Ensure software reliability through automated end-to-end, API, and performance testing.',
-    icon: 'assets/images/careers/qa-engineer.svg',
+    icon: 'assets/images/careers/qa-engineer.jpg',
     description:
       'You have an analytical eye for edge cases and quality—designing automated test suites and CI quality gates so software ships without critical bugs.',
     skills: ['Playwright / Cypress / Selenium', 'API Testing (Postman & REST)', 'Test Strategy & Bug Triage', 'CI/CD Quality Gates'],
@@ -174,7 +174,7 @@ const CAREER_DATA = {
     id: 'business-analyst',
     title: 'Business Analyst & Project Manager',
     tagline: 'Bridge business strategy, stakeholder requirements, Agile delivery, and enterprise solutions.',
-    icon: 'assets/images/careers/business-analyst.svg',
+    icon: 'assets/images/careers/business-analyst.jpg',
     description:
       'You excel at communication, process modeling, and leadership—translating business challenges into structured project plans, user stories, and measurable outcomes.',
     skills: ['Business Process Modeling (BPMN)', 'Agile / Scrum & Jira', 'Requirements Engineering', 'SQL & Power BI Basics'],
@@ -191,7 +191,7 @@ const CAREER_DATA = {
     id: 'product-manager',
     title: 'Product Manager',
     tagline: 'Define product vision, market strategy, feature prioritization, and cross-functional execution.',
-    icon: 'assets/images/careers/product-manager.svg',
+    icon: 'assets/images/careers/product-manager.jpg',
     description:
       'You think like a mini-CEO for a product—combining customer discovery, competitive market analysis, UX intuition, and product roadmapping.',
     skills: ['Product Strategy & Roadmapping', 'User Discovery & PRDs', 'Product Analytics (Mixpanel/GA4)', 'Cross-Functional Leadership'],
@@ -208,7 +208,7 @@ const CAREER_DATA = {
     id: 'digital-marketing',
     title: 'Digital Marketing & Growth Strategist',
     tagline: 'Drive brand visibility, SEO/SEM customer acquisition, social media strategy, and conversion growth.',
-    icon: 'assets/images/careers/digital-marketing.svg',
+    icon: 'assets/images/careers/digital-marketing.jpg',
     description:
       'You combine creative storytelling with data-driven marketing—growing brands through search engines, paid campaigns, content strategy, and analytics.',
     skills: ['SEO & Content Strategy', 'Google Ads & Meta Ads', 'Google Analytics 4 (GA4)', 'Conversion Rate Optimization'],
@@ -225,7 +225,7 @@ const CAREER_DATA = {
     id: 'financial-analyst',
     title: 'Financial Analyst & FinTech Specialist',
     tagline: 'Lead corporate financial modeling, investment analysis, valuation, and digital banking innovation.',
-    icon: 'assets/images/careers/financial-analyst.svg',
+    icon: 'assets/images/careers/financial-analyst.jpg',
     description:
       'You thrive on financial markets, corporate valuation, accounting logic, and FinTech—turning financial statements and market data into strategic investments.',
     skills: ['Financial Modeling & Valuation', 'Advanced Excel & Power BI', 'Corporate Finance & Accounting', 'FinTech & Risk Analysis'],
@@ -242,7 +242,7 @@ const CAREER_DATA = {
     id: 'multimedia-designer',
     title: 'Creative Multimedia & Motion Designer',
     tagline: 'Create compelling motion graphics, video production, 3D visuals, and brand identities.',
-    icon: 'assets/images/careers/multimedia-designer.svg',
+    icon: 'assets/images/careers/multimedia-designer.jpg',
     description:
       'You bring stories to life visually—combining video editing, 2D/3D motion graphics, sound design, and visual branding for digital media and agencies.',
     skills: ['Video Editing (Premiere / DaVinci)', 'Motion Graphics (After Effects)', '3D & Visual Design (Blender / Illustrator)', 'Brand Storytelling'],
@@ -259,7 +259,7 @@ const CAREER_DATA = {
     id: 'robotics-iot',
     title: 'Mechatronics, Robotics & IoT Engineer',
     tagline: 'Build smart connected hardware, embedded systems, industrial automation, and robotics.',
-    icon: 'assets/images/careers/robotics-iot.svg',
+    icon: 'assets/images/careers/robotics-iot.jpg',
     description:
       'You love bridging physical hardware and software—programming microcontrollers, sensors, robotics, and smart IoT systems for industry and agriculture.',
     skills: ['Embedded C/C++ & MicroPython', 'ESP32 / Arduino / Raspberry Pi', 'IoT Protocols (MQTT) & Sensors', 'PCB & 3D CAD Prototyping'],
@@ -504,3 +504,5 @@ function renderQuizResults(topKey, secondKey, scores, totalQuestions) {
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }, 100);
 }
+
+window.initCareerQuiz = initCareerQuiz;
