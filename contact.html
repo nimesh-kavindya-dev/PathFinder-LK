@@ -12,7 +12,7 @@
   <meta property="og:description" content="Explore how to contribute to PathFinder LK on GitHub, meet the student collaborators, and get answers to common IT career planning questions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nimesh-kavindya-dev.github.io/pathfinder-lk/contact.html">
-  <meta property="og:image" content="assets/images/hero/hero-illustration.svg">
+  <meta property="og:image" content="assets/images/hero/hero-banner.jpg">
 
   <!-- Mobile Web App & PWA Capability -->
   <meta name="theme-color" content="#060b16">
@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="PathFinderLK">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
 
   <title>Community, Collaborators &amp; FAQ | PathFinder LK</title>
 
@@ -36,27 +36,32 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <!-- Immediate Theme & Loader Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}if(sessionStorage.getItem('pf_internal_nav')==='1'){sessionStorage.removeItem('pf_internal_nav');document.documentElement.classList.add('pf-skip-loader');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
+  <script src="js/careers.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/roadmaps.js" defer></script>
+  <script src="js/resources.js" defer></script>
 </head>
 <body>
-  <!-- Glassmorphic Branded Loading Screen -->
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
-    <div class="loader-content">
-      <div class="loader-logo-wrap">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+  <!-- Glassy Branded Loading Screen (Initial Open & Browser Refresh) -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading PathFinder LK">
+    <div class="loader-glass-card">
+      <div class="loader-compass-ring">
+        <div class="loader-ring-orbit"></div>
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass" width="46" height="46" loading="lazy" decoding="async" class="loader-logo-img">
       </div>
-      <div class="loader-brand">PathFinder <span>LK</span></div>
-      <div class="loader-subtext">Loading Community &amp; FAQ Hub...</div>
-      <div class="loader-bar-track" aria-hidden="true">
-        <div class="loader-bar-fill"></div>
+      <div class="loader-brand-name">PathFinder<span class="brand-highlight">-LK</span></div>
+      <p class="loader-status-text" id="loader-status-text">Initializing Career Pathways...</p>
+      <div class="loader-progress-track" aria-hidden="true">
+        <div class="loader-progress-fill" id="loader-progress-fill"></div>
       </div>
-      <div class="loader-percent" aria-hidden="true">8%</div>
+      <div class="loader-percent" id="loader-percent">0%</div>
     </div>
   </div>
 
@@ -66,7 +71,7 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass Logo" width="38" height="38" loading="lazy" decoding="async" class="logo-img">
         <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
       </a>
 
@@ -315,7 +320,7 @@
       <div class="footer-grid">
         <div class="footer-col footer-brand-col">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <img src="assets/icons/logo.png" alt="PathFinder LK Logo" width="34" height="34" loading="lazy" decoding="async">
             <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
           </a>
           <p class="footer-mission">

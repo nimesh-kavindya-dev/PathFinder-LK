@@ -2,7 +2,23 @@
  * Pure domain logic for PathFinder LK (used by unit tests and browser scripts)
  */
 
-export const CAREER_KEYS = ['se', 'fs', 'cloud', 'da', 'de', 'ds', 'cs', 'uiux', 'qa'];
+export const CAREER_KEYS = [
+  'se',
+  'fs',
+  'cloud',
+  'da',
+  'de',
+  'ds',
+  'cs',
+  'uiux',
+  'qa',
+  'ba',
+  'pm',
+  'dm',
+  'fa',
+  'mm',
+  'iot',
+];
 
 export const ROADMAP_CAREER_MAP = {
   'software-engineer': 'roadmap-se',
@@ -23,6 +39,18 @@ export const ROADMAP_CAREER_MAP = {
   'uiux': 'roadmap-uiux',
   'qa-engineer': 'roadmap-qa',
   'qa': 'roadmap-qa',
+  'business-analyst': 'roadmap-ba',
+  'ba': 'roadmap-ba',
+  'product-manager': 'roadmap-pm',
+  'pm': 'roadmap-pm',
+  'digital-marketing': 'roadmap-dm',
+  'dm': 'roadmap-dm',
+  'financial-analyst': 'roadmap-fa',
+  'fa': 'roadmap-fa',
+  'multimedia-designer': 'roadmap-mm',
+  'mm': 'roadmap-mm',
+  'robotics-iot': 'roadmap-iot',
+  'iot': 'roadmap-iot',
 };
 
 /**
@@ -31,7 +59,10 @@ export const ROADMAP_CAREER_MAP = {
  * @returns {{ topKey: string, secondKey: string, scores: Record<string, number>, topPercent: number }}
  */
 export function calculateQuizResult(answers) {
-  const scores = { se: 0, fs: 0, cloud: 0, da: 0, de: 0, ds: 0, cs: 0, uiux: 0, qa: 0 };
+  const scores = {};
+  for (const key of CAREER_KEYS) {
+    scores[key] = 0;
+  }
   if (!Array.isArray(answers) || answers.length === 0) {
     return { topKey: 'se', secondKey: 'fs', scores, topPercent: 0 };
   }

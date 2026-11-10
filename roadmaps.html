@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="PathFinderLK">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
 
   <title>Learning Roadmaps (15 Tracks) | PathFinder LK - 6-Stage Step-by-Step Guides</title>
 
@@ -36,28 +36,32 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <!-- Immediate Theme & Loader Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}if(sessionStorage.getItem('pf_internal_nav')==='1'){sessionStorage.removeItem('pf_internal_nav');document.documentElement.classList.add('pf-skip-loader');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
+  <script src="js/careers.js" defer></script>
+  <script src="js/quiz.js" defer></script>
   <script src="js/roadmaps.js" defer></script>
+  <script src="js/resources.js" defer></script>
 </head>
 <body>
-  <!-- Glassmorphic Branded Loading Screen -->
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
-    <div class="loader-content">
-      <div class="loader-logo-wrap">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+  <!-- Glassy Branded Loading Screen (Initial Open & Browser Refresh) -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading PathFinder LK">
+    <div class="loader-glass-card">
+      <div class="loader-compass-ring">
+        <div class="loader-ring-orbit"></div>
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass" width="46" height="46" loading="lazy" decoding="async" class="loader-logo-img">
       </div>
-      <div class="loader-brand">PathFinder <span>LK</span></div>
-      <div class="loader-subtext">Loading 15 Structured 6-Stage Learning Roadmaps...</div>
-      <div class="loader-bar-track" aria-hidden="true">
-        <div class="loader-bar-fill"></div>
+      <div class="loader-brand-name">PathFinder<span class="brand-highlight">-LK</span></div>
+      <p class="loader-status-text" id="loader-status-text">Initializing Career Pathways...</p>
+      <div class="loader-progress-track" aria-hidden="true">
+        <div class="loader-progress-fill" id="loader-progress-fill"></div>
       </div>
-      <div class="loader-percent" aria-hidden="true">8%</div>
+      <div class="loader-percent" id="loader-percent">0%</div>
     </div>
   </div>
 
@@ -67,7 +71,7 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass Logo" width="38" height="38" loading="lazy" decoding="async" class="logo-img">
         <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
       </a>
 
@@ -182,7 +186,7 @@
         <div id="roadmap-se" class="roadmap-pane" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer" width="52" height="52">
+              <img src="assets/images/careers/software-engineer.jpg" alt="Software Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-blue">Track 01 &bull; Software Engineering</span>
@@ -376,7 +380,7 @@
         <div id="roadmap-fs" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer" width="52" height="52">
+              <img src="assets/images/careers/fullstack-developer.jpg" alt="Full-Stack Developer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-cyan">Track 02 &bull; Full-Stack Web Engineering</span>
@@ -570,7 +574,7 @@
         <div id="roadmap-cloud" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/cloud-devops.svg" alt="Cloud & DevOps Engineer" width="52" height="52">
+              <img src="assets/images/careers/cloud-devops.jpg" alt="Cloud & DevOps Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-teal">Track 03 &bull; Cloud &amp; DevOps Infrastructure</span>
@@ -762,7 +766,7 @@
         <div id="roadmap-da" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst" width="52" height="52">
+              <img src="assets/images/careers/data-analyst.jpg" alt="Data Analyst" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-green">Track 04 &bull; Data Analytics &amp; BI</span>
@@ -950,7 +954,7 @@
         <div id="roadmap-de" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/data-engineer.svg" alt="Data Engineer" width="52" height="52">
+              <img src="assets/images/careers/data-engineer.jpg" alt="Data Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-amber">Track 05 &bull; Data Engineering &amp; Pipelines</span>
@@ -1137,7 +1141,7 @@
         <div id="roadmap-ds" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/data-scientist.svg" alt="Data Scientist & AI Engineer" width="52" height="52">
+              <img src="assets/images/careers/data-scientist.jpg" alt="Data Scientist & AI Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-green">Track 06 &bull; Data Science &amp; Applied AI</span>
@@ -1325,7 +1329,7 @@
         <div id="roadmap-cs" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/cybersecurity.svg" alt="Cybersecurity Analyst" width="52" height="52">
+              <img src="assets/images/careers/cybersecurity.jpg" alt="Cybersecurity Analyst" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-red">Track 07 &bull; Cybersecurity &amp; Defense</span>
@@ -1513,7 +1517,7 @@
         <div id="roadmap-uiux" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer" width="52" height="52">
+              <img src="assets/images/careers/ui-ux.jpg" alt="UI/UX Designer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-purple">Track 08 &bull; UI/UX &amp; Product Design</span>
@@ -1701,7 +1705,7 @@
         <div id="roadmap-qa" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/qa-engineer.svg" alt="QA & Test Automation Engineer" width="52" height="52">
+              <img src="assets/images/careers/qa-engineer.jpg" alt="QA & Test Automation Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-amber">Track 09 &bull; Quality Assurance &amp; Test Automation</span>
@@ -1888,9 +1892,8 @@
              ================================================================ -->
         <div id="roadmap-ba" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst & Project Manager" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst" width="52" height="52">
+              <img src="assets/images/careers/business-analyst.jpg" alt="Business Analyst" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-blue">Track 10 &bull; Business Analysis &amp; Agile Delivery</span>
@@ -2077,9 +2080,8 @@
              ================================================================ -->
         <div id="roadmap-pm" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/product-manager.jpg" alt="Product Manager" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/product-manager.svg" alt="Product Manager" width="52" height="52">
+              <img src="assets/images/careers/product-manager.jpg" alt="Product Manager" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-purple">Track 11 &bull; Product Strategy &amp; SaaS</span>
@@ -2266,9 +2268,8 @@
              ================================================================ -->
         <div id="roadmap-dm" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing & Growth Strategist" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing" width="52" height="52">
+              <img src="assets/images/careers/digital-marketing.jpg" alt="Digital Marketing" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-cyan">Track 12 &bull; Digital Marketing &amp; Growth</span>
@@ -2455,9 +2456,8 @@
              ================================================================ -->
         <div id="roadmap-fa" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst & FinTech Specialist" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst" width="52" height="52">
+              <img src="assets/images/careers/financial-analyst.jpg" alt="Financial Analyst" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-green">Track 13 &bull; Corporate Finance &amp; FinTech</span>
@@ -2644,9 +2644,8 @@
              ================================================================ -->
         <div id="roadmap-mm" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/multimedia-designer.jpg" alt="Creative Multimedia & Motion Designer" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/multimedia-designer.svg" alt="Creative Multimedia Designer" width="52" height="52">
+              <img src="assets/images/careers/multimedia-designer.jpg" alt="Creative Multimedia Designer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-purple">Track 14 &bull; Creative Media, 3D &amp; Motion</span>
@@ -2833,9 +2832,8 @@
              ================================================================ -->
         <div id="roadmap-iot" class="roadmap-pane hidden" role="tabpanel">
           <div class="detail-header-card" style="max-width: 900px; margin: 0 auto 2rem;">
-            <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics, Robotics & IoT Engineer" class="detail-photo-thumb" loading="lazy">
             <div class="detail-icon-box">
-              <img src="assets/images/careers/robotics-iot.svg" alt="Robotics & IoT Engineer" width="52" height="52">
+              <img src="assets/images/careers/robotics-iot.jpg" alt="Robotics & IoT Engineer" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="detail-title-group">
               <span class="badge badge-amber">Track 15 &bull; Embedded Systems, Robotics &amp; IoT</span>
@@ -3046,7 +3044,7 @@
       <div class="footer-grid">
         <div class="footer-col footer-brand-col">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <img src="assets/icons/logo.png" alt="PathFinder LK Logo" width="34" height="34" loading="lazy" decoding="async">
             <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
           </a>
           <p class="footer-mission">

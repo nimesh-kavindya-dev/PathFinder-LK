@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Data Engineer icon">
-  <rect width="120" height="120" rx="18" fill="#f59e0b" fill-opacity="0.14"/>
-  <ellipse cx="60" cy="36" rx="34" ry="12" fill="#f59e0b"/>
-  <path d="M26 36 v18 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-18" fill="#d97706" fill-opacity="0.85"/>
-  <path d="M26 58 v18 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-18" fill="#f59e0b" fill-opacity="0.85"/>
-  <path d="M26 80 v16 c0 6.6 15.2 12 34 12 s34 -5.4 34 -12 v-16" fill="#d97706"/>
-  <circle cx="86" cy="84" r="13" fill="#0284c7" stroke="#ffffff" stroke-width="2.5"/>
-  <path d="M82 85 L86 81 L90 85" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-</svg>

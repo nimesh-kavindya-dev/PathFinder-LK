@@ -166,5 +166,11 @@ function initRoadmapsPage() {
   };
 
   handleDeepLink();
+  if (window.__pfRoadmapsPopHandler) {
+    window.removeEventListener('popstate', window.__pfRoadmapsPopHandler);
+  }
+  window.__pfRoadmapsPopHandler = handleDeepLink;
   window.addEventListener('popstate', handleDeepLink);
 }
+
+window.initRoadmapsPage = initRoadmapsPage;

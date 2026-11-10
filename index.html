@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="PathFinderLK">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
 
   <title>PathFinder LK | Career Guidance Platform for University Students</title>
 
@@ -36,27 +36,32 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Immediate Theme Engine Initializer to Prevent Flash -->
+  <!-- Immediate Theme & Loader Initializer to Prevent Flash -->
   <script>
-    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('pathfinder-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}else if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}else{document.documentElement.setAttribute('data-theme','dark');}if(sessionStorage.getItem('pf_internal_nav')==='1'){sessionStorage.removeItem('pf_internal_nav');document.documentElement.classList.add('pf-skip-loader');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
+  <script src="js/careers.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/roadmaps.js" defer></script>
+  <script src="js/resources.js" defer></script>
 </head>
 <body>
-  <!-- Glassmorphic Branded Loading Screen -->
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
-    <div class="loader-content">
-      <div class="loader-logo-wrap">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass" width="44" height="44">
+  <!-- Glassy Branded Loading Screen (Initial Open & Browser Refresh) -->
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading PathFinder LK">
+    <div class="loader-glass-card">
+      <div class="loader-compass-ring">
+        <div class="loader-ring-orbit"></div>
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass" width="46" height="46" loading="lazy" decoding="async" class="loader-logo-img">
       </div>
-      <div class="loader-brand">PathFinder <span>LK</span></div>
-      <div class="loader-subtext">Initializing Career Guidance Platform...</div>
-      <div class="loader-bar-track" aria-hidden="true">
-        <div class="loader-bar-fill"></div>
+      <div class="loader-brand-name">PathFinder<span class="brand-highlight">-LK</span></div>
+      <p class="loader-status-text" id="loader-status-text">Initializing Career Pathways...</p>
+      <div class="loader-progress-track" aria-hidden="true">
+        <div class="loader-progress-fill" id="loader-progress-fill"></div>
       </div>
-      <div class="loader-percent" aria-hidden="true">8%</div>
+      <div class="loader-percent" id="loader-percent">0%</div>
     </div>
   </div>
 
@@ -67,7 +72,7 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       <a href="index.html" class="brand-logo" aria-label="PathFinder LK Home">
-        <img src="assets/icons/logo.svg" alt="PathFinder LK Compass Logo" width="38" height="38" class="logo-img">
+        <img src="assets/icons/logo.png" alt="PathFinder LK Compass Logo" width="38" height="38" loading="lazy" decoding="async" class="logo-img">
         <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
       </a>
 
@@ -104,13 +109,7 @@
     <!-- 2. HERO SECTION (FULL-BLEED CONTINUOUS BACKGROUND PHOTO SHOWCASE) -->
     <section class="hero-section" aria-labelledby="hero-heading">
       <div class="hero-bg-media" aria-hidden="true">
-        <img
-          src="assets/images/photos/software-engineer.jpg"
-          alt=""
-          width="1400"
-          height="800"
-          class="hero-bg-photo"
-        >
+        <img src="assets/images/hero/hero-banner.jpg" alt="" width="1440" height="960" loading="eager" fetchpriority="high" decoding="async" class="hero-bg-photo">
       </div>
       <div class="container">
         <div class="hero-grid">
@@ -129,11 +128,11 @@
               <a href="quiz.html" class="btn btn-outline-light btn-lg">Take Career Match Quiz</a>
             </div>
             <div class="hero-trust-note">
-              <span class="trust-check">&#10003;</span> 15 Career Pathways (IT &amp; Beyond)
-              <span class="trust-divider">&bull;</span>
-              <span class="trust-check">&#10003;</span> 90 Roadmap Stages
-              <span class="trust-divider">&bull;</span>
-              <span class="trust-check">&#10003;</span> 100% Free Curated Courses
+              <span class="trust-item"><span class="trust-check">&#10003;</span> 15 Career Pathways (IT &amp; Beyond)</span>
+              <span class="trust-divider" aria-hidden="true">&bull;</span>
+              <span class="trust-item"><span class="trust-check">&#10003;</span> 90 Roadmap Stages</span>
+              <span class="trust-divider" aria-hidden="true">&bull;</span>
+              <span class="trust-item"><span class="trust-check">&#10003;</span> 100% Free Curated Courses</span>
             </div>
           </div>
 
@@ -299,11 +298,11 @@
           <!-- Card 1: Software Engineer -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/software-engineer.jpg" alt="Software Engineer working on code architecture" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/software-engineer.jpg" alt="Software Engineer working on code architecture" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/software-engineer.svg" alt="Software Engineer Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/software-engineer.jpg" alt="Software Engineer Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-blue">Software Development</span>
             </div>
@@ -326,11 +325,11 @@
           <!-- Card 2: Full-Stack Developer -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/fullstack-developer.jpg" alt="Full-Stack Developer building modern web interfaces" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/fullstack-developer.jpg" alt="Full-Stack Developer building modern web interfaces" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/fullstack-developer.svg" alt="Full-Stack Developer Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/fullstack-developer.jpg" alt="Full-Stack Developer Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-cyan">Web Engineering</span>
             </div>
@@ -353,11 +352,11 @@
           <!-- Card 3: Data Analyst -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/data-analyst.jpg" alt="Data Analyst visualizing business intelligence dashboards" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/data-analyst.jpg" alt="Data Analyst visualizing business intelligence dashboards" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/data-analyst.svg" alt="Data Analyst Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/data-analyst.jpg" alt="Data Analyst Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-green">Data &amp; BI</span>
             </div>
@@ -380,11 +379,11 @@
           <!-- Card 4: Business Analyst & Project Manager -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst and Project Manager leading strategy session" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/business-analyst.jpg" alt="Business Analyst and Project Manager leading strategy session" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/business-analyst.svg" alt="Business Analyst Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/business-analyst.jpg" alt="Business Analyst Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-amber">Business &amp; Agile PM</span>
             </div>
@@ -407,11 +406,11 @@
           <!-- Card 5: Product Manager -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/product-manager.jpg" alt="Product Manager planning product roadmap with team" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/product-manager.jpg" alt="Product Manager planning product roadmap with team" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/product-manager.svg" alt="Product Manager Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/product-manager.jpg" alt="Product Manager Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-purple">Product Strategy</span>
             </div>
@@ -434,11 +433,11 @@
           <!-- Card 6: Digital Marketing & Growth Strategist -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing Strategist analyzing campaign growth metrics" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/digital-marketing.jpg" alt="Digital Marketing Strategist analyzing campaign growth metrics" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/digital-marketing.svg" alt="Digital Marketing Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/digital-marketing.jpg" alt="Digital Marketing Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-red">Marketing &amp; Growth</span>
             </div>
@@ -461,11 +460,11 @@
           <!-- Card 7: Financial Analyst & FinTech Specialist -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst reviewing corporate valuation and market charts" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/financial-analyst.jpg" alt="Financial Analyst reviewing corporate valuation and market charts" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/financial-analyst.svg" alt="Financial Analyst Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/financial-analyst.jpg" alt="Financial Analyst Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-green">Finance &amp; FinTech</span>
             </div>
@@ -488,11 +487,11 @@
           <!-- Card 8: UI/UX & Creative Multimedia -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/ui-ux.jpg" alt="UI/UX Designer creating digital wireframes and visual interfaces" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/ui-ux.jpg" alt="UI/UX Designer creating digital wireframes and visual interfaces" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/ui-ux.svg" alt="UI/UX Designer Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/ui-ux.jpg" alt="UI/UX Designer Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-purple">Product Design</span>
             </div>
@@ -515,11 +514,11 @@
           <!-- Card 9: Mechatronics, Robotics & IoT Engineer -->
           <article class="card career-card">
             <div class="card-photo-banner">
-              <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics and Robotics Engineer testing smart hardware prototype" width="400" height="225" loading="lazy" class="card-photo-img">
+              <img src="assets/images/photos/robotics-iot.jpg" alt="Mechatronics and Robotics Engineer testing smart hardware prototype" width="960" height="720" loading="lazy" decoding="async" class="card-photo-img">
             </div>
             <div class="card-header">
               <div class="card-icon-wrapper">
-                <img src="assets/images/careers/robotics-iot.svg" alt="Robotics and IoT Engineer Icon" width="40" height="40" class="card-icon">
+                <img src="assets/images/careers/robotics-iot.jpg" alt="Robotics and IoT Engineer Icon" width="800" height="600" loading="lazy" decoding="async" class="card-icon">
               </div>
               <span class="badge badge-teal">Engineering &amp; IoT</span>
             </div>
@@ -542,6 +541,60 @@
 
         <div class="section-cta-center">
           <a href="careers.html" class="btn btn-primary btn-lg">View All 15 Career Pathways &amp; Comparison Matrix &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CAREER QUIZ INTRODUCTION -->
+    <section class="section tools-preview-section quiz-intro-section" aria-labelledby="quiz-intro-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Interactive Self-Assessment</span>
+          <h2 id="quiz-intro-heading" class="section-title">Not Sure Which Career Path Fits You Best?</h2>
+          <p class="section-description">
+            Take our rule-based 9-question Career Match Quiz to evaluate your problem-solving preferences, project interests, and analytical strengths across all 15 career tracks.
+          </p>
+        </div>
+
+        <div class="grid grid-2 split-feature-grid">
+          <div class="card feature-highlight-card quiz-preview-card">
+            <div class="feature-badge-row">
+              <span class="badge badge-accent">9 Scenario Questions</span>
+              <span class="feature-time-estimate">&#9201; Takes ~2 Minutes</span>
+            </div>
+            <h3 class="feature-title">Discover Your Top Career &amp; Runner-Up Match</h3>
+            <p class="feature-description">
+              Whether you enjoy writing clean backend code, designing user interfaces in Figma, analyzing financial &amp; business data, running digital growth campaigns, or building embedded IoT systems—our rubric maps your answers to real graduate pathways.
+            </p>
+            <ul class="feature-checklist">
+              <li>Evaluates affinity across all 15 IT, Business, Finance, Media &amp; Engineering roles</li>
+              <li>Shows transparent primary and runner-up career recommendations</li>
+              <li>Provides immediate beginner steps, skill tags, and roadmap links</li>
+            </ul>
+            <div class="feature-action">
+              <a href="quiz.html" class="btn btn-accent">Start the Career Match Quiz &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card feature-highlight-card quiz-sample-card">
+            <div class="feature-badge-row">
+              <span class="badge badge-blue">What the Quiz Evaluates</span>
+              <span class="feature-time-estimate">&#127919; Practical Guidance</span>
+            </div>
+            <h3 class="feature-title">Structured Around Real University Decisions</h3>
+            <p class="feature-description">
+              Instead of vague personality traits, each question asks how you prefer to contribute to university projects, internships, and real-world problem-solving.
+            </p>
+            <div class="mini-roadmap-preview" aria-label="Quiz Evaluation Dimensions">
+              <div class="mini-stage"><span class="mini-dot">01</span> Problem-Solving &amp; Logic Style</div>
+              <div class="mini-stage"><span class="mini-dot">02</span> Preferred Tools &amp; Workflows</div>
+              <div class="mini-stage"><span class="mini-dot">03</span> Team Role in Capstone Projects</div>
+              <div class="mini-stage"><span class="mini-dot">04</span> Analytical vs. Creative Balance</div>
+            </div>
+            <div class="feature-action">
+              <a href="careers.html#career-comparison" class="btn btn-outline">Compare All 15 Roles Side-by-Side &rarr;</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -576,7 +629,7 @@
 
           <div class="card step-card">
             <div class="step-number" aria-hidden="true">03</div>
-            <h3 class="step-title">Follow the Roadmap</h3>
+            <h3 class="step-title">Follow the 6-Stage Roadmap</h3>
             <p class="step-description">
               Track a stage-by-stage learning progression from foundational university concepts to capstone portfolio projects.
             </p>
@@ -593,57 +646,36 @@
       </div>
     </section>
 
-    <!-- 6. INTERACTIVE QUIZ & LEARNING ROADMAP PREVIEW -->
-    <section class="section tools-preview-section" aria-labelledby="interactive-tools-heading">
+    <!-- 6. CAREER ROADMAP PREVIEW (CONSISTENT 6-STAGE STRUCTURE) -->
+    <section class="section roadmap-preview-section" aria-labelledby="roadmap-preview-heading">
       <div class="container">
         <div class="section-header">
-          <span class="section-subtitle">Interactive Guidance Tools</span>
-          <h2 id="interactive-tools-heading" class="section-title">Match Your Strengths &amp; Plan Every Semester</h2>
+          <span class="section-subtitle">6-Stage Progression System</span>
+          <h2 id="roadmap-preview-heading" class="section-title">Structured 6-Stage Career Roadmaps</h2>
           <p class="section-description">
-            Combine personalized career matching with concrete semester-by-semester skill milestones.
+            Stop jumping between random tutorials. Every one of our 15 career pathways features a complete 6-stage learning roadmap guiding you from first-year fundamentals to internship readiness.
           </p>
         </div>
 
-        <div class="grid grid-2 split-feature-grid">
-          <!-- Career Quiz Preview Card -->
-          <div class="card feature-highlight-card quiz-preview-card">
-            <div class="feature-badge-row">
-              <span class="badge badge-accent">Interactive Assessment</span>
-              <span class="feature-time-estimate">&#9201; Takes ~2 Minutes</span>
-            </div>
-            <h3 class="feature-title">Not Sure Which Career Path Fits You Best?</h3>
-            <p class="feature-description">
-              Our 9-question Career Match Quiz evaluates whether you thrive on software engineering, business &amp; product strategy, data analytics, digital marketing, finance, creative media, or robotics—and calculates your primary and runner-up affinities.
-            </p>
-            <ul class="feature-checklist">
-              <li>Evaluates across all 15 career pathways (IT &amp; Non-IT)</li>
-              <li>Instant primary &amp; runner-up career match breakdown</li>
-              <li>Recommended beginner tools &amp; next steps</li>
-            </ul>
-            <div class="feature-action">
-              <a href="quiz.html" class="btn btn-accent">Start the Career Quiz &rarr;</a>
-            </div>
+        <div class="card feature-highlight-card roadmap-preview-card">
+          <div class="feature-badge-row">
+            <span class="badge badge-blue">15 Pathways &times; 6 Stages = 90 Milestones</span>
+            <span class="feature-time-estimate">&#128204; Year 1 Foundations to Graduate Portfolio</span>
           </div>
-
-          <!-- Learning Roadmap Preview Card -->
-          <div class="card feature-highlight-card roadmap-preview-card">
-            <div class="feature-badge-row">
-              <span class="badge badge-blue">6-Stage Progression</span>
-              <span class="feature-time-estimate">&#128204; Beginner to Internship-Ready</span>
-            </div>
-            <h3 class="feature-title">Structured Learning Roadmaps</h3>
-            <p class="feature-description">
-              Stop jumping between random tutorials. Each of our 15 career roadmaps breaks your journey into 6 logical stages—showing exactly what to study, which tools to master, and what portfolio projects to build.
-            </p>
-            <div class="mini-roadmap-preview" aria-label="Sample Roadmap Stages">
-              <div class="mini-stage"><span class="mini-dot">1</span> Core Foundations &amp; Domain Concepts</div>
-              <div class="mini-stage"><span class="mini-dot">2</span> Industry Tools &amp; Analytical Workflows</div>
-              <div class="mini-stage"><span class="mini-dot">3</span> Frameworks, Strategy &amp; Execution</div>
-              <div class="mini-stage"><span class="mini-dot">4</span> Capstone Portfolio &amp; Internship Prep</div>
-            </div>
-            <div class="feature-action">
-              <a href="roadmaps.html" class="btn btn-primary">Explore All 15 Roadmaps &rarr;</a>
-            </div>
+          <h3 class="feature-title">What Every 6-Stage Career Roadmap Includes</h3>
+          <p class="feature-description">
+            Each stage clearly outlines core learning objectives, industry technologies to master, hands-on practice exercises, and portfolio project deliverables.
+          </p>
+          <div class="grid grid-3 roadmap-six-stage-grid" aria-label="All 6 Roadmap Stages">
+            <div class="mini-stage"><span class="mini-dot">01</span> Stage 1: Core Foundations &amp; Domain Concepts</div>
+            <div class="mini-stage"><span class="mini-dot">02</span> Stage 2: Essential Languages, Tools &amp; Workflows</div>
+            <div class="mini-stage"><span class="mini-dot">03</span> Stage 3: Frameworks, Architecture &amp; Analysis</div>
+            <div class="mini-stage"><span class="mini-dot">04</span> Stage 4: Applied Systems, Security &amp; Quality</div>
+            <div class="mini-stage"><span class="mini-dot">05</span> Stage 5: Real-World Projects &amp; Collaboration</div>
+            <div class="mini-stage"><span class="mini-dot">06</span> Stage 6: Capstone Portfolio &amp; Internship Prep</div>
+          </div>
+          <div class="feature-action">
+            <a href="roadmaps.html" class="btn btn-primary">Explore All 15 Interactive Roadmaps &rarr;</a>
           </div>
         </div>
       </div>
@@ -783,7 +815,7 @@
       <div class="footer-grid">
         <div class="footer-col footer-brand-col">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="assets/icons/logo.svg" alt="PathFinder LK Logo" width="34" height="34">
+            <img src="assets/icons/logo.png" alt="PathFinder LK Logo" width="34" height="34" loading="lazy" decoding="async">
             <span class="brand-text">PathFinder<span class="brand-highlight">-LK</span></span>
           </a>
           <p class="footer-mission">
