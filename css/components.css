@@ -1,16 +1,4 @@
-/* ==========================================================================
-   PathFinder LK - Reusable Glassmorphic UI Components (components.css)
-   Description: Glassy Loading Screen, Scroll-Reveal Transitions, Buttons,
-                Badges, Frosted Photographic Cards, Search & Filter Bar,
-                Comparison Matrix, Accordions, Roadmaps, Career Details, Quiz,
-                Mobile Bottom Nav Dock, and Modals.
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   0. GLASSY BRANDED PAGE LOADER & SMOOTH WATER-LIKE PAGE TRANSITIONS
-   -------------------------------------------------------------------------- */
-
-/* Branded Glassmorphic Page Loader (Shown on Initial Open & Browser Refresh) */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -39,7 +27,7 @@
   filter: blur(5px);
 }
 
-/* Skip loader immediately when navigating internally between pages */
+
 html.pf-skip-loader .page-loader {
   display: none !important;
   opacity: 0 !important;
@@ -152,7 +140,7 @@ html.pf-skip-loader .page-loader {
   }
 }
 
-/* Smooth Water-Like Internal Page-to-Page Transitions (Main Content Only; Top Header Never Refreshes) */
+
 @view-transition {
   navigation: auto;
 }
@@ -230,7 +218,7 @@ main.pf-entering {
   }
 }
 
-/* Ensure cards and sections are always 100% visible immediately */
+
 .scroll-reveal,
 .scroll-reveal.scroll-reveal-left,
 .scroll-reveal.scroll-reveal-right,
@@ -239,7 +227,7 @@ main.pf-entering {
   transform: none;
 }
 
-/* Subtle Non-Blanking Cascade Animation for Filtered Cards & Switched Roadmap Panes */
+
 @keyframes pf-card-pop {
   0% {
     filter: blur(1.5px);
@@ -255,7 +243,7 @@ main.pf-entering {
   animation: pf-card-pop 180ms ease-out;
 }
 
-/* Smooth Anchor Scroll Target Highlight Pulse */
+
 @keyframes pf-anchor-pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.48);
@@ -272,9 +260,7 @@ main.pf-entering {
   animation: pf-anchor-pulse 1.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --------------------------------------------------------------------------
-   1. BUTTONS
-   -------------------------------------------------------------------------- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -391,9 +377,7 @@ main.pf-entering {
   width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   2. BADGES & SKILL TAGS (Dual-Theme Safe)
-   -------------------------------------------------------------------------- */
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -503,9 +487,7 @@ main.pf-entering {
   max-width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   3. GLASSMORPHIC EQUAL-HEIGHT CARDS & REAL PHOTOGRAPHIC BANNERS
-   -------------------------------------------------------------------------- */
+
 .card {
   background-color: var(--bg-card);
   backdrop-filter: var(--glass-blur);
@@ -532,7 +514,7 @@ main.pf-entering {
   transition-delay: 0ms;
 }
 
-/* Real Photographic Banner at Top of Career Cards */
+
 .card-photo-banner {
   position: relative;
   margin: -1.55rem -1.55rem 1.15rem -1.55rem;
@@ -662,7 +644,7 @@ main.pf-entering {
   width: 100%;
 }
 
-/* Resource Card Specific Header */
+
 .resource-card-top {
   display: flex;
   align-items: center;
@@ -691,9 +673,7 @@ main.pf-entering {
   color: var(--text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   4. GLASSY SEARCH & FILTER CONTROLS
-   -------------------------------------------------------------------------- */
+
 .filter-bar {
   background-color: var(--bg-card);
   backdrop-filter: var(--glass-blur);
@@ -820,7 +800,7 @@ main.pf-entering {
   gap: 1rem;
 }
 
-/* Empty State Box */
+
 .empty-state {
   background-color: var(--bg-card);
   backdrop-filter: var(--glass-blur);
@@ -839,9 +819,7 @@ main.pf-entering {
   margin-bottom: 0.75rem;
 }
 
-/* --------------------------------------------------------------------------
-   5. SIDE-BY-SIDE COMPARISON TABLE
-   -------------------------------------------------------------------------- */
+
 .comparison-table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -885,9 +863,7 @@ main.pf-entering {
   background-color: var(--bg-surface-hover);
 }
 
-/* --------------------------------------------------------------------------
-   6. CAREER DETAILS PAGE COMPONENTS
-   -------------------------------------------------------------------------- */
+
 .role-switcher-bar {
   padding: 0.75rem 0;
   background-color: var(--bg-header);
@@ -1083,9 +1059,7 @@ main.pf-entering {
   flex-shrink: 0;
 }
 
-/* --------------------------------------------------------------------------
-   7. LEARNING ROADMAPS & ACCORDIONS
-   -------------------------------------------------------------------------- */
+
 .roadmap-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -1242,9 +1216,7 @@ main.pf-entering {
 }
 [data-theme="dark"] .stage-tag-amber { color: #fbbf24; }
 
-/* --------------------------------------------------------------------------
-   8. INTERACTIVE CAREER QUIZ
-   -------------------------------------------------------------------------- */
+
 .quiz-container {
   max-width: 840px;
 }
@@ -1545,9 +1517,7 @@ main.pf-entering {
   margin-top: 1.35rem;
 }
 
-/* --------------------------------------------------------------------------
-   9. COMMUNITY & CONNECT HUB CARDS
-   -------------------------------------------------------------------------- */
+
 .contact-hub-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1603,9 +1573,7 @@ main.pf-entering {
   margin-top: auto;
 }
 
-/* --------------------------------------------------------------------------
-   10. NATIVE-STYLE GLASSY MOBILE BOTTOM NAVIGATION DOCK & MODAL
-   -------------------------------------------------------------------------- */
+
 .mobile-bottom-dock {
   display: none;
 }

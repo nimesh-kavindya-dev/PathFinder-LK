@@ -7,9 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distDir = path.join(__dirname, 'dist');
 
-/**
- * Generates a valid PNG icon buffer with PathFinder LK navy & cyan compass motif
- */
+
 function createCompassPng(size, isMaskable = false) {
   const width = size;
   const height = size;
