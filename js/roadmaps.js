@@ -1,21 +1,9 @@
-/**
- * ============================================================================
- * PathFinder LK - Interactive Learning Roadmaps Script (roadmaps.js)
- * ============================================================================
- * Description: Powers the interactive career roadmap switcher, staggered stage
- *              entrance animations, collapsible learning stage accordions,
- *              expand/collapse all controls, and URL parameter/hash deep-linking
- *              for all 15 career pathways on roadmaps.html.
- * ============================================================================
- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initRoadmapsPage();
 });
 
-/**
- * Valid career keys mapped to their corresponding roadmap container IDs (15 paths)
- */
+
 const CAREER_MAP = {
   'software-engineer': 'roadmap-se',
   'se': 'roadmap-se',
