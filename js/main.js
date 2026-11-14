@@ -1,19 +1,4 @@
-/**
- * ============================================================================
- * PathFinder LK - Global Main Script (main.js)
- * ============================================================================
- * Description: Handles global UI logic across all pages, including:
- *              0. Glassy Branded Loading Screen Controller (Single-Run per Page)
- *              1. Smooth Scroll-Reveal Card Transition Engine & Metric Counters
- *              2. Dark / Light Theme System (localStorage + OS preference)
- *              3. Mobile Hamburger Drawer + Native-Style Mobile Bottom Nav Dock
- *              4. PWA Service Worker Registration & In-App Mobile Install Flow
- *              5. Active Navigation Link Highlighting
- *              6. Universal Smooth Scrolling (In-Page, Header, Footer & Hash Links)
- *              7. Dynamic Copyright Year Update in Footer
- *              8. Standalone FAQ Accordion Controller
- * ============================================================================
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initPageLoader();

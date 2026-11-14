@@ -1,23 +1,11 @@
-/**
- * ============================================================================
- * PathFinder LK - Careers Exploration & Filtering Script (careers.js)
- * ============================================================================
- * Description: Handles interactive search, category pill filtering across all
- *              15 career pathways (IT, Business, Finance, Marketing, Creative,
- *              and Engineering), staggered card entrance animations, URL query
- *              pre-selection, live result counts, and career detail role
- *              switcher synchronization.
- * ============================================================================
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initCareerFilters();
   initCareerDetailsNavigation();
 });
 
-/**
- * 1. Career Search & Category Filtering (careers.html)
- */
+
 function initCareerFilters() {
   const searchInput = document.getElementById('career-search');
   const filterButtons = document.querySelectorAll('.career-filter-btn');

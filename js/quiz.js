@@ -1,21 +1,9 @@
-/**
- * ============================================================================
- * PathFinder LK - Interactive Career Match Quiz Script (quiz.js)
- * ============================================================================
- * Description: Powers the interactive career recommendation quiz across all
- *              15 high-demand career pathways (IT, Business & Product,
- *              Finance & FinTech, Digital Marketing, Creative Multimedia,
- *              and Robotics/IoT Engineering).
- * ============================================================================
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initCareerQuiz();
 });
 
-/**
- * Comprehensive metadata for all 15 supported career pathways
- */
 const CAREER_DATA = {
   se: {
     id: 'software-engineer',

@@ -1,13 +1,4 @@
-/**
- * ============================================================================
- * PathFinder LK - Free Learning Resources Filter Script (resources.js)
- * ============================================================================
- * Description: Powers real-time search, category filtering (Software, Data,
- *              Cloud, Security, Design/Media, QA, Business & Management,
- *              Marketing, Finance, Engineering), difficulty filtering, and
- *              staggered card entrance transitions.
- * ============================================================================
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initResourcesFilter();

@@ -1,6 +1,4 @@
-/**
- * Pure domain logic for PathFinder LK (used by unit tests and browser scripts)
- */
+
 
 export const CAREER_KEYS = [
   'se',
